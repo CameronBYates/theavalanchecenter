@@ -4,7 +4,8 @@
 // data/storms.json for index.html to read. Only flagged centers are written.
 // Usage: node storm-watch/update.mjs [output path]   (no output path: print only)
 
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { dirname } from 'node:path';
 
 const HEAVY_CM = 30;   // 72-hour forecast total that counts as a big storm
 const NOTABLE_CM = 15; // smaller but still worth a mention
@@ -124,6 +125,7 @@ if (out) {
   if (same && fresh) {
     console.log('No change since last run; leaving the file alone.');
   } else {
+    await mkdir(dirname(out), { recursive: true });
     await writeFile(out, JSON.stringify(result, null, 1) + '\n');
     console.log(`Wrote ${out}`);
   }
