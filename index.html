@@ -7,91 +7,86 @@
 <meta name="description" content="A directory of every regional avalanche forecast center in the United States and Canada.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
-/* Layout: trailhead-sign header, then a directory of regions; each region is a labeled list of center rows. */
+/* Layout: alpine-night stage; centered logo, lede, scale and search; a centered directory of region cards below. Single committed dark look. */
 :root {
-  --bg: #f3f6f8;
-  --surface: #ffffff;
-  --ink: #14202b;
-  --muted: #586a78;
-  --line: #d6dee4;
-  --accent: #1d5f8a;
-  --sign: #14202b;
-  --sign-ink: #f3f6f8;
-  --low: #50b848; --moderate: #fff200; --considerable: #f7941e; --high: #ed1c24; --extreme: #231f20;
-  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --night: #050608; --night-2: #0d1120;
+  --surface: rgba(255,255,255,0.06); --surface-hi: rgba(255,255,255,0.11);
+  --ink: #f2f6fb; --muted: #a9b6d6; --line: rgba(255,255,255,0.13);
+  --accent: #ffb86b;
+  --low: #50b848; --moderate: #fff200; --considerable: #f7941e; --high: #ed1c24; --extreme: #0b0b0e;
+  --logo: "Unbounded", "Arial Black", sans-serif;
+  --display: "Big Shoulders Display", "Arial Narrow", sans-serif;
   --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0e161d; --surface: #15212b; --ink: #e6edf2; --muted: #93a6b4; --line: #26353f;
-    --accent: #7cc0ea; --sign: #e6edf2; --sign-ink: #0e161d; --extreme: #000;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0e161d; --surface: #15212b; --ink: #e6edf2; --muted: #93a6b4; --line: #26353f;
-  --accent: #7cc0ea; --sign: #e6edf2; --sign-ink: #0e161d; --extreme: #000;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; background: var(--night); }
 body {
-  margin: 0; background: var(--bg); color: var(--ink);
-  font: 400 1rem/1.55 var(--body);
+  margin: 0; color: var(--ink); font: 400 1rem/1.55 var(--body);
+  background-color: var(--night);
+  background-image:
+    radial-gradient(110% 45rem at 50% -8rem, rgba(255,96,60,0.20), transparent 62%),
+    radial-gradient(60% 36rem at 92% 4rem, rgba(110,80,255,0.22), transparent 65%),
+    radial-gradient(50% 30rem at 4% 10rem, rgba(30,170,190,0.14), transparent 65%),
+    linear-gradient(180deg, var(--night-2), var(--night) 36rem);
+  background-repeat: no-repeat;
 }
-.wrap { max-width: 60rem; margin: 0 auto; padding-inline: 1.25rem; padding-block: 2.5rem 3rem; display: grid; gap: 2.5rem; }
-header { display: grid; gap: 1rem; }
-.sign {
-  justify-self: start; background: var(--sign); color: var(--sign-ink);
-  font: 800 clamp(2.4rem, 7vw, 4.2rem)/0.95 var(--display); text-transform: uppercase; letter-spacing: 0.01em;
-  padding: 0.6rem 1rem 0.5rem; border-radius: 4px; text-wrap: balance; margin: 0;
-}
-.lede { margin: 0; max-width: 38rem; font-size: 1.125rem; color: var(--muted); }
-.scale { display: grid; gap: 0.5rem; max-width: 38rem; }
-.scale-bar { display: grid; grid-template-columns: repeat(5, 1fr); border-radius: 3px; overflow: hidden; height: 0.5rem; }
+.wrap { max-width: 56rem; margin: 0 auto; padding-inline: 1.25rem; padding-block: 2.5rem 3rem; display: grid; gap: 2.75rem; }
+header { display: grid; gap: 1.25rem; justify-items: center; text-align: center; }
+.logo { margin: 0; width: min(100%, 44rem); }
+.logo svg { display: block; width: 100%; height: auto; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.lede { margin: 0; max-width: 34rem; font-size: 1.125rem; color: var(--muted); text-wrap: balance; }
+.scale { display: grid; gap: 0.5rem; width: min(100%, 34rem); }
+.scale-bar { display: grid; grid-template-columns: repeat(5, 1fr); border-radius: 99px; overflow: hidden; height: 0.6rem; border: 1.5px solid var(--ink); }
 .scale-bar span:nth-child(1) { background: var(--low); }
 .scale-bar span:nth-child(2) { background: var(--moderate); }
 .scale-bar span:nth-child(3) { background: var(--considerable); }
 .scale-bar span:nth-child(4) { background: var(--high); }
-.scale-bar span:nth-child(5) { background: var(--extreme); border-left: 1px solid var(--line); }
-.scale-labels { display: grid; grid-template-columns: repeat(5, 1fr); font: 500 0.7rem/1.2 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.scale-bar span:nth-child(5) { background: var(--extreme); }
+.scale-labels { display: grid; grid-template-columns: repeat(5, 1fr); font: 500 0.68rem/1.2 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
 .scale-labels span { min-width: 0; overflow-wrap: anywhere; }
-.search { display: grid; gap: 0.4rem; max-width: 26rem; }
-.search label { font: 600 0.8rem/1 var(--body); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.search { display: grid; gap: 0.45rem; width: min(100%, 26rem); justify-items: center; }
+.search label { font: 500 0.75rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
 .search input {
-  font: 400 1rem var(--body); color: var(--ink); background: var(--surface);
-  border: 1px solid var(--line); border-radius: 4px; padding: 0.65rem 0.8rem; width: 100%;
+  font: 400 1rem var(--body); color: var(--ink); background: var(--surface-hi); text-align: center;
+  border: 1px solid var(--line); border-radius: 99px; padding: 0.7rem 1rem; width: 100%;
 }
-.search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-.regions { display: grid; gap: 2rem; }
+.search input::placeholder { color: var(--muted); }
+.search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.regions { display: grid; gap: 1.25rem; }
+section { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.1rem 1.25rem 0.5rem; }
 section h2 {
-  margin: 0 0 0.5rem; font: 600 1.6rem/1.1 var(--display); text-transform: uppercase; letter-spacing: 0.03em;
+  margin: 0 0 0.5rem; font: 900 1.45rem/1.1 var(--display); text-transform: uppercase; letter-spacing: 0.03em;
   display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap;
 }
-section h2 small { font: 500 0.75rem/1 var(--mono); color: var(--muted); letter-spacing: 0.04em; }
-ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-li { border-bottom: 1px solid var(--line); }
+section h2 small { font: 500 0.72rem/1 var(--mono); color: var(--muted); letter-spacing: 0.04em; }
+ul { list-style: none; margin: 0; padding: 0; }
+li + li { border-top: 1px solid var(--line); }
 li a {
-  display: grid; grid-template-columns: 3.2rem 1fr auto; gap: 0.75rem; align-items: baseline;
-  padding: 0.75rem 0.25rem; color: inherit; text-decoration: none;
+  display: grid; grid-template-columns: 2.8rem 1fr auto; gap: 0.75rem; align-items: baseline;
+  padding: 0.75rem 0.25rem; color: inherit; text-decoration: none; border-radius: 8px;
 }
-li a:hover .name, li a:focus-visible .name { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-li a:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: 2px; }
-.code { font: 500 0.8rem/1 var(--mono); color: var(--muted); letter-spacing: 0.04em; }
-.name { font-weight: 500; min-width: 0; }
+li a:hover .name, li a:focus-visible .name { color: var(--accent); }
+li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
+.code { font: 500 0.78rem/1 var(--mono); color: var(--accent); letter-spacing: 0.04em; }
+.name { font-weight: 500; min-width: 0; transition: color .15s; }
 .name em { display: block; font-style: normal; font-weight: 400; font-size: 0.875rem; color: var(--muted); }
-.host { font: 500 0.75rem/1 var(--mono); color: var(--muted); }
-.empty { color: var(--muted); margin: 0; }
-footer { border-top: 1px solid var(--line); padding-top: 1.25rem; color: var(--muted); font-size: 0.875rem; display: grid; gap: 0.5rem; max-width: 42rem; }
+.host { font: 500 0.72rem/1 var(--mono); color: var(--muted); }
+.empty { color: var(--muted); margin: 0; text-align: center; }
+footer { border-top: 1px solid var(--line); padding-top: 1.25rem; color: var(--muted); font-size: 0.875rem; display: grid; gap: 0.5rem; max-width: 40rem; margin: 0 auto; text-align: center; }
 footer p { margin: 0; }
 footer strong { color: var(--ink); }
-a.inline { color: var(--accent); }
+.particle { animation: drift 3.2s ease-in infinite; }
+@keyframes drift { 0% { transform: translate(0,0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translate(34px, 22px); opacity: 0; } }
+.puff { animation: billow 4s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
+@keyframes billow { from { transform: scale(0.94); } to { transform: scale(1.06); } }
+@media (prefers-reduced-motion: reduce) { .puff { animation: none; } .particle { animation: none; opacity: 0.8; } .name { transition: none; } }
 @media (max-width: 34rem) {
-  li a { grid-template-columns: 2.6rem 1fr; }
+  li a { grid-template-columns: 2.4rem 1fr; }
   .host { display: none; }
 }
 </style>
@@ -99,7 +94,9 @@ a.inline { color: var(--accent); }
 <body>
 <div class="wrap">
   <header>
-    <h1 class="sign">The Avalanche Center</h1>
+    <h1 class="logo"><span class="sr">The Avalanche Center</span>
+      <svg id="logo" viewBox="10 10 1110 410" aria-hidden="true"></svg>
+    </h1>
     <p class="lede">Every regional avalanche forecast center in the United States and Canada, in one place. Find your range and check today's forecast before you head out.</p>
     <div class="scale" aria-label="North American Public Avalanche Danger Scale">
       <div class="scale-bar" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
@@ -195,6 +192,453 @@ a.inline { color: var(--accent); }
     <p>Missing a center or found a broken link? Let us know so we can fix it.</p>
   </footer>
 </div>
+<script>
+
+
+(function () {
+  var NS = 'http://www.w3.org/2000/svg';
+  var C = { low: '#50b848', mod: '#fff200', con: '#f7941e', high: '#ed1c24', ext: '#0b0b0e', snow: '#f2f6fb', night: '#050608' };
+  var BANDS = [C.low, C.mod, C.con, C.high, C.ext];
+  function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  function bez(p, t) { var u = 1 - t; return [
+    u*u*u*p[0][0] + 3*u*u*t*p[1][0] + 3*u*t*t*p[2][0] + t*t*t*p[3][0],
+    u*u*u*p[0][1] + 3*u*u*t*p[1][1] + 3*u*t*t*p[2][1] + t*t*t*p[3][1]]; }
+  function f(pt) { return pt[0].toFixed(1) + ',' + pt[1].toFixed(1); }
+
+  // Six band edges leave the R's right side and curve downhill; o.spread fans them out (or narrows them when negative).
+  function edges(o) {
+    var out = [];
+    for (var i = 0; i <= 5; i++) {
+      var y = o.y0 + i * o.h, s = i * o.h * o.spread;
+      out.push([[o.x0, y], [o.x0 + o.L * 0.28, y + o.D * 0.03], [o.x0 + o.L * 0.52, y + o.D * 0.88 + s], [o.x0 + o.L, y + o.D + s]]);
+    }
+    return out;
+  }
+  function piece(g, a, b, t0, t1, dx, dy, rot, color) {
+    var pts = [], n = 5, k;
+    for (k = 0; k <= n; k++) pts.push(bez(a, t0 + (t1 - t0) * k / n));
+    for (k = n; k >= 0; k--) pts.push(bez(b, t0 + (t1 - t0) * k / n));
+    var c = bez(a, (t0 + t1) / 2);
+    el('path', { d: 'M' + pts.map(f).join('L') + 'Z', fill: color, stroke: 'rgba(255,255,255,.35)', 'stroke-width': '0.8',
+      transform: 'translate(' + dx.toFixed(1) + ',' + dy.toFixed(1) + ') rotate(' + rot.toFixed(1) + ' ' + f(c) + ')' }, g);
+  }
+  function slab(g, o) {
+    var e = edges(o);
+    for (var b = 0; b < 5; b++) {
+      var crack = 0.4 + ((b * 37) % 7) * 0.012, len = 0.11, gap = 0.018, n = 0, t;
+      piece(g, e[b], e[b + 1], 0, crack, 0, 0, 0, BANDS[b]);
+      t = crack + gap;
+      while (t < 0.94) {
+        n++;
+        var t1 = Math.min(t + len, 0.97);
+        var wob = ((b * 13 + n * 7) % 5 - 2);
+        piece(g, e[b], e[b + 1], t, t1, n * 2.2, n * (1.2 + b * 0.5), wob * (1.6 + n), BANDS[b]);
+        t = t1 + gap; len *= 0.72; gap *= 1.45;
+      }
+    }
+    var tip = bez(e[3], 1);
+    for (var p = 0; p < 12; p++) {
+      var x = tip[0] + ((p * 23) % 40) - 8, y = tip[1] + ((p * 17) % 46) - 30, s = 2.5 + (p % 3) * 1.5;
+      var r = el('rect', { x: x, y: y, width: s, height: s, fill: p % 3 ? BANDS[(p + 1) % 5] : C.snow, class: 'particle',
+        transform: 'rotate(' + (p * 31) + ' ' + x + ' ' + y + ')' }, g);
+      r.style.animationDelay = (p * 0.27) + 's';
+    }
+  }
+  function powder(g, o, id) {
+    var e = edges(o);
+    for (var b = 0; b < 5; b++) piece(g, e[b], e[b + 1], 0, 1, 0, 0, 0, BANDS[b]);
+    var defs = el('defs', {}, g);
+    var flt = el('filter', { id: id, x: '-50%', y: '-50%', width: '200%', height: '200%' }, defs);
+    el('feGaussianBlur', { stdDeviation: '5' }, flt);
+    var tip = bez(e[2], 1), cloud = el('g', { filter: 'url(#' + id + ')' }, g);
+    [[-6, -8, 26, .55], [14, 6, 30, .6], [34, -10, 22, .5], [4, 26, 22, .5], [40, 18, 18, .45], [-20, 14, 16, .4], [56, 0, 14, .35]].forEach(function (c, k) {
+      var puff = el('circle', { cx: tip[0] + c[0], cy: tip[1] + c[1], r: c[2], fill: C.snow, opacity: c[3], class: 'puff' }, cloud);
+      puff.style.animationDelay = (k * 0.5) + 's';
+    });
+  }
+  function cloud(g, o, id) {
+    var e = edges(o);
+    var defs = el('defs', {}, g);
+    var flt = el('filter', { id: id, x: '-50%', y: '-50%', width: '200%', height: '200%' }, defs);
+    el('feGaussianBlur', { stdDeviation: '6' }, flt);
+    var tip = bez(e[3], 0.97), cl = el('g', { filter: 'url(#' + id + ')' }, g);
+    [[-10, -14, 24, .45], [10, 0, 30, .55], [30, -18, 22, .45], [0, 22, 22, .45], [36, 14, 20, .4], [-26, 6, 16, .35], [54, -4, 14, .3], [20, -34, 14, .3]].forEach(function (c, k) {
+      var puff = el('circle', { cx: tip[0] + c[0], cy: tip[1] + c[1], r: c[2], fill: C.snow, opacity: c[3], class: 'puff' }, cl);
+      puff.style.animationDelay = (k * 0.5) + 's';
+    });
+  }
+  function add(a, b, k) { return [a[0] + b[0] * k, a[1] + b[1] * k]; }
+  function lerp(a, b, t) { return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t]; }
+  function unit(a, b) { var dx = b[0] - a[0], dy = b[1] - a[1], m = Math.hypot(dx, dy) || 1; return [dx / m, dy / m]; }
+  // Deterministic pseudo-random so the drawing is identical on every load.
+  function rnd(n) { var x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
+
+  // A fluid slab: one silhouette tongue with a lobed toe, danger bands flowing through it,
+  // fracture lines cut out of it (via a mask), small shards spraying off, and a powder cloud at the front.
+  function flow(g, o, id) {
+    var e = edges(o), top = e[0], bot = e[5];
+    var A = top[3], B = bot[3], tan = unit(top[2], top[3]), span = Math.hypot(B[0] - A[0], B[1] - A[1]);
+    var defs = el('defs', {}, g);
+
+    // Tongue outline: crown along the top edge, rounded lobes at the toe, bed surface back along the bottom.
+    var d = 'M' + f(top[0]) + 'C' + f(top[1]) + ' ' + f(top[2]) + ' ' + f(A), lobes = 3;
+    for (var k = 1; k <= lobes; k++) {
+      var P = lerp(A, B, k / lobes), mid = lerp(A, B, (k - 0.5) / lobes);
+      var push = span / lobes * (0.55 + 0.35 * rnd(k + o.seed));
+      d += 'Q' + f(add(mid, tan, push)) + ' ' + f(P);
+    }
+    d += 'C' + f(bot[2]) + ' ' + f(bot[1]) + ' ' + f(bot[0]) + 'Z';
+
+    var mask = el('mask', { id: id + '-m', maskUnits: 'userSpaceOnUse', x: '0', y: '0', width: '2000', height: '1000' }, defs);
+    el('path', { d: d, fill: '#fff' }, mask);
+
+    // Fracture lines: jagged, slightly angled cuts across the slab that widen as it breaks up downhill.
+    var cracks = [0.2, 0.33, 0.44, 0.53];
+    cracks.forEach(function (t, ci) {
+      var w = 2 + ci * 1.6, left = [], right = [];
+      for (var j = -1; j <= 6; j++) {
+        var jj = Math.max(0, Math.min(5, j));
+        var tt = t - jj * 0.014 + (rnd(ci * 9 + j) - 0.5) * 0.03;
+        var p = bez(e[jj], Math.min(tt, 0.999));
+        if (j === -1) p = add(p, [0, -1], o.h);
+        if (j === 6) p = add(p, [0, 1], o.h);
+        left.push(add(p, tan, -w / 2)); right.unshift(add(p, tan, w / 2));
+      }
+      el('path', { d: 'M' + left.concat(right).map(f).join('L') + 'Z', fill: '#000' }, mask);
+    });
+
+    // Bands run the full length and past the toe, so the lobes are filled; the mask trims them to the tongue.
+    var bands = el('g', { mask: 'url(#' + id + '-m)' }, g);
+    for (var b = 0; b < 5; b++) {
+      var pts = [], n = 24, q;
+      for (q = 0; q <= n; q++) pts.push(bez(e[b], q / n));
+      pts.push(add(e[b][3], tan, span * 1.2));
+      var back = [add(e[b + 1][3], tan, span * 1.2)];
+      for (q = n; q >= 0; q--) back.push(bez(e[b + 1], q / n));
+      el('path', { d: 'M' + pts.concat(back).map(f).join('L') + 'Z', fill: BANDS[b] }, bands);
+    }
+    // A thin rim keeps the black band readable on a black page.
+    el('path', { d: d, fill: 'none', stroke: 'rgba(255,255,255,.55)', 'stroke-width': '1', mask: 'url(#' + id + '-m)' }, g);
+
+    // Shards: small irregular slivers lifting off the crown and spraying ahead of the toe.
+    for (var s = 0; s < 8; s++) {
+      var t0 = 0.3 + s * 0.07, base = bez(top, t0);
+      var c = add(base, [0.3, -1], 6 + rnd(s + 7) * 14);
+      var r = 2.5 + rnd(s + 11) * 3.5, ang = rnd(s + 5) * 6.28;
+      var tri = [0, 1, 2].map(function (v) { var a = ang + v * 2.1 + rnd(s * 3 + v) * 0.6; return [c[0] + Math.cos(a) * r * (0.7 + rnd(v + s) * 0.6), c[1] + Math.sin(a) * r]; });
+      var sh = el('path', { d: 'M' + tri.map(f).join('L') + 'Z', fill: BANDS[s % 4], opacity: '0.9', class: 'particle' }, g);
+      sh.style.animationDelay = (s * 0.3) + 's';
+    }
+
+    // Powder: a faint streak lifting off the crown, and a soft cloud boiling off the toe.
+    var blur = el('filter', { id: id + '-b', x: '-50%', y: '-50%', width: '200%', height: '200%' }, defs);
+    el('feGaussianBlur', { stdDeviation: '6' }, blur);
+    var trail = [];
+    for (q = 0; q <= 10; q++) trail.push(add(bez(top, 0.45 + q * 0.055), [0, -1], 4 + q * 1.4));
+    el('path', { d: 'M' + trail.map(f).join('L'), fill: 'none', stroke: C.snow, 'stroke-width': '7', 'stroke-linecap': 'round', opacity: '0.16', filter: 'url(#' + id + '-b)' }, g);
+    var toe = add(lerp(A, B, 0.42), tan, span * 0.08), cl = el('g', { filter: 'url(#' + id + '-b)' }, g);
+    [[-14, -22, 26, .4], [8, -4, 34, .5], [30, -26, 24, .4], [0, 26, 28, .45], [36, 14, 24, .4], [-24, 10, 20, .32], [56, -8, 18, .3], [18, -44, 16, .28], [-30, -40, 14, .22]].forEach(function (p, k) {
+      var puff = el('circle', { cx: toe[0] + p[0], cy: toe[1] + p[1], r: p[2], fill: C.snow, opacity: p[3], class: 'puff' }, cl);
+      puff.style.animationDelay = (k * 0.5) + 's';
+    });
+  }
+  // Avalanche rose: eight aspects, three elevation bands (inner = above treeline).
+  function rose(g, cx, cy, sc, label) {
+    var rings = [[18, 46], [48, 72], [74, 98]];
+    var plan = [
+      [C.high, C.high, C.high, C.con, C.con, C.con, C.con, C.high],
+      [C.con, C.con, C.con, C.mod, C.mod, C.mod, C.mod, C.con],
+      [C.mod, C.mod, C.low, C.low, C.low, C.low, C.low, C.low]
+    ];
+    function pt(r, a) { var t = (a - 90) * Math.PI / 180; return (cx + r * sc * Math.cos(t)).toFixed(2) + ',' + (cy + r * sc * Math.sin(t)).toFixed(2); }
+    rings.forEach(function (ring, ri) {
+      for (var k = 0; k < 8; k++) {
+        var a1 = k * 45 - 22.5 + 1.6, a2 = k * 45 + 22.5 - 1.6, r1 = ring[0] * sc, r2 = ring[1] * sc;
+        el('path', { d: 'M' + pt(ring[0], a1) + 'L' + pt(ring[1], a1) + 'A' + r2 + ',' + r2 + ' 0 0 1 ' + pt(ring[1], a2) +
+          'L' + pt(ring[0], a2) + 'A' + r1 + ',' + r1 + ' 0 0 0 ' + pt(ring[0], a1) + 'Z', fill: plan[ri][k] }, g);
+      }
+    });
+    el('circle', { cx: cx, cy: cy, r: 13 * sc, fill: C.ext, stroke: C.snow, 'stroke-width': 2.5 * sc }, g);
+    if (label) {
+      el('path', { d: 'M' + (cx - 6 * sc) + ',' + (cy - 104 * sc) + 'L' + cx + ',' + (cy - 116 * sc) + 'L' + (cx + 6 * sc) + ',' + (cy - 104 * sc) + 'Z', fill: C.snow }, g);
+    }
+  }
+  // Set each line at its natural proportions, sized to span W units but never taller than max.
+  function fit(t, size, W, max) {
+    t.setAttribute('font-size', size);
+    var len = t.getComputedTextLength(), fitted = Math.min(size * W / len, max);
+    t.setAttribute('font-size', fitted.toFixed(2));
+    return { size: fitted, width: len * fitted / size };
+  }
+  // Two lines right-aligned to the same width W; line 2 sits under line 1 by its own cap height.
+  function words(svg, f1, f2, W, max1, max2, cap) {
+    var t1 = el('text', { x: 252, y: 136, 'font-family': f1.fam + ', Arial Black, sans-serif', 'font-weight': f1.w, fill: C.snow }, svg);
+    t1.textContent = 'THE AVALANCHE';
+    var t2 = el('text', { x: 250, y: 236, 'font-family': f2.fam + ', Arial Black, sans-serif', 'font-weight': f2.w, fill: C.snow }, svg);
+    t2.textContent = 'CENTER';
+    if (f1.stretch) t1.style.fontStretch = f1.stretch;
+    if (f2.stretch) t2.style.fontStretch = f2.stretch;
+    var a = fit(t1, 38, W, max1), b = fit(t2, 92, W, max2);
+    var cap1 = a.size * cap, cap2 = b.size * cap, y2 = 136 + a.size * 0.55 + cap2;
+    t2.setAttribute('y', y2.toFixed(1));
+    return { w1: a.width, cap1: cap1, w2: b.width, cap2: cap2, y2: y2, top: 136 - cap1 };
+  }
+  // Mountain the avalanche runs down: peak at the top-right corner of the E, a steep right flank that eases
+  // into a runout, a gentler left flank behind the wordmark, snow on the ridge and a few gullies on the face.
+  function mountain(g, o) {
+    var defs = el('defs', {}, g), P = o.peak, bottom = o.bottom;
+    var mg = el('linearGradient', { id: o.id + '-mtn', x1: '0', y1: '0', x2: '0', y2: '1' }, defs);
+    el('stop', { offset: '0', 'stop-color': '#2a3550' }, mg); el('stop', { offset: '0.6', 'stop-color': '#151b2b' }, mg); el('stop', { offset: '1', 'stop-color': '#151b2b', 'stop-opacity': '0' }, mg);
+    var ridge = [], k;
+    for (k = 0; k <= 30; k++) { var t = k / 30 * 1.3, p = o.ground(t); var jag = (k % 3 === 0 ? -(3 + rnd(k + 300) * 5) : (rnd(k + 350) - 0.5) * 3) * Math.min(1, t * 3); ridge.push([p[0] + jag * 0.5, p[1] + jag]); }
+    // Summit above and a little left of where the slide starts, joined to it by a short jagged ridge.
+    var Q = o.summit, crest = [[Q[0] + (P[0] - Q[0]) * 0.35, Q[1] + (P[1] - Q[1]) * 0.42 - 3], [Q[0] + (P[0] - Q[0]) * 0.7, Q[1] + (P[1] - Q[1]) * 0.64 + 2]];
+    var left = [];
+    for (k = 1; k <= 16; k++) { var u = k / 16, shoulder = u > 0.3 && u < 0.5 ? -14 * Math.sin((u - 0.3) / 0.2 * Math.PI) : 0; left.push([Q[0] - 340 * u + (rnd(k + 500) - 0.5) * 8, Q[1] + (bottom - Q[1]) * Math.pow(u, 0.8) + (k % 2 ? -1 : 1) * (4 + rnd(k + 520) * 7) + shoulder]); }
+    var poly = [Q].concat(crest).concat([P]).concat(ridge).concat([[ridge[ridge.length - 1][0], bottom], [left[left.length - 1][0], bottom]]).concat(left.slice().reverse());
+    el('path', { d: 'M' + poly.map(f).join('L') + 'Z', fill: 'url(#' + o.id + '-mtn)' }, g);
+    // Snow cap on the summit with a ragged lower edge.
+    var capL = left[1], capR = crest[1], cap = [Q, crest[0], capR, lerp(capR, capL, 0.2), add(lerp(capR, capL, 0.35), [0, 1], 8), lerp(capR, capL, 0.5), add(lerp(capR, capL, 0.68), [0, 1], 10), lerp(capR, capL, 0.82), left[0], capL];
+    el('path', { d: 'M' + [Q].concat(cap.slice(1)).map(f).join('L') + 'Z', fill: '#f2f6fb', opacity: '0.92' }, g);
+    // Snowy ridge lines.
+    el('path', { d: 'M' + [Q].concat(crest).concat([P]).concat(ridge).map(f).join('L'), fill: 'none', stroke: 'rgba(242,246,251,.7)', 'stroke-width': '2', 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, g);
+    el('path', { d: 'M' + [Q].concat(left.slice(0, 6)).map(f).join('L'), fill: 'none', stroke: 'rgba(242,246,251,.35)', 'stroke-width': '1.5', 'stroke-linejoin': 'round' }, g);
+    // Crown fracture where the slab broke away, just under the summit.
+    var tn = unit(o.ground(0), o.ground(0.03)), nn = [-tn[1], tn[0]];
+    el('path', { d: 'M' + f(add(P, nn, -3)) + 'L' + f(add(add(P, nn, 9), tn, -2)) + 'L' + f(add(add(P, nn, 17), tn, 1)) + 'L' + f(add(add(P, nn, 26), tn, -1)), fill: 'none', stroke: '#f2f6fb', 'stroke-width': '2.2', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, g);
+    for (k = 0; k < 5; k++) {
+      var s0 = o.ground(0.08 + k * 0.1), dx = -18 - k * 6;
+      el('path', { d: 'M' + f([s0[0] - 6, s0[1] + 8]) + 'q' + (dx * 0.4).toFixed(1) + ',30 ' + dx + ',' + (60 + k * 8), fill: 'none', stroke: 'rgba(242,246,251,.14)', 'stroke-width': '1.4', 'stroke-linecap': 'round' }, g);
+    }
+  }
+  // Side-view powder avalanche: a cauliflower cloud that pours off the R and swells into a tall rolling head.
+  // Built as one silhouette (a body plus billows along its top and a domed head), outlined once around
+  // the outside, with one danger gradient running through it and highlight/shadow arcs for lumpy detail.
+  function powderCloud(g, o) {
+    var id = o.id, defs = el('defs', {}, g);
+    var x0 = o.x0, yb = o.y0 + o.h * 5, L = o.L, D = o.D, capH = o.h * 5, Hmax = o.Hmax, tHead = o.tHead;
+    var gA = o.ground ? o.ground(0) : [x0, 0], gB = o.ground ? o.ground(1.05) : [x0 + L * 1.08, 0];
+    var grad = el('linearGradient', { id: id + '-g', gradientUnits: 'userSpaceOnUse', x1: gA[0], y1: gA[1], x2: gB[0], y2: gB[1] }, defs);
+    o.stops.forEach(function (s) { el('stop', { offset: s[0], 'stop-color': s[1] }, grad); });
+    var blur = el('filter', { id: id + '-b', x: '-50%', y: '-50%', width: '200%', height: '200%' }, defs);
+    el('feGaussianBlur', { stdDeviation: '9' }, blur);
+
+    function ground(t) { return o.ground ? o.ground(t) : [x0 + L * t, yb + D * Math.pow(Math.max(t, 0), 1.15)]; }
+    function height(t) {
+      var u = Math.min(t / tHead, 1), base = o.base != null ? o.base : capH * 0.55;
+      return base + (Hmax * 0.68 - base) * Math.pow(Math.sin(u * Math.PI / 2), o.swell);
+    }
+
+    if (o.slope) {
+      var gp = []; for (var k = -2; k <= 24; k++) gp.push(ground(k / 20));
+      el('path', { d: 'M' + gp.map(f).join('L'), fill: 'none', stroke: 'rgba(242,246,251,.4)', 'stroke-width': '1.6', 'stroke-linecap': 'round' }, g);
+    }
+    // Dust haze hanging around and above the head.
+    var haze = el('g', { filter: 'url(#' + id + '-b)' }, g), hp = ground(tHead);
+    [[-40, -Hmax * 1.0, Hmax * 0.45, .1], [10, -Hmax * 0.9, Hmax * 0.5, .12], [-110, -Hmax * 0.6, Hmax * 0.35, .08], [40, -Hmax * 0.4, Hmax * 0.4, .1]].forEach(function (h) {
+      el('circle', { cx: hp[0] + h[0], cy: hp[1] + h[1], r: h[2], fill: C.snow, opacity: h[3] }, haze);
+    });
+
+    // Silhouette pieces: a body polygon, billows along the top contour, and a cluster forming the domed head.
+    var shapes = [], top = [], bottom = [], M = 40, k2;
+    for (k2 = 0; k2 <= M; k2++) {
+      var t = k2 / M * tHead, gpt = ground(t), hh = height(t);
+      top.push([gpt[0], gpt[1] - hh]); bottom.push(gpt);
+    }
+    shapes.push({ type: 'path', d: 'M' + top.map(f).join('L') + 'L' + bottom.slice().reverse().map(f).join('L') + 'Z' });
+    for (k2 = 0; k2 <= 34; k2++) {
+      var tt = Math.pow(k2 / 34, 0.8) * tHead, gp2 = ground(tt), h2 = height(tt);
+      var r = 3 + h2 * (0.26 + rnd(k2) * 0.2);
+      shapes.push({ type: 'circle', x: gp2[0] + (rnd(k2 + 40) - 0.5) * r * 0.6, y: gp2[1] - h2 + r * 0.55, r: r });
+    }
+    // Head: big billows stacked into a dome at the front, leaning slightly forward and tumbling onto the slope.
+    var hc = ground(tHead), hx = hc[0], hy = hc[1];
+    [[0.02, 0.62, 0.36], [0.2, 0.42, 0.33], [0.3, 0.16, 0.25], [-0.14, 0.86, 0.3], [0.14, 0.86, 0.27], [-0.36, 0.7, 0.26], [0.38, 0.64, 0.22], [-0.06, 0.34, 0.34], [0.02, 1.08, 0.2], [-0.26, 1.02, 0.18], [0.26, 1.02, 0.16], [0.42, 0.32, 0.2], [0.48, 0.08, 0.14], [-0.5, 0.52, 0.22]].forEach(function (b, k) {
+      shapes.push({ type: 'circle', x: hx + b[0] * Hmax, y: hy - b[1] * Hmax, r: b[2] * Hmax * (0.92 + rnd(k + 70) * 0.16) });
+    });
+    // Toe: small rolling billows along the slope at the front.
+    for (k2 = 0; k2 < 6; k2++) {
+      var tp = ground(tHead + 0.02 + k2 * 0.022);
+      shapes.push({ type: 'circle', x: tp[0], y: tp[1] - (10 + rnd(k2 + 90) * 8), r: 9 + rnd(k2 + 95) * 9 - k2 * 1.2 });
+    }
+
+    function draw(parent, attrs) {
+      shapes.forEach(function (s) {
+        var a = {}; for (var k in attrs) a[k] = attrs[k];
+        if (s.type === 'path') { a.d = s.d; el('path', a, parent); }
+        else { a.cx = s.x.toFixed(1); a.cy = s.y.toFixed(1); a.r = Math.max(1, s.r).toFixed(1); el('circle', a, parent); }
+      });
+    }
+    // Clip everything to the ground so the cloud sits on the slope instead of hanging below it.
+    var gl = []; for (k2 = -2; k2 <= 24; k2++) gl.push(ground(k2 / 20));
+    var clip = el('clipPath', { id: id + '-c' }, defs);
+    el('path', { d: 'M' + f([x0 - 40, yb - 600]) + 'L' + gl.map(f).join('L') + 'L' + f([x0 + L * 1.3, yb - 600]) + 'Z' }, clip);
+    var body = el('g', { 'clip-path': 'url(#' + id + '-c)' }, g);
+    draw(body, { fill: 'none', stroke: 'rgba(242,246,251,.75)', 'stroke-width': '2.6', 'stroke-linejoin': 'round' });
+    draw(body, { fill: 'url(#' + id + '-g)' });
+
+    // Lumpy detail: a light arc on the upper-left and a dark arc on the lower-right of each billow.
+    var detail = el('g', {}, body);
+    shapes.forEach(function (s, k) {
+      if (s.type !== 'circle' || s.r < 15) return;
+      var r = s.r * 0.78;
+      el('path', { d: 'M' + f([s.x - r * 0.95, s.y + r * 0.2]) + 'A' + r.toFixed(1) + ',' + r.toFixed(1) + ' 0 0 1 ' + f([s.x + r * 0.15, s.y - r * 0.95]),
+        fill: 'none', stroke: 'rgba(255,255,255,.42)', 'stroke-width': Math.max(1.1, s.r * 0.06).toFixed(1), 'stroke-linecap': 'round' }, detail);
+      if (k % 2) el('path', { d: 'M' + f([s.x + r * 0.95, s.y - r * 0.15]) + 'A' + r.toFixed(1) + ',' + r.toFixed(1) + ' 0 0 1 ' + f([s.x - r * 0.1, s.y + r * 0.95]),
+        fill: 'none', stroke: 'rgba(0,0,0,.28)', 'stroke-width': Math.max(1.1, s.r * 0.09).toFixed(1), 'stroke-linecap': 'round' }, detail);
+    });
+
+    // Snow chunks and specks thrown out ahead of and above the head.
+    for (var s = 0; s < 16; s++) {
+      var sx = hx + Hmax * (0.3 + rnd(s) * 0.5), sy = hy - Hmax * (0.2 + rnd(s + 5) * 1.0), sz = 1.2 + rnd(s + 9) * 2.4;
+      var dot = el('circle', { cx: sx, cy: sy, r: sz, fill: s % 4 ? C.snow : '#9aa3b5', class: 'particle' }, g);
+      dot.style.animationDelay = (s * 0.21) + 's';
+    }
+  }
+  // ---- Shared ribbon: five danger bands laid along a center path, with thickness varying along it.
+  function normals(P) {
+    return P.map(function (p, k) {
+      var a = P[Math.max(0, k - 1)], b = P[Math.min(P.length - 1, k + 1)], u = unit(a, b);
+      return [-u[1], u[0]];
+    });
+  }
+  function ribbon(g, P, thick, rim) {
+    var N = normals(P), B = [];
+    for (var i = 0; i <= 5; i++) B.push(P.map(function (p, k) { var t = k / (P.length - 1); return add(p, N[k], (i / 5 - 0.5) * thick(t)); }));
+    for (var b = 0; b < 5; b++) {
+      el('path', { d: 'M' + B[b].map(f).join('L') + 'L' + B[b + 1].slice().reverse().map(f).join('L') + 'Z', fill: BANDS[b] }, g);
+    }
+    if (rim !== false) el('path', { d: 'M' + B[0].map(f).join('L') + 'L' + B[5].slice().reverse().map(f).join('L') + 'Z', fill: 'none', stroke: 'rgba(255,255,255,.5)', 'stroke-width': '0.9', 'stroke-linejoin': 'round' }, g);
+    return B;
+  }
+  function cubicPts(p0, p1, p2, p3, n) { var out = []; for (var k = 0; k <= n; k++) out.push(bez([p0, p1, p2, p3], k / n)); return out; }
+  function puffs(g, c, list, id, blurAmt) {
+    var defs = el('defs', {}, g), flt = el('filter', { id: id, x: '-50%', y: '-50%', width: '200%', height: '200%' }, defs);
+    el('feGaussianBlur', { stdDeviation: String(blurAmt || 6) }, flt);
+    var cl = el('g', { filter: 'url(#' + id + ')' }, g);
+    list.forEach(function (p, k) {
+      var pf = el('circle', { cx: c[0] + p[0], cy: c[1] + p[1], r: p[2], fill: C.snow, opacity: p[3], class: 'puff' }, cl);
+      pf.style.animationDelay = (k * 0.45) + 's';
+    });
+  }
+  var CLOUD = [[-14, -22, 26, .4], [8, -4, 34, .5], [30, -26, 24, .4], [0, 26, 28, .45], [36, 14, 24, .4], [-24, 10, 20, .32], [56, -8, 18, .3], [18, -44, 16, .28]];
+
+  // V2: the slab releases as a few big angular plates that slide away from a clean crown fracture.
+  function plates(g, o) {
+    var H = o.h * 5;
+    function plate(cx, cy, w, ang, seed, sc) {
+      var gg = el('g', { transform: 'translate(' + cx.toFixed(1) + ',' + cy.toFixed(1) + ') rotate(' + ang + ') scale(' + sc + ')' }, g);
+      var L = [], R = [];
+      for (var i = 0; i <= 5; i++) {
+        var y = -H / 2 + i * o.h;
+        L.push([-w / 2 + (rnd(seed + i) - 0.5) * 9 - i * 2.2, y]);
+        R.push([w / 2 + (rnd(seed + i + 20) - 0.5) * 12 - i * 2.2, y]);
+      }
+      for (var b = 0; b < 5; b++) el('path', { d: 'M' + [L[b], R[b], R[b + 1], L[b + 1]].map(f).join('L') + 'Z', fill: BANDS[b] }, gg);
+      el('path', { d: 'M' + L.concat(R.slice().reverse()).map(f).join('L') + 'Z', fill: 'none', stroke: 'rgba(255,255,255,.55)', 'stroke-width': '0.9', 'stroke-linejoin': 'round' }, gg);
+    }
+    // Crown stub still attached to the R, with a stepped fracture face.
+    var stubL = [], stubR = [];
+    for (var i = 0; i <= 5; i++) { var y = o.y0 + i * o.h; stubL.push([o.x0, y]); stubR.push([o.x0 + 16 + (i % 2) * 5 - i * 1.5, y]); }
+    for (var b = 0; b < 5; b++) el('path', { d: 'M' + [stubL[b], stubR[b], stubR[b + 1], stubL[b + 1]].map(f).join('L') + 'Z', fill: BANDS[b] }, g);
+    var cy0 = o.y0 + H / 2;
+    plate(o.x0 + 72, cy0 + 26, 96, 22, 1, 1.05);
+    plate(o.x0 + 168, cy0 + 72, 84, 30, 7, 0.95);
+    plate(o.x0 + 246, cy0 + 118, 62, 38, 13, 0.82);
+    for (var s = 0; s < 9; s++) {
+      var c = [o.x0 + 270 + rnd(s) * 40, cy0 + 110 + rnd(s + 4) * 40], r = 2 + rnd(s + 9) * 3.5, a = rnd(s + 2) * 6.3;
+      var tri = [0, 1, 2].map(function (v) { return [c[0] + Math.cos(a + v * 2.1) * r, c[1] + Math.sin(a + v * 2.1) * r]; });
+      var sh = el('path', { d: 'M' + tri.map(f).join('L') + 'Z', fill: BANDS[s % 4], class: 'particle' }, g); sh.style.animationDelay = (s * 0.3) + 's';
+    }
+    puffs(g, [o.x0 + 296, cy0 + 136], CLOUD, o.id + '-b');
+  }
+
+  // V3: the bands stretch into speed streaks that taper to sharp points at different lengths.
+  function streaks(g, o) {
+    var lens = [0.78, 1.0, 0.9, 0.72, 0.6];
+    for (var b = 0; b < 5; b++) {
+      var y = o.y0 + (b + 0.5) * o.h, Lb = o.L * 1.25 * lens[b], dy = o.D * (0.8 + b * 0.12);
+      var P = cubicPts([o.x0 - 2, y], [o.x0 + Lb * 0.3, y], [o.x0 + Lb * 0.55, y + dy * 0.9], [o.x0 + Lb, y + dy], 40);
+      var N = normals(P), top = [], bot = [];
+      P.forEach(function (p, k) { var t = k / 40, th = o.h * 0.5 * Math.pow(1 - t, 0.75) + 0.2; top.push(add(p, N[k], -th)); bot.push(add(p, N[k], th)); });
+      el('path', { d: 'M' + top.map(f).join('L') + 'L' + bot.reverse().map(f).join('L') + 'Z', fill: BANDS[b], stroke: 'rgba(255,255,255,.45)', 'stroke-width': '0.7' }, g);
+    }
+    // Thin motion lines above and below.
+    [[-0.9, 0.55, 0.2], [5.9, 0.5, 0.18]].forEach(function (m) {
+      var y = o.y0 + m[0] * o.h, Lb = o.L * m[1];
+      el('path', { d: 'M' + f([o.x0 + 30, y + 6]) + 'C' + f([o.x0 + 30 + Lb * 0.3, y + 6]) + ' ' + f([o.x0 + 30 + Lb * 0.55, y + o.D * 0.7]) + ' ' + f([o.x0 + 30 + Lb, y + o.D * 0.8]), fill: 'none', stroke: C.snow, 'stroke-width': '1.5', 'stroke-linecap': 'round', opacity: String(m[2] * 3) }, g);
+    });
+    puffs(g, [o.x0 + o.L * 1.2, o.y0 + o.D + o.h * 2.6], CLOUD.slice(0, 6).map(function (p) { return [p[0] * 0.8, p[1] * 0.8, p[2] * 0.75, p[3]]; }), o.id + '-b');
+  }
+
+  // V4: the slab runs downhill, then its front rears up and curls over like a breaking wave of snow.
+  function wave(g, o) {
+    var P = cubicPts([o.x0, o.y0 + 2.5 * o.h], [o.x0 + o.L * 0.25, o.y0 + 2.5 * o.h], [o.x0 + o.L * 0.4, o.y0 + o.D + 2.5 * o.h], [o.x0 + o.L * 0.62, o.y0 + o.D + 2.5 * o.h], 30);
+    var end = P[P.length - 1], R = o.h * 3.6, c = [end[0], end[1] - R];
+    for (var k = 1; k <= 26; k++) { var a = k / 26 * 3.6; P.push([c[0] + R * Math.sin(a) * (1 - k / 90), c[1] + R * Math.cos(a) * (1 - k / 90)]); }
+    var n = P.length - 1, split = 30 / n;
+    ribbon(g, P, function (t) { return t < split ? o.h * 5 : o.h * 5 * Math.max(0.12, 1 - (t - split) / (1 - split) * 0.9); });
+    puffs(g, [c[0] + R * 0.4, c[1] - R * 0.9], [[0, 0, 22, .45], [22, -10, 18, .4], [-18, -12, 16, .35], [36, 8, 14, .3], [10, -30, 14, .28], [48, -14, 10, .25]], o.id + '-b');
+    for (var s = 0; s < 8; s++) {
+      var cc = [c[0] + R * 0.2 + rnd(s) * 50, c[1] - R * 1.1 - rnd(s + 3) * 22], r = 1.5 + rnd(s + 6) * 2.5;
+      var d = el('circle', { cx: cc[0], cy: cc[1], r: r, fill: s % 3 ? C.snow : BANDS[s % 4], class: 'particle' }, g); d.style.animationDelay = (s * 0.35) + 's';
+    }
+  }
+
+  // V5: the slab flows downhill and splits into five debris fingers that fan out on the runout.
+  function fingers(g, o) {
+    var lens = [0.82, 0.95, 1.0, 0.9, 0.78];
+    for (var b = 0; b < 5; b++) {
+      var off = (b - 2) * o.h, Lb = o.L * 1.15 * lens[b];
+      var P = cubicPts([o.x0, o.y0 + 2.5 * o.h + off], [o.x0 + Lb * 0.3, o.y0 + 2.5 * o.h + off], [o.x0 + Lb * 0.5, o.y0 + o.D + 2.5 * o.h + off * 2.2], [o.x0 + Lb, o.y0 + o.D * 1.15 + 2.5 * o.h + off * 3.2], 40);
+      var N = normals(P), top = [], bot = [];
+      P.forEach(function (p, k) {
+        var t = k / 40, th = o.h * 0.5 * (t < 0.75 ? 1 + t * 0.4 : (1.3) * Math.sqrt(Math.max(0, 1 - (t - 0.75) / 0.25)));
+        top.push(add(p, N[k], -th)); bot.push(add(p, N[k], th));
+      });
+      el('path', { d: 'M' + top.map(f).join('L') + 'L' + bot.reverse().map(f).join('L') + 'Z', fill: BANDS[b], stroke: 'rgba(255,255,255,.45)', 'stroke-width': '0.7' }, g);
+    }
+    puffs(g, [o.x0 + o.L * 1.05, o.y0 + o.D * 1.1 + o.h * 2], CLOUD.slice(0, 6).map(function (p) { return [p[0], p[1] * 1.3, p[2] * 0.8, p[3] * 0.8]; }), o.id + '-b', 8);
+  }
+
+  // V6: a crisp white powder-cloud silhouette rolling over a thin flowing slab of danger bands.
+  function powderRoll(g, o) {
+    var P = cubicPts([o.x0, o.y0 + 2.5 * o.h], [o.x0 + o.L * 0.3, o.y0 + 2.5 * o.h], [o.x0 + o.L * 0.55, o.y0 + o.D + 3 * o.h], [o.x0 + o.L * 1.05, o.y0 + o.D * 1.05 + 3 * o.h], 40);
+    ribbon(g, P, function (t) { return o.h * 5 * Math.pow(Math.max(0, 1 - t), 0.45) + 0.5; });
+    var bdefs = el('defs', {}, g), bf = el('filter', { id: o.id + '-soft', x: '-50%', y: '-50%', width: '200%', height: '200%' }, bdefs);
+    el('feGaussianBlur', { stdDeviation: '2.5' }, bf);
+    var body = el('g', { filter: 'url(#' + o.id + '-soft)' }, g);
+    for (var k = 0; k < 9; k++) {
+      var t = 0.38 + k * 0.075, p = bez([[o.x0, o.y0 + 2.5 * o.h], [o.x0 + o.L * 0.3, o.y0 + 2.5 * o.h], [o.x0 + o.L * 0.55, o.y0 + o.D + 3 * o.h], [o.x0 + o.L * 1.05, o.y0 + o.D * 1.05 + 3 * o.h]], Math.min(t, 1));
+      var r = 8 + k * 4.2;
+      el('circle', { cx: p[0] + k * 1.5, cy: p[1] - o.h * 1.2 - r * 0.35, r: r, fill: C.snow, opacity: (0.35 + k * 0.05).toFixed(2) }, body);
+    }
+    el('path', { d: 'M0,0', fill: 'none' }, body);
+    puffs(g, [o.x0 + o.L * 1.15, o.y0 + o.D * 0.75], [[0, 0, 26, .3], [20, -16, 18, .25], [-10, -30, 16, .2]], o.id + '-b', 8);
+  }
+
+  var FONTS = {
+    mix: { f1: { fam: "'Michroma'", w: '400' }, f2: { fam: "'Archivo'", w: '900', stretch: '125%' }, W: 440, max1: 46, max2: 112, cap: 0.72 },
+    big: { f1: { fam: "'Big Shoulders Display'", w: '700' }, f2: { fam: "'Big Shoulders Display'", w: '900' }, W: 420, max1: 64, max2: 170, cap: 0.74 }
+  };
+  function draw(id, font, stops) {
+    var s = document.getElementById(id), F = FONTS[font];
+    var back = el('g', {}, s), roseG = el('g', {}, s), g = el('g', {}, s);
+    var m = words(s, F.f1, F.f2, F.W, F.max1, F.max2, F.cap);
+    rose(roseG, 128, (m.top + m.y2) / 2, 1, true);
+    var P = [252 + m.w1 + 64, m.top + 8], L = 320, D = 285, Q = [P[0] - 30, m.top - 52];
+    function ground(t) {
+      if (t < 0) return [P[0] + L * t, P[1] + D * 1.7 * t];
+      return [P[0] + L * t, P[1] + D * (1 - Math.pow(Math.max(0, 1 - t), 1.7)) + (t > 1 ? 0 : 0)];
+    }
+    mountain(back, { id: id, peak: P, summit: Q, ground: ground, bottom: P[1] + D + 40 });
+    powderCloud(g, { id: id, x0: P[0], y0: P[1], h: 4, L: L, D: D, ground: ground, base: 8, stops: stops, Hmax: 150, tHead: 0.8, swell: 1.4, slope: false });
+  }
+  var faces = ['700 40px "Big Shoulders Display"', '900 40px "Big Shoulders Display"'];
+  var ready = document.fonts ? Promise.all(faces.map(function (x) { return document.fonts.load(x, 'CENTER').catch(function () {}); })) : Promise.resolve();
+  ready.then(function () { draw('logo', 'big', [['0','#ed1c24'],['.35','#f7941e'],['.65','#fff200'],['1','#50b848']]); });
+})();
+</script>
 <script>
 (function () {
   var q = document.getElementById('q');
