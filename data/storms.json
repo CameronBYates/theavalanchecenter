@@ -1,0 +1,290 @@
+{
+ "updated": "2026-10-10T22:11:47.260Z",
+ "thresholds": {
+  "heavyCm": 30,
+  "notableCm": 15,
+  "hours": 72
+ },
+ "binsStart": "2026-10-10T22:00Z",
+ "sources": [
+  {
+   "name": "Open-Meteo",
+   "url": "https://open-meteo.com/",
+   "license": "CC BY 4.0"
+  },
+  {
+   "name": "NOAA National Weather Service",
+   "url": "https://www.weather.gov/"
+  }
+ ],
+ "centers": {
+  "https://www.cnfaic.org/": {
+   "name": "Chugach NF Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "Turnagain Pass",
+   "bins": [
+    0.4,
+    4.8,
+    7.4,
+    0,
+    0,
+    0.4,
+    0.1,
+    0,
+    0,
+    0,
+    2.2,
+    0.4
+   ],
+   "snowingAt": [],
+   "alerts": []
+  },
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "Hatcher Pass",
+   "bins": [
+    1.6,
+    1.7,
+    1.6,
+    6.4,
+    1,
+    0.6,
+    1,
+    0.4,
+    0.2,
+    0,
+    0,
+    0.8
+   ],
+   "snowingAt": [
+    "Hatcher Pass"
+   ],
+   "alerts": []
+  },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 25,
+   "place": "Thompson Pass",
+   "bins": [
+    2.2,
+    3.9,
+    4,
+    3.5,
+    0.7,
+    0.8,
+    1.1,
+    0.7,
+    0.5,
+    0,
+    1.8,
+    6.2
+   ],
+   "snowingAt": [
+    "Thompson Pass"
+   ],
+   "alerts": []
+  },
+  "https://nwac.us/": {
+   "name": "Northwest Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Snoqualmie Pass"
+   ],
+   "alerts": []
+  },
+  "https://www.flatheadavalanche.org/": {
+   "name": "Flathead Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Marias Pass",
+   "bins": [
+    2.4,
+    2.5,
+    2.6,
+    3.4,
+    3,
+    4.1,
+    1.9,
+    0.2,
+    0,
+    0,
+    0,
+    0
+   ],
+   "snowingAt": [],
+   "alerts": [
+    {
+     "event": "Winter Storm Warning",
+     "ends": "2026-10-12T06:00:00-06:00",
+     "place": "Marias Pass",
+     "link": "https://forecast.weather.gov/MapClick.php?lat=48.32&lon=-113.35"
+    }
+   ]
+  },
+  "https://www.mtavalanche.com/": {
+   "name": "Gallatin NF Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 25,
+   "place": "Cooke City",
+   "bins": [
+    0,
+    2.9,
+    6.4,
+    7.6,
+    5.4,
+    0.8,
+    2.4,
+    0.4,
+    0.1,
+    0,
+    0,
+    0
+   ],
+   "snowingAt": [],
+   "alerts": [
+    {
+     "event": "Winter Storm Warning",
+     "ends": "2026-10-12T12:00:00-06:00",
+     "place": "Cooke City",
+     "link": "https://forecast.weather.gov/MapClick.php?lat=45.02&lon=-109.93"
+    }
+   ]
+  },
+  "https://utahavalanchecenter.org/": {
+   "name": "Utah Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 25,
+   "place": "Uintas",
+   "bins": [
+    0,
+    2.2,
+    4.8,
+    0.6,
+    0,
+    1.8,
+    1.3,
+    2.5,
+    2,
+    3.8,
+    4,
+    0.8
+   ],
+   "snowingAt": [],
+   "alerts": []
+  },
+  "https://avalanche.state.co.us/": {
+   "name": "Colorado Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Red Mountain Pass",
+   "bins": [
+    0.5,
+    0.8,
+    0.3,
+    0,
+    3.8,
+    1.6,
+    0,
+    0.5,
+    0.8,
+    1,
+    4.6,
+    3.7
+   ],
+   "snowingAt": [],
+   "alerts": []
+  },
+  "https://www.avalanche.ca/map": {
+   "name": "Avalanche Canada",
+   "units": "cm",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 25,
+   "place": "Waterton",
+   "bins": [
+    3.4,
+    3.9,
+    4.3,
+    3.4,
+    3.3,
+    4,
+    2.1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "snowingAt": [
+    "Rossland",
+    "Waterton"
+   ],
+   "alerts": []
+  }
+ },
+ "deepest": [
+  {
+   "href": "https://www.mtavalanche.com/",
+   "name": "Gallatin NF Avalanche Center",
+   "place": "Cooke City",
+   "region": "North America",
+   "units": "in",
+   "cm": 26
+  },
+  {
+   "href": "https://alaskasnow.org/",
+   "name": "Alaska Avalanche Information Center",
+   "place": "Thompson Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 25
+  },
+  {
+   "href": "https://www.avalanche.ca/map",
+   "name": "Avalanche Canada",
+   "place": "Waterton",
+   "region": "North America",
+   "units": "cm",
+   "cm": 24
+  },
+  {
+   "href": "https://utahavalanchecenter.org/",
+   "name": "Utah Avalanche Center",
+   "place": "Uintas",
+   "region": "North America",
+   "units": "in",
+   "cm": 24
+  },
+  {
+   "href": "https://www.flatheadavalanche.org/",
+   "name": "Flathead Avalanche Center",
+   "place": "Marias Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 20
+  }
+ ]
+}
