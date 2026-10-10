@@ -647,6 +647,7 @@ footer a { color: var(--accent); }
   .host { display: none; }
   .storms { padding-inline: 1rem; }
 }
+  body.searching .jump, body.searching .storms { display: none; }
 </style>
 </head>
 <body>
@@ -1277,25 +1278,53 @@ footer a { color: var(--accent); }
   var q = document.getElementById('q');
   var sections = Array.prototype.slice.call(document.querySelectorAll('#regions section'));
   var empty = document.getElementById('empty');
-  q.addEventListener('input', function () {
-    var term = q.value.trim().toLowerCase();
-    var any = false;
-    sections.forEach(function (s) {
-      var region = s.querySelector('h2').textContent.toLowerCase();
-      var shown = 0;
-      s.querySelectorAll('li').forEach(function (li) {
-        var hit = !term || li.textContent.toLowerCase().indexOf(term) !== -1 || region.indexOf(term) !== -1;
-        li.hidden = !hit;
-        if (hit) shown++;
-      });
-      s.hidden = shown === 0;
-      if (shown) any = true;
+  // Full names and common nicknames for each row's code, so "wyoming" or "salt lake" finds the right center.
+  var NAMES = {
+    US: 'united states usa america', CA: 'california', AK: 'alaska anchorage', WA: 'washington seattle',
+    OR: 'oregon', ID: 'idaho', MT: 'montana', WY: 'wyoming', UT: 'utah salt lake city park city',
+    CO: 'colorado denver aspen vail telluride summit county', NM: 'new mexico', AZ: 'arizona',
+    NH: 'new hampshire white mountains new england', BC: 'canada', QC: 'quebec canada',
+    EU: 'europe', FR: 'france chamonix', CH: 'switzerland swiss', AT: 'austria', IT: 'italy',
+    DE: 'germany', SI: 'slovenia', JP: 'japan hokkaido', NZ: 'new zealand'
+  };
+  var rows = [];
+  sections.forEach(function (s) {
+    var region = s.querySelector('h2').textContent;
+    s.querySelectorAll('li').forEach(function (li) {
+      var codeEl = li.querySelector('.code'), code = codeEl ? codeEl.textContent.trim() : '';
+      var extra = NAMES[code] || '';
+      if (code === 'CA' && /canada/i.test(li.textContent)) extra = 'canada';
+      rows.push({ li: li, s: s, code: code.toLowerCase(), text: (li.textContent + ' ' + region + ' ' + extra).toLowerCase().replace(/\s+/g, ' ') });
     });
+  });
+  function matches(r, term) {
+    // A two-letter search like "co" matches the state code or a whole word, not every word containing it.
+    if (term.length <= 2) return r.code === term || new RegExp('(^|[^a-z])' + term.replace(/[^a-z0-9]/g, '') + '([^a-z]|$)').test(r.text);
+    return r.text.indexOf(term) !== -1;
+  }
+  function run() {
+    var term = q.value.trim().toLowerCase().replace(/\s+/g, ' ');
+    var any = false, shown = new Map();
+    document.body.classList.toggle('searching', !!term);
+    rows.forEach(function (r) {
+      var hit = !term || matches(r, term);
+      r.li.hidden = !hit;
+      if (hit) shown.set(r.s, true);
+    });
+    sections.forEach(function (s) { s.hidden = !shown.has(s); if (shown.has(s)) any = true; });
     empty.hidden = any;
+  }
+  q.addEventListener('input', run);
+  q.addEventListener('search', run);
+  // Enter (or Search on a phone keyboard) closes the keyboard and brings the results into view.
+  q.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter') return;
+    e.preventDefault(); q.blur();
+    document.getElementById('regions').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
   document.querySelectorAll('.jump a').forEach(function (a) {
     a.addEventListener('click', function () {
-      if (q.value) { q.value = ''; q.dispatchEvent(new Event('input')); }
+      if (q.value) { q.value = ''; run(); }
     });
   });
 })();
