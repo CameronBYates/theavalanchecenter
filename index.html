@@ -622,6 +622,10 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .storm-detail { display: grid; gap: 0.85rem; }
 .storm-mini .host { color: var(--accent); white-space: nowrap; }
 .storm-mini .alert-dot { display: inline-block; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--high); margin-right: 0.4rem; vertical-align: 0.1em; }
+.storm-mini em.warn { color: #ff5a5f; font-weight: 600; }
+.storm-mini em.warn .alert-dot { animation: redpulse 1.8s ease-out infinite; }
+.storm-mini em.warn .alert-dot + .alert-dot, .storm-mini em.warn .alert-dot:last-child { margin: 0 0 0 0.4rem; }
+@keyframes redpulse { 0% { box-shadow: 0 0 0 0 rgba(237,28,36,0.7); } 70% { box-shadow: 0 0 0 0.45rem rgba(237,28,36,0); } 100% { box-shadow: 0 0 0 0 rgba(237,28,36,0); } }
 .storms-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem 1rem; }
 .storms-toggle {
   font: 500 0.72rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink);
@@ -651,7 +655,7 @@ footer a { color: var(--accent); }
 @keyframes drift { 0% { transform: translate(0,0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translate(34px, 22px); opacity: 0; } }
 .puff { animation: billow 4s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
 @keyframes billow { from { transform: scale(0.94); } to { transform: scale(1.06); } }
-@media (prefers-reduced-motion: reduce) { .puff { animation: none; } .particle { animation: none; opacity: 0.8; } .name { transition: none; } .storms h2::before, .now-dot { animation: none; } .storm-card { transition: none; } .tag-fall { display: none; } }
+@media (prefers-reduced-motion: reduce) { .puff { animation: none; } .particle { animation: none; opacity: 0.8; } .name { transition: none; } .storms h2::before, .now-dot { animation: none; } .storm-card { transition: none; } .tag-fall { display: none; } .storm-mini em.warn .alert-dot { animation: none; } }
 @media (max-width: 34rem) {
   li a { grid-template-columns: 2.4rem 1fr; }
   .host { display: none; }
@@ -1504,6 +1508,8 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
         var note = c.alerts.length ? c.alerts[0].event : c.snowingAt.length ? 'Snowing now' : c.place ? 'Heaviest near ' + c.place : '';
         var em = el('em', '', note);
         if (c.alerts.length) em.insertBefore(el('span', 'alert-dot'), em.firstChild);
+        // Storm-level warnings (Winter Storm Warning and the like) read in red with a pulsing dot on each side.
+        if (c.alerts.length && BIG_ALERTS.indexOf(c.alerts[0].event) !== -1) { em.classList.add('warn'); em.appendChild(el('span', 'alert-dot')); }
         mn.appendChild(em); ma.appendChild(mn);
         ma.appendChild(el('span', 'host', c.snow72cm ? '~' + inUnits(c.snow72cm, c.units) + ' ' + c.units : 'Snowing'));
         var mli = el('li'); mli.appendChild(ma); mini.appendChild(mli);
