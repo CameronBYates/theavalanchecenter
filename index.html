@@ -549,6 +549,12 @@ li a {
 }
 li a:hover .name, li a:focus-visible .name { color: var(--accent); }
 li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
+.jump { display: grid; gap: 0.6rem; justify-items: center; }
+.jump p { font: 500 0.75rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0; }
+.jump ul { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+.jump li + li { border: 0; }
+.jump li a { display: inline-block; padding: 0.45rem 0.85rem; border: 1px solid var(--line); border-radius: 99px; color: var(--ink); text-decoration: none; font-size: 0.9rem; background: var(--surface); }
+.jump li a:hover, .jump li a:focus-visible { border-color: var(--accent); color: var(--accent); }
 .code { font: 500 0.78rem/1 var(--mono); color: var(--accent); letter-spacing: 0.04em; }
 .name { font-weight: 500; min-width: 0; transition: color .15s; }
 .name em { display: block; font-style: normal; font-weight: 400; font-size: 0.875rem; color: var(--muted); }
@@ -586,12 +592,31 @@ footer a { color: var(--accent); }
     </div>
   </header>
 
+  <nav class="jump" aria-label="Browse by region">
+    <p>Browse by region</p>
+    <ul>
+      <li><a href="/regions/alaska/">Alaska</a></li>
+      <li><a href="/regions/pacific-northwest/">Pacific Northwest</a></li>
+      <li><a href="/regions/california/">California</a></li>
+      <li><a href="/regions/northern-rockies/">Northern Rockies</a></li>
+      <li><a href="/regions/utah-southern-rockies/">Utah &amp; Southern Rockies</a></li>
+      <li><a href="/regions/northeast/">Northeast</a></li>
+      <li><a href="/regions/canada/">Canada</a></li>
+      <li><a href="/regions/alps/">Alps</a></li>
+      <li><a href="/regions/japan/">Japan</a></li>
+      <li><a href="/regions/new-zealand/">New Zealand</a></li>
+    </ul>
+  </nav>
+
   <main class="regions" id="regions">
     <section>
-      <h2>National <small>US + Canada</small></h2>
+      <h2>National <small>US + Canada + Alps + Japan + New Zealand</small></h2>
       <ul>
         <li><a href="https://avalanche.org/" target="_blank" rel="noopener"><span class="code">US</span><span class="name">Avalanche.org<em>Forecast map for every US center</em></span><span class="host">avalanche.org</span></a></li>
         <li><a href="https://www.avalanche.ca/" target="_blank" rel="noopener"><span class="code">CA</span><span class="name">Avalanche Canada<em>Forecasts for BC, Alberta, Yukon, and the Parks Canada and Kananaskis regions</em></span><span class="host">avalanche.ca</span></a></li>
+        <li><a href="https://www.avalanches.org/" target="_blank" rel="noopener"><span class="code">EU</span><span class="name">European Avalanche Warning Services<em>Live bulletin map for every European service, including the Alps</em></span><span class="host">avalanches.org</span></a></li>
+        <li><a href="https://nadare.jp/" target="_blank" rel="noopener"><span class="code">JP</span><span class="name">Japan Avalanche Network<em>Niseko, Taisetsu-Tokachi, Hakuba, Myoko, Kagura-Tanigawa, Tateyama</em></span><span class="host">nadare.jp</span></a></li>
+        <li><a href="https://www.avalanche.net.nz/" target="_blank" rel="noopener"><span class="code">NZ</span><span class="name">NZ Avalanche Advisory<em>13 backcountry regions incl. Aoraki/Mt Cook, Aspiring, Wanaka, Queenstown, Tongariro</em></span><span class="host">avalanche.net.nz</span></a></li>
       </ul>
     </section>
 
