@@ -660,6 +660,16 @@ footer a { color: var(--accent); }
   .name .also[hidden] { display: none; }
   .name .also { display: block; margin-top: .2rem; font-size: .8rem; font-weight: 600; color: #fff200; }
   body.searching .jump, body.searching .storms { display: none; }
+li a.has-tag { grid-template-columns: 2.8rem auto 1fr auto; }
+li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
+@media (max-width: 34rem) { li a.has-tag { grid-template-columns: 2.4rem 1fr; } li a > .tag { grid-column: 2; justify-self: start; margin-top: .15rem; } }
+.tag { font-size: .95rem; font-weight: 700; padding: .42rem .85rem; vertical-align: 0; letter-spacing: .07em; }
+.tag.snow { padding: .42rem .9rem .42rem .65rem; gap: .45rem; }
+.tag .flake-icon { width: 1.2rem; height: 1.2rem; }
+.tag-fall i { width: 4px; height: 4px; }
+.tag.snow:not(.big) { border-color: rgba(140,200,255,.55); background: linear-gradient(100deg, rgba(60,130,220,.35), rgba(140,200,255,.18)); color: #e8f4ff; box-shadow: 0 0 12px rgba(120,190,255,.25); }
+.tag:not(.snow) { border-style: dashed; border-color: rgba(140,200,255,.5); color: #cfe6ff; }
+@media (max-width: 34rem) { .tag { font-size: .78rem; padding: .36rem .65rem; } .tag.snow { padding: .36rem .7rem .36rem .5rem; } .tag .flake-icon { width: 1rem; height: 1rem; } }
 </style>
 </head>
 <body>
@@ -1497,7 +1507,8 @@ footer a { color: var(--accent); }
       if (row) {
         // Snowing now wins over Snow coming, so the label matches the falling-flake animation.
         var label = isBig(c) ? 'Big storm' : c.snowingAt.length ? 'Snowing' : 'Snow coming';
-        row.querySelector('.name').insertBefore(tag(label, isBig(c), isBig(c) || c.snowingAt.length > 0), row.querySelector('.name em'));
+        // The tag gets its own column right after the center name, vertically centered in the row.
+        row.classList.add('has-tag'); row.insertBefore(tag(label, isBig(c), isBig(c) || c.snowingAt.length > 0), row.querySelector('.host'));
       }
       // Centers where it is only snowing (no big totals or alerts) share one line instead of a card each.
       if (!c.level && !c.alerts.length) { flurries.push(c); return; }
