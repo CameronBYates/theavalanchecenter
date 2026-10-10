@@ -1,0 +1,41 @@
+name: Storm watch
+
+on:
+  schedule:
+    - cron: '17 */3 * * *'   # every 3 hours
+  workflow_dispatch:
+  push:                       # dry run whenever the updater itself changes
+    paths:
+      - 'storm-watch/**'
+      - '.github/workflows/storm-watch.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: storm-watch
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch forecasts and alerts
+        run: node storm-watch/update.mjs data/storms.json
+      - name: Commit data/storms.json if it changed
+        if: github.event_name != 'push' && github.ref == 'refs/heads/main'
+        run: |
+          if git diff --quiet -- data/storms.json && ! git ls-files --others --exclude-standard data | grep -q .; then
+            echo "No change."; exit 0
+          fi
+          git config user.name "storm-watch[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/storms.json
+          git commit -m "Update storm watch data"
+          git pull --rebase origin main
+          git push origin HEAD:main
