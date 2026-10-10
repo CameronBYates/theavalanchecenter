@@ -562,6 +562,77 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .name em { display: block; font-style: normal; font-weight: 400; font-size: 0.875rem; color: var(--muted); }
 .host { font: 500 0.72rem/1 var(--mono); color: var(--muted); }
 .empty { color: var(--muted); margin: 0; text-align: center; }
+.storms { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.1rem 1.25rem 1rem; display: grid; gap: 0.85rem; }
+.storms-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; flex-wrap: wrap; }
+.storms h2, .storms h3 { margin: 0; font: 900 1.45rem/1.1 var(--display); text-transform: uppercase; letter-spacing: 0.03em; }
+.storms h2 { display: flex; align-items: center; gap: 0.55rem; }
+.storms h2::before, .now-dot { content: ""; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 rgba(255,184,107,0.6); animation: pulse 2.4s ease-out infinite; flex: none; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 0.55rem rgba(255,184,107,0); } 100% { box-shadow: 0 0 0 0 rgba(255,184,107,0); } }
+.storms h3 { font-size: 1.05rem; color: var(--muted); }
+.storms-head small, .storms-src { font: 500 0.72rem/1.4 var(--mono); color: var(--muted); letter-spacing: 0.04em; }
+.storms-sub { margin: 0; color: var(--muted); font-size: 0.9rem; max-width: 46rem; }
+.storms-src { margin: 0; }
+.storms-src a { color: inherit; }
+.storm-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.storm-tabs button {
+  font: 500 0.72rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted);
+  background: transparent; border: 1px solid var(--line); border-radius: 99px; padding: 0.45rem 0.7rem; cursor: pointer;
+}
+.storm-tabs button[aria-pressed="true"] { color: var(--night); background: var(--ink); border-color: var(--ink); }
+.storm-tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.storm-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: 0.75rem; }
+.storms [hidden] { display: none !important; }
+.storm-card {
+  display: flex; flex-direction: column; gap: 0.6rem; padding: 0.9rem 1rem; border-radius: 12px; color: inherit; text-decoration: none;
+  background: var(--surface-hi); border: 1px solid var(--line); min-width: 0; transition: border-color .15s;
+}
+.storm-card.big { border-color: rgba(255,184,107,0.55); }
+.storm-card:hover, .storm-card:focus-visible { border-color: var(--accent); }
+.storm-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sc-top { display: grid; grid-template-columns: auto 1fr auto; gap: 0.6rem; align-items: baseline; }
+.sc-name { font-weight: 500; min-width: 0; }
+.sc-name em { display: block; font-style: normal; font-size: 0.82rem; color: var(--muted); }
+.sc-total { font: 900 1.9rem/1 var(--display); color: var(--accent); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.sc-total small { font: 500 0.7rem/1 var(--mono); color: var(--muted); margin-left: 0.15rem; letter-spacing: 0.04em; }
+.sc-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.pill { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.55rem; border-radius: 8px; font: 500 0.68rem/1.2 var(--mono); letter-spacing: 0.04em; border: 1px solid var(--line); color: var(--ink); }
+.pill.alert { border-color: var(--high); color: #ffd2d2; background: rgba(237,28,36,0.14); }
+.pill .now-dot { width: 0.42rem; height: 0.42rem; }
+.sc-plot { margin-top: auto; display: grid; gap: 0.3rem; }
+.sc-chart { display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; align-items: end; height: 3.2rem; border-bottom: 1px solid var(--line); }
+.sc-chart span { background: linear-gradient(to top, rgba(255,184,107,0.45), var(--accent)); border-radius: 3px 3px 0 0; min-height: 2px; }
+.sc-chart span.zero { background: var(--line); }
+.sc-axis { display: grid; grid-template-columns: repeat(3, 1fr); font: 500 0.64rem/1 var(--mono); color: var(--muted); letter-spacing: 0.04em; }
+.sc-axis span:last-child { text-align: right; }
+.sc-axis span:nth-child(2) { text-align: center; }
+.storms-flurries { padding-top: 0.75rem; border-top: 1px solid var(--line); display: flex; gap: 0.5rem; align-items: baseline; }
+.storms-flurries .now-dot { transform: translateY(-0.05rem); }
+.deepest { display: grid; gap: 0.5rem; padding-top: 0.85rem; border-top: 1px solid var(--line); }
+.deepest ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; counter-reset: deep; }
+.deepest li { border: 0; counter-increment: deep; display: grid; grid-template-columns: 1.4rem minmax(0, 1fr) 4.2rem; gap: 0.6rem; align-items: center; }
+.deepest li::before { content: counter(deep); font: 500 0.75rem/1 var(--mono); color: var(--muted); }
+.deepest li a { color: inherit; text-decoration: none; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.3rem; padding: 0; }
+.deepest a:hover .dn, .deepest a:focus-visible .dn { color: var(--accent); }
+.deepest .dn { font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.deepest .dn em { font-style: normal; color: var(--muted); }
+.deepest .bar { height: 0.35rem; border-radius: 99px; background: var(--line); overflow: hidden; }
+.deepest .bar i { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
+.deepest .dv { font: 500 0.8rem/1 var(--mono); text-align: right; font-variant-numeric: tabular-nums; }
+.storms-quiet { color: var(--muted); margin: 0; }
+.storm-detail { display: grid; gap: 0.85rem; }
+.storm-mini .host { color: var(--accent); white-space: nowrap; }
+.storm-mini .alert-dot { display: inline-block; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--high); margin-right: 0.4rem; vertical-align: 0.1em; }
+.storms-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem 1rem; }
+.storms-toggle {
+  font: 500 0.72rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink);
+  background: var(--surface-hi); border: 1px solid var(--line); border-radius: 99px; padding: 0.55rem 0.85rem; cursor: pointer;
+}
+.storms-toggle:hover { border-color: var(--accent); }
+.storms-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.storms-foot .storms-src { flex: 1 1 18rem; text-align: right; }
+@media (max-width: 34rem) { .storm-mini .host { display: block; } .storm-mini li a { grid-template-columns: 2.4rem 1fr auto; } .storms-foot .storms-src { text-align: left; } }
+.tag { display: inline-block; margin-left: 0.45rem; padding: 0.2rem 0.45rem; border-radius: 99px; font: 500 0.66rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; vertical-align: 0.12em; border: 1px solid var(--line); color: var(--ink); background: var(--surface-hi); }
+.tag.big { border-color: var(--accent); color: var(--accent); }
 footer { border-top: 1px solid var(--line); padding-top: 1.25rem; color: var(--muted); font-size: 0.875rem; display: grid; gap: 0.5rem; max-width: 40rem; margin: 0 auto; text-align: center; }
 footer p { margin: 0; }
 footer strong { color: var(--ink); }
@@ -570,10 +641,11 @@ footer a { color: var(--accent); }
 @keyframes drift { 0% { transform: translate(0,0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translate(34px, 22px); opacity: 0; } }
 .puff { animation: billow 4s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
 @keyframes billow { from { transform: scale(0.94); } to { transform: scale(1.06); } }
-@media (prefers-reduced-motion: reduce) { .puff { animation: none; } .particle { animation: none; opacity: 0.8; } .name { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .puff { animation: none; } .particle { animation: none; opacity: 0.8; } .name { transition: none; } .storms h2::before, .now-dot { animation: none; } .storm-card { transition: none; } }
 @media (max-width: 34rem) {
   li a { grid-template-columns: 2.4rem 1fr; }
   .host { display: none; }
+  .storms { padding-inline: 1rem; }
 }
 </style>
 </head>
@@ -611,6 +683,25 @@ footer a { color: var(--accent); }
       <li><a href="#new-zealand">New Zealand</a></li>
     </ul>
   </nav>
+
+  <aside class="storms" id="storms" aria-labelledby="storms-title" hidden>
+    <div class="storms-head"><h2 id="storms-title">Storm watch</h2><small id="storms-count">Next 72 hours</small></div>
+    <p class="storms-sub">Big snow in the forecast or falling now. Weather data, not an avalanche forecast: open a center for its official forecast.</p>
+    <ul class="storm-mini" id="storm-mini"></ul>
+    <div class="storm-detail" id="storm-detail" hidden>
+      <div class="storm-tabs" id="storm-tabs" aria-label="Filter by region" hidden></div>
+      <div class="storm-cards" id="storm-cards"></div>
+      <p class="storms-sub storms-flurries" id="storm-flurries" hidden></p>
+      <div class="deepest" id="deepest" hidden>
+        <h3>Deepest forecasts worldwide</h3>
+        <ol id="deepest-list"></ol>
+      </div>
+    </div>
+    <div class="storms-foot">
+      <button type="button" class="storms-toggle" id="storms-toggle" aria-expanded="false" aria-controls="storm-detail">Show storm details</button>
+      <p class="storms-src">Snowfall forecast by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0). US winter alerts from <a href="https://www.weather.gov/" target="_blank" rel="noopener">NOAA's National Weather Service</a>. Checked every 3 hours.</p>
+    </div>
+  </aside>
 
   <main class="regions" id="regions">
     <section>
@@ -1207,6 +1298,156 @@ footer a { color: var(--accent); }
       if (q.value) { q.value = ''; q.dispatchEvent(new Event('input')); }
     });
   });
+})();
+</script>
+<script>
+// Storm watch: reads data/storms.json, written every few hours by .github/workflows/storm-watch.yml.
+(function () {
+  var box = document.getElementById('storms');
+  var cards = document.getElementById('storm-cards');
+  var tabs = document.getElementById('storm-tabs');
+  var flurryLine = document.getElementById('storm-flurries');
+  var deepest = document.getElementById('deepest');
+  var deepList = document.getElementById('deepest-list');
+  var BIG_ALERTS = ['Blizzard Warning', 'Winter Storm Warning', 'Lake Effect Snow Warning', 'Ice Storm Warning'];
+  var REGIONS = ['North America', 'Europe', 'Japan', 'New Zealand'];
+  function inUnits(cm, units) { return units === 'in' ? Math.round(cm / 2.54) : Math.round(cm); }
+  function isBig(c) { return c.level === 'heavy' || c.alerts.some(function (a) { return BIG_ALERTS.indexOf(a.event) !== -1; }); }
+  function rank(c) { return (isBig(c) ? 2000 : 0) + (c.alerts.length ? 1000 : 0) + (c.snow72cm || 0) + (c.snowingAt.length ? 1 : 0); }
+  function el(tag, cls, str) { var e = document.createElement(tag); if (cls) e.className = cls; if (str != null) e.textContent = str; return e; }
+  function until(iso) {
+    var t = Date.parse(iso);
+    if (isNaN(t)) return '';
+    var when = new Date(t);
+    return ' · until ' + when.toLocaleDateString([], { weekday: 'short' }) + ' ' + when.toLocaleTimeString([], { hour: 'numeric' });
+  }
+  function nowPill() { var p = el('span', 'pill'); p.appendChild(el('span', 'now-dot')); p.appendChild(document.createTextNode('Snowing now')); return p; }
+
+  function card(href, c, code, scale) {
+    var a = el('a', 'storm-card' + (isBig(c) ? ' big' : ''));
+    a.href = href; a.target = '_blank'; a.rel = 'noopener'; a.dataset.region = c.region;
+    var top = el('div', 'sc-top');
+    top.appendChild(el('span', 'code', code));
+    var name = el('span', 'sc-name', c.name);
+    if (c.place) name.appendChild(el('em', '', 'Heaviest near ' + c.place));
+    top.appendChild(name);
+    if (c.snow72cm) {
+      var total = el('span', 'sc-total', '~' + inUnits(c.snow72cm, c.units));
+      total.appendChild(el('small', '', c.units));
+      top.appendChild(total);
+    }
+    a.appendChild(top);
+    var pills = el('div', 'sc-pills');
+    c.alerts.forEach(function (al) { pills.appendChild(el('span', 'pill alert', al.event + until(al.ends))); });
+    if (c.snowingAt.length) pills.appendChild(nowPill());
+    if (pills.children.length) a.appendChild(pills);
+    if (c.bins) {
+      var chart = el('div', 'sc-chart');
+      var peak = c.bins.indexOf(Math.max.apply(null, c.bins));
+      chart.setAttribute('role', 'img');
+      chart.setAttribute('aria-label', 'Snowfall in 6-hour steps over the next 72 hours, heaviest ' + (peak * 6) + ' to ' + (peak * 6 + 6) + ' hours from now');
+      c.bins.forEach(function (v) {
+        var bar = el('span', v > 0.05 ? '' : 'zero');
+        bar.style.height = Math.max(4, Math.min(100, v / scale * 100)) + '%';
+        bar.title = inUnits(v, c.units) + ' ' + c.units;
+        chart.appendChild(bar);
+      });
+      var plot = el('div', 'sc-plot');
+      plot.appendChild(chart);
+      var axis = el('div', 'sc-axis');
+      ['Now', '+36 h', '72 h'].forEach(function (t) { axis.appendChild(el('span', '', t)); });
+      plot.appendChild(axis);
+      a.appendChild(plot);
+    }
+    return a;
+  }
+
+  fetch('data/storms.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    if (!d || Date.now() - Date.parse(d.updated) > 36 * 3600 * 1000) return;
+    var hrefs = Object.keys(d.centers).sort(function (a, b) { return rank(d.centers[b]) - rank(d.centers[a]); });
+    var flurries = [];
+    // One shared bar scale across cards, so a tall bar means the same amount everywhere.
+    var scale = 5;
+    hrefs.forEach(function (h) { (d.centers[h].bins || []).forEach(function (v) { if (v > scale) scale = v; }); });
+    var mini = document.getElementById('storm-mini');
+    hrefs.forEach(function (href) {
+      var c = d.centers[href];
+      var row = document.querySelector('#regions a[href="' + href + '"]');
+      // The collapsed view lists the top three as one-line rows, styled like the directory below.
+      if (mini.children.length < 3) {
+        var ma = el('a'); ma.href = href; ma.target = '_blank'; ma.rel = 'noopener';
+        ma.appendChild(el('span', 'code', row ? row.querySelector('.code').textContent : ''));
+        var mn = el('span', 'name', c.name);
+        var note = c.alerts.length ? c.alerts[0].event : c.snowingAt.length ? 'Snowing now' : c.place ? 'Heaviest near ' + c.place : '';
+        var em = el('em', '', note);
+        if (c.alerts.length) em.insertBefore(el('span', 'alert-dot'), em.firstChild);
+        mn.appendChild(em); ma.appendChild(mn);
+        ma.appendChild(el('span', 'host', c.snow72cm ? '~' + inUnits(c.snow72cm, c.units) + ' ' + c.units : 'Snowing'));
+        var mli = el('li'); mli.appendChild(ma); mini.appendChild(mli);
+      }
+      if (row) {
+        var label = isBig(c) ? 'Big storm' : c.level || c.alerts.length ? 'Snow coming' : 'Snowing';
+        row.querySelector('.name').insertBefore(el('span', isBig(c) ? 'tag big' : 'tag', label), row.querySelector('.name em'));
+      }
+      // Centers where it is only snowing (no big totals or alerts) share one line instead of a card each.
+      if (!c.level && !c.alerts.length) { flurries.push(c); return; }
+      cards.appendChild(card(href, c, row ? row.querySelector('.code').textContent : '', scale));
+    });
+
+    var deep = d.deepest || [];
+    var maxDeep = deep.length ? deep[0].cm || 1 : 1;
+    deep.forEach(function (x) {
+      var li = el('li'); li.dataset.region = x.region;
+      var a = el('a'); a.href = x.href; a.target = '_blank'; a.rel = 'noopener';
+      var dn = el('span', 'dn', x.name + ' ');
+      dn.appendChild(el('em', '', x.place));
+      a.appendChild(dn);
+      var bar = el('span', 'bar'); var fill = el('i'); fill.style.width = Math.max(3, x.cm / maxDeep * 100) + '%'; bar.appendChild(fill);
+      a.appendChild(bar);
+      li.appendChild(a);
+      li.appendChild(el('span', 'dv', inUnits(x.cm, x.units) + ' ' + x.units));
+      deepList.appendChild(li);
+    });
+    deepest.hidden = !deep.length;
+
+    function show(region) {
+      Array.prototype.forEach.call(cards.children, function (n) { n.hidden = region !== 'All' && n.dataset.region !== region; });
+      Array.prototype.forEach.call(deepList.children, function (n) { n.hidden = region !== 'All' && n.dataset.region !== region; });
+      var f = flurries.filter(function (c) { return region === 'All' || c.region === region; });
+      flurryLine.textContent = '';
+      if (f.length) { flurryLine.appendChild(el('span', 'now-dot')); flurryLine.appendChild(el('span', '', 'Also snowing now near ' + f.map(function (c) { return c.name; }).join(', ') + '.')); }
+      flurryLine.hidden = !f.length;
+      var quiet = document.getElementById('storms-quiet');
+      var anyCard = Array.prototype.some.call(cards.children, function (n) { return !n.hidden && n.className.indexOf('storm-card') !== -1; });
+      if (!anyCard && !quiet) { quiet = el('p', 'storms-quiet', 'Quiet right now: no big storms in the forecast here.'); quiet.id = 'storms-quiet'; cards.appendChild(quiet); }
+      if (quiet) quiet.hidden = anyCard;
+      Array.prototype.forEach.call(tabs.children, function (b) { b.setAttribute('aria-pressed', String(b.dataset.region === region)); });
+    }
+    var present = REGIONS.filter(function (r) {
+      return hrefs.some(function (h) { return d.centers[h].region === r; }) || deep.some(function (x) { return x.region === r; });
+    });
+    if (present.length > 1) {
+      ['All'].concat(present).forEach(function (r) {
+        var b = el('button', '', r); b.type = 'button'; b.dataset.region = r;
+        b.addEventListener('click', function () { show(r); });
+        tabs.appendChild(b);
+      });
+      tabs.hidden = false;
+    }
+    show('All');
+    var count = hrefs.length;
+    document.getElementById('storms-count').textContent = count ? count + (count === 1 ? ' center' : ' centers') + ' · next 72 h' : 'Next 72 hours';
+    if (!count) mini.appendChild(el('li', 'storms-quiet', 'Quiet right now: no big storms in the forecast near any center.'));
+    var toggle = document.getElementById('storms-toggle');
+    var detail = document.getElementById('storm-detail');
+    toggle.addEventListener('click', function () {
+      var open = detail.hidden;
+      detail.hidden = !open; mini.hidden = open;
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Hide storm details' : 'Show storm details';
+    });
+    box.hidden = false;
+  }).catch(function () {});
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5dffcd378d304650a1905d2089c5c529"}'></script><!-- End Cloudflare Web Analytics -->
