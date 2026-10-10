@@ -1,9 +1,7 @@
 // Storm watch updater. Run by .github/workflows/storm-watch.yml on a schedule.
-// Reads storm-watch/points.json and, for every point, asks MET Norway's free worldwide
-// forecast whether it is snowing now and roughly how much snow the next 72 hours bring.
-// At US points it also uses the National Weather Service's own snowfall forecast (which
-// replaces the estimate) and active winter alerts. Writes data/storms.json for index.html.
-// Only flagged centers are written. Both sources allow commercial use with credit.
+// Reads storm-watch/points.json, asks Open-Meteo for snowfall at every point and the
+// US National Weather Service for active winter alerts at US points, then writes
+// data/storms.json for index.html to read. Only flagged centers are written.
 // Usage: node storm-watch/update.mjs [output path]   (no output path: print only)
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
@@ -11,92 +9,48 @@ import { dirname } from 'node:path';
 
 const HEAVY_CM = 30;   // 72-hour forecast total that counts as a big storm
 const NOTABLE_CM = 15; // smaller but still worth a mention
-const HOURS = 72;
+const SNOW_CODES = new Set([71, 73, 75, 77, 85, 86]); // WMO weather codes for falling snow
 const NWS_EVENTS = new Set([
   'Blizzard Warning', 'Winter Storm Warning', 'Winter Storm Watch',
   'Lake Effect Snow Warning', 'Ice Storm Warning'
 ]);
-// MET Norway and NWS both ask for a User-Agent that names the app and a way to reach its owner.
-const UA = 'theavalanchecenter.com-stormwatch/1.0 https://github.com/CameronBYates/theavalanchecenter';
+const UA = 'theavalanchecenter.com storm watch (https://theavalanchecenter.com)';
 
 const out = process.argv[2];
 const { centers } = JSON.parse(await readFile(new URL('./points.json', import.meta.url)));
 const points = centers.flatMap(c => c.points.map(([lat, lon, place]) => ({ center: c, lat, lon, place })));
-const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function getJSON(url, headers = {}) {
   for (let attempt = 1; ; attempt++) {
     const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/json', ...headers } });
     if (res.ok) return res.json();
-    if (attempt >= 3 || res.status === 404) throw new Error(`${res.status} ${res.statusText} for ${url}`);
-    await sleep(5000 * attempt);
+    if (attempt >= 3) throw new Error(`${res.status} ${res.statusText} for ${url}`);
+    await new Promise(r => setTimeout(r, 5000 * attempt));
   }
 }
 
-// MET Norway gives precipitation (mm of water) with a weather symbol per step: hourly at
-// first, then 6-hourly. Count precipitation as snow when the symbol says snow (half for
-// sleet) and convert at the usual 10:1 ratio, so 1 mm of water is about 1 cm of snow.
-function snowFraction(symbol = '') {
-  if (symbol.includes('snow')) return 1;
-  if (symbol.includes('sleet')) return 0.5;
-  return 0;
-}
-
-async function metNorway(p) {
-  const data = await getJSON(`https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${p.lat.toFixed(4)}&lon=${p.lon.toFixed(4)}`);
-  const series = data.properties.timeseries;
-  const end = Date.now() + HOURS * 3600 * 1000;
-  let cm = 0;
-  for (let i = 0; i < series.length; i++) {
-    const t = Date.parse(series[i].time);
-    if (t >= end) break;
-    const gap = i + 1 < series.length ? (Date.parse(series[i + 1].time) - t) / 3600000 : 6;
-    const block = gap <= 1 ? series[i].data.next_1_hours : series[i].data.next_6_hours;
-    if (!block) continue;
-    cm += (block.details?.precipitation_amount || 0) * snowFraction(block.summary?.symbol_code);
-  }
-  const now = series[0]?.data.next_1_hours?.summary?.symbol_code || '';
-  return { total: cm, snowing: now.includes('snow') };
-}
-
-// NWS forecast grids carry snowfallAmount in mm of snow for intervals like "...T18:00:00+00:00/PT6H".
-async function nwsSnowfall(p) {
-  const pt = await getJSON(`https://api.weather.gov/points/${p.lat},${p.lon}`, { Accept: 'application/geo+json' });
-  const grid = await getJSON(pt.properties.forecastGridData, { Accept: 'application/geo+json' });
-  const now = Date.now(), end = now + HOURS * 3600 * 1000;
-  let mm = 0;
-  for (const v of grid.properties.snowfallAmount?.values || []) {
-    const [start, dur] = v.validTime.split('/');
-    const s = Date.parse(start);
-    const hours = Number((dur.match(/(\d+)H/) || [])[1] || 0) + 24 * Number((dur.match(/(\d+)D/) || [])[1] || 0);
-    const e = s + hours * 3600 * 1000;
-    if (e <= now || s >= end) continue;
-    mm += v.value || 0;
-  }
-  return mm / 10;
-}
-
+// Open-Meteo takes many coordinates in one call; send them in chunks to keep URLs short.
 async function snowfall() {
   const results = [];
-  for (const p of points) {
-    let r = { ...p, total: 0, snowing: false, source: null };
-    try {
-      Object.assign(r, await metNorway(p), { source: 'met' });
-    } catch (err) {
-      console.warn(`MET Norway failed for ${p.place}: ${err.message}`);
-    }
-    if (p.center.country === 'US') {
-      try {
-        r.total = await nwsSnowfall(p);
-        r.source = 'nws';
-      } catch (err) {
-        console.warn(`NWS snowfall failed for ${p.place}: ${err.message}`);
-      }
-    }
-    results.push(r);
-    await sleep(250);
+  for (let i = 0; i < points.length; i += 50) {
+    const chunk = points.slice(i, i + 50);
+    const qs = new URLSearchParams({
+      latitude: chunk.map(p => p.lat).join(','),
+      longitude: chunk.map(p => p.lon).join(','),
+      current: 'weather_code,snowfall',
+      hourly: 'snowfall',
+      forecast_hours: '72',
+      timezone: 'GMT'
+    });
+    const data = await getJSON(`https://api.open-meteo.com/v1/forecast?${qs}`);
+    results.push(...(Array.isArray(data) ? data : [data]));
   }
-  return results;
+  return points.map((p, i) => {
+    const r = results[i];
+    const total = r.hourly.snowfall.reduce((a, b) => a + (b || 0), 0);
+    const snowing = SNOW_CODES.has(r.current.weather_code) || r.current.snowfall > 0;
+    return { ...p, total, snowing };
+  });
 }
 
 async function nwsAlerts(p) {
@@ -116,13 +70,12 @@ for (const p of usPoints) {
   } catch (err) {
     console.warn(`NWS alerts failed for ${p.place}: ${err.message}`);
   }
-  await sleep(300);
+  await new Promise(r => setTimeout(r, 300));
 }
 
 const flagged = {};
 for (const c of centers) {
   const mine = snow.filter(s => s.center === c);
-  if (!mine.some(s => s.source)) continue; // no data at all for this center this run
   const top = mine.reduce((a, b) => (b.total > a.total ? b : a));
   const snowingAt = mine.filter(s => s.snowing).map(s => s.place);
   const centerAlerts = [];
@@ -151,7 +104,7 @@ const result = {
   updated: new Date().toISOString(),
   thresholds: { heavyCm: HEAVY_CM, notableCm: NOTABLE_CM, hours: 72 },
   sources: [
-    { name: 'MET Norway', url: 'https://api.met.no/', license: 'CC BY 4.0' },
+    { name: 'Open-Meteo', url: 'https://open-meteo.com/', license: 'CC BY 4.0' },
     { name: 'NOAA National Weather Service', url: 'https://www.weather.gov/' }
   ],
   centers: flagged
@@ -159,7 +112,7 @@ const result = {
 
 console.log(`${points.length} points, ${Object.keys(flagged).length} centers flagged`);
 for (const s of [...snow].sort((a, b) => b.total - a.total).slice(0, 10)) {
-  console.log(`  ${s.total.toFixed(1).padStart(6)} cm  ${s.source || 'none'}  ${s.snowing ? 'snowing' : '       '}  ${s.place} (${s.center.name})`);
+  console.log(`  ${s.total.toFixed(1).padStart(6)} cm  ${s.snowing ? 'snowing' : '       '}  ${s.place} (${s.center.name})`);
 }
 for (const [href, f] of Object.entries(flagged)) console.log(`  FLAG ${f.name}: ${JSON.stringify({ level: f.level, cm: f.snow72cm, snowingAt: f.snowingAt, alerts: f.alerts.map(a => a.event) })}`);
 
