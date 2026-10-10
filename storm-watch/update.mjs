@@ -22,7 +22,7 @@ const round1 = n => Math.round(n * 10) / 10;
 
 const out = process.argv[2];
 const { centers } = JSON.parse(await readFile(new URL('./points.json', import.meta.url)));
-const points = centers.flatMap(c => c.points.map(([lat, lon, place]) => ({ center: c, lat, lon, place })));
+const points = centers.flatMap(c => c.points.map(([lat, lon, place, elev]) => ({ center: c, lat, lon, place, elev })));
 
 async function getJSON(url, headers = {}) {
   for (let attempt = 1; ; attempt++) {
@@ -42,6 +42,7 @@ async function snowfall() {
     const qs = new URLSearchParams({
       latitude: chunk.map(p => p.lat).join(','),
       longitude: chunk.map(p => p.lon).join(','),
+      elevation: chunk.map(p => p.elev).join(','), // forecast for alpine terrain, not the valley floor
       current: 'weather_code,snowfall',
       hourly: 'snowfall',
       forecast_hours: '72',
@@ -128,7 +129,7 @@ const result = {
 };
 
 console.log(`${points.length} points, ${Object.keys(flagged).length} centers flagged`);
-for (const s of [...snow].sort((a, b) => b.total - a.total).slice(0, 10)) {
+for (const s of [...snow].sort((a, b) => b.total - a.total).filter(s => s.total >= 2)) {
   console.log(`  ${s.total.toFixed(1).padStart(6)} cm  ${s.snowing ? 'snowing' : '       '}  ${s.place} (${s.center.name})`);
 }
 for (const [href, f] of Object.entries(flagged)) console.log(`  FLAG ${f.name}: ${JSON.stringify({ level: f.level, cm: f.snow72cm, snowingAt: f.snowingAt, alerts: f.alerts.map(a => a.event) })}`);
