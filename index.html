@@ -632,7 +632,17 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .storms-foot .storms-src { flex: 1 1 18rem; text-align: right; }
 @media (max-width: 34rem) { .storm-mini .host { display: block; } .storm-mini li a { grid-template-columns: 2.4rem 1fr auto; } .storms-foot .storms-src { text-align: left; } }
 .tag { display: inline-block; margin-left: 0.45rem; padding: 0.2rem 0.45rem; border-radius: 99px; font: 500 0.66rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; vertical-align: 0.12em; border: 1px solid var(--line); color: var(--ink); background: var(--surface-hi); }
-.tag.big { border-color: var(--accent); color: var(--accent); }
+.tag.snow { position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.22rem 0.55rem 0.22rem 0.45rem; vertical-align: 0.08em; }
+.tag .flake-icon { width: 0.8rem; height: 0.8rem; flex: none; position: relative; color: #dff1ff; }
+.tag-text { position: relative; }
+.tag-fall { position: absolute; inset: 0; pointer-events: none; }
+.tag-fall i { position: absolute; top: -4px; width: 3px; height: 3px; border-radius: 50%; background: #fff; opacity: 0; animation: tagsnow 2.6s linear infinite; }
+@keyframes tagsnow { 0% { transform: translate(0, 0); opacity: 0; } 15% { opacity: 0.9; } 100% { transform: translate(3px, 1.6rem); opacity: 0; } }
+/* Big storm: hot danger-color badge with a soft glow so it stands out in the list. */
+.tag.big { border: 0; color: #fff; font-weight: 700; letter-spacing: 0.08em; background: linear-gradient(100deg, #ed1c24, #f7941e); box-shadow: 0 0 0 1px rgba(255,255,255,0.18) inset, 0 0 14px rgba(247,148,30,0.45); text-shadow: 0 1px 1px rgba(0,0,0,0.35); }
+.tag.big .flake-icon { color: #fff; }
+@media (prefers-reduced-motion: no-preference) { .tag.big { animation: stormglow 2.8s ease-in-out infinite; } }
+@keyframes stormglow { 50% { box-shadow: 0 0 0 1px rgba(255,255,255,0.25) inset, 0 0 22px rgba(237,28,36,0.6); } }
 footer { border-top: 1px solid var(--line); padding-top: 1.25rem; color: var(--muted); font-size: 0.875rem; display: grid; gap: 0.5rem; max-width: 40rem; margin: 0 auto; text-align: center; }
 footer p { margin: 0; }
 footer strong { color: var(--ink); }
@@ -641,7 +651,7 @@ footer a { color: var(--accent); }
 @keyframes drift { 0% { transform: translate(0,0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translate(34px, 22px); opacity: 0; } }
 .puff { animation: billow 4s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
 @keyframes billow { from { transform: scale(0.94); } to { transform: scale(1.06); } }
-@media (prefers-reduced-motion: reduce) { .puff { animation: none; } .particle { animation: none; opacity: 0.8; } .name { transition: none; } .storms h2::before, .now-dot { animation: none; } .storm-card { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .puff { animation: none; } .particle { animation: none; opacity: 0.8; } .name { transition: none; } .storms h2::before, .now-dot { animation: none; } .storm-card { transition: none; } .tag-fall { display: none; } }
 @media (max-width: 34rem) {
   li a { grid-template-columns: 2.4rem 1fr; }
   .host { display: none; }
@@ -1401,6 +1411,25 @@ footer a { color: var(--accent); }
     var when = new Date(t);
     return ' · until ' + when.toLocaleDateString([], { weekday: 'short' }) + ' ' + when.toLocaleTimeString([], { hour: 'numeric' });
   }
+  // Row tag. Where it is snowing now or a big storm is coming, it gets a snowflake icon and a few flakes drifting down behind the text.
+  var FLAKE = '<svg class="flake-icon" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7"/><path d="M9 4l3 2 3-2M9 20l3-2 3 2M3.5 10.5l3-1.5-.4-3.4M20.5 13.5l-3 1.5.4 3.4M3.5 13.5l3 1.5-.4 3.4M20.5 10.5l-3-1.5.4-3.4"/></g></svg>';
+  function tag(label, big, snow) {
+    var t = el('span', 'tag' + (big ? ' big' : '') + (snow ? ' snow' : ''));
+    if (snow) {
+      var fall = el('span', 'tag-fall'); fall.setAttribute('aria-hidden', 'true');
+      for (var i = 0; i < (big ? 9 : 6); i++) {
+        var s = el('i'); s.style.left = (6 + i * (88 / (big ? 8 : 5))) + '%';
+        s.style.animationDelay = (-(i * 0.73) % 2.6).toFixed(2) + 's';
+        s.style.animationDuration = (2.2 + (i % 3) * 0.5) + 's';
+        if (i % 2) s.style.width = s.style.height = '2px';
+        fall.appendChild(s);
+      }
+      t.appendChild(fall);
+      t.insertAdjacentHTML('beforeend', FLAKE);
+    }
+    t.appendChild(el('span', 'tag-text', label));
+    return t;
+  }
   function nowPill() { var p = el('span', 'pill'); p.appendChild(el('span', 'now-dot')); p.appendChild(document.createTextNode('Snowing now')); return p; }
 
   function card(href, c, code, scale) {
@@ -1467,7 +1496,7 @@ footer a { color: var(--accent); }
       }
       if (row) {
         var label = isBig(c) ? 'Big storm' : c.level || c.alerts.length ? 'Snow coming' : 'Snowing';
-        row.querySelector('.name').insertBefore(el('span', isBig(c) ? 'tag big' : 'tag', label), row.querySelector('.name em'));
+        row.querySelector('.name').insertBefore(tag(label, isBig(c), isBig(c) || c.snowingAt.length > 0), row.querySelector('.name em'));
       }
       // Centers where it is only snowing (no big totals or alerts) share one line instead of a card each.
       if (!c.level && !c.alerts.length) { flurries.push(c); return; }
