@@ -1495,7 +1495,8 @@ footer a { color: var(--accent); }
         var mli = el('li'); mli.appendChild(ma); mini.appendChild(mli);
       }
       if (row) {
-        var label = isBig(c) ? 'Big storm' : c.level || c.alerts.length ? 'Snow coming' : 'Snowing';
+        // Snowing now wins over Snow coming, so the label matches the falling-flake animation.
+        var label = isBig(c) ? 'Big storm' : c.snowingAt.length ? 'Snowing' : 'Snow coming';
         row.querySelector('.name').insertBefore(tag(label, isBig(c), isBig(c) || c.snowingAt.length > 0), row.querySelector('.name em'));
       }
       // Centers where it is only snowing (no big totals or alerts) share one line instead of a card each.
