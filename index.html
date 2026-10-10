@@ -1514,7 +1514,9 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
         // Snow falling now gets the same animated tag as the directory: Big storm under a storm warning, Snowing otherwise.
         mn.appendChild(em); ma.appendChild(mn);
         // Like the directory rows, the tag gets its own column right after the name, centered top to bottom.
-        if (snowing) { ma.classList.add('has-tag'); ma.appendChild(warned ? tag('Big storm', true, true) : tag('Snowing', false, true)); }
+        // Snowing under a storm warning: Big storm. Snowing: Snowing. Storm warning but not snowing yet: Snow coming.
+        var mt = snowing ? (warned ? tag('Big storm', true, true) : tag('Snowing', false, true)) : warned ? tag('Snow coming', false, false) : null;
+        if (mt) { ma.classList.add('has-tag'); ma.appendChild(mt); }
         ma.appendChild(el('span', 'host', c.snow72cm ? '~' + inUnits(c.snow72cm, c.units) + ' ' + c.units : 'Snowing'));
         var mli = el('li'); mli.appendChild(ma); mini.appendChild(mli);
       }
