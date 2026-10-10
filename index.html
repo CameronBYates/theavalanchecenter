@@ -501,6 +501,8 @@
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; background: var(--night); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+#regions section { scroll-margin-top: 1rem; }
 body {
   margin: 0; color: var(--ink); font: 400 1rem/1.55 var(--body);
   background-color: var(--night);
@@ -549,6 +551,12 @@ li a {
 }
 li a:hover .name, li a:focus-visible .name { color: var(--accent); }
 li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
+.jump { display: grid; gap: 0.5rem; justify-items: center; }
+.jump p { font: 500 0.75rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0; }
+.jump ul { display: flex; width: 100%; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+.jump li + li { border: 0; }
+.jump li a { display: inline-block; padding: 0.45rem 0.85rem; border: 1px solid var(--line); border-radius: 99px; color: var(--ink); text-decoration: none; font-size: 0.9rem; background: var(--surface); }
+.jump li a:hover, .jump li a:focus-visible { border-color: var(--accent); color: var(--accent); }
 .code { font: 500 0.78rem/1 var(--mono); color: var(--accent); letter-spacing: 0.04em; }
 .name { font-weight: 500; min-width: 0; transition: color .15s; }
 .name em { display: block; font-style: normal; font-weight: 400; font-size: 0.875rem; color: var(--muted); }
@@ -586,16 +594,37 @@ footer a { color: var(--accent); }
     </div>
   </header>
 
+  <nav class="jump" aria-label="Browse by region">
+    <p>Browse by region</p>
+    <ul>
+      <li><a href="#alaska">Alaska</a></li>
+      <li><a href="#pacific-northwest">Pacific Northwest</a></li>
+      <li><a href="#california">California</a></li>
+      <li><a href="#northern-rockies">Northern Rockies</a></li>
+      <li><a href="#utah-southern-rockies">Utah &amp; Southern Rockies</a></li>
+      <li><a href="#northeast">Northeast</a></li>
+    </ul>
+    <ul>
+      <li><a href="#canada">Canada</a></li>
+      <li><a href="#alps">Alps</a></li>
+      <li><a href="#japan">Japan</a></li>
+      <li><a href="#new-zealand">New Zealand</a></li>
+    </ul>
+  </nav>
+
   <main class="regions" id="regions">
     <section>
-      <h2>National <small>US + Canada</small></h2>
+      <h2>National <small>US + Canada + Alps + Japan + New Zealand</small></h2>
       <ul>
         <li><a href="https://avalanche.org/" target="_blank" rel="noopener"><span class="code">US</span><span class="name">Avalanche.org<em>Forecast map for every US center</em></span><span class="host">avalanche.org</span></a></li>
         <li><a href="https://www.avalanche.ca/" target="_blank" rel="noopener"><span class="code">CA</span><span class="name">Avalanche Canada<em>Forecasts for BC, Alberta, Yukon, and the Parks Canada and Kananaskis regions</em></span><span class="host">avalanche.ca</span></a></li>
+        <li><a href="https://www.avalanches.org/" target="_blank" rel="noopener"><span class="code">EU</span><span class="name">European Avalanche Warning Services<em>Live bulletin map for every European service, including the Alps</em></span><span class="host">avalanches.org</span></a></li>
+        <li><a href="https://nadare.jp/" target="_blank" rel="noopener"><span class="code">JP</span><span class="name">Japan Avalanche Network<em>Niseko, Taisetsu-Tokachi, Hakuba, Myoko, Kagura-Tanigawa, Tateyama</em></span><span class="host">nadare.jp</span></a></li>
+        <li><a href="https://www.avalanche.net.nz/" target="_blank" rel="noopener"><span class="code">NZ</span><span class="name">NZ Avalanche Advisory<em>13 backcountry regions incl. Aoraki/Mt Cook, Aspiring, Wanaka, Queenstown, Tongariro</em></span><span class="host">avalanche.net.nz</span></a></li>
       </ul>
     </section>
 
-    <section>
+    <section id="alaska">
       <h2>Alaska</h2>
       <ul>
         <li><a href="https://www.cnfaic.org/" target="_blank" rel="noopener"><span class="code">AK</span><span class="name">Chugach National Forest Avalanche Information Center<em>Turnagain Pass, Girdwood, Summit Lake</em></span><span class="host">cnfaic.org</span></a></li>
@@ -605,7 +634,7 @@ footer a { color: var(--accent); }
       </ul>
     </section>
 
-    <section>
+    <section id="pacific-northwest">
       <h2>Pacific Northwest</h2>
       <ul>
         <li><a href="https://nwac.us/" target="_blank" rel="noopener"><span class="code">WA</span><span class="name">Northwest Avalanche Center<em>Washington Cascades, Olympics, Mt Hood</em></span><span class="host">nwac.us</span></a></li>
@@ -614,7 +643,7 @@ footer a { color: var(--accent); }
       </ul>
     </section>
 
-    <section>
+    <section id="california">
       <h2>California</h2>
       <ul>
         <li><a href="https://www.shastaavalanche.org/" target="_blank" rel="noopener"><span class="code">CA</span><span class="name">Mount Shasta Avalanche Center<em>Mt Shasta</em></span><span class="host">shastaavalanche.org</span></a></li>
@@ -624,7 +653,7 @@ footer a { color: var(--accent); }
       </ul>
     </section>
 
-    <section>
+    <section id="northern-rockies">
       <h2>Northern Rockies</h2>
       <ul>
         <li><a href="https://www.idahopanhandleavalanche.org/" target="_blank" rel="noopener"><span class="code">ID</span><span class="name">Idaho Panhandle Avalanche Center<em>Selkirks, Cabinets, St. Regis Basin</em></span><span class="host">idahopanhandleavalanche.org</span></a></li>
@@ -637,7 +666,7 @@ footer a { color: var(--accent); }
       </ul>
     </section>
 
-    <section>
+    <section id="utah-southern-rockies">
       <h2>Utah &amp; Southern Rockies</h2>
       <ul>
         <li><a href="https://utahavalanchecenter.org/" target="_blank" rel="noopener"><span class="code">UT</span><span class="name">Utah Avalanche Center<em>Wasatch, Uintas, Logan, Ogden, Moab, Skyline</em></span><span class="host">utahavalanchecenter.org</span></a></li>
@@ -648,21 +677,21 @@ footer a { color: var(--accent); }
       </ul>
     </section>
 
-    <section>
+    <section id="northeast">
       <h2>Northeast</h2>
       <ul>
         <li><a href="https://www.mountwashingtonavalanchecenter.org/" target="_blank" rel="noopener"><span class="code">NH</span><span class="name">Mount Washington Avalanche Center<em>Presidential Range, Tuckerman and Huntington Ravines</em></span><span class="host">mountwashingtonavalanchecenter.org</span></a></li>
       </ul>
     </section>
 
-    <section>
+    <section id="canada">
       <h2>Canada</h2>
       <ul>
         <li><a href="https://www.avalanche.ca/map" target="_blank" rel="noopener"><span class="code">BC</span><span class="name">Avalanche Canada forecast map<em>British Columbia, Alberta Rockies, Yukon; includes Parks Canada (Banff, Jasper, Glacier, Yoho, Kootenay, Waterton) and Kananaskis Country</em></span><span class="host">avalanche.ca</span></a></li>
         <li><a href="https://www.avalanchequebec.ca/" target="_blank" rel="noopener"><span class="code">QC</span><span class="name">Avalanche Québec<em>Chic-Chocs, Gaspésie</em></span><span class="host">avalanchequebec.ca</span></a></li>
       </ul>
     </section>
-    <section>
+    <section id="alps">
       <h2>Alps <small>Europe</small></h2>
       <ul>
         <li><a href="https://www.avalanches.org/" target="_blank" rel="noopener"><span class="code">EU</span><span class="name">European Avalanche Warning Services<em>Live bulletin map for every European service</em></span><span class="host">avalanches.org</span></a></li>
@@ -681,7 +710,7 @@ footer a { color: var(--accent); }
       </ul>
     </section>
 
-    <section>
+    <section id="japan">
       <h2>Japan</h2>
       <ul>
         <li><a href="https://nadare.jp/" target="_blank" rel="noopener"><span class="code">JP</span><span class="name">Japan Avalanche Network<em>Niseko, Taisetsu-Tokachi, Hakuba, Myoko, Kagura-Tanigawa, Tateyama</em></span><span class="host">nadare.jp</span></a></li>
@@ -689,7 +718,7 @@ footer a { color: var(--accent); }
       </ul>
     </section>
 
-    <section>
+    <section id="new-zealand">
       <h2>New Zealand</h2>
       <ul>
         <li><a href="https://www.avalanche.net.nz/" target="_blank" rel="noopener"><span class="code">NZ</span><span class="name">NZ Avalanche Advisory<em>13 backcountry regions incl. Aoraki/Mt Cook, Aspiring, Wanaka, Queenstown, Tongariro</em></span><span class="host">avalanche.net.nz</span></a></li>
@@ -1172,6 +1201,11 @@ footer a { color: var(--accent); }
       if (shown) any = true;
     });
     empty.hidden = any;
+  });
+  document.querySelectorAll('.jump a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (q.value) { q.value = ''; q.dispatchEvent(new Event('input')); }
+    });
   });
 })();
 </script>
