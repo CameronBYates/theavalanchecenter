@@ -622,6 +622,7 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .storm-detail { display: grid; gap: 0.85rem; }
 .storm-mini .host { color: var(--accent); white-space: nowrap; }
 .storm-mini .alert-dot { display: inline-block; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--high); margin-right: 0.4rem; vertical-align: 0.1em; }
+.storm-mini .name > .tag { vertical-align: middle; margin-top: -0.2rem; }
 .storm-mini em.warn { color: #ff5a5f; font-weight: 600; }
 .storm-mini em.warn .alert-dot { animation: redpulse 1.8s ease-out infinite; }
 .storm-mini em.warn .alert-dot + .alert-dot, .storm-mini em.warn .alert-dot:last-child { margin: 0 0 0 0.4rem; }
@@ -1505,11 +1506,14 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
         var ma = el('a'); ma.href = href; ma.target = '_blank'; ma.rel = 'noopener';
         ma.appendChild(el('span', 'code', row ? row.querySelector('.code').textContent : ''));
         var mn = el('span', 'name', c.name);
-        var note = c.alerts.length ? c.alerts[0].event : c.snowingAt.length ? 'Snowing now' : c.place ? 'Heaviest near ' + c.place : '';
+        var snowing = c.snowingAt.length > 0, warned = c.alerts.length && BIG_ALERTS.indexOf(c.alerts[0].event) !== -1;
+        var note = c.alerts.length ? c.alerts[0].event : snowing ? 'Near ' + c.snowingAt[0] : c.place ? 'Heaviest near ' + c.place : '';
         var em = el('em', '', note);
         if (c.alerts.length) em.insertBefore(el('span', 'alert-dot'), em.firstChild);
         // Storm-level warnings (Winter Storm Warning and the like) read in red with a pulsing dot on each side.
         if (c.alerts.length && BIG_ALERTS.indexOf(c.alerts[0].event) !== -1) { em.classList.add('warn'); em.appendChild(el('span', 'alert-dot')); }
+        // Snow falling now gets the same animated tag as the directory: Big storm under a storm warning, Snowing otherwise.
+        if (snowing) mn.appendChild(warned ? tag('Big storm', true, true) : tag('Snowing', false, true));
         mn.appendChild(em); ma.appendChild(mn);
         ma.appendChild(el('span', 'host', c.snow72cm ? '~' + inUnits(c.snow72cm, c.units) + ' ' + c.units : 'Snowing'));
         var mli = el('li'); mli.appendChild(ma); mini.appendChild(mli);
