@@ -619,6 +619,18 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .deepest .bar i { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
 .deepest .dv { font: 500 0.8rem/1 var(--mono); text-align: right; font-variant-numeric: tabular-nums; }
 .storms-quiet { color: var(--muted); margin: 0; }
+.storm-detail { display: grid; gap: 0.85rem; }
+.storm-mini .host { color: var(--accent); white-space: nowrap; }
+.storm-mini .alert-dot { display: inline-block; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--high); margin-right: 0.4rem; vertical-align: 0.1em; }
+.storms-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem 1rem; }
+.storms-toggle {
+  font: 500 0.72rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink);
+  background: var(--surface-hi); border: 1px solid var(--line); border-radius: 99px; padding: 0.55rem 0.85rem; cursor: pointer;
+}
+.storms-toggle:hover { border-color: var(--accent); }
+.storms-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.storms-foot .storms-src { flex: 1 1 18rem; text-align: right; }
+@media (max-width: 34rem) { .storm-mini .host { display: block; } .storm-mini li a { grid-template-columns: 2.4rem 1fr auto; } .storms-foot .storms-src { text-align: left; } }
 .tag { display: inline-block; margin-left: 0.45rem; padding: 0.2rem 0.45rem; border-radius: 99px; font: 500 0.66rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; vertical-align: 0.12em; border: 1px solid var(--line); color: var(--ink); background: var(--surface-hi); }
 .tag.big { border-color: var(--accent); color: var(--accent); }
 footer { border-top: 1px solid var(--line); padding-top: 1.25rem; color: var(--muted); font-size: 0.875rem; display: grid; gap: 0.5rem; max-width: 40rem; margin: 0 auto; text-align: center; }
@@ -654,19 +666,6 @@ footer a { color: var(--accent); }
     </div>
   </header>
 
-  <aside class="storms" id="storms" aria-labelledby="storms-title" hidden>
-    <div class="storms-head"><h2 id="storms-title">Storm watch</h2><small>Next 72 hours</small></div>
-    <p class="storms-sub">Heavy snow in the forecast or falling now near these centers. This is weather data, not an avalanche forecast: open a center for its official forecast.</p>
-    <div class="storm-tabs" id="storm-tabs" aria-label="Filter by region" hidden></div>
-    <div class="storm-cards" id="storm-cards"></div>
-    <p class="storms-sub storms-flurries" id="storm-flurries" hidden></p>
-    <div class="deepest" id="deepest" hidden>
-      <h3>Deepest forecasts worldwide</h3>
-      <ol id="deepest-list"></ol>
-    </div>
-    <p class="storms-src">Snowfall forecast by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0). US winter alerts from <a href="https://www.weather.gov/" target="_blank" rel="noopener">NOAA's National Weather Service</a>. Checked every 3 hours.</p>
-  </aside>
-
   <nav class="jump" aria-label="Browse by region">
     <p>Browse by region</p>
     <ul>
@@ -684,6 +683,25 @@ footer a { color: var(--accent); }
       <li><a href="#new-zealand">New Zealand</a></li>
     </ul>
   </nav>
+
+  <aside class="storms" id="storms" aria-labelledby="storms-title" hidden>
+    <div class="storms-head"><h2 id="storms-title">Storm watch</h2><small id="storms-count">Next 72 hours</small></div>
+    <p class="storms-sub">Big snow in the forecast or falling now. Weather data, not an avalanche forecast: open a center for its official forecast.</p>
+    <ul class="storm-mini" id="storm-mini"></ul>
+    <div class="storm-detail" id="storm-detail" hidden>
+      <div class="storm-tabs" id="storm-tabs" aria-label="Filter by region" hidden></div>
+      <div class="storm-cards" id="storm-cards"></div>
+      <p class="storms-sub storms-flurries" id="storm-flurries" hidden></p>
+      <div class="deepest" id="deepest" hidden>
+        <h3>Deepest forecasts worldwide</h3>
+        <ol id="deepest-list"></ol>
+      </div>
+    </div>
+    <div class="storms-foot">
+      <button type="button" class="storms-toggle" id="storms-toggle" aria-expanded="false" aria-controls="storm-detail">Show storm details</button>
+      <p class="storms-src">Snowfall forecast by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0). US winter alerts from <a href="https://www.weather.gov/" target="_blank" rel="noopener">NOAA's National Weather Service</a>. Checked every 3 hours.</p>
+    </div>
+  </aside>
 
   <main class="regions" id="regions">
     <section>
@@ -1351,9 +1369,22 @@ footer a { color: var(--accent); }
     // One shared bar scale across cards, so a tall bar means the same amount everywhere.
     var scale = 5;
     hrefs.forEach(function (h) { (d.centers[h].bins || []).forEach(function (v) { if (v > scale) scale = v; }); });
+    var mini = document.getElementById('storm-mini');
     hrefs.forEach(function (href) {
       var c = d.centers[href];
       var row = document.querySelector('#regions a[href="' + href + '"]');
+      // The collapsed view lists the top three as one-line rows, styled like the directory below.
+      if (mini.children.length < 3) {
+        var ma = el('a'); ma.href = href; ma.target = '_blank'; ma.rel = 'noopener';
+        ma.appendChild(el('span', 'code', row ? row.querySelector('.code').textContent : ''));
+        var mn = el('span', 'name', c.name);
+        var note = c.alerts.length ? c.alerts[0].event : c.snowingAt.length ? 'Snowing now' : c.place ? 'Heaviest near ' + c.place : '';
+        var em = el('em', '', note);
+        if (c.alerts.length) em.insertBefore(el('span', 'alert-dot'), em.firstChild);
+        mn.appendChild(em); ma.appendChild(mn);
+        ma.appendChild(el('span', 'host', c.snow72cm ? '~' + inUnits(c.snow72cm, c.units) + ' ' + c.units : 'Snowing'));
+        var mli = el('li'); mli.appendChild(ma); mini.appendChild(mli);
+      }
       if (row) {
         var label = isBig(c) ? 'Big storm' : c.level || c.alerts.length ? 'Snow coming' : 'Snowing';
         row.querySelector('.name').insertBefore(el('span', isBig(c) ? 'tag big' : 'tag', label), row.querySelector('.name em'));
@@ -1404,6 +1435,17 @@ footer a { color: var(--accent); }
       tabs.hidden = false;
     }
     show('All');
+    var count = hrefs.length;
+    document.getElementById('storms-count').textContent = count ? count + (count === 1 ? ' center' : ' centers') + ' · next 72 h' : 'Next 72 hours';
+    if (!count) mini.appendChild(el('li', 'storms-quiet', 'Quiet right now: no big storms in the forecast near any center.'));
+    var toggle = document.getElementById('storms-toggle');
+    var detail = document.getElementById('storm-detail');
+    toggle.addEventListener('click', function () {
+      var open = detail.hidden;
+      detail.hidden = !open; mini.hidden = open;
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Hide storm details' : 'Show storm details';
+    });
     box.hidden = false;
   }).catch(function () {});
 })();
