@@ -16,6 +16,10 @@ const NWS_EVENTS = new Set([
 ]);
 const UA = 'theavalanchecenter.com storm watch (https://theavalanchecenter.com)';
 
+const REGIONS = { US: 'North America', CA: 'North America', JP: 'Japan', NZ: 'New Zealand' }; // everything else is Europe
+const region = country => REGIONS[country] || 'Europe';
+const round1 = n => Math.round(n * 10) / 10;
+
 const out = process.argv[2];
 const { centers } = JSON.parse(await readFile(new URL('./points.json', import.meta.url)));
 const points = centers.flatMap(c => c.points.map(([lat, lon, place]) => ({ center: c, lat, lon, place })));
@@ -29,6 +33,7 @@ async function getJSON(url, headers = {}) {
   }
 }
 
+let binsStart = null; // GMT start of the first 6-hour bin
 // Open-Meteo takes many coordinates in one call; send them in chunks to keep URLs short.
 async function snowfall() {
   const results = [];
@@ -45,11 +50,15 @@ async function snowfall() {
     const data = await getJSON(`https://api.open-meteo.com/v1/forecast?${qs}`);
     results.push(...(Array.isArray(data) ? data : [data]));
   }
+  binsStart = results[0]?.hourly?.time?.[0] ? results[0].hourly.time[0] + 'Z' : null;
   return points.map((p, i) => {
     const r = results[i];
-    const total = r.hourly.snowfall.reduce((a, b) => a + (b || 0), 0);
+    const hourly = r.hourly.snowfall.map(v => v || 0);
+    const total = hourly.reduce((a, b) => a + b, 0);
+    // Twelve 6-hour bins show when the snow arrives; the page draws them as a small bar chart.
+    const bins = Array.from({ length: 12 }, (_, b) => round1(hourly.slice(b * 6, b * 6 + 6).reduce((a, v) => a + v, 0)));
     const snowing = SNOW_CODES.has(r.current.weather_code) || r.current.snowfall > 0;
-    return { ...p, total, snowing };
+    return { ...p, total, bins, snowing };
   });
 }
 
@@ -92,9 +101,11 @@ for (const c of centers) {
   flagged[c.href] = {
     name: c.name,
     units: c.units,
+    region: region(c.country),
     level,
     snow72cm: level ? cm : null,
     place: level ? top.place : null,
+    bins: level ? top.bins : null,
     snowingAt,
     alerts: centerAlerts
   };
@@ -103,11 +114,17 @@ for (const c of centers) {
 const result = {
   updated: new Date().toISOString(),
   thresholds: { heavyCm: HEAVY_CM, notableCm: NOTABLE_CM, hours: 72 },
+  binsStart,
   sources: [
     { name: 'Open-Meteo', url: 'https://open-meteo.com/', license: 'CC BY 4.0' },
     { name: 'NOAA National Weather Service', url: 'https://www.weather.gov/' }
   ],
-  centers: flagged
+  centers: flagged,
+  // The five deepest 72-hour forecasts anywhere, flagged or not, so the panel has something to show between storms.
+  deepest: [...snow].sort((a, b) => b.total - a.total)
+    .filter((s, i, all) => all.findIndex(t => t.center === s.center) === i)
+    .slice(0, 5)
+    .map(s => ({ href: s.center.href, name: s.center.name, place: s.place, region: region(s.center.country), units: s.center.units, cm: Math.round(s.total) }))
 };
 
 console.log(`${points.length} points, ${Object.keys(flagged).length} centers flagged`);
