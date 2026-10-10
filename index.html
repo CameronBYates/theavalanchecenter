@@ -647,6 +647,7 @@ footer a { color: var(--accent); }
   .host { display: none; }
   .storms { padding-inline: 1rem; }
 }
+  .name .also { display: block; margin-top: .2rem; font-size: .8rem; font-weight: 600; color: #fff200; }
   body.searching .jump, body.searching .storms { display: none; }
 </style>
 </head>
@@ -663,7 +664,7 @@ footer a { color: var(--accent); }
     </div>
     <div class="search">
       <label for="q">Find a center</label>
-      <input id="q" type="search" placeholder="State, country, or range" autocomplete="off">
+      <input id="q" type="search" placeholder="State, range, or ski resort" autocomplete="off">
     </div>
   </header>
 
@@ -1282,11 +1283,53 @@ footer a { color: var(--accent); }
   var NAMES = {
     US: 'united states usa america', CA: 'california', AK: 'alaska anchorage', WA: 'washington seattle',
     OR: 'oregon', ID: 'idaho', MT: 'montana', WY: 'wyoming', UT: 'utah salt lake city park city',
-    CO: 'colorado denver aspen vail telluride summit county', NM: 'new mexico', AZ: 'arizona',
+    CO: 'colorado denver summit county', NM: 'new mexico', AZ: 'arizona',
     NH: 'new hampshire white mountains new england', BC: 'canada', QC: 'quebec canada',
     EU: 'europe', FR: 'france chamonix', CH: 'switzerland swiss', AT: 'austria', IT: 'italy',
     DE: 'germany', SI: 'slovenia', JP: 'japan hokkaido', NZ: 'new zealand'
   };
+  // Ski resorts and well-known backcountry zones inside each center's area, keyed by the row's site.
+  var RESORTS = {
+    'cnfaic.org': 'Alyeska, Girdwood, Turnagain Pass, Hatcher, Seward, Summit Lake, Kenai',
+    'hpavalanche.org': 'Hatcher Pass, Skeetawk, Palmer, Wasilla',
+    'alaskasnow.org': 'Valdez, Thompson Pass, Haines, Fairbanks, Moose Mountain, Eaglecrest, Mount Eyak, Cordova, Anchorage, Hilltop, Arctic Valley',
+    'coastalakavalanche.org': 'Eaglecrest, Juneau',
+    'nwac.us': 'Mt Baker, Stevens Pass, Snoqualmie, Summit at Snoqualmie, Alpental, Crystal Mountain, White Pass, Mission Ridge, Mt Hood Meadows, Timberline, Mt Hood Skibowl, Cooper Spur, Hurricane Ridge, Loup Loup, Leavenworth, Methow, Washington Pass',
+    'coavalanche.org': 'Mt Bachelor, Hoodoo, Willamette Pass, Bend, Three Sisters, Tumalo',
+    'wallowaavalanchecenter.org': 'Ferguson Ridge, Joseph, Anthony Lakes, Wallowa',
+    'shastaavalanche.org': 'Mt Shasta Ski Park, Mount Shasta',
+    'sierraavalanchecenter.org': 'Palisades Tahoe, Squaw Valley, Alpine Meadows, Northstar, Heavenly, Kirkwood, Sugar Bowl, Sierra-at-Tahoe, Mt Rose, Diamond Peak, Homewood, Boreal, Soda Springs, Donner Ski Ranch, Tahoe Donner, Granlibakken, Truckee, Donner Pass, Carson Pass',
+    'bridgeportavalanchecenter.org': 'Dodge Ridge, Bear Valley, Sonora Pass, Twin Lakes, Virginia Lakes',
+    'esavalanche.org': 'Mammoth Mountain, June Mountain, Mammoth Lakes, Bishop, Rock Creek, Tioga Pass',
+    'idahopanhandleavalanche.org': 'Schweitzer, Lookout Pass, Silver Mountain, Sandpoint, Coeur d’Alene, Coeur d\'Alene',
+    'payetteavalanche.org': 'Brundage, Tamarack, McCall, Bogus Basin',
+    'sawtoothavalanche.com': 'Sun Valley, Bald Mountain, Ketchum, Galena, Stanley, Soldier Mountain',
+    'flatheadavalanche.org': 'Whitefish Mountain, Big Mountain, Blacktail Mountain, Glacier National Park, Essex, Marias Pass',
+    'missoulaavalanche.org': 'Montana Snowbowl, Snowbowl, Lost Trail, Discovery, Lolo Pass, Missoula',
+    'mtavalanche.com': 'Big Sky, Moonlight Basin, Yellowstone Club, Bridger Bowl, Cooke City, West Yellowstone, Hyalite',
+    'jhavalanche.org': 'Jackson Hole, Grand Targhee, Snow King, Teton Pass, Togwotee, Driggs, Teton Village, Grand Teton',
+    'utahavalanchecenter.org': 'Alta, Snowbird, Brighton, Solitude, Park City, Deer Valley, Canyons, Snowbasin, Powder Mountain, Nordic Valley, Sundance, Brian Head, Eagle Point, Beaver Mountain, Cherry Peak, Woodward Park City, Little Cottonwood, Big Cottonwood, Salt Lake City, Provo, La Sal, Moab',
+    'avalanche.state.co.us': 'Aspen, Snowmass, Aspen Highlands, Buttermilk, Vail, Beaver Creek, Breckenridge, Keystone, Arapahoe Basin, A-Basin, Copper Mountain, Loveland, Winter Park, Steamboat, Telluride, Silverton, Purgatory, Durango, Wolf Creek, Monarch, Ski Cooper, Eldora, Granby Ranch, Sunlight, Powderhorn, Howelsen, Echo Mountain, Berthoud Pass, Red Mountain Pass, Rocky Mountain National Park, Leadville, Crested Butte',
+    'cbavalanchecenter.org': 'Crested Butte, Gunnison, Kebler Pass, Paradise Divide',
+    'taosavalanchecenter.org': 'Taos Ski Valley, Angel Fire, Red River, Ski Santa Fe, Sipapu, Pajarito',
+    'kachinapeaks.org': 'Arizona Snowbowl, Snowbowl, Humphreys Peak',
+    'mountwashingtonavalanchecenter.org': 'Tuckerman Ravine, Huntington Ravine, Wildcat, Cannon, Bretton Woods, Attitash, Loon, Gorham, Pinkham Notch',
+    'avalanche.ca': 'Whistler, Blackcomb, Revelstoke, Rogers Pass, Kicking Horse, Golden, Fernie, Red Mountain, Rossland, Whitewater, Nelson, Big White, Silver Star, Sun Peaks, Panorama, Kimberley, Apex, Mt Washington Alpine, Cypress, Grouse, Seymour, Baldy, Shames, Hudson Bay Mountain, Powder King, Sasquatch, Manning Park, Mount Cain, Banff, Lake Louise, Sunshine Village, Mt Norquay, Norquay, Jasper, Marmot Basin, Castle Mountain, Nakiska, Kananaskis, Yoho, Kootenay, Waterton, Glacier National Park, Whitehorse, Yukon, Haines Pass, Coquihalla, Duffey Lake, Sea to Sky, Squamish, Pemberton, Valemount, Kootenay Pass, Kaslo',
+    'avalanchequebec.ca': 'Chic-Chocs, Gaspesie, Mont Albert, Mont Lyall, Mont Hog\'s Back, Murdochville, Mont-Sainte-Anne, Tremblant',
+    'meteofrance.com': 'Chamonix, Mont Blanc, Megeve, Val d\'Isere, Tignes, Courchevel, Meribel, Val Thorens, Les Arcs, La Plagne, Les Deux Alpes, La Grave, Alpe d\'Huez, Serre Chevalier, Morzine, Avoriaz, Les Gets, Flaine, La Clusaz, Portes du Soleil, Trois Vallees',
+    'slf.ch': 'Zermatt, Verbier, St. Moritz, Davos, Klosters, Laax, Engelberg, Andermatt, Saas-Fee, Crans-Montana, Gstaad, Grindelwald, Wengen, Murren, Arosa, Lenzerheide, Champery, Disentis',
+    'avalanche.report': 'Innsbruck, Kitzbuhel, Ischgl, St. Anton, Solden, Obergurgl, Mayrhofen, Hintertux, Stubai, Seefeld, Serfaus, Val Gardena, Alta Badia, Dolomites, Cortina, Madonna di Campiglio, Kronplatz',
+    'vorarlberg.at': 'Lech, Zurs, Warth, Schroecken, Stuben, Arlberg, Montafon, Silvretta',
+    'lawine.salzburg.at': 'Saalbach, Hinterglemm, Zell am See, Kaprun, Obertauern, Bad Gastein, Flachau',
+    'aineva.it': 'Courmayeur, Cervinia, Monterosa, Alagna, La Thuile, Livigno, Bormio, Sestriere, Via Lattea, Dolomites, Cortina',
+    'lawinenwarndienst.bayern.de': 'Garmisch-Partenkirchen, Zugspitze, Oberstdorf, Berchtesgaden',
+    'meteo.si': 'Kranjska Gora, Vogel, Kanin, Krvavec, Triglav',
+    'nadare.jp': 'Niseko, Rusutsu, Kiroro, Furano, Asahidake, Kamui, Hakuba, Happo-one, Cortina, Myoko, Nozawa Onsen, Shiga Kogen, Madarao, Kagura, Naeba, Tanigawa, Minakami, Tateyama, Hakkoda, Zao, Appi',
+    'niseko.nadare.info': 'Grand Hirafu, Hanazono, Annupuri, Niseko Village, Moiwa',
+    'avalanche.net.nz': 'Mt Hutt, Coronet Peak, The Remarkables, Cardrona, Treble Cone, Mt Ruapehu, Whakapapa, Turoa, Craigieburn, Temple Basin, Broken River, Porters, Mt Olympus, Mt Dobson, Ohau, Roundhill, Arthur\'s Pass, Mt Cook, Milford'
+  };
+  // Lowercase and drop accents so "Val d'Isère" and "val d'isere" both match.
+  function norm(t) { return t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[\u2019]/g, "'").replace(/\s+/g, ' '); }
   var rows = [];
   sections.forEach(function (s) {
     var region = s.querySelector('h2').textContent;
@@ -1294,7 +1337,10 @@ footer a { color: var(--accent); }
       var codeEl = li.querySelector('.code'), code = codeEl ? codeEl.textContent.trim() : '';
       var extra = NAMES[code] || '';
       if (code === 'CA' && /canada/i.test(li.textContent)) extra = 'canada';
-      rows.push({ li: li, s: s, code: code.toLowerCase(), text: (li.textContent + ' ' + region + ' ' + extra).toLowerCase().replace(/\s+/g, ' ') });
+      var hostEl = li.querySelector('.host'), list = (RESORTS[hostEl ? hostEl.textContent.trim() : ''] || '').split(', ').filter(Boolean);
+      var hint = document.createElement('span'); hint.className = 'also'; hint.hidden = true;
+      var name = li.querySelector('.name'); if (name) name.appendChild(hint);
+      rows.push({ li: li, s: s, code: code.toLowerCase(), hint: hint, resorts: list, text: norm(li.textContent + ' ' + region + ' ' + extra + ' ' + list.join(' ')) });
     });
   });
   function matches(r, term) {
@@ -1303,12 +1349,16 @@ footer a { color: var(--accent); }
     return r.text.indexOf(term) !== -1;
   }
   function run() {
-    var term = q.value.trim().toLowerCase().replace(/\s+/g, ' ');
+    var term = norm(q.value.trim());
     var any = false, shown = new Map();
     document.body.classList.toggle('searching', !!term);
     rows.forEach(function (r) {
       var hit = !term || matches(r, term);
       r.li.hidden = !hit;
+      // When the match came from a resort name, say so on the row: "Covers Alta".
+      var found = hit && term.length > 2 && r.resorts.filter(function (x) { return norm(x).indexOf(term) !== -1; });
+      r.hint.hidden = !(found && found.length);
+      if (found && found.length) r.hint.textContent = 'Covers ' + found.slice(0, 3).join(', ');
       if (hit) shown.set(r.s, true);
     });
     sections.forEach(function (s) { s.hidden = !shown.has(s); if (shown.has(s)) any = true; });
