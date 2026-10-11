@@ -624,6 +624,8 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .storm-mini .alert-dot { display: inline-block; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--high); margin-right: 0.4rem; vertical-align: 0.1em; }
 /* Teaser tags line up with the top of the center name lettering (half-leading plus ascent minus cap height). */
 .storm-mini li a > .tag { align-self: start; margin-top: 0.4rem; }
+.storm-mini .tag.warned { position: relative; border-color: transparent; }
+.tag-outline { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 /* In Storm watch, Big storm matches the size of the other tags. */
 .storm-mini .tag.big { font-size: .81rem; padding: .36rem .77rem .36rem .55rem; gap: .38rem; }
 .storm-mini .tag.big .flake-icon { width: 1.02rem; height: 1.02rem; }
@@ -724,6 +726,7 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
   <aside class="storms" id="storms" aria-labelledby="storms-title" hidden>
     <div class="storms-head"><h2 id="storms-title">Storm watch</h2><small id="storms-count">Next 72 hours</small></div>
     <p class="storms-sub">Big snow in the forecast or falling now. Weather data, not an avalanche forecast: open a center for its official forecast.</p>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="warn-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ed1c24"/><stop offset="1" stop-color="#f7941e"/></linearGradient></defs></svg>
     <ul class="storm-mini" id="storm-mini"></ul>
     <div class="storm-detail" id="storm-detail" hidden>
       <div class="storm-tabs" id="storm-tabs" aria-label="Filter by region" hidden></div>
@@ -1454,6 +1457,18 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
     t.appendChild(el('span', 'tag-text', label));
     return t;
   }
+  // Storm watch only: Snow coming under a storm warning gets a dashed outline in the Storming now red-to-orange.
+  // A CSS border can't be both dashed and a gradient, so the outline is a small SVG drawn over the tag.
+  function warnOutline(t) {
+    t.classList.add('warned');
+    t.insertAdjacentHTML('afterbegin', '<svg class="tag-outline" aria-hidden="true"><rect x="0.75" y="0.75" fill="none" stroke="url(#warn-grad)" stroke-width="1.5" stroke-dasharray="4 3"/></svg>');
+    // Size the outline to the tag once it is on the page, with pill-shaped ends.
+    requestAnimationFrame(function () {
+      var r = t.querySelector('.tag-outline rect'), w = t.offsetWidth - 1.5, ht = t.offsetHeight - 1.5;
+      if (w > 0 && ht > 0) { r.setAttribute('width', w); r.setAttribute('height', ht); r.setAttribute('rx', ht / 2); r.setAttribute('ry', ht / 2); }
+    });
+    return t;
+  }
   function nowPill() { var p = el('span', 'pill'); p.appendChild(el('span', 'now-dot')); p.appendChild(document.createTextNode('Snowing now')); return p; }
 
   function card(href, c, code, scale) {
@@ -1521,7 +1536,7 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
         mn.appendChild(em); ma.appendChild(mn);
         // Like the directory rows, the tag gets its own column right after the name, centered top to bottom.
         // Snowing under a storm warning: Storming now. Snowing: Snowing. Storm warning but not snowing yet: Snow coming.
-        var mt = snowing ? (warned ? tag('Storming now', true, true) : tag('Snowing', false, true)) : warned ? tag('Snow coming', false, false) : null;
+        var mt = snowing ? (warned ? tag('Storming now', true, true) : tag('Snowing', false, true)) : warned ? warnOutline(tag('Snow coming', false, false)) : null;
         if (mt) { ma.classList.add('has-tag'); ma.appendChild(mt); }
         ma.appendChild(el('span', 'host', c.snow72cm ? '~' + inUnits(c.snow72cm, c.units) + ' ' + c.units : 'Snowing'));
         var mli = el('li'); mli.appendChild(ma); mini.appendChild(mli);
