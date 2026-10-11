@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-11T06:41:32.597Z",
+ "updated": "2026-10-11T09:34:34.944Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-11T06:00Z",
+ "binsStart": "2026-10-11T09:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -35,23 +35,10 @@
    "name": "Hatcher Pass Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 15,
-   "place": "Hatcher Pass",
-   "bins": [
-    1.9,
-    2.7,
-    6.2,
-    1,
-    1.4,
-    1.7,
-    0.3,
-    0.8,
-    0,
-    0,
-    0.3,
-    0
-   ],
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
    "snowingAt": [
     "Hatcher Pass"
    ],
@@ -61,22 +48,22 @@
    "name": "Alaska Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "level": "heavy",
-   "snow72cm": 30,
+   "level": "notable",
+   "snow72cm": 25,
    "place": "Thompson Pass",
    "bins": [
-    4.3,
     4.1,
-    4.3,
+    3.9,
+    4,
     0.8,
-    0.3,
-    0.9,
-    0.3,
-    0.3,
-    0.8,
-    1.5,
-    4.6,
-    9.6
+    2,
+    0.1,
+    0,
+    0,
+    0.4,
+    1.7,
+    3.8,
+    4.1
    ],
    "snowingAt": [
     "Thompson Pass"
@@ -91,12 +78,12 @@
    "snow72cm": 15,
    "place": "Marias Pass",
    "bins": [
-    1.6,
-    3.3,
-    2.9,
+    2.8,
     3.2,
+    4,
     4.3,
-    1.1,
+    1.6,
+    0,
     0,
     0,
     0,
@@ -114,21 +101,34 @@
     }
    ]
   },
+  "https://missoulaavalanche.org/": {
+   "name": "West Central Montana Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Lolo Pass"
+   ],
+   "alerts": []
+  },
   "https://www.mtavalanche.com/": {
    "name": "Gallatin NF Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 15,
    "place": "Big Sky",
    "bins": [
-    1.7,
     0.8,
-    7,
-    7.8,
-    5.5,
+    5,
+    6,
+    3.8,
     0,
     0,
+    0.3,
     0,
     0,
     0,
@@ -149,21 +149,21 @@
    "name": "Utah Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 25,
+   "level": "heavy",
+   "snow72cm": 35,
    "place": "Uintas",
    "bins": [
-    1.8,
-    2.1,
-    0.3,
-    0.2,
-    2.7,
-    1.3,
-    6.4,
-    5.4,
-    2.2,
-    0.3,
+    0.9,
+    0.1,
+    0.7,
+    1,
+    8.6,
+    4.6,
+    8.3,
     4.8,
+    0.4,
+    2.9,
+    2.2,
     0
    ],
    "snowingAt": [],
@@ -177,12 +177,12 @@
    "snow72cm": 15,
    "place": "Waterton",
    "bins": [
-    2.8,
-    3.8,
-    2.6,
-    3.1,
-    3.1,
-    1.1,
+    2,
+    4.4,
+    3.3,
+    4,
+    1.8,
+    0,
     0,
     0,
     0,
@@ -191,49 +191,72 @@
     0
    ],
    "snowingAt": [
-    "Kananaskis",
     "Waterton"
    ],
+   "alerts": []
+  },
+  "https://www.avalanchequebec.ca/": {
+   "name": "Avalanche Québec",
+   "units": "cm",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "Chic-Chocs",
+   "bins": [
+    2,
+    2.3,
+    0,
+    0,
+    0.3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2.7,
+    9.5
+   ],
+   "snowingAt": [],
    "alerts": []
   }
  },
  "deepest": [
-  {
-   "href": "https://alaskasnow.org/",
-   "name": "Alaska Avalanche Information Center",
-   "place": "Thompson Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 32
-  },
   {
    "href": "https://utahavalanchecenter.org/",
    "name": "Utah Avalanche Center",
    "place": "Uintas",
    "region": "North America",
    "units": "in",
-   "cm": 27
+   "cm": 34
   },
   {
-   "href": "https://www.mtavalanche.com/",
-   "name": "Gallatin NF Avalanche Center",
-   "place": "Big Sky",
+   "href": "https://alaskasnow.org/",
+   "name": "Alaska Avalanche Information Center",
+   "place": "Thompson Pass",
    "region": "North America",
    "units": "in",
-   "cm": 23
+   "cm": 25
   },
   {
-   "href": "https://www.avalanche.ca/map",
-   "name": "Avalanche Canada",
-   "place": "Waterton",
+   "href": "https://www.avalanchequebec.ca/",
+   "name": "Avalanche Québec",
+   "place": "Chic-Chocs",
    "region": "North America",
    "units": "cm",
-   "cm": 16
+   "cm": 17
   },
   {
    "href": "https://www.flatheadavalanche.org/",
    "name": "Flathead Avalanche Center",
    "place": "Marias Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 16
+  },
+  {
+   "href": "https://www.mtavalanche.com/",
+   "name": "Gallatin NF Avalanche Center",
+   "place": "Big Sky",
    "region": "North America",
    "units": "in",
    "cm": 16
