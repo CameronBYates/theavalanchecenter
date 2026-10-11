@@ -624,10 +624,11 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .storm-mini .alert-dot { display: inline-block; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--high); margin-right: 0.4rem; vertical-align: 0.1em; }
 /* Teaser tags line up with the top of the center name lettering (half-leading plus ascent minus cap height). */
 .storm-mini li a > .tag { align-self: start; margin-top: 0.4rem; }
-.storm-mini .tag.warned { position: relative; border-color: transparent; display: inline-flex; align-items: center; justify-content: center; color: #f7941e; }
+.storm-mini .tag:not(.snow) { display: inline-flex; align-items: center; justify-content: center; }
+.storm-mini .tag.warned { position: relative; border-color: transparent; color: #f7941e; }
 /* Letter-spacing adds space after the last letter; pull it back so the word sits in the middle. */
-.storm-mini .tag.warned .tag-text { margin-right: -0.07em; transform: translateY(1.5px); }
-@media (max-width: 34rem) { .storm-mini .tag.warned .tag-text { transform: none; } }
+.storm-mini .tag:not(.snow) .tag-text { margin-right: -0.07em; transform: translateY(1.5px); }
+@media (max-width: 34rem) { .storm-mini .tag:not(.snow) .tag-text { transform: none; } }
 .tag-outline { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 /* In Storm watch, Big storm matches the size of the other tags. */
 .storm-mini .tag.big { font-size: .81rem; padding: .36rem .77rem .36rem .55rem; gap: .38rem; }
@@ -1538,8 +1539,9 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
         // Snow falling now gets the same animated tag as the directory: Big storm under a storm warning, Snowing otherwise.
         mn.appendChild(em); ma.appendChild(mn);
         // Like the directory rows, the tag gets its own column right after the name, centered top to bottom.
-        // Snowing under a storm warning: Storming now. Snowing: Snowing. Storm warning but not snowing yet: Snow coming.
-        var mt = snowing ? (warned ? tag('Storming now', true, true) : tag('Snowing', false, true)) : warned ? warnOutline(tag('Snow coming', false, false)) : null;
+        // Snowing under a storm warning: Storming now. Snowing: Snowing. Storm warning but not snowing yet: Snow coming
+        // with the red-orange outline. Snow in the forecast only (no warning, not falling yet): plain Snow coming.
+        var mt = snowing ? (warned ? tag('Storming now', true, true) : tag('Snowing', false, true)) : warned ? warnOutline(tag('Snow coming', false, false)) : tag('Snow coming', false, false);
         if (mt) { ma.classList.add('has-tag'); ma.appendChild(mt); }
         ma.appendChild(el('span', 'host', c.snow72cm ? '~' + inUnits(c.snow72cm, c.units) + ' ' + c.units : 'Snowing'));
         var mli = el('li'); mli.appendChild(ma); mini.appendChild(mli);
