@@ -635,6 +635,10 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .storm-mini .tag.big .flake-icon { width: 1.02rem; height: 1.02rem; }
 @media (max-width: 34rem) { .storm-mini .tag.big { font-size: .66rem; padding: .31rem .6rem .31rem .43rem; } .storm-mini .tag.big .flake-icon { width: .85rem; height: .85rem; } }
 .storm-mini em.warn { color: #ff5a5f; font-weight: 600; }
+.nws-link { cursor: pointer; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; text-decoration-color: rgba(255,90,95,0.45); }
+.nws-link:hover, .nws-link:focus-visible { text-decoration-color: currentColor; }
+.nws-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.nws-link::after { content: "\2197"; font-size: 0.8em; margin-left: 0.3rem; text-decoration: none; display: inline-block; }
 .storm-mini em.warn .alert-dot { animation: redpulse 1.8s ease-out infinite; }
 .storm-mini em.warn .alert-dot + .alert-dot, .storm-mini em.warn .alert-dot:last-child { margin: 0 0 0 0.4rem; }
 @keyframes redpulse { 0% { box-shadow: 0 0 0 0 rgba(237,28,36,0.7); } 70% { box-shadow: 0 0 0 0.45rem rgba(237,28,36,0); } 100% { box-shadow: 0 0 0 0 rgba(237,28,36,0); } }
@@ -1473,6 +1477,17 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
     });
     return t;
   }
+  // Warning text opens the official National Weather Service page for that spot. The rows and cards are already
+  // links to the avalanche center, and links can't nest, so this is a link-role span that opens the NWS page itself.
+  function nwsLink(node, url, event) {
+    if (!url) return node;
+    node.classList.add('nws-link'); node.setAttribute('role', 'link'); node.tabIndex = 0;
+    node.title = 'Official ' + event + ' from the National Weather Service';
+    function go(e) { e.preventDefault(); e.stopPropagation(); window.open(url, '_blank', 'noopener'); }
+    node.addEventListener('click', go);
+    node.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') go(e); });
+    return node;
+  }
   function nowPill() { var p = el('span', 'pill'); p.appendChild(el('span', 'now-dot')); p.appendChild(document.createTextNode('Snowing now')); return p; }
 
   function card(href, c, code, scale) {
@@ -1490,7 +1505,7 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
     }
     a.appendChild(top);
     var pills = el('div', 'sc-pills');
-    c.alerts.forEach(function (al) { pills.appendChild(el('span', 'pill alert', al.event + until(al.ends))); });
+    c.alerts.forEach(function (al) { pills.appendChild(nwsLink(el('span', 'pill alert', al.event + until(al.ends)), al.link, al.event)); });
     if (c.snowingAt.length) pills.appendChild(nowPill());
     if (pills.children.length) a.appendChild(pills);
     if (c.bins) {
@@ -1536,6 +1551,7 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
         if (c.alerts.length) em.insertBefore(el('span', 'alert-dot'), em.firstChild);
         // Storm-level warnings (Winter Storm Warning and the like) read in red with a pulsing dot on each side.
         if (c.alerts.length && BIG_ALERTS.indexOf(c.alerts[0].event) !== -1) { em.classList.add('warn'); em.appendChild(el('span', 'alert-dot')); }
+        if (c.alerts.length) nwsLink(em, c.alerts[0].link, c.alerts[0].event);
         // Snow falling now gets the same animated tag as the directory: Big storm under a storm warning, Snowing otherwise.
         mn.appendChild(em); ma.appendChild(mn);
         // Like the directory rows, the tag gets its own column right after the name, centered top to bottom.
