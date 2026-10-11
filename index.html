@@ -623,7 +623,9 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .storm-mini .host { color: var(--accent); white-space: nowrap; }
 .storm-mini .alert-dot { display: inline-block; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--high); margin-right: 0.4rem; vertical-align: 0.1em; }
 /* Teaser tags line up with the top of the center name lettering (half-leading plus ascent minus cap height). */
-.storm-mini li a > .tag { align-self: start; margin-top: 0.4rem; }
+.storm-mini li a > .tagbox { align-self: start; margin: 0.4rem 0 0 0.4rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.9rem; }
+.storm-mini .tagbox .tag { margin-left: 0; }
+.storm-mini .alert-line { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; color: #ffd2d2; }
 .storm-mini .tag:not(.snow) { display: inline-flex; align-items: center; justify-content: center; }
 .storm-mini .tag.warned { position: relative; border-color: transparent; color: #f7941e; }
 /* Letter-spacing adds space after the last letter; pull it back so the word sits in the middle. */
@@ -634,13 +636,14 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .storm-mini .tag.big { font-size: .81rem; padding: .36rem .77rem .36rem .55rem; gap: .38rem; }
 .storm-mini .tag.big .flake-icon { width: 1.02rem; height: 1.02rem; }
 @media (max-width: 34rem) { .storm-mini .tag.big { font-size: .66rem; padding: .31rem .6rem .31rem .43rem; } .storm-mini .tag.big .flake-icon { width: .85rem; height: .85rem; } }
-.storm-mini em.warn { color: #ff5a5f; font-weight: 600; }
-.nws-link { cursor: pointer; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; text-decoration-color: rgba(255,90,95,0.45); }
-.nws-link:hover, .nws-link:focus-visible { text-decoration-color: currentColor; }
+.storm-mini .alert-line.warn { color: #ff5a5f; font-weight: 600; }
+.nws-link { cursor: pointer; }
+.nws-link .alert-text, .pill.nws-link { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; text-decoration-color: rgba(255,90,95,0.45); }
+.nws-link:hover .alert-text, .nws-link:focus-visible .alert-text, .pill.nws-link:hover { text-decoration-color: currentColor; }
 .nws-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
-.nws-link::after { content: "\2197"; font-size: 0.8em; margin-left: 0.3rem; text-decoration: none; display: inline-block; }
-.storm-mini em.warn .alert-dot { animation: redpulse 1.8s ease-out infinite; }
-.storm-mini em.warn .alert-dot + .alert-dot, .storm-mini em.warn .alert-dot:last-child { margin: 0 0 0 0.4rem; }
+.nws-link .alert-text::after, .pill.nws-link::after { content: "\2197"; font-size: 0.8em; margin-left: 0.3rem; display: inline-block; text-decoration: none; }
+.storm-mini .alert-line.warn .alert-dot { animation: redpulse 1.8s ease-out infinite; }
+.storm-mini .alert-line .alert-dot { margin: 0; }
 @keyframes redpulse { 0% { box-shadow: 0 0 0 0 rgba(237,28,36,0.7); } 70% { box-shadow: 0 0 0 0.45rem rgba(237,28,36,0); } 100% { box-shadow: 0 0 0 0 rgba(237,28,36,0); } }
 .storms-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem 1rem; }
 .storms-toggle {
@@ -650,7 +653,7 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .storms-toggle:hover { border-color: var(--accent); }
 .storms-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .storms-foot .storms-src { flex: 1 1 18rem; text-align: right; }
-@media (max-width: 34rem) { .storm-mini .host { display: block; } .storm-mini li a { grid-template-columns: 2.4rem 1fr auto; } .storm-mini li a.has-tag { grid-template-columns: 2.4rem 1fr auto; } .storm-mini li a.has-tag > .host { grid-column: 3; grid-row: 1; } .storm-mini li a.has-tag > .tag { grid-column: 2; grid-row: 2; } .storms-foot .storms-src { text-align: left; } }
+@media (max-width: 34rem) { .storm-mini .host { display: block; } .storm-mini li a { grid-template-columns: 2.4rem 1fr auto; } .storm-mini li a.has-tag { grid-template-columns: 2.4rem 1fr auto; } .storm-mini li a.has-tag > .host { grid-column: 3; grid-row: 1; } .storm-mini li a.has-tag > .tagbox { grid-column: 2; grid-row: 2; margin-left: 0; } .storms-foot .storms-src { text-align: left; } }
 .tag { display: inline-block; margin-left: 0.45rem; padding: 0.2rem 0.45rem; border-radius: 99px; font: 500 0.66rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; vertical-align: 0.12em; border: 1px solid var(--line); color: var(--ink); background: var(--surface-hi); }
 .tag.snow { position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.22rem 0.55rem 0.22rem 0.45rem; vertical-align: 0.08em; }
 .tag .flake-icon { width: 0.8rem; height: 0.8rem; flex: none; position: relative; color: #dff1ff; }
@@ -671,7 +674,7 @@ footer a { color: var(--accent); }
 @keyframes drift { 0% { transform: translate(0,0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translate(34px, 22px); opacity: 0; } }
 .puff { animation: billow 4s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
 @keyframes billow { from { transform: scale(0.94); } to { transform: scale(1.06); } }
-@media (prefers-reduced-motion: reduce) { .puff { animation: none; } .particle { animation: none; opacity: 0.8; } .name { transition: none; } .storms h2::before, .now-dot { animation: none; } .storm-card { transition: none; } .tag-fall { display: none; } .storm-mini em.warn .alert-dot { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .puff { animation: none; } .particle { animation: none; opacity: 0.8; } .name { transition: none; } .storms h2::before, .now-dot { animation: none; } .storm-card { transition: none; } .tag-fall { display: none; } .storm-mini .alert-line.warn .alert-dot { animation: none; } }
 @media (max-width: 34rem) {
   li a { grid-template-columns: 2.4rem 1fr; }
   .host { display: none; }
@@ -1546,23 +1549,27 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
         ma.appendChild(el('span', 'code', row ? row.querySelector('.code').textContent : ''));
         var mn = el('span', 'name', c.name);
         var snowing = c.snowingAt.length > 0, warned = c.alerts.length && BIG_ALERTS.indexOf(c.alerts[0].event) !== -1;
-        var note = c.alerts.length ? c.alerts[0].event : snowing ? 'Near ' + c.snowingAt[0] : c.place ? 'Heaviest near ' + c.place : '';
-        var em = el('em', '', note);
-        if (c.alerts.length) em.insertBefore(el('span', 'alert-dot'), em.firstChild);
-        // Storm-level warnings (Winter Storm Warning and the like) read in red with a pulsing dot on each side.
-        if (c.alerts.length && BIG_ALERTS.indexOf(c.alerts[0].event) !== -1) { em.classList.add('warn'); em.appendChild(el('span', 'alert-dot')); }
-        if (c.alerts.length) nwsLink(em, c.alerts[0].link, c.alerts[0].event);
-        // Snow falling now gets the same animated tag as the directory: Big storm under a storm warning, Snowing otherwise.
-        mn.appendChild(em); ma.appendChild(mn);
-        // Like the directory rows, the tag gets its own column right after the name, centered top to bottom.
-        // Snowing under a storm warning: Storming now. Snowing: Snowing. Storm warning but not snowing yet: Snow coming
-        // with the red-orange outline. Snow in the forecast only (no warning, not falling yet): plain Snow coming.
-        // 12 inches (30.5 cm) or more forecast and not falling yet: Big storm coming, styled like the warning tag.
+        // The line under the name gives the local detail: where it is snowing, or where the most snow is forecast.
+        var note = snowing ? 'Snowing near ' + c.snowingAt[0] : c.place ? 'Heaviest near ' + c.place : '';
+        if (note) mn.appendChild(el('em', '', note));
+        ma.appendChild(mn);
+        // Tag, right after the name. Snowing under a storm warning: Storming now. Snowing: Snowing.
+        // 12 inches (30.5 cm) or more forecast and not falling yet: Big storm coming. Storm warning but not snowing yet:
+        // Snow coming, both with the red-orange outline. Snow in the forecast only: plain Snow coming.
         var bigComing = (c.snow72cm || 0) >= 30.5;
         var mt = snowing ? (warned ? tag('Storming now', true, true) : tag('Snowing', false, true))
           : bigComing ? warnOutline(tag('Big storm coming', false, false))
           : warned ? warnOutline(tag('Snow coming', false, false)) : tag('Snow coming', false, false);
-        if (mt) { ma.classList.add('has-tag'); ma.appendChild(mt); }
+        // Any NWS alert sits to the right of the tag and links to the official NWS page.
+        var box = el('span', 'tagbox'); box.appendChild(mt);
+        if (c.alerts.length) {
+          var al = c.alerts[0], wl = el('span', 'alert-line' + (warned ? ' warn' : ''));
+          wl.appendChild(el('span', 'alert-dot')); wl.appendChild(el('span', 'alert-text', al.event));
+          // Storm-level warnings (Winter Storm Warning and the like) read in red with a pulsing dot on each side.
+          if (warned) wl.appendChild(el('span', 'alert-dot'));
+          box.appendChild(nwsLink(wl, al.link, al.event));
+        }
+        ma.classList.add('has-tag'); ma.appendChild(box);
         ma.appendChild(el('span', 'host', c.snow72cm ? '~' + inUnits(c.snow72cm, c.units) + ' ' + c.units : 'Snowing'));
         var mli = el('li'); mli.appendChild(ma); mini.appendChild(mli);
       }
