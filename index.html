@@ -1541,7 +1541,11 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
         // Like the directory rows, the tag gets its own column right after the name, centered top to bottom.
         // Snowing under a storm warning: Storming now. Snowing: Snowing. Storm warning but not snowing yet: Snow coming
         // with the red-orange outline. Snow in the forecast only (no warning, not falling yet): plain Snow coming.
-        var mt = snowing ? (warned ? tag('Storming now', true, true) : tag('Snowing', false, true)) : warned ? warnOutline(tag('Snow coming', false, false)) : tag('Snow coming', false, false);
+        // 12 inches (30.5 cm) or more forecast and not falling yet: Big storm coming, styled like the warning tag.
+        var bigComing = (c.snow72cm || 0) >= 30.5;
+        var mt = snowing ? (warned ? tag('Storming now', true, true) : tag('Snowing', false, true))
+          : bigComing ? warnOutline(tag('Big storm coming', false, false))
+          : warned ? warnOutline(tag('Snow coming', false, false)) : tag('Snow coming', false, false);
         if (mt) { ma.classList.add('has-tag'); ma.appendChild(mt); }
         ma.appendChild(el('span', 'host', c.snow72cm ? '~' + inUnits(c.snow72cm, c.units) + ' ' + c.units : 'Snowing'));
         var mli = el('li'); mli.appendChild(ma); mini.appendChild(mli);
