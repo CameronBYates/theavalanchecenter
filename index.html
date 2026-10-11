@@ -624,7 +624,10 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .storm-mini .alert-dot { display: inline-block; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--high); margin-right: 0.4rem; vertical-align: 0.1em; }
 /* Teaser tags line up with the top of the center name lettering (half-leading plus ascent minus cap height). */
 .storm-mini li a > .tag { align-self: start; margin-top: 0.4rem; }
-.storm-mini .tag.warned { position: relative; border-color: transparent; }
+.storm-mini .tag.warned { position: relative; border-color: transparent; display: inline-flex; align-items: center; justify-content: center; color: #f7941e; }
+/* Letter-spacing adds space after the last letter; pull it back so the word sits in the middle. */
+.storm-mini .tag.warned .tag-text { margin-right: -0.07em; transform: translateY(1.5px); }
+@media (max-width: 34rem) { .storm-mini .tag.warned .tag-text { transform: none; } }
 .tag-outline { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 /* In Storm watch, Big storm matches the size of the other tags. */
 .storm-mini .tag.big { font-size: .81rem; padding: .36rem .77rem .36rem .55rem; gap: .38rem; }
