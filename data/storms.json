@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-12T06:49:23.606Z",
+ "updated": "2026-10-12T09:41:27.740Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-12T06:00Z",
+ "binsStart": "2026-10-12T09:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -18,8 +18,32 @@
   }
  ],
  "centers": {
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
+  "https://www.cnfaic.org/": {
+   "name": "Chugach NF Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Turnagain Pass",
+   "bins": [
+    0.2,
+    0,
+    0,
+    0,
+    0,
+    0.8,
+    3.4,
+    1.1,
+    0,
+    0,
+    3.8,
+    12.1
+   ],
+   "snowingAt": [],
+   "alerts": []
+  },
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": null,
@@ -27,7 +51,34 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Thompson Pass"
+    "Hatcher Pass"
+   ],
+   "alerts": []
+  },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Thompson Pass",
+   "bins": [
+    1.2,
+    0.4,
+    0.3,
+    3.6,
+    0.7,
+    2.5,
+    2.7,
+    4.6,
+    0.4,
+    0.8,
+    0.1,
+    0.3
+   ],
+   "snowingAt": [
+    "Thompson Pass",
+    "Haines"
    ],
    "alerts": []
   },
@@ -52,9 +103,7 @@
    "snow72cm": null,
    "place": null,
    "bins": null,
-   "snowingAt": [
-    "Marias Pass"
-   ],
+   "snowingAt": [],
    "alerts": [
     {
      "event": "Winter Storm Warning",
@@ -90,22 +139,20 @@
    "snow72cm": 35,
    "place": "Uintas",
    "bins": [
-    5.2,
-    5.5,
-    2.6,
-    6,
-    2,
-    0.6,
-    9.2,
-    1,
-    0.2,
-    1.2,
+    5,
+    4.3,
+    4.9,
+    2.8,
+    2.5,
+    5.6,
+    8.4,
+    0.1,
+    0.9,
+    0.7,
     0.4,
-    0.2
+    0
    ],
-   "snowingAt": [
-    "Uintas"
-   ],
+   "snowingAt": [],
    "alerts": []
   },
   "https://avalanche.state.co.us/": {
@@ -119,44 +166,41 @@
     0,
     0,
     0,
-    0,
-    1.5,
-    5,
-    0.2,
+    3,
     0.1,
+    2,
+    0.8,
+    0.8,
+    4.8,
+    4,
     2.7,
-    5.1,
-    2.7,
-    2.1
+    0.9
    ],
    "snowingAt": [],
    "alerts": []
   },
-  "https://www.avalanche.ca/map": {
-   "name": "Avalanche Canada",
-   "units": "cm",
+  "https://cbavalanchecenter.org/": {
+   "name": "Crested Butte Avalanche Center",
+   "units": "in",
    "region": "North America",
    "level": "notable",
    "snow72cm": 20,
-   "place": "Terrace",
+   "place": "Crested Butte",
    "bins": [
+    0.6,
+    0.3,
     0,
     0,
+    4.1,
     0,
     0,
-    0,
-    0,
-    9.5,
-    8.2,
-    0,
-    0,
-    0,
-    0
+    0.7,
+    0.1,
+    4.9,
+    4.8,
+    3.6
    ],
-   "snowingAt": [
-    "Waterton",
-    "White Pass, Yukon"
-   ],
+   "snowingAt": [],
    "alerts": []
   }
  },
@@ -167,31 +211,15 @@
    "place": "Uintas",
    "region": "North America",
    "units": "in",
-   "cm": 34
+   "cm": 36
   },
   {
-   "href": "https://avalanche.state.co.us/",
-   "name": "Colorado Avalanche Information Center",
-   "place": "Red Mountain Pass",
+   "href": "https://www.cnfaic.org/",
+   "name": "Chugach NF Avalanche Information Center",
+   "place": "Turnagain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 20
-  },
-  {
-   "href": "https://www.avalanche.ca/map",
-   "name": "Avalanche Canada",
-   "place": "Terrace",
-   "region": "North America",
-   "units": "cm",
-   "cm": 18
-  },
-  {
-   "href": "https://alaskasnow.org/",
-   "name": "Alaska Avalanche Information Center",
-   "place": "Thompson Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 14
+   "cm": 21
   },
   {
    "href": "https://cbavalanchecenter.org/",
@@ -199,7 +227,23 @@
    "place": "Crested Butte",
    "region": "North America",
    "units": "in",
-   "cm": 13
+   "cm": 19
+  },
+  {
+   "href": "https://avalanche.state.co.us/",
+   "name": "Colorado Avalanche Information Center",
+   "place": "Red Mountain Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 19
+  },
+  {
+   "href": "https://alaskasnow.org/",
+   "name": "Alaska Avalanche Information Center",
+   "place": "Thompson Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 18
   }
  ]
 }
