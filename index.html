@@ -688,6 +688,11 @@ footer a { color: var(--accent); }
 @keyframes billow { from { transform: scale(0.94); } to { transform: scale(1.06); } }
 @media (prefers-reduced-motion: reduce) { .puff { animation: none; } .particle { animation: none; opacity: 0.8; } .name { transition: none; } .storms h2::before, .now-dot { animation: none; } .storm-card { transition: none; } .tag-fall { display: none; } .storm-mini .alert-line.warn .alert-dot { animation: none; } }
 @media (max-width: 34rem) {
+  /* Phones: region boxes in two even columns, so no box (like Northeast) is left alone on a row. US and international stay separate. */
+  .jump ul { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .jump ul + ul { margin-top: 0.5rem; }
+  .jump li a { font-size: 0.85rem; }
+  .jump li a { display: flex; align-items: center; justify-content: center; text-align: center; height: 100%; box-sizing: border-box; padding: 0.55rem 0.6rem; line-height: 1.2; }
   li a { grid-template-columns: 2.4rem 1fr; }
   .host { display: none; }
   .storms { padding-inline: 1rem; }
