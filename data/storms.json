@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-12T21:35:47.204Z",
+ "updated": "2026-10-13T00:50:01.679Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-12T21:00Z",
+ "binsStart": "2026-10-13T00:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -23,21 +23,21 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 35,
+   "snow72cm": 40,
    "place": "Turnagain Pass",
    "bins": [
     0,
-    0.4,
-    0.8,
+    0.1,
+    0.1,
+    0.5,
+    2.2,
     0,
     0,
-    0,
-    0,
-    0,
-    1.8,
-    12,
-    13.2,
-    7.4
+    0.6,
+    8.4,
+    11.9,
+    8.5,
+    8
    ],
    "snowingAt": [],
    "alerts": []
@@ -63,20 +63,33 @@
    "snow72cm": 20,
    "place": "Thompson Pass",
    "bins": [
+    2.4,
+    1,
+    1.9,
+    2.7,
+    1.3,
+    2.4,
+    1.7,
     0.1,
-    2.9,
-    1.3,
-    3.2,
-    2.2,
-    3.2,
-    1.3,
-    0.6,
     0,
-    0.5,
-    0,
-    2.5
+    0.2,
+    0.4,
+    4.8
    ],
    "snowingAt": [],
+   "alerts": []
+  },
+  "https://www.bridgeportavalanchecenter.org/": {
+   "name": "Bridgeport Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Sonora Pass"
+   ],
    "alerts": []
   },
   "https://utahavalanchecenter.org/": {
@@ -84,24 +97,24 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 25,
-   "place": "Uintas",
+   "snow72cm": 15,
+   "place": "Alta",
    "bins": [
-    4.6,
-    5.7,
+    6.1,
+    2.3,
+    0.1,
+    1.1,
+    3.1,
+    4.3,
+    0.3,
     0,
-    3.6,
-    6.9,
-    1.8,
-    0,
-    0.5,
     0,
     0,
     0,
     0
    ],
    "snowingAt": [
-    "Uintas"
+    "Alta"
    ],
    "alerts": []
   },
@@ -110,20 +123,20 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 35,
    "place": "Red Mountain Pass",
    "bins": [
-    0.7,
-    1,
-    2.7,
-    1.9,
-    2.2,
-    8.3,
-    0.8,
-    4.9,
-    12,
-    6.7,
+    0.1,
     0.3,
+    3.2,
+    0.1,
+    4.4,
+    6.9,
+    0.9,
+    12.2,
+    4.5,
+    0.5,
+    0,
     0
    ],
    "snowingAt": [],
@@ -134,20 +147,20 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Crested Butte",
    "bins": [
     0,
     0,
-    1.1,
-    1.8,
+    0.4,
     1.2,
     0.6,
     0,
-    2.7,
-    9.9,
-    0.8,
-    0.2,
+    0.4,
+    17.5,
+    4.8,
+    1.4,
+    0,
     0
    ],
    "snowingAt": [],
@@ -158,21 +171,21 @@
    "units": "cm",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 15,
-   "place": "Terrace",
+   "snow72cm": 20,
+   "place": "White Pass, Yukon",
    "bins": [
     0,
+    0.1,
+    0.4,
     0,
     0,
-    1.6,
-    13.7,
+    0,
+    0.1,
     0.1,
     0,
-    0,
-    0,
-    0,
-    0,
-    0
+    0.5,
+    11.4,
+    6.5
    ],
    "snowingAt": [],
    "alerts": []
@@ -180,28 +193,20 @@
  },
  "deepest": [
   {
-   "href": "https://avalanche.state.co.us/",
-   "name": "Colorado Avalanche Information Center",
-   "place": "Red Mountain Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 41
-  },
-  {
    "href": "https://www.cnfaic.org/",
    "name": "Chugach NF Avalanche Information Center",
    "place": "Turnagain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 35
+   "cm": 40
   },
   {
-   "href": "https://utahavalanchecenter.org/",
-   "name": "Utah Avalanche Center",
-   "place": "Uintas",
+   "href": "https://avalanche.state.co.us/",
+   "name": "Colorado Avalanche Information Center",
+   "place": "Red Mountain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 23
+   "cm": 33
   },
   {
    "href": "https://cbavalanchecenter.org/",
@@ -209,7 +214,15 @@
    "place": "Crested Butte",
    "region": "North America",
    "units": "in",
-   "cm": 18
+   "cm": 26
+  },
+  {
+   "href": "https://www.avalanche.ca/map",
+   "name": "Avalanche Canada",
+   "place": "White Pass, Yukon",
+   "region": "North America",
+   "units": "cm",
+   "cm": 19
   },
   {
    "href": "https://alaskasnow.org/",
@@ -217,7 +230,7 @@
    "place": "Thompson Pass",
    "region": "North America",
    "units": "in",
-   "cm": 18
+   "cm": 19
   }
  ]
 }
