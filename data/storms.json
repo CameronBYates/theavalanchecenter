@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-13T12:48:36.203Z",
+ "updated": "2026-10-13T15:40:09.504Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-13T12:00Z",
+ "binsStart": "2026-10-13T15:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -30,24 +30,36 @@
    "snow72cm": 25,
    "place": "Turnagain Pass",
    "bins": [
+    0,
+    1.3,
+    0.3,
+    0,
+    0.1,
+    1.9,
+    13.3,
+    3.1,
+    5.7,
     0.6,
-    0.6,
-    1,
-    0,
-    0,
-    1.2,
-    6.2,
-    11,
-    1.5,
-    4.8,
-    0,
-    0.3
+    0.2,
+    0.9
    ],
-   "snowingAt": [
-    "Turnagain Pass"
-   ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": 0
+  },
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Hatcher Pass"
+   ],
+   "alerts": [],
+   "recentCm": 22.5
   },
   "https://alaskasnow.org/": {
    "name": "Alaska Avalanche Information Center",
@@ -64,15 +76,13 @@
     0.1,
     0,
     0,
-    0.6,
-    13.9,
-    0.5,
+    7.4,
+    7.7,
     0,
-    0.1
+    0,
+    2.2
    ],
-   "snowingAt": [
-    "Thompson Pass"
-   ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": 2.5
   },
@@ -80,16 +90,26 @@
    "name": "Utah Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Ogden",
-    "Uintas"
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "Uintas",
+   "bins": [
+    0,
+    7.4,
+    0.8,
+    0,
+    0.6,
+    3.5,
+    4.3,
+    0,
+    0,
+    0,
+    0,
+    0
    ],
+   "snowingAt": [],
    "alerts": [],
-   "recentCm": 17.5
+   "recentCm": 20
   },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
@@ -97,18 +117,18 @@
    "region": "North America",
    "level": "heavy",
    "snow72cm": 35,
-   "place": "Berthoud Pass",
+   "place": "Wolf Creek Pass",
    "bins": [
-    0.1,
+    5.6,
+    4.9,
+    3.2,
+    15.6,
+    2.4,
+    2.2,
     0,
-    6.7,
-    1.1,
-    3.6,
-    11.1,
-    4.7,
-    6,
-    1,
-    1.3,
+    0,
+    0,
+    0,
     0,
     0
    ],
@@ -124,22 +144,20 @@
    "snow72cm": 15,
    "place": "Crested Butte",
    "bins": [
-    1.7,
     0,
-    3.2,
-    0,
-    4,
-    4.3,
-    1.5,
-    1.8,
     0.1,
+    3.4,
+    6.6,
+    1.1,
+    2.8,
+    1.6,
+    0.2,
+    0,
     0,
     0,
     0
    ],
-   "snowingAt": [
-    "Crested Butte"
-   ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": 2.5
   },
@@ -151,36 +169,25 @@
    "snow72cm": 20,
    "place": "White Pass, Yukon",
    "bins": [
-    0.4,
+    0,
     0,
     0,
     0,
     0.1,
     0,
-    0,
-    1.2,
-    13,
-    1.5,
-    0.7,
-    1.1
+    0.1,
+    6.7,
+    8.8,
+    0.3,
+    1.4,
+    3.6
    ],
-   "snowingAt": [
-    "White Pass, Yukon"
-   ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": 10
   }
  },
  "recent": {
-  "https://hpavalanche.org/": {
-   "name": "Hatcher Pass Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 25,
-   "place": "Independence Mine",
-   "source": "snotel",
-   "resorts": []
-  },
   "https://missoulaavalanche.org/": {
    "name": "West Central Montana Avalanche Center",
    "units": "in",
@@ -227,6 +234,15 @@
     }
    ]
   },
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 22.5,
+   "place": "Independence Mine",
+   "source": "snotel",
+   "resorts": []
+  },
   "https://www.flatheadavalanche.org/": {
    "name": "Flathead Avalanche Center",
    "units": "in",
@@ -247,8 +263,8 @@
    "name": "Utah Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 17.5,
-   "place": "Lakefork Basin",
+   "cm": 20,
+   "place": "Brown Duck",
    "source": "snotel",
    "resorts": [
     {
@@ -443,7 +459,7 @@
    "units": "in",
    "region": "North America",
    "cm": 5,
-   "place": "Mineral Creek",
+   "place": "Beartown",
    "source": "snotel",
    "resorts": [
     {
@@ -457,6 +473,11 @@
      "cm": 2.5,
      "station": "Loveland Basin",
      "source": "snotel"
+    },
+    {
+     "name": "Steamboat",
+     "cm": 2.5,
+     "source": "model"
     },
     {
      "name": "Wolf Creek",
@@ -478,11 +499,6 @@
     },
     {
      "name": "Aspen Snowmass",
-     "cm": 0,
-     "source": "model"
-    },
-    {
-     "name": "Steamboat",
      "cm": 0,
      "source": "model"
     },
@@ -711,10 +727,10 @@
   {
    "href": "https://avalanche.state.co.us/",
    "name": "Colorado Avalanche Information Center",
-   "place": "Berthoud Pass",
+   "place": "Wolf Creek Pass",
    "region": "North America",
    "units": "in",
-   "cm": 35
+   "cm": 34
   },
   {
    "href": "https://www.cnfaic.org/",
@@ -730,15 +746,7 @@
    "place": "White Pass, Yukon",
    "region": "North America",
    "units": "cm",
-   "cm": 18
-  },
-  {
-   "href": "https://cbavalanchecenter.org/",
-   "name": "Crested Butte Avalanche Center",
-   "place": "Crested Butte",
-   "region": "North America",
-   "units": "in",
-   "cm": 17
+   "cm": 21
   },
   {
    "href": "https://alaskasnow.org/",
@@ -746,7 +754,15 @@
    "place": "Haines",
    "region": "North America",
    "units": "in",
-   "cm": 15
+   "cm": 17
+  },
+  {
+   "href": "https://utahavalanchecenter.org/",
+   "name": "Utah Avalanche Center",
+   "place": "Uintas",
+   "region": "North America",
+   "units": "in",
+   "cm": 17
   }
  ]
 }
