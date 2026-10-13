@@ -172,9 +172,9 @@ for (const c of centers) {
   const areas = resortSnow.filter(s => s.center === c).map(s => measured.has(s)
     ? { name: s.place, cm: roundRecent(measured.get(s).cm), station: measured.get(s).station, source: 'snotel' }
     : { name: s.place, cm: roundRecent(s.past), source: 'model' })
-    .filter(r => r.cm >= 2.5).sort((a, b) => b.cm - a.cm);
+    .sort((a, b) => b.cm - a.cm); // kept even at zero, so a storm card can show that a ski area has had none yet
   const cm = roundRecent(best.cm);
-  if (cm >= 2.5) recent[c.href] = { name: c.name, units: c.units, region: region(c.country), cm, place: best.place, source: best.source, resorts: areas };
+  if (cm >= 2.5 || areas.length) recent[c.href] = { name: c.name, units: c.units, region: region(c.country), cm, place: best.place, source: best.source, resorts: areas };
 }
 
 const flagged = {};
