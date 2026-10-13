@@ -22,6 +22,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0   # full history so sitemap dates are right
       - uses: actions/setup-node@v5
         with:
           node-version: 22
@@ -40,5 +42,14 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/storms.json
           git commit -m "Update storm watch data"
+          node seo/sitemap-lastmod.mjs
+          git add sitemap.xml
+          git diff --cached --quiet || git commit -m "Update sitemap dates"
           git pull --rebase origin main
           git push origin HEAD:main
+          echo "pushed=1" >> "$GITHUB_OUTPUT"
+        id: commit
+      - name: Tell Bing the home page changed (IndexNow)
+        if: steps.commit.outputs.pushed == '1'
+        continue-on-error: true
+        run: node seo/indexnow.mjs https://theavalanchecenter.com/
