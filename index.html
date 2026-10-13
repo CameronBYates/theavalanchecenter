@@ -619,6 +619,7 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .deepest .bar i { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
 .deepest .dv { font: 500 0.8rem/1 var(--mono); text-align: right; font-variant-numeric: tabular-nums; }
 #recent .bar i { background: #8cc8ff; }
+.src-tag { font-size: 0.72em; letter-spacing: 0.02em; opacity: 0.85; }
 .recent-note { margin: 0; color: var(--muted); font-size: 0.78rem; }
 .sc-recent { margin: 0; font-size: 0.82rem; color: var(--muted); }
 .sc-recent b { font: 500 0.82rem/1 var(--mono); color: #cfe6ff; }
@@ -1549,7 +1550,8 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
     if (recent && recent.cm >= 2.5) {
       var rl = el('p', 'sc-recent', 'Last 72 h: ');
       rl.appendChild(el('b', '', inUnits(recent.cm, recent.units) + ' ' + recent.units));
-      rl.appendChild(document.createTextNode(recent.source === 'snotel' ? ' measured at ' + recent.place + ' SNOTEL' : ' estimated near ' + recent.place));
+      rl.appendChild(document.createTextNode(recent.source === 'snotel' ? ' measured at ' + recent.place + ' ' : ' estimated near ' + recent.place));
+      if (recent.source === 'snotel') rl.appendChild(el('small', 'src-tag', '(SNOTEL)'));
       a.appendChild(rl);
     }
     var rs = resortLine('sc-resorts', recent, 3);
@@ -1652,7 +1654,9 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
       var li = el('li'); li.dataset.region = x.region;
       var a = el('a'); a.href = x.href; a.target = '_blank'; a.rel = 'noopener';
       var dn = el('span', 'dn', x.name + ' ');
-      dn.appendChild(el('em', '', x.source === 'snotel' ? x.place + ' SNOTEL' : 'near ' + x.place + ' (est.)'));
+      var where = el('em', '', x.source === 'snotel' ? x.place + ' ' : 'near ' + x.place + ' ');
+      where.appendChild(el('small', 'src-tag', x.source === 'snotel' ? '(SNOTEL)' : '(est.)'));
+      dn.appendChild(where);
       a.appendChild(dn);
       var ra = resortLine('ra', x, 2);
       if (ra) a.appendChild(ra);
