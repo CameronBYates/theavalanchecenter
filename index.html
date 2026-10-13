@@ -625,6 +625,7 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .sc-recent + .sc-resorts { margin-top: -0.35rem; }
 .sc-resorts { margin: 0; font-size: 0.78rem; color: var(--muted); }
 .sc-resorts b { font: 500 0.78rem/1 var(--mono); color: #cfe6ff; }
+.sc-resorts .area b, #recent .ra .area b { white-space: nowrap; }
 #recent li a .ra { font-size: 0.74rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .storms-quiet { color: var(--muted); margin: 0; }
 .storm-detail { display: grid; gap: 0.85rem; }
@@ -1509,12 +1510,15 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
   }
   // Ski areas: up to three well-known resorts in the center's area with their own recent totals.
   function resortLine(cls, recent, max) {
-    var list = (recent && recent.resorts || []).filter(function (r) { return cls !== 'ra' || r.cm >= 2.5; }).slice(0, max);
+    var all = (recent && recent.resorts || []).filter(function (r) { return cls !== 'ra' || r.cm >= 2.5; });
+    var list = all.slice(0, max), lead = all.filter(function (r) { return r.featured; })[0];
+    // The center's headline ski area (the Cottonwood Canyons for Utah) always makes the cut.
+    if (lead && list.indexOf(lead) === -1) list[list.length - 1] = lead;
     if (!list.length) return null;
     var p = el(cls === 'ra' ? 'span' : 'p', cls, 'Ski areas: ');
     list.forEach(function (r, i) {
       if (i) p.appendChild(document.createTextNode(' · '));
-      var b = el('span', '', r.name + ' ');
+      var b = el('span', 'area', r.name + ' ');
       b.appendChild(el('b', '', inUnits(r.cm, recent.units) + ' ' + recent.units));
       b.title = r.source === 'snotel' ? 'Measured at ' + r.station + ' SNOTEL' : "Open-Meteo's estimate";
       p.appendChild(b);

@@ -169,9 +169,10 @@ for (const c of centers) {
     ? deepestOf(gauged.map(s => ({ cm: measured.get(s).cm, place: measured.get(s).station, source: 'snotel' })))
     : deepestOf(mine.map(s => ({ cm: s.past, place: s.place, source: 'model' })));
   // Each ski area on its own: measured at its nearest SNOTEL stations when it has any, otherwise estimated.
-  const areas = resortSnow.filter(s => s.center === c).map(s => measured.has(s)
+  // The first ski area listed for a center (the Cottonwood Canyons for Utah) is its headline area and is always shown.
+  const areas = resortSnow.filter(s => s.center === c).map((s, i) => ({ ...(measured.has(s)
     ? { name: s.place, cm: roundRecent(measured.get(s).cm), station: measured.get(s).station, source: 'snotel' }
-    : { name: s.place, cm: roundRecent(s.past), source: 'model' })
+    : { name: s.place, cm: roundRecent(s.past), source: 'model' }), ...(i === 0 ? { featured: true } : {}) }))
     .sort((a, b) => b.cm - a.cm); // kept even at zero, so a storm card can show that a ski area has had none yet
   const cm = roundRecent(best.cm);
   if (cm >= 2.5 || areas.length) recent[c.href] = { name: c.name, units: c.units, region: region(c.country), cm, place: best.place, source: best.source, resorts: areas };
