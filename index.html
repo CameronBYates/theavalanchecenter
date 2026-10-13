@@ -618,6 +618,10 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 .deepest .bar { height: 0.35rem; border-radius: 99px; background: var(--line); overflow: hidden; }
 .deepest .bar i { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
 .deepest .dv { font: 500 0.8rem/1 var(--mono); text-align: right; font-variant-numeric: tabular-nums; }
+#recent .bar i { background: #8cc8ff; }
+.recent-note { margin: 0; color: var(--muted); font-size: 0.78rem; }
+.sc-recent { margin: 0; font-size: 0.82rem; color: var(--muted); }
+.sc-recent b { font: 500 0.82rem/1 var(--mono); color: #cfe6ff; }
 .storms-quiet { color: var(--muted); margin: 0; }
 .storm-detail { display: grid; gap: 0.85rem; }
 .storm-mini .host { color: var(--accent); white-space: nowrap; }
@@ -750,10 +754,15 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
         <h3>Deepest forecasts worldwide</h3>
         <ol id="deepest-list"></ol>
       </div>
+      <div class="deepest" id="recent" hidden>
+        <h3>Most snow in the last 72 hours</h3>
+        <ol id="recent-list"></ol>
+        <p class="recent-note">US amounts are measured at USDA SNOTEL stations near each center. Elsewhere they are Open-Meteo's estimate of what fell.</p>
+      </div>
     </div>
     <div class="storms-foot">
       <button type="button" class="storms-toggle" id="storms-toggle" aria-expanded="false" aria-controls="storm-detail">Show storm details</button>
-      <p class="storms-src">Snowfall forecast by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0). US winter alerts from <a href="https://www.weather.gov/" target="_blank" rel="noopener">NOAA's National Weather Service</a>. Checked every 3 hours.</p>
+      <p class="storms-src">Snowfall forecast by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0). US winter alerts from <a href="https://www.weather.gov/" target="_blank" rel="noopener">NOAA's National Weather Service</a>. US measured snow from <a href="https://www.nrcs.usda.gov/wps/portal/wcc/home/" target="_blank" rel="noopener">USDA SNOTEL</a>. Checked every 3 hours.</p>
     </div>
   </aside>
 
@@ -1496,7 +1505,7 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
   }
   function nowPill() { var p = el('span', 'pill'); p.appendChild(el('span', 'now-dot')); p.appendChild(document.createTextNode('Snowing now')); return p; }
 
-  function card(href, c, code, scale) {
+  function card(href, c, code, scale, recent) {
     var a = el('a', 'storm-card' + (isBig(c) ? ' big' : ''));
     a.href = href; a.target = '_blank'; a.rel = 'noopener'; a.dataset.region = c.region;
     var top = el('div', 'sc-top');
@@ -1514,6 +1523,13 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
     c.alerts.forEach(function (al) { pills.appendChild(nwsLink(el('span', 'pill alert', al.event + until(al.ends)), al.link, al.event)); });
     if (c.snowingAt.length) pills.appendChild(nowPill());
     if (pills.children.length) a.appendChild(pills);
+    // Snow that already fell, so a storm's forecast reads alongside what it has dropped so far.
+    if (recent) {
+      var rl = el('p', 'sc-recent', 'Last 72 h: ');
+      rl.appendChild(el('b', '', inUnits(recent.cm, recent.units) + ' ' + recent.units));
+      rl.appendChild(document.createTextNode(recent.source === 'snotel' ? ' measured at ' + recent.place + ' SNOTEL' : ' estimated near ' + recent.place));
+      a.appendChild(rl);
+    }
     if (c.bins) {
       var chart = el('div', 'sc-chart');
       var peak = c.bins.indexOf(Math.max.apply(null, c.bins));
@@ -1584,7 +1600,7 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
       }
       // Centers where it is only snowing (no big totals or alerts) share one line instead of a card each.
       if (!c.level && !c.alerts.length) { flurries.push(c); return; }
-      cards.appendChild(card(href, c, row ? row.querySelector('.code').textContent : '', scale));
+      cards.appendChild(card(href, c, row ? row.querySelector('.code').textContent : '', scale, (d.recent || {})[href]));
     });
 
     var deep = d.deepest || [];
@@ -1603,9 +1619,29 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
     });
     deepest.hidden = !deep.length;
 
+    // Recent snowfall: the five centers with the most new snow in the last 72 hours.
+    var recentBox = document.getElementById('recent'), recentList = document.getElementById('recent-list');
+    var rec = Object.keys(d.recent || {}).map(function (h) { var r = d.recent[h]; r.href = h; return r; })
+      .filter(function (r) { return r.cm >= 2.5; }).sort(function (a, b) { return b.cm - a.cm; }).slice(0, 5);
+    var maxRec = rec.length ? rec[0].cm : 1;
+    rec.forEach(function (x) {
+      var li = el('li'); li.dataset.region = x.region;
+      var a = el('a'); a.href = x.href; a.target = '_blank'; a.rel = 'noopener';
+      var dn = el('span', 'dn', x.name + ' ');
+      dn.appendChild(el('em', '', x.source === 'snotel' ? x.place + ' SNOTEL' : 'near ' + x.place + ' (est.)'));
+      a.appendChild(dn);
+      var bar = el('span', 'bar'); var fill = el('i'); fill.style.width = Math.max(3, x.cm / maxRec * 100) + '%'; bar.appendChild(fill);
+      a.appendChild(bar);
+      li.appendChild(a);
+      li.appendChild(el('span', 'dv', inUnits(x.cm, x.units) + ' ' + x.units));
+      recentList.appendChild(li);
+    });
+    recentBox.hidden = !rec.length;
+
     function show(region) {
       Array.prototype.forEach.call(cards.children, function (n) { n.hidden = region !== 'All' && n.dataset.region !== region; });
       Array.prototype.forEach.call(deepList.children, function (n) { n.hidden = region !== 'All' && n.dataset.region !== region; });
+      Array.prototype.forEach.call(recentList.children, function (n) { n.hidden = region !== 'All' && n.dataset.region !== region; });
       var f = flurries.filter(function (c) { return region === 'All' || c.region === region; });
       flurryLine.textContent = '';
       if (f.length) { flurryLine.appendChild(el('span', 'now-dot')); flurryLine.appendChild(el('span', '', 'Also snowing now near ' + f.map(function (c) { return c.name; }).join(', ') + '.')); }

@@ -1,7 +1,8 @@
 // Storm watch updater. Run by .github/workflows/storm-watch.yml on a schedule.
-// Reads storm-watch/points.json, asks Open-Meteo for snowfall at every point and the
-// US National Weather Service for active winter alerts at US points, then writes
-// data/storms.json for index.html to read. Only flagged centers are written.
+// Reads storm-watch/points.json, asks Open-Meteo for snowfall at every point (the last 72 hours
+// and the next 72), the US National Weather Service for active winter alerts at US points, and
+// USDA SNOTEL stations for measured snow depth near US points, then writes data/storms.json for
+// index.html to read. Only flagged centers are written, plus recent snowfall for every center.
 // Usage: node storm-watch/update.mjs [output path]   (no output path: print only)
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
@@ -15,6 +16,8 @@ const NWS_EVENTS = new Set([
   'Lake Effect Snow Warning', 'Ice Storm Warning'
 ]);
 const UA = 'theavalanchecenter.com storm watch (https://theavalanchecenter.com)';
+const SNOTEL_KM = 30; // SNOTEL stations this close to a center's point count for that center
+const AWDB = 'https://wcc.sc.egov.usda.gov/awdbRestApi/services/v1';
 
 const REGIONS = { US: 'North America', CA: 'North America', JP: 'Japan', NZ: 'New Zealand' }; // everything else is Europe
 const region = country => REGIONS[country] || 'Europe';
@@ -45,21 +48,28 @@ async function snowfall() {
       elevation: chunk.map(p => p.elev).join(','), // forecast for alpine terrain, not the valley floor
       current: 'weather_code,snowfall',
       hourly: 'snowfall',
+      past_hours: '72',
       forecast_hours: '72',
       timezone: 'GMT'
     });
     const data = await getJSON(`https://api.open-meteo.com/v1/forecast?${qs}`);
     results.push(...(Array.isArray(data) ? data : [data]));
   }
-  binsStart = results[0]?.hourly?.time?.[0] ? results[0].hourly.time[0] + 'Z' : null;
+  // The hourly series runs from 72 hours ago to 72 hours ahead; split it at the current hour.
+  const times = results[0]?.hourly?.time || [];
+  const nowHour = (results[0]?.current?.time || '').slice(0, 13) + ':00';
+  const split = times.indexOf(nowHour) >= 0 ? times.indexOf(nowHour) : 72;
+  binsStart = times[split] ? times[split] + 'Z' : null;
   return points.map((p, i) => {
     const r = results[i];
-    const hourly = r.hourly.snowfall.map(v => v || 0);
+    const all = r.hourly.snowfall.map(v => v || 0);
+    const past = all.slice(0, split).reduce((a, b) => a + b, 0);
+    const hourly = all.slice(split, split + 72);
     const total = hourly.reduce((a, b) => a + b, 0);
     // Twelve 6-hour bins show when the snow arrives; the page draws them as a small bar chart.
     const bins = Array.from({ length: 12 }, (_, b) => round1(hourly.slice(b * 6, b * 6 + 6).reduce((a, v) => a + v, 0)));
     const snowing = SNOW_CODES.has(r.current.weather_code) || r.current.snowfall > 0;
-    return { ...p, total, bins, snowing };
+    return { ...p, total, past, bins, snowing };
   });
 }
 
@@ -69,6 +79,57 @@ async function nwsAlerts(p) {
     .map(f => f.properties)
     .filter(a => NWS_EVENTS.has(a.event))
     .map(a => ({ event: a.event, ends: a.ends || a.expires || null }));
+}
+
+const km = (a, b, c, d) => {
+  const r = Math.PI / 180, x = (d - b) * r * Math.cos((a + c) / 2 * r), y = (c - a) * r;
+  return Math.hypot(x, y) * 6371;
+};
+
+// SNOTEL: automated USDA snow stations in the western US and Alaska, reporting snow depth every hour.
+// New snow is the biggest rise in depth over the last 72 hours, measured from the lowest point before it,
+// after smoothing out sensor jitter. Settling makes this a little conservative, but it is a measurement.
+async function snotel(usPoints) {
+  const stations = await getJSON(`${AWDB}/stations?stationTriplets=*:*:SNTL&activeOnly=true&returnStationElements=false&returnForecastPointMetadata=false&returnReservoirMetadata=false`);
+  const near = new Map(); // station triplet -> station, for stations close to any US point
+  const byPoint = new Map();
+  for (const p of usPoints) {
+    const mine = stations
+      .map(s => ({ s, d: km(p.lat, p.lon, s.latitude, s.longitude) }))
+      .filter(x => x.d <= SNOTEL_KM)
+      .sort((a, b) => a.d - b.d);
+    byPoint.set(p, mine.map(x => x.s.stationTriplet));
+    for (const { s } of mine) near.set(s.stationTriplet, s);
+  }
+  const fmt = t => new Date(t).toISOString().slice(0, 16).replace('T', ' ');
+  // SNOTEL dates are in each station's local standard time, so ask for a wider window and keep the last 72 readings.
+  const end = Date.now() + 3600 * 1000, begin = end - 90 * 3600 * 1000;
+  const depth = new Map(); // triplet -> new snow in cm
+  const triplets = [...near.keys()];
+  for (let i = 0; i < triplets.length; i += 40) {
+    const qs = new URLSearchParams({
+      stationTriplets: triplets.slice(i, i + 40).join(','),
+      elements: 'SNWD', duration: 'HOURLY', beginDate: fmt(begin), endDate: fmt(end)
+    });
+    const data = await getJSON(`${AWDB}/data?${qs}`);
+    for (const st of data) {
+      const vals = (st.data?.[0]?.values || []).map(v => v.value).filter(v => typeof v === 'number' && v >= 0 && v < 1000).slice(-72);
+      if (vals.length < 24) continue; // too patchy to trust
+      // Median of each 5-hour window irons out the depth sensor's inch-or-two jitter.
+      const smooth = vals.map((_, k) => { const w = vals.slice(Math.max(0, k - 2), k + 3).sort((a, b) => a - b); return w[w.length >> 1]; });
+      let low = Infinity, rise = 0;
+      for (const v of smooth) { low = Math.min(low, v); rise = Math.max(rise, v - low); }
+      depth.set(st.stationTriplet, rise * 2.54);
+    }
+  }
+  const result = new Map(); // point -> deepest station { cm, station }
+  for (const [p, list] of byPoint) {
+    const best = list.filter(t => depth.has(t)).map(t => ({ cm: depth.get(t), station: near.get(t).name }))
+      .reduce((a, b) => (!a || b.cm > a.cm ? b : a), null);
+    if (best) result.set(p, best);
+  }
+  console.log(`SNOTEL: ${stations.length} stations, ${near.size} near our points, ${depth.size} with usable depth data`);
+  return result;
 }
 
 const snow = await snowfall();
@@ -81,6 +142,26 @@ for (const p of usPoints) {
     console.warn(`NWS alerts failed for ${p.place}: ${err.message}`);
   }
   await new Promise(r => setTimeout(r, 300));
+}
+
+let measured = new Map();
+try {
+  measured = await snotel(snow.filter(s => s.center.country === 'US'));
+} catch (err) {
+  console.warn(`SNOTEL failed, using model estimates only: ${err.message}`);
+}
+
+// Recent snowfall for every center: measured by SNOTEL where a US center has stations close by,
+// otherwise Open-Meteo's estimate of what fell in the last 72 hours.
+const recent = {};
+for (const c of centers) {
+  const mine = snow.filter(s => s.center === c);
+  const gauged = mine.filter(s => measured.has(s));
+  const best = gauged.length
+    ? gauged.map(s => ({ cm: measured.get(s).cm, place: measured.get(s).station, source: 'snotel' })).reduce((a, b) => (b.cm > a.cm ? b : a))
+    : mine.map(s => ({ cm: s.past, place: s.place, source: 'model' })).reduce((a, b) => (b.cm > a.cm ? b : a));
+  const cm = Math.round(best.cm / 2.5) * 2.5; // coarse rounding keeps the file from changing every run
+  if (cm >= 2.5) recent[c.href] = { name: c.name, units: c.units, region: region(c.country), cm, place: best.place, source: best.source };
 }
 
 const flagged = {};
@@ -108,7 +189,8 @@ for (const c of centers) {
     place: level ? top.place : null,
     bins: level ? top.bins : null,
     snowingAt,
-    alerts: centerAlerts
+    alerts: centerAlerts,
+    recentCm: recent[c.href]?.cm ?? null
   };
 }
 
@@ -118,9 +200,12 @@ const result = {
   binsStart,
   sources: [
     { name: 'Open-Meteo', url: 'https://open-meteo.com/', license: 'CC BY 4.0' },
-    { name: 'NOAA National Weather Service', url: 'https://www.weather.gov/' }
+    { name: 'NOAA National Weather Service', url: 'https://www.weather.gov/' },
+    { name: 'USDA NRCS SNOTEL', url: 'https://www.nrcs.usda.gov/wps/portal/wcc/home/' }
   ],
   centers: flagged,
+  // Snow that fell in the last 72 hours, for every center with some, deepest first.
+  recent: Object.fromEntries(Object.entries(recent).sort((a, b) => b[1].cm - a[1].cm)),
   // The five deepest 72-hour forecasts anywhere, flagged or not, so the panel has something to show between storms.
   deepest: [...snow].sort((a, b) => b.total - a.total)
     .filter((s, i, all) => all.findIndex(t => t.center === s.center) === i)
@@ -132,6 +217,7 @@ console.log(`${points.length} points, ${Object.keys(flagged).length} centers fla
 for (const s of [...snow].sort((a, b) => b.total - a.total).filter(s => s.total >= 2)) {
   console.log(`  ${s.total.toFixed(1).padStart(6)} cm  ${s.snowing ? 'snowing' : '       '}  ${s.place} (${s.center.name})`);
 }
+for (const [, r] of Object.entries(result.recent)) console.log(`  RECENT ${r.cm.toString().padStart(5)} cm  ${r.source.padEnd(6)}  ${r.place} (${r.name})`);
 for (const [href, f] of Object.entries(flagged)) console.log(`  FLAG ${f.name}: ${JSON.stringify({ level: f.level, cm: f.snow72cm, snowingAt: f.snowingAt, alerts: f.alerts.map(a => a.event) })}`);
 
 if (out) {
