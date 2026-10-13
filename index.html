@@ -665,8 +665,10 @@ li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 0; }
 }
 .storms-toggle:hover { border-color: var(--accent); }
 .storms-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.storms-foot .storms-src { flex: 1 1 18rem; text-align: right; }
-@media (max-width: 34rem) { .storm-mini .host { display: block; } .storm-mini li a { grid-template-columns: 2.4rem 1fr auto; } .storm-mini li a.has-tag { grid-template-columns: 2.4rem 1fr auto; } .storm-mini li a.has-tag > .host { grid-column: 3; grid-row: 1; } .storm-mini li a.has-tag > .tagbox { grid-column: 2; grid-row: 2; margin-left: 0; } .storms-foot .storms-src { text-align: left; } }
+.storms-foot .storms-src { flex: 1 1 100%; text-align: center; }
+/* The details button runs the full width of the panel, label centered. */
+.storms-foot .storms-toggle { flex: 1 1 100%; justify-content: center; text-align: center; }
+@media (max-width: 34rem) { .storm-mini .host { display: block; } .storm-mini li a { grid-template-columns: 2.4rem 1fr auto; } .storm-mini li a.has-tag { grid-template-columns: 2.4rem 1fr auto; } .storm-mini li a.has-tag > .host { grid-column: 3; grid-row: 1; } .storm-mini li a.has-tag > .tagbox { grid-column: 2; grid-row: 2; margin-left: 0; } }
 .tag { display: inline-block; margin-left: 0.45rem; padding: 0.2rem 0.45rem; border-radius: 99px; font: 500 0.66rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; vertical-align: 0.12em; border: 1px solid var(--line); color: var(--ink); background: var(--surface-hi); }
 .tag.snow { position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.22rem 0.55rem 0.22rem 0.45rem; vertical-align: 0.08em; }
 .tag .flake-icon { width: 0.8rem; height: 0.8rem; flex: none; position: relative; color: #dff1ff; }
@@ -779,7 +781,7 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
 
   <main class="regions" id="regions">
     <section>
-      <h2>National <small>US + Canada + Alps + Japan + New Zealand</small></h2>
+      <h2>National Centers <small>US + Canada + Alps + Japan + New Zealand</small></h2>
       <ul>
         <li><a href="https://avalanche.org/" target="_blank" rel="noopener"><span class="code">US</span><span class="name">Avalanche.org<em>Forecast map for every US center</em></span><span class="host">avalanche.org</span></a></li>
         <li><a href="https://www.avalanche.ca/" target="_blank" rel="noopener"><span class="code">CA</span><span class="name">Avalanche Canada<em>Forecasts for BC, Alberta, Yukon, and the Parks Canada and Kananaskis regions</em></span><span class="host">avalanche.ca</span></a></li>
