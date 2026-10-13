@@ -38,5 +38,4 @@ jobs:
             git push origin HEAD:main
           fi
       - name: Tell Bing (IndexNow)
-        continue-on-error: true
         run: node seo/indexnow.mjs

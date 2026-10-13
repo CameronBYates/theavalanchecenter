@@ -13,4 +13,5 @@ const res = await fetch('https://api.indexnow.org/indexnow', {
   body: JSON.stringify({ host: HOST, key, keyLocation: `https://${HOST}/${key}.txt`, urlList: urls }),
 });
 console.log(`IndexNow: ${res.status} for ${urls.length} URL(s)`);
-// 200/202 = accepted. Anything else is logged but never fails the job.
+// 200/202 = accepted. Anything else fails this step so it shows up red.
+if (!res.ok) { console.log(await res.text()); process.exit(1); }
