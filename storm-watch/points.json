@@ -1,8 +1,10 @@
 {
-  "_note": "One entry per center link on index.html, keyed by its exact href. Points are [lat, lon, place, elevation in m]: representative mountain spots in each center's area; the center is flagged if any of its points qualifies. units: in for US centers, cm elsewhere. Elevation is passed to Open-Meteo so totals reflect alpine terrain rather than the valley under the point.",
+  "_note": "One entry per center link on index.html, keyed by its exact href. Points are [lat, lon, place, elevation in m]: representative mountain spots in each center's area; the center is flagged if any of its points qualifies. units: in for US centers, cm elsewhere. Elevation is passed to Open-Meteo so totals reflect alpine terrain rather than the valley under the point. Optional resorts are [lat, lon, name, elevation in m, search radius in km (default 8)]: well-known ski areas whose recent snow is shown alongside the center's deepest total. In the US it is measured at SNOTEL stations within the radius; elsewhere, or with no station that close, it is Open-Meteo's estimate at the point.",
   "centers": [
     { "href": "https://www.cnfaic.org/", "name": "Chugach NF Avalanche Information Center", "country": "US", "units": "in", "points": [
       [60.78, -149.18, "Turnagain Pass", 900]
+    ], "resorts": [
+      [60.97, -149.1, "Alyeska", 600]
     ] },
     { "href": "https://hpavalanche.org/", "name": "Hatcher Pass Avalanche Center", "country": "US", "units": "in", "points": [
       [61.78, -149.27, "Hatcher Pass", 1100]
@@ -20,8 +22,16 @@
       [47.42, -121.41, "Snoqualmie Pass", 1200],
       [46.79, -121.74, "Paradise", 1650],
       [45.33, -121.71, "Mt Hood", 1800]
+    ], "resorts": [
+      [48.86, -121.67, "Mt Baker Ski Area", 1300],
+      [47.74, -121.09, "Stevens Pass", 1400],
+      [47.42, -121.41, "Snoqualmie Pass", 1000],
+      [46.93, -121.5, "Crystal Mountain", 1700],
+      [45.33, -121.67, "Mt Hood Meadows and Timberline", 1800]
     ] },
     { "href": "https://www.coavalanche.org/", "name": "Central Oregon Avalanche Center", "country": "US", "units": "in", "points": [
+      [43.98, -121.69, "Mt Bachelor", 2000]
+    ], "resorts": [
       [43.98, -121.69, "Mt Bachelor", 2000]
     ] },
     { "href": "https://www.wallowaavalanchecenter.org/", "name": "Wallowa Avalanche Center", "country": "US", "units": "in", "points": [
@@ -33,56 +43,104 @@
     { "href": "https://www.sierraavalanchecenter.org/", "name": "Sierra Avalanche Center", "country": "US", "units": "in", "points": [
       [39.32, -120.33, "Donner Summit", 2300],
       [38.69, -120.0, "Carson Pass", 2600]
+    ], "resorts": [
+      [39.2, -120.24, "Palisades Tahoe", 2400],
+      [39.3, -120.34, "Sugar Bowl", 2300],
+      [38.94, -119.94, "Heavenly", 2700],
+      [38.68, -120.07, "Kirkwood", 2500]
     ] },
     { "href": "https://www.bridgeportavalanchecenter.org/", "name": "Bridgeport Avalanche Center", "country": "US", "units": "in", "points": [
       [38.33, -119.64, "Sonora Pass", 2900]
     ] },
     { "href": "https://www.esavalanche.org/", "name": "Eastern Sierra Avalanche Center", "country": "US", "units": "in", "points": [
       [37.63, -119.03, "Mammoth Lakes", 2900]
+    ], "resorts": [
+      [37.63, -119.03, "Mammoth Mountain", 2900],
+      [37.77, -119.09, "June Mountain", 2600]
     ] },
     { "href": "https://www.idahopanhandleavalanche.org/", "name": "Idaho Panhandle Avalanche Center", "country": "US", "units": "in", "points": [
       [48.37, -116.62, "Selkirks", 1800]
+    ], "resorts": [
+      [48.37, -116.62, "Schweitzer", 1600],
+      [47.46, -115.7, "Lookout Pass", 1500]
     ] },
     { "href": "https://payetteavalanche.org/", "name": "Payette Avalanche Center", "country": "US", "units": "in", "points": [
       [45.0, -116.15, "McCall", 2000]
+    ], "resorts": [
+      [45.0, -116.15, "Brundage", 2000],
+      [44.67, -116.12, "Tamarack", 1800]
     ] },
     { "href": "https://www.sawtoothavalanche.com/", "name": "Sawtooth Avalanche Center", "country": "US", "units": "in", "points": [
       [43.87, -114.71, "Galena Summit", 2600]
+    ], "resorts": [
+      [43.67, -114.4, "Sun Valley", 2400]
     ] },
     { "href": "https://www.flatheadavalanche.org/", "name": "Flathead Avalanche Center", "country": "US", "units": "in", "points": [
       [48.48, -114.36, "Whitefish Range", 2000],
       [48.32, -113.35, "Marias Pass", 1600]
+    ], "resorts": [
+      [48.48, -114.36, "Whitefish Mountain", 1900]
     ] },
     { "href": "https://missoulaavalanche.org/", "name": "West Central Montana Avalanche Center", "country": "US", "units": "in", "points": [
       [46.63, -114.58, "Lolo Pass", 1700]
+    ], "resorts": [
+      [47.01, -114.0, "Montana Snowbowl", 1800],
+      [45.69, -113.95, "Lost Trail", 2100]
     ] },
     { "href": "https://www.mtavalanche.com/", "name": "Gallatin NF Avalanche Center", "country": "US", "units": "in", "points": [
       [45.28, -111.4, "Big Sky", 2700],
       [45.02, -109.93, "Cooke City", 2700]
+    ], "resorts": [
+      [45.28, -111.4, "Big Sky", 2600],
+      [45.82, -110.9, "Bridger Bowl", 2200]
     ] },
     { "href": "https://jhavalanche.org/", "name": "Bridger-Teton Avalanche Center", "country": "US", "units": "in", "points": [
       [43.5, -110.95, "Teton Pass", 2600]
+    ], "resorts": [
+      [43.59, -110.85, "Jackson Hole", 2600],
+      [43.79, -110.94, "Grand Targhee", 2500]
     ] },
     { "href": "https://utahavalanchecenter.org/", "name": "Utah Avalanche Center", "country": "US", "units": "in", "points": [
       [40.58, -111.64, "Alta", 2900],
       [41.3, -111.8, "Ogden", 2600],
       [41.9, -111.6, "Logan", 2500],
       [40.7, -110.9, "Uintas", 3000]
+    ], "resorts": [
+      [40.6, -111.62, "Cottonwood Canyons", 2700, 8],
+      [40.64, -111.52, "Park City", 2500, 4],
+      [41.27, -111.82, "Snowbasin and Powder Mountain", 2300],
+      [40.39, -111.58, "Sundance", 2300, 5],
+      [41.97, -111.54, "Beaver Mountain", 2300]
     ] },
     { "href": "https://avalanche.state.co.us/", "name": "Colorado Avalanche Information Center", "country": "US", "units": "in", "points": [
       [39.8, -105.78, "Berthoud Pass", 3500],
       [39.6, -106.35, "Vail Pass", 3400],
       [37.9, -107.71, "Red Mountain Pass", 3500],
       [37.47, -106.79, "Wolf Creek Pass", 3300]
+    ], "resorts": [
+      [39.55, -105.98, "Summit County", 3300],
+      [39.6, -106.38, "Vail and Beaver Creek", 3100],
+      [39.87, -105.76, "Winter Park", 3100],
+      [39.68, -105.9, "Loveland", 3400, 5],
+      [39.18, -106.9, "Aspen Snowmass", 3200],
+      [40.46, -106.77, "Steamboat", 2900],
+      [37.93, -107.83, "Telluride", 3300],
+      [37.47, -106.79, "Wolf Creek", 3300]
     ] },
     { "href": "https://cbavalanchecenter.org/", "name": "Crested Butte Avalanche Center", "country": "US", "units": "in", "points": [
       [38.9, -106.96, "Crested Butte", 3300]
+    ], "resorts": [
+      [38.9, -106.96, "Crested Butte", 3100]
     ] },
     { "href": "https://taosavalanchecenter.org/", "name": "Taos Avalanche Center", "country": "US", "units": "in", "points": [
+      [36.58, -105.45, "Taos Ski Valley", 3300]
+    ], "resorts": [
       [36.58, -105.45, "Taos Ski Valley", 3300]
     ] },
     { "href": "https://kachinapeaks.org/", "name": "Kachina Peaks Avalanche Center", "country": "US", "units": "in", "points": [
       [35.33, -111.7, "San Francisco Peaks", 3200]
+    ], "resorts": [
+      [35.33, -111.71, "Arizona Snowbowl", 3000]
     ] },
     { "href": "https://www.mountwashingtonavalanchecenter.org/", "name": "Mount Washington Avalanche Center", "country": "US", "units": "in", "points": [
       [44.27, -71.3, "Mt Washington", 1500]
@@ -108,6 +166,17 @@
       [49.05, -113.95, "Waterton", 2000],
       [52.8, -118.1, "Jasper", 2200],
       [59.62, -135.15, "White Pass, Yukon", 1100]
+    ], "resorts": [
+      [50.06, -122.95, "Whistler Blackcomb", 1800],
+      [50.95, -118.16, "Revelstoke Mountain", 1900],
+      [51.3, -117.05, "Kicking Horse", 2000],
+      [51.08, -115.78, "Sunshine Village", 2300],
+      [51.44, -116.16, "Lake Louise Ski Resort", 2200],
+      [49.1, -117.83, "Red Mountain", 1800],
+      [49.45, -117.38, "Whitewater", 1900],
+      [49.46, -115.09, "Fernie Alpine", 1800],
+      [49.72, -118.93, "Big White", 1900],
+      [50.88, -119.89, "Sun Peaks", 1800]
     ] },
     { "href": "https://www.avalanchequebec.ca/", "name": "Avalanche Québec", "country": "CA", "units": "cm", "points": [
       [48.95, -66.1, "Chic-Chocs", 1000]

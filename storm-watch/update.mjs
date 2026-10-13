@@ -26,6 +26,9 @@ const round1 = n => Math.round(n * 10) / 10;
 const out = process.argv[2];
 const { centers } = JSON.parse(await readFile(new URL('./points.json', import.meta.url)));
 const points = centers.flatMap(c => c.points.map(([lat, lon, place, elev]) => ({ center: c, lat, lon, place, elev })));
+// Well-known ski areas, reported on their own for recent snowfall. Asked for together with the points.
+const resorts = centers.flatMap(c => (c.resorts || []).map(([lat, lon, place, elev, radius = 8]) => ({ center: c, lat, lon, place, elev, radius, resort: true })));
+const allPoints = [...points, ...resorts];
 
 async function getJSON(url, headers = {}) {
   for (let attempt = 1; ; attempt++) {
@@ -40,8 +43,8 @@ let binsStart = null; // GMT start of the first 6-hour bin
 // Open-Meteo takes many coordinates in one call; send them in chunks to keep URLs short.
 async function snowfall() {
   const results = [];
-  for (let i = 0; i < points.length; i += 50) {
-    const chunk = points.slice(i, i + 50);
+  for (let i = 0; i < allPoints.length; i += 50) {
+    const chunk = allPoints.slice(i, i + 50);
     const qs = new URLSearchParams({
       latitude: chunk.map(p => p.lat).join(','),
       longitude: chunk.map(p => p.lon).join(','),
@@ -60,7 +63,7 @@ async function snowfall() {
   const nowHour = (results[0]?.current?.time || '').slice(0, 13) + ':00';
   const split = times.indexOf(nowHour) >= 0 ? times.indexOf(nowHour) : 72;
   binsStart = times[split] ? times[split] + 'Z' : null;
-  return points.map((p, i) => {
+  return allPoints.map((p, i) => {
     const r = results[i];
     const all = r.hourly.snowfall.map(v => v || 0);
     const past = all.slice(0, split).reduce((a, b) => a + b, 0);
@@ -89,6 +92,7 @@ const km = (a, b, c, d) => {
 // SNOTEL: automated USDA snow stations in the western US and Alaska, reporting snow depth every hour.
 // New snow is the biggest rise in depth over the last 72 hours, measured from the lowest point before it,
 // after smoothing out sensor jitter. Settling makes this a little conservative, but it is a measurement.
+// Each spot is matched to the stations within its own radius (km).
 async function snotel(usPoints) {
   const stations = await getJSON(`${AWDB}/stations?stationTriplets=*:*:SNTL&activeOnly=true&returnStationElements=false&returnForecastPointMetadata=false&returnReservoirMetadata=false`);
   const near = new Map(); // station triplet -> station, for stations close to any US point
@@ -96,7 +100,7 @@ async function snotel(usPoints) {
   for (const p of usPoints) {
     const mine = stations
       .map(s => ({ s, d: km(p.lat, p.lon, s.latitude, s.longitude) }))
-      .filter(x => x.d <= SNOTEL_KM)
+      .filter(x => x.d <= (p.radius || SNOTEL_KM))
       .sort((a, b) => a.d - b.d);
     byPoint.set(p, mine.map(x => x.s.stationTriplet));
     for (const { s } of mine) near.set(s.stationTriplet, s);
@@ -132,7 +136,9 @@ async function snotel(usPoints) {
   return result;
 }
 
-const snow = await snowfall();
+const everywhere = await snowfall();
+const snow = everywhere.filter(s => !s.resort); // the center's own points; ski areas are kept apart
+const resortSnow = everywhere.filter(s => s.resort);
 const usPoints = points.filter(p => p.center.country === 'US');
 const alerts = new Map();
 for (const p of usPoints) {
@@ -146,7 +152,7 @@ for (const p of usPoints) {
 
 let measured = new Map();
 try {
-  measured = await snotel(snow.filter(s => s.center.country === 'US'));
+  measured = await snotel(everywhere.filter(s => s.center.country === 'US'));
 } catch (err) {
   console.warn(`SNOTEL failed, using model estimates only: ${err.message}`);
 }
@@ -154,14 +160,21 @@ try {
 // Recent snowfall for every center: measured by SNOTEL where a US center has stations close by,
 // otherwise Open-Meteo's estimate of what fell in the last 72 hours.
 const recent = {};
+const deepestOf = list => list.reduce((a, b) => (b.cm > a.cm ? b : a));
+const roundRecent = cm => Math.round(cm / 2.5) * 2.5; // coarse rounding keeps the file from changing every run
 for (const c of centers) {
-  const mine = snow.filter(s => s.center === c);
+  const mine = everywhere.filter(s => s.center === c);
   const gauged = mine.filter(s => measured.has(s));
   const best = gauged.length
-    ? gauged.map(s => ({ cm: measured.get(s).cm, place: measured.get(s).station, source: 'snotel' })).reduce((a, b) => (b.cm > a.cm ? b : a))
-    : mine.map(s => ({ cm: s.past, place: s.place, source: 'model' })).reduce((a, b) => (b.cm > a.cm ? b : a));
-  const cm = Math.round(best.cm / 2.5) * 2.5; // coarse rounding keeps the file from changing every run
-  if (cm >= 2.5) recent[c.href] = { name: c.name, units: c.units, region: region(c.country), cm, place: best.place, source: best.source };
+    ? deepestOf(gauged.map(s => ({ cm: measured.get(s).cm, place: measured.get(s).station, source: 'snotel' })))
+    : deepestOf(mine.map(s => ({ cm: s.past, place: s.place, source: 'model' })));
+  // Each ski area on its own: measured at its nearest SNOTEL stations when it has any, otherwise estimated.
+  const areas = resortSnow.filter(s => s.center === c).map(s => measured.has(s)
+    ? { name: s.place, cm: roundRecent(measured.get(s).cm), station: measured.get(s).station, source: 'snotel' }
+    : { name: s.place, cm: roundRecent(s.past), source: 'model' })
+    .filter(r => r.cm >= 2.5).sort((a, b) => b.cm - a.cm);
+  const cm = roundRecent(best.cm);
+  if (cm >= 2.5) recent[c.href] = { name: c.name, units: c.units, region: region(c.country), cm, place: best.place, source: best.source, resorts: areas };
 }
 
 const flagged = {};
@@ -217,7 +230,10 @@ console.log(`${points.length} points, ${Object.keys(flagged).length} centers fla
 for (const s of [...snow].sort((a, b) => b.total - a.total).filter(s => s.total >= 2)) {
   console.log(`  ${s.total.toFixed(1).padStart(6)} cm  ${s.snowing ? 'snowing' : '       '}  ${s.place} (${s.center.name})`);
 }
-for (const [, r] of Object.entries(result.recent)) console.log(`  RECENT ${r.cm.toString().padStart(5)} cm  ${r.source.padEnd(6)}  ${r.place} (${r.name})`);
+for (const [, r] of Object.entries(result.recent)) {
+  console.log(`  RECENT ${r.cm.toString().padStart(5)} cm  ${r.source.padEnd(6)}  ${r.place} (${r.name})`);
+  for (const a of r.resorts) console.log(`         ${a.cm.toString().padStart(5)} cm  ${a.source.padEnd(6)}  ${a.name}${a.station ? ' at ' + a.station : ''}`);
+}
 for (const [href, f] of Object.entries(flagged)) console.log(`  FLAG ${f.name}: ${JSON.stringify({ level: f.level, cm: f.snow72cm, snowingAt: f.snowingAt, alerts: f.alerts.map(a => a.event) })}`);
 
 if (out) {
