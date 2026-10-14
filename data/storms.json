@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-14T13:01:25.787Z",
+ "updated": "2026-10-14T15:55:57.267Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-14T13:00Z",
+ "binsStart": "2026-10-14T15:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -27,21 +27,21 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 45,
+   "snow72cm": 40,
    "place": "Turnagain Pass",
    "bins": [
-    0,
-    1.4,
-    11.7,
-    11.8,
-    9.5,
-    4,
-    0,
+    0.1,
+    3.7,
+    13.9,
+    10,
+    6.7,
     0,
     0,
     0,
-    1.5,
-    4.8
+    0,
+    0.1,
+    3.6,
+    2.9
    ],
    "snowingAt": [],
    "alerts": [],
@@ -52,25 +52,23 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 30,
-   "place": "Thompson Pass",
+   "snow72cm": 20,
+   "place": "Haines",
    "bins": [
-    0.4,
-    0.1,
-    0.9,
-    0.7,
-    8.1,
-    5,
-    8,
-    3.1,
-    0.5,
-    0.1,
-    1,
-    1.3
+    0,
+    0,
+    0,
+    8.8,
+    10.2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
    ],
-   "snowingAt": [
-    "Thompson Pass"
-   ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": null
   },
@@ -86,21 +84,7 @@
     "Red Mountain Pass"
    ],
    "alerts": [],
-   "recentCm": 20
-  },
-  "https://cbavalanchecenter.org/": {
-   "name": "Crested Butte Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Crested Butte"
-   ],
-   "alerts": [],
-   "recentCm": 2.5
+   "recentCm": 25
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
@@ -110,22 +94,49 @@
    "snow72cm": 25,
    "place": "White Pass, Yukon",
    "bins": [
-    0,
-    0.3,
-    0,
-    4.5,
-    12,
-    2.2,
     0.1,
-    2.9,
-    2.2,
+    0.1,
+    0.1,
+    6.9,
+    11.5,
+    0.1,
+    0.3,
+    4.1,
+    0.8,
     0,
-    0.4,
-    1
+    1,
+    0.5
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": 12.5
+  },
+  "https://www.avalanchequebec.ca/": {
+   "name": "Avalanche Québec",
+   "units": "cm",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "Chic-Chocs",
+   "bins": [
+    1.1,
+    0,
+    2.1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0.5,
+    4.1,
+    6,
+    2.2
+   ],
+   "snowingAt": [
+    "Chic-Chocs"
+   ],
+   "alerts": [],
+   "recentCm": 2.5
   },
   "https://nadare.jp/": {
    "name": "Japan Avalanche Network",
@@ -209,13 +220,13 @@
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 20,
+   "cm": 25,
    "place": "Beartown",
    "source": "snotel",
    "resorts": [
     {
      "name": "Telluride",
-     "cm": 5,
+     "cm": 15,
      "station": "Alta Lakes",
      "source": "snotel"
     },
@@ -261,15 +272,6 @@
     }
    ]
   },
-  "https://hpavalanche.org/": {
-   "name": "Hatcher Pass Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 12.5,
-   "place": "Independence Mine",
-   "source": "snotel",
-   "resorts": []
-  },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
@@ -287,22 +289,6 @@
    "place": "Mt. Howard",
    "source": "snotel",
    "resorts": []
-  },
-  "https://www.flatheadavalanche.org/": {
-   "name": "Flathead Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 12.5,
-   "place": "Pike Creek",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Whitefish Mountain",
-     "cm": 2.5,
-     "source": "model",
-     "featured": true
-    }
-   ]
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
@@ -362,6 +348,31 @@
      "name": "Sun Peaks",
      "cm": 0,
      "source": "model"
+    }
+   ]
+  },
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 10,
+   "place": "Frostbite Bottom",
+   "source": "snotel",
+   "resorts": []
+  },
+  "https://www.flatheadavalanche.org/": {
+   "name": "Flathead Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 10,
+   "place": "Pike Creek",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Whitefish Mountain",
+     "cm": 2.5,
+     "source": "model",
+     "featured": true
     }
    ]
   },
@@ -446,6 +457,23 @@
      "name": "Tamarack",
      "cm": 0,
      "source": "model"
+    }
+   ]
+  },
+  "https://cbavalanchecenter.org/": {
+   "name": "Crested Butte Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Schofield Pass",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Crested Butte",
+     "cm": 2.5,
+     "station": "Butte",
+     "source": "snotel",
+     "featured": true
     }
    ]
   },
@@ -570,23 +598,6 @@
     }
    ]
   },
-  "https://cbavalanchecenter.org/": {
-   "name": "Crested Butte Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Butte",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Crested Butte",
-     "cm": 2.5,
-     "station": "Butte",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
   "https://taosavalanchecenter.org/": {
    "name": "Taos Avalanche Center",
    "units": "in",
@@ -676,15 +687,7 @@
    "place": "Turnagain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 45
-  },
-  {
-   "href": "https://alaskasnow.org/",
-   "name": "Alaska Avalanche Information Center",
-   "place": "Thompson Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 29
+   "cm": 41
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -692,7 +695,15 @@
    "place": "White Pass, Yukon",
    "region": "North America",
    "units": "cm",
-   "cm": 25
+   "cm": 26
+  },
+  {
+   "href": "https://alaskasnow.org/",
+   "name": "Alaska Avalanche Information Center",
+   "place": "Haines",
+   "region": "North America",
+   "units": "in",
+   "cm": 19
   },
   {
    "href": "https://www.avalanchequebec.ca/",
@@ -700,15 +711,15 @@
    "place": "Chic-Chocs",
    "region": "North America",
    "units": "cm",
-   "cm": 15
+   "cm": 16
   },
   {
-   "href": "https://nadare.jp/",
-   "name": "Japan Avalanche Network",
-   "place": "Taisetsu-Tokachi",
-   "region": "Japan",
-   "units": "cm",
-   "cm": 13
+   "href": "https://avalanche.state.co.us/",
+   "name": "Colorado Avalanche Information Center",
+   "place": "Wolf Creek Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 14
   }
  ]
 }
