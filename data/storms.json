@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-15T07:05:17.107Z",
+ "updated": "2026-10-15T09:51:08.603Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-15T07:00Z",
+ "binsStart": "2026-10-15T09:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -22,55 +22,30 @@
   }
  ],
  "centers": {
-  "https://www.cnfaic.org/": {
-   "name": "Chugach NF Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "Turnagain Pass",
-   "bins": [
-    6.3,
-    10,
-    3.4,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "snowingAt": [
-    "Turnagain Pass"
-   ],
-   "alerts": [],
-   "recentCm": 0
-  },
   "https://alaskasnow.org/": {
    "name": "Alaska Avalanche Information Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 30,
    "place": "Haines",
    "bins": [
-    4.2,
-    16.1,
+    11.3,
+    12.9,
+    0,
+    0,
     0.6,
     0,
-    1.9,
     0.1,
-    0,
-    0,
-    0,
-    0.1,
-    0.6,
+    0.2,
+    0.8,
+    2,
+    0.5,
     0
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Haines"
+   ],
    "alerts": [],
    "recentCm": null
   },
@@ -79,25 +54,25 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Mt Juneau",
    "bins": [
-    2.2,
+    2.3,
     0,
     0,
     0,
     0,
     0,
-    0,
-    5.1,
-    3.9,
-    5.6,
-    2.6,
+    1.5,
+    8.8,
+    4.6,
+    7.6,
+    0.1,
     0
    ],
    "snowingAt": [],
    "alerts": [],
-   "recentCm": 5
+   "recentCm": 2.5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
@@ -107,20 +82,22 @@
    "snow72cm": 35,
    "place": "White Pass, Yukon",
    "bins": [
-    3.6,
-    14.7,
-    2.1,
-    2.7,
-    4.4,
-    2.9,
+    8.5,
+    14.4,
+    0,
+    0.7,
+    4.8,
+    0.3,
     0,
     0.1,
-    0.3,
-    0.2,
-    2,
-    1.9
+    0.7,
+    3.7,
+    1.5,
+    0.9
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "White Pass, Yukon"
+   ],
    "alerts": [],
    "recentCm": 12.5
   },
@@ -144,7 +121,7 @@
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 40,
+   "cm": 37.5,
    "place": "Beartown",
    "source": "snotel",
    "resorts": [
@@ -152,6 +129,12 @@
      "name": "Telluride",
      "cm": 30,
      "station": "Alta Lakes",
+     "source": "snotel"
+    },
+    {
+     "name": "Loveland",
+     "cm": 17.5,
+     "station": "Loveland Basin",
      "source": "snotel"
     },
     {
@@ -166,26 +149,20 @@
      "source": "model"
     },
     {
-     "name": "Wolf Creek",
-     "cm": 7.5,
-     "station": "Upper San Juan",
-     "source": "snotel"
-    },
-    {
      "name": "Winter Park",
-     "cm": 5,
+     "cm": 7.5,
      "station": "Berthoud Summit",
      "source": "snotel"
     },
     {
-     "name": "Loveland",
-     "cm": 2.5,
-     "station": "Loveland Basin",
+     "name": "Wolf Creek",
+     "cm": 7.5,
+     "station": "Wolf Creek Summit",
      "source": "snotel"
     },
     {
      "name": "Vail and Beaver Creek",
-     "cm": 0,
+     "cm": 2.5,
      "station": "Vail Mountain",
      "source": "snotel"
     },
@@ -322,15 +299,6 @@
    "source": "snotel",
    "resorts": []
   },
-  "https://www.coastalakavalanche.org/": {
-   "name": "Coastal Alaska Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Mt Juneau",
-   "source": "model",
-   "resorts": []
-  },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
    "units": "in",
@@ -399,6 +367,15 @@
    "region": "Japan",
    "cm": 5,
    "place": "Taisetsu-Tokachi",
+   "source": "model",
+   "resorts": []
+  },
+  "https://www.coastalakavalanche.org/": {
+   "name": "Coastal Alaska Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Mt Juneau",
    "source": "model",
    "resorts": []
   },
@@ -682,7 +659,7 @@
    "place": "White Pass, Yukon",
    "region": "North America",
    "units": "cm",
-   "cm": 35
+   "cm": 36
   },
   {
    "href": "https://alaskasnow.org/",
@@ -690,15 +667,7 @@
    "place": "Haines",
    "region": "North America",
    "units": "in",
-   "cm": 24
-  },
-  {
-   "href": "https://www.cnfaic.org/",
-   "name": "Chugach NF Avalanche Information Center",
-   "place": "Turnagain Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 20
+   "cm": 28
   },
   {
    "href": "https://www.coastalakavalanche.org/",
@@ -706,7 +675,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 19
+   "cm": 25
   },
   {
    "href": "https://www.avalanchequebec.ca/",
@@ -714,7 +683,15 @@
    "place": "Chic-Chocs",
    "region": "North America",
    "units": "cm",
-   "cm": 11
+   "cm": 15
+  },
+  {
+   "href": "https://meteofrance.com/meteo-montagne",
+   "name": "Météo-France (BERA)",
+   "place": "Pyrenees",
+   "region": "Europe",
+   "units": "cm",
+   "cm": 9
   }
  ]
 }
