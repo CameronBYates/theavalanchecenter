@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-14T21:49:33.725Z",
+ "updated": "2026-10-15T01:02:45.052Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-14T21:00Z",
+ "binsStart": "2026-10-15T00:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -30,11 +30,11 @@
    "snow72cm": 35,
    "place": "Turnagain Pass",
    "bins": [
-    4.4,
-    14.6,
-    9.2,
-    8.8,
-    0.3,
+    10.8,
+    11.9,
+    9.6,
+    3.5,
+    0,
     0,
     0,
     0,
@@ -43,9 +43,7 @@
     0,
     0
    ],
-   "snowingAt": [
-    "Turnagain Pass"
-   ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": 0
   },
@@ -53,29 +51,29 @@
    "name": "Alaska Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "level": "heavy",
-   "snow72cm": 35,
-   "place": "Thompson Pass",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Haines",
    "bins": [
-    0.1,
-    0.6,
-    4.1,
-    7.6,
-    10,
-    5,
-    3.5,
-    1.2,
-    0.3,
-    0.8,
-    1.8,
-    0
+    0,
+    2.4,
+    16.8,
+    1.7,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0.6
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": null
   },
-  "https://avalanche.state.co.us/": {
-   "name": "Colorado Avalanche Information Center",
+  "https://cbavalanchecenter.org/": {
+   "name": "Crested Butte Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": null,
@@ -83,10 +81,10 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Berthoud Pass"
+    "Crested Butte"
    ],
    "alerts": [],
-   "recentCm": 35
+   "recentCm": 5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
@@ -96,18 +94,18 @@
    "snow72cm": 35,
    "place": "White Pass, Yukon",
    "bins": [
-    0.1,
-    0.3,
-    7.2,
-    13.1,
-    0.3,
-    4.8,
-    5.3,
-    0.5,
     0,
-    0.2,
-    0.1,
-    1
+    2.5,
+    13.4,
+    5,
+    0.8,
+    5.6,
+    4.1,
+    0,
+    0,
+    0.3,
+    0.4,
+    1.5
    ],
    "snowingAt": [],
    "alerts": [],
@@ -118,21 +116,21 @@
    "units": "cm",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 15,
    "place": "Chic-Chocs",
    "bins": [
-    0,
-    1.8,
-    0,
-    0,
+    0.1,
+    0.7,
     0,
     0,
-    0.5,
-    2.1,
-    5.7,
-    5.3,
-    1.9,
-    2.5
+    0,
+    0,
+    2.4,
+    3.7,
+    4.5,
+    1.6,
+    1.4,
+    2
    ],
    "snowingAt": [],
    "alerts": [],
@@ -170,9 +168,14 @@
     },
     {
      "name": "Summit County",
-     "cm": 7.5,
+     "cm": 10,
      "source": "model",
      "featured": true
+    },
+    {
+     "name": "Steamboat",
+     "cm": 7.5,
+     "source": "model"
     },
     {
      "name": "Wolf Creek",
@@ -181,21 +184,16 @@
      "source": "snotel"
     },
     {
-     "name": "Winter Park",
-     "cm": 2.5,
-     "station": "Berthoud Summit",
-     "source": "snotel"
-    },
-    {
      "name": "Loveland",
-     "cm": 2.5,
+     "cm": 5,
      "station": "Loveland Basin",
      "source": "snotel"
     },
     {
-     "name": "Steamboat",
+     "name": "Winter Park",
      "cm": 2.5,
-     "source": "model"
+     "station": "Berthoud Summit",
+     "source": "snotel"
     },
     {
      "name": "Vail and Beaver Creek",
@@ -215,12 +213,12 @@
    "units": "in",
    "region": "North America",
    "cm": 27.5,
-   "place": "Brown Duck",
+   "place": "Snowbird",
    "source": "snotel",
    "resorts": [
     {
      "name": "Cottonwood Canyons",
-     "cm": 25,
+     "cm": 27.5,
      "station": "Snowbird",
      "source": "snotel",
      "featured": true
@@ -266,29 +264,6 @@
    "place": "Mt. Howard",
    "source": "snotel",
    "resorts": []
-  },
-  "https://www.mtavalanche.com/": {
-   "name": "Gallatin NF Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 12.5,
-   "place": "Sacajawea",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Bridger Bowl",
-     "cm": 12.5,
-     "station": "Sacajawea",
-     "source": "snotel"
-    },
-    {
-     "name": "Big Sky",
-     "cm": 7.5,
-     "station": "Lone Mountain",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
@@ -351,41 +326,26 @@
     }
    ]
   },
-  "https://payetteavalanche.org/": {
-   "name": "Payette Avalanche Center",
+  "https://www.mtavalanche.com/": {
+   "name": "Gallatin NF Avalanche Center",
    "units": "in",
    "region": "North America",
    "cm": 7.5,
-   "place": "Brundage Reservoir",
+   "place": "White Mill",
    "source": "snotel",
    "resorts": [
     {
-     "name": "Brundage",
-     "cm": 7.5,
-     "station": "Brundage Reservoir",
+     "name": "Big Sky",
+     "cm": 5,
+     "station": "Lone Mountain",
      "source": "snotel",
      "featured": true
     },
     {
-     "name": "Tamarack",
-     "cm": 0,
-     "source": "model"
-    }
-   ]
-  },
-  "https://www.flatheadavalanche.org/": {
-   "name": "Flathead Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 7.5,
-   "place": "Pike Creek",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Whitefish Mountain",
-     "cm": 2.5,
-     "source": "model",
-     "featured": true
+     "name": "Bridger Bowl",
+     "cm": 5,
+     "station": "Sacajawea",
+     "source": "snotel"
     }
    ]
   },
@@ -437,6 +397,22 @@
     }
    ]
   },
+  "https://www.flatheadavalanche.org/": {
+   "name": "Flathead Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Pike Creek",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Whitefish Mountain",
+     "cm": 2.5,
+     "source": "model",
+     "featured": true
+    }
+   ]
+  },
   "https://missoulaavalanche.org/": {
    "name": "West Central Montana Avalanche Center",
    "units": "in",
@@ -447,7 +423,7 @@
    "resorts": [
     {
      "name": "Montana Snowbowl",
-     "cm": 5,
+     "cm": 2.5,
      "station": "Stuart Mountain",
      "source": "snotel",
      "featured": true
@@ -455,7 +431,7 @@
     {
      "name": "Lost Trail",
      "cm": 2.5,
-     "station": "Saddle Mtn.",
+     "station": "Moose Creek",
      "source": "snotel"
     }
    ]
@@ -557,6 +533,28 @@
      "station": "Schweitzer Basin",
      "source": "snotel",
      "featured": true
+    }
+   ]
+  },
+  "https://payetteavalanche.org/": {
+   "name": "Payette Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Brundage Reservoir",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Brundage",
+     "cm": 2.5,
+     "station": "Brundage Reservoir",
+     "source": "snotel",
+     "featured": true
+    },
+    {
+     "name": "Tamarack",
+     "cm": 0,
+     "source": "model"
     }
    ]
   },
@@ -696,15 +694,7 @@
    "place": "Turnagain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 37
-  },
-  {
-   "href": "https://alaskasnow.org/",
-   "name": "Alaska Avalanche Information Center",
-   "place": "Thompson Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 35
+   "cm": 36
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -712,7 +702,15 @@
    "place": "White Pass, Yukon",
    "region": "North America",
    "units": "cm",
-   "cm": 33
+   "cm": 34
+  },
+  {
+   "href": "https://alaskasnow.org/",
+   "name": "Alaska Avalanche Information Center",
+   "place": "Haines",
+   "region": "North America",
+   "units": "in",
+   "cm": 21
   },
   {
    "href": "https://www.avalanchequebec.ca/",
@@ -720,15 +718,15 @@
    "place": "Chic-Chocs",
    "region": "North America",
    "units": "cm",
-   "cm": 20
+   "cm": 16
   },
   {
-   "href": "https://nadare.jp/",
-   "name": "Japan Avalanche Network",
-   "place": "Taisetsu-Tokachi",
-   "region": "Japan",
-   "units": "cm",
-   "cm": 12
+   "href": "https://www.coastalakavalanche.org/",
+   "name": "Coastal Alaska Avalanche Center",
+   "place": "Mt Juneau",
+   "region": "North America",
+   "units": "in",
+   "cm": 13
   }
  ]
 }
