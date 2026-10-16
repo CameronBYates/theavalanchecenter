@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-16T15:51:05.742Z",
+ "updated": "2026-10-16T18:56:10.292Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-16T15:00Z",
+ "binsStart": "2026-10-16T18:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -22,20 +22,6 @@
   }
  ],
  "centers": {
-  "https://www.cnfaic.org/": {
-   "name": "Chugach NF Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Turnagain Pass"
-   ],
-   "alerts": [],
-   "recentCm": 0
-  },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
@@ -45,17 +31,17 @@
    "place": "Mt Juneau",
    "bins": [
     0,
+    6.9,
+    4.8,
+    1.2,
+    4.7,
     0,
-    11.7,
-    0,
-    5.5,
     0.4,
     0.4,
+    1.5,
     0.1,
-    1.1,
-    0.8,
-    0.1,
-    0.7
+    0.5,
+    0.4
    ],
    "snowingAt": [],
    "alerts": [],
@@ -70,101 +56,31 @@
    "place": "Terrace",
    "bins": [
     0,
-    0,
-    6.4,
-    7.3,
-    0.8,
-    2.4,
-    0.9,
-    1,
+    2.5,
+    8.9,
+    2.5,
+    2.3,
     1.1,
-    0.1,
+    0.8,
+    1.3,
+    0.4,
     0.2,
-    0.3
+    0.3,
+    0.1
    ],
    "snowingAt": [
     "White Pass, Yukon"
    ],
    "alerts": [],
-   "recentCm": 32.5
-  },
-  "https://nadare.jp/": {
-   "name": "Japan Avalanche Network",
-   "units": "cm",
-   "region": "Japan",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Taisetsu-Tokachi"
-   ],
-   "alerts": [],
-   "recentCm": 10
+   "recentCm": 37.5
   }
  },
  "recent": {
-  "https://avalanche.state.co.us/": {
-   "name": "Colorado Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 32.5,
-   "place": "Beartown",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Telluride",
-     "cm": 30,
-     "station": "Alta Lakes",
-     "source": "snotel"
-    },
-    {
-     "name": "Loveland",
-     "cm": 15,
-     "station": "Loveland Basin",
-     "source": "snotel"
-    },
-    {
-     "name": "Summit County",
-     "cm": 10,
-     "source": "model",
-     "featured": true
-    },
-    {
-     "name": "Winter Park",
-     "cm": 7.5,
-     "station": "Berthoud Summit",
-     "source": "snotel"
-    },
-    {
-     "name": "Steamboat",
-     "cm": 7.5,
-     "source": "model"
-    },
-    {
-     "name": "Wolf Creek",
-     "cm": 7.5,
-     "station": "Wolf Creek Summit",
-     "source": "snotel"
-    },
-    {
-     "name": "Vail and Beaver Creek",
-     "cm": 2.5,
-     "station": "Vail Mountain",
-     "source": "snotel"
-    },
-    {
-     "name": "Aspen Snowmass",
-     "cm": 0,
-     "source": "model"
-    }
-   ]
-  },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 32.5,
+   "cm": 37.5,
    "place": "White Pass, Yukon",
    "source": "model",
    "resorts": [
@@ -221,6 +137,62 @@
     }
    ]
   },
+  "https://avalanche.state.co.us/": {
+   "name": "Colorado Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 32.5,
+   "place": "Beartown",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Telluride",
+     "cm": 30,
+     "station": "Alta Lakes",
+     "source": "snotel"
+    },
+    {
+     "name": "Loveland",
+     "cm": 15,
+     "station": "Loveland Basin",
+     "source": "snotel"
+    },
+    {
+     "name": "Summit County",
+     "cm": 10,
+     "source": "model",
+     "featured": true
+    },
+    {
+     "name": "Winter Park",
+     "cm": 7.5,
+     "station": "Berthoud Summit",
+     "source": "snotel"
+    },
+    {
+     "name": "Steamboat",
+     "cm": 7.5,
+     "source": "model"
+    },
+    {
+     "name": "Wolf Creek",
+     "cm": 7.5,
+     "station": "Wolf Creek Summit",
+     "source": "snotel"
+    },
+    {
+     "name": "Vail and Beaver Creek",
+     "cm": 2.5,
+     "station": "Vail Mountain",
+     "source": "snotel"
+    },
+    {
+     "name": "Aspen Snowmass",
+     "cm": 0,
+     "source": "model"
+    }
+   ]
+  },
   "https://utahavalanchecenter.org/": {
    "name": "Utah Avalanche Center",
    "units": "in",
@@ -269,11 +241,20 @@
    "source": "snotel",
    "resorts": []
   },
+  "https://nadare.jp/": {
+   "name": "Japan Avalanche Network",
+   "units": "cm",
+   "region": "Japan",
+   "cm": 10,
+   "place": "Taisetsu-Tokachi",
+   "source": "model",
+   "resorts": []
+  },
   "https://cbavalanchecenter.org/": {
    "name": "Crested Butte Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 10,
+   "cm": 7.5,
    "place": "Schofield Pass",
    "source": "snotel",
    "resorts": [
@@ -285,15 +266,6 @@
      "featured": true
     }
    ]
-  },
-  "https://nadare.jp/": {
-   "name": "Japan Avalanche Network",
-   "units": "cm",
-   "region": "Japan",
-   "cm": 10,
-   "place": "Taisetsu-Tokachi",
-   "source": "model",
-   "resorts": []
   },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
@@ -453,7 +425,7 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Poison Flat",
+   "place": "Sonora Pass",
    "source": "snotel",
    "resorts": []
   },
@@ -673,11 +645,11 @@
    "cm": 7
   },
   {
-   "href": "https://nadare.jp/",
-   "name": "Japan Avalanche Network",
-   "place": "Taisetsu-Tokachi",
-   "region": "Japan",
-   "units": "cm",
+   "href": "https://avalanche.state.co.us/",
+   "name": "Colorado Avalanche Information Center",
+   "place": "Red Mountain Pass",
+   "region": "North America",
+   "units": "in",
    "cm": 4
   }
  ]
