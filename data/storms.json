@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-17T03:49:25.386Z",
+ "updated": "2026-10-17T06:59:22.323Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-17T03:00Z",
+ "binsStart": "2026-10-17T06:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -30,18 +30,18 @@
    "snow72cm": 20,
    "place": "Thompson Pass",
    "bins": [
-    5.1,
-    1.5,
-    0.9,
-    0.1,
+    5.4,
+    0.6,
+    0.8,
     0,
     0,
     0,
     0,
-    0.3,
-    1.3,
-    4,
-    6.3
+    0,
+    1.1,
+    2.2,
+    5,
+    5.7
    ],
    "snowingAt": [
     "Thompson Pass"
@@ -57,43 +57,43 @@
    "snow72cm": 20,
    "place": "Mt Juneau",
    "bins": [
-    6.2,
-    1.5,
-    7.8,
-    0.5,
+    2.5,
+    3.8,
+    5.2,
     0,
-    0.7,
-    1.1,
-    1.9,
-    0.1,
+    0,
     1.8,
-    0.7,
-    0.3
+    0.8,
+    1.3,
+    1.1,
+    1.3,
+    0.2,
+    0.6
    ],
    "snowingAt": [
     "Mt Juneau"
    ],
    "alerts": [],
-   "recentCm": 5
+   "recentCm": 7.5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 20,
    "place": "Terrace",
    "bins": [
-    5.7,
-    7.4,
-    0.5,
-    3.1,
-    1.1,
+    8.5,
+    3,
+    2.7,
+    1.4,
     0.8,
-    2.3,
-    1.1,
-    1.2,
-    0.1,
+    2,
+    1.3,
+    1.7,
+    0.4,
+    0,
     0,
     0
    ],
@@ -102,6 +102,20 @@
    ],
    "alerts": [],
    "recentCm": 37.5
+  },
+  "https://nadare.jp/": {
+   "name": "Japan Avalanche Network",
+   "units": "cm",
+   "region": "Japan",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Taisetsu-Tokachi"
+   ],
+   "alerts": [],
+   "recentCm": 12.5
   }
  },
  "recent": {
@@ -171,7 +185,7 @@
    "units": "in",
    "region": "North America",
    "cm": 30,
-   "place": "Red Mountain Pass",
+   "place": "Alta Lakes",
    "source": "snotel",
    "resorts": [
     {
@@ -231,17 +245,26 @@
    "source": "snotel",
    "resorts": []
   },
+  "https://nadare.jp/": {
+   "name": "Japan Avalanche Network",
+   "units": "cm",
+   "region": "Japan",
+   "cm": 12.5,
+   "place": "Taisetsu-Tokachi",
+   "source": "model",
+   "resorts": []
+  },
   "https://utahavalanchecenter.org/": {
    "name": "Utah Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 12.5,
+   "cm": 10,
    "place": "Mill-D North",
    "source": "snotel",
    "resorts": [
     {
      "name": "Cottonwood Canyons",
-     "cm": 12.5,
+     "cm": 10,
      "station": "Mill-D North",
      "source": "snotel",
      "featured": true
@@ -270,12 +293,12 @@
     }
    ]
   },
-  "https://nadare.jp/": {
-   "name": "Japan Avalanche Network",
-   "units": "cm",
-   "region": "Japan",
-   "cm": 12.5,
-   "place": "Taisetsu-Tokachi",
+  "https://www.coastalakavalanche.org/": {
+   "name": "Coastal Alaska Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 7.5,
+   "place": "Mt Juneau",
    "source": "model",
    "resorts": []
   },
@@ -283,7 +306,7 @@
    "name": "Crested Butte Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 10,
+   "cm": 7.5,
    "place": "Schofield Pass",
    "source": "snotel",
    "resorts": [
@@ -302,15 +325,6 @@
    "region": "North America",
    "cm": 7.5,
    "place": "Chic-Chocs",
-   "source": "model",
-   "resorts": []
-  },
-  "https://www.coastalakavalanche.org/": {
-   "name": "Coastal Alaska Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Mt Juneau",
    "source": "model",
    "resorts": []
   },
@@ -647,14 +661,6 @@
    "place": "Terrace",
    "region": "North America",
    "units": "cm",
-   "cm": 23
-  },
-  {
-   "href": "https://www.coastalakavalanche.org/",
-   "name": "Coastal Alaska Avalanche Center",
-   "place": "Mt Juneau",
-   "region": "North America",
-   "units": "in",
    "cm": 22
   },
   {
@@ -663,7 +669,15 @@
    "place": "Thompson Pass",
    "region": "North America",
    "units": "in",
-   "cm": 20
+   "cm": 21
+  },
+  {
+   "href": "https://www.coastalakavalanche.org/",
+   "name": "Coastal Alaska Avalanche Center",
+   "place": "Mt Juneau",
+   "region": "North America",
+   "units": "in",
+   "cm": 18
   },
   {
    "href": "https://www.cnfaic.org/",
@@ -674,12 +688,12 @@
    "cm": 11
   },
   {
-   "href": "https://avalanche.state.co.us/",
-   "name": "Colorado Avalanche Information Center",
-   "place": "Red Mountain Pass",
+   "href": "https://hpavalanche.org/",
+   "name": "Hatcher Pass Avalanche Center",
+   "place": "Hatcher Pass",
    "region": "North America",
    "units": "in",
-   "cm": 5
+   "cm": 6
   }
  ]
 }
