@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-18T15:45:11.694Z",
+ "updated": "2026-10-18T18:49:21.663Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-18T15:00Z",
+ "binsStart": "2026-10-18T18:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -27,21 +27,21 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 35,
+   "snow72cm": 40,
    "place": "Turnagain Pass",
    "bins": [
     0,
     0,
+    0.7,
+    6.6,
+    6,
     0,
-    2.3,
-    9.3,
-    1.6,
-    0.1,
-    4.3,
-    11.7,
-    5,
-    1.1,
-    1.8
+    0.6,
+    10.2,
+    9,
+    1.7,
+    2,
+    1.3
    ],
    "snowingAt": [],
    "alerts": [],
@@ -57,16 +57,16 @@
    "bins": [
     0,
     0,
+    0.4,
+    4.5,
+    7.5,
+    2.5,
     0,
-    2.2,
+    3.1,
+    4.8,
     6.1,
-    6.4,
-    0.1,
-    1,
-    5.5,
-    6.5,
-    2.1,
-    2.2
+    2.7,
+    1
    ],
    "snowingAt": [],
    "alerts": [],
@@ -81,17 +81,17 @@
    "place": "Thompson Pass",
    "bins": [
     0,
-    0,
-    0.6,
-    1.1,
-    7.7,
-    14.7,
-    0.6,
-    0,
+    0.5,
+    0.1,
+    3.5,
+    13.7,
+    6.9,
     0,
     0,
     0,
-    0.6
+    0,
+    0,
+    0.8
    ],
    "snowingAt": [],
    "alerts": [],
@@ -105,24 +105,22 @@
    "snow72cm": 35,
    "place": "Mt Juneau",
    "bins": [
-    1.2,
+    0.2,
     0,
-    0,
-    2.7,
     0.8,
-    0.3,
-    1,
-    12.8,
-    4.4,
+    2.6,
+    0.2,
+    0.2,
+    5.8,
+    12.5,
     0,
-    2.7,
-    6.8
+    0.6,
+    5.5,
+    6.9
    ],
-   "snowingAt": [
-    "Mt Juneau"
-   ],
+   "snowingAt": [],
    "alerts": [],
-   "recentCm": 15
+   "recentCm": 17.5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
@@ -132,25 +130,24 @@
    "snow72cm": 30,
    "place": "White Pass, Yukon",
    "bins": [
+    0,
+    0.2,
     0.4,
     0.1,
-    0.5,
-    0.1,
-    0.1,
     0,
-    1.3,
-    6.7,
-    8.1,
-    12,
-    1.8,
-    0.6
+    0.3,
+    3.4,
+    7.9,
+    10.2,
+    7.8,
+    0.9,
+    0.1
    ],
    "snowingAt": [
-    "Terrace",
-    "White Pass, Yukon"
+    "Terrace"
    ],
    "alerts": [],
-   "recentCm": 35
+   "recentCm": 27.5
   }
  },
  "recent": {
@@ -158,7 +155,7 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 35,
+   "cm": 27.5,
    "place": "White Pass, Yukon",
    "source": "model",
    "resorts": [
@@ -219,7 +216,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 15,
+   "cm": 17.5,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -232,6 +229,62 @@
    "place": "Upper Tsaina River",
    "source": "snotel",
    "resorts": []
+  },
+  "https://avalanche.state.co.us/": {
+   "name": "Colorado Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 7.5,
+   "place": "Spud Mountain",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Wolf Creek",
+     "cm": 5,
+     "station": "Upper San Juan",
+     "source": "snotel"
+    },
+    {
+     "name": "Winter Park",
+     "cm": 2.5,
+     "station": "Berthoud Summit",
+     "source": "snotel"
+    },
+    {
+     "name": "Loveland",
+     "cm": 2.5,
+     "station": "Loveland Basin",
+     "source": "snotel"
+    },
+    {
+     "name": "Telluride",
+     "cm": 2.5,
+     "station": "Alta Lakes",
+     "source": "snotel"
+    },
+    {
+     "name": "Summit County",
+     "cm": 0,
+     "source": "model",
+     "featured": true
+    },
+    {
+     "name": "Vail and Beaver Creek",
+     "cm": 0,
+     "station": "Vail Mountain",
+     "source": "snotel"
+    },
+    {
+     "name": "Aspen Snowmass",
+     "cm": 0,
+     "source": "model"
+    },
+    {
+     "name": "Steamboat",
+     "cm": 0,
+     "source": "model"
+    }
+   ]
   },
   "https://nadare.jp/": {
    "name": "Japan Avalanche Network",
@@ -304,59 +357,42 @@
     }
    ]
   },
-  "https://avalanche.state.co.us/": {
-   "name": "Colorado Avalanche Information Center",
+  "https://utahavalanchecenter.org/": {
+   "name": "Utah Avalanche Center",
    "units": "in",
    "region": "North America",
    "cm": 5,
-   "place": "Beaver Ck Village",
+   "place": "Chalk Creek #1",
    "source": "snotel",
    "resorts": [
     {
-     "name": "Wolf Creek",
-     "cm": 5,
-     "station": "Upper San Juan",
-     "source": "snotel"
-    },
-    {
-     "name": "Winter Park",
+     "name": "Cottonwood Canyons",
      "cm": 2.5,
-     "station": "Berthoud Summit",
-     "source": "snotel"
-    },
-    {
-     "name": "Loveland",
-     "cm": 2.5,
-     "station": "Loveland Basin",
-     "source": "snotel"
-    },
-    {
-     "name": "Telluride",
-     "cm": 2.5,
-     "station": "Alta Lakes",
-     "source": "snotel"
-    },
-    {
-     "name": "Summit County",
-     "cm": 0,
-     "source": "model",
+     "station": "Atwater",
+     "source": "snotel",
      "featured": true
     },
     {
-     "name": "Vail and Beaver Creek",
+     "name": "Park City",
      "cm": 0,
-     "station": "Vail Mountain",
+     "station": "Thaynes Canyon",
      "source": "snotel"
     },
     {
-     "name": "Aspen Snowmass",
+     "name": "Snowbasin and Powder Mountain",
      "cm": 0,
      "source": "model"
     },
     {
-     "name": "Steamboat",
+     "name": "Sundance",
      "cm": 0,
      "source": "model"
+    },
+    {
+     "name": "Beaver Mountain",
+     "cm": 0,
+     "station": "Klondike Narrows",
+     "source": "snotel"
     }
    ]
   },
@@ -544,45 +580,6 @@
     }
    ]
   },
-  "https://utahavalanchecenter.org/": {
-   "name": "Utah Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Atwater",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Cottonwood Canyons",
-     "cm": 2.5,
-     "station": "Atwater",
-     "source": "snotel",
-     "featured": true
-    },
-    {
-     "name": "Park City",
-     "cm": 0,
-     "station": "Thaynes Canyon",
-     "source": "snotel"
-    },
-    {
-     "name": "Snowbasin and Powder Mountain",
-     "cm": 0,
-     "source": "model"
-    },
-    {
-     "name": "Sundance",
-     "cm": 0,
-     "source": "model"
-    },
-    {
-     "name": "Beaver Mountain",
-     "cm": 0,
-     "station": "Klondike Narrows",
-     "source": "snotel"
-    }
-   ]
-  },
   "https://cbavalanchecenter.org/": {
    "name": "Crested Butte Avalanche Center",
    "units": "in",
@@ -696,7 +693,7 @@
    "place": "Turnagain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 37
+   "cm": 38
   },
   {
    "href": "https://www.coastalakavalanche.org/",
@@ -704,7 +701,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 33
+   "cm": 35
   },
   {
    "href": "https://hpavalanche.org/",
@@ -720,7 +717,7 @@
    "place": "White Pass, Yukon",
    "region": "North America",
    "units": "cm",
-   "cm": 32
+   "cm": 31
   },
   {
    "href": "https://alaskasnow.org/",
