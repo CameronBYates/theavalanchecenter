@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-18T06:58:11.468Z",
+ "updated": "2026-10-18T09:46:54.468Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-18T06:00Z",
+ "binsStart": "2026-10-18T09:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -27,21 +27,21 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 35,
    "place": "Turnagain Pass",
    "bins": [
     0,
     0,
     0,
+    0.1,
+    3.4,
+    7.2,
+    2.1,
     0,
-    0.9,
-    2.9,
-    5.5,
-    4.9,
-    1.6,
-    8.6,
-    9.5,
-    4.6
+    3.2,
+    8.4,
+    6.9,
+    2.7
    ],
    "snowingAt": [],
    "alerts": [],
@@ -51,22 +51,22 @@
    "name": "Hatcher Pass Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "heavy",
-   "snow72cm": 40,
+   "level": "notable",
+   "snow72cm": 25,
    "place": "Hatcher Pass",
    "bins": [
-    0.6,
-    0.1,
-    0.1,
     0,
-    0.1,
-    2.8,
-    5,
-    7.1,
-    5,
-    6.4,
-    8,
-    3.1
+    0,
+    0,
+    0,
+    3.2,
+    8.3,
+    6.9,
+    0.2,
+    0.9,
+    3.2,
+    3.4,
+    1.1
    ],
    "snowingAt": [],
    "alerts": [],
@@ -77,21 +77,21 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 75,
+   "snow72cm": 30,
    "place": "Thompson Pass",
    "bins": [
     0,
     0,
     0,
-    0.4,
     0.6,
-    3.6,
-    13.4,
-    11.7,
-    11.6,
-    17,
-    12.9,
-    4.3
+    1.7,
+    7.4,
+    17.5,
+    2,
+    0,
+    0,
+    0,
+    3.2
    ],
    "snowingAt": [],
    "alerts": [],
@@ -101,51 +101,51 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
+   "level": "heavy",
    "snow72cm": 30,
    "place": "Mt Juneau",
    "bins": [
-    2.3,
-    4.3,
-    1.5,
-    0,
-    2,
-    1.4,
+    2.7,
+    4.5,
     0.1,
-    0.2,
-    4.6,
-    11.3,
-    0.6,
-    1.1
+    0,
+    1.3,
+    0.8,
+    0,
+    0.4,
+    12.8,
+    5,
+    0,
+    2.9
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Mt Juneau"
+   ],
    "alerts": [],
-   "recentCm": 20
+   "recentCm": 17.5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "level": "heavy",
+   "level": "notable",
    "snow72cm": 30,
    "place": "White Pass, Yukon",
    "bins": [
-    0.8,
     0.7,
-    0.3,
+    0.6,
     0,
+    0,
+    0.2,
     0,
     0.1,
-    0,
-    0.5,
-    3.3,
-    7.1,
-    11.2,
-    6.3
+    1.3,
+    6.7,
+    8.3,
+    11.3,
+    0.7
    ],
-   "snowingAt": [
-    "White Pass, Yukon"
-   ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": 42.5
   }
@@ -216,7 +216,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 20,
+   "cm": 17.5,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -229,62 +229,6 @@
    "place": "Flower Mountain",
    "source": "snotel",
    "resorts": []
-  },
-  "https://avalanche.state.co.us/": {
-   "name": "Colorado Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 12.5,
-   "place": "Loveland Basin",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Loveland",
-     "cm": 12.5,
-     "station": "Loveland Basin",
-     "source": "snotel"
-    },
-    {
-     "name": "Winter Park",
-     "cm": 7.5,
-     "station": "Berthoud Summit",
-     "source": "snotel"
-    },
-    {
-     "name": "Vail and Beaver Creek",
-     "cm": 2.5,
-     "station": "Vail Mountain",
-     "source": "snotel"
-    },
-    {
-     "name": "Telluride",
-     "cm": 2.5,
-     "station": "Alta Lakes",
-     "source": "snotel"
-    },
-    {
-     "name": "Wolf Creek",
-     "cm": 2.5,
-     "station": "Upper San Juan",
-     "source": "snotel"
-    },
-    {
-     "name": "Summit County",
-     "cm": 0,
-     "source": "model",
-     "featured": true
-    },
-    {
-     "name": "Aspen Snowmass",
-     "cm": 0,
-     "source": "model"
-    },
-    {
-     "name": "Steamboat",
-     "cm": 0,
-     "source": "model"
-    }
-   ]
   },
   "https://nadare.jp/": {
    "name": "Japan Avalanche Network",
@@ -334,43 +278,59 @@
     }
    ]
   },
-  "https://missoulaavalanche.org/": {
-   "name": "West Central Montana Avalanche Center",
+  "https://avalanche.state.co.us/": {
+   "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
    "cm": 5,
-   "place": "Moose Creek",
+   "place": "Berthoud Summit",
    "source": "snotel",
    "resorts": [
     {
-     "name": "Lost Trail",
+     "name": "Winter Park",
      "cm": 5,
-     "station": "Moose Creek",
+     "station": "Berthoud Summit",
      "source": "snotel"
     },
     {
-     "name": "Montana Snowbowl",
-     "cm": 0,
-     "station": "Stuart Mountain",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
-  "https://cbavalanchecenter.org/": {
-   "name": "Crested Butte Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Schofield Pass",
-   "source": "snotel",
-   "resorts": [
+     "name": "Loveland",
+     "cm": 5,
+     "station": "Grizzly Peak",
+     "source": "snotel"
+    },
     {
-     "name": "Crested Butte",
+     "name": "Vail and Beaver Creek",
+     "cm": 2.5,
+     "station": "Vail Mountain",
+     "source": "snotel"
+    },
+    {
+     "name": "Telluride",
+     "cm": 2.5,
+     "station": "Alta Lakes",
+     "source": "snotel"
+    },
+    {
+     "name": "Wolf Creek",
+     "cm": 2.5,
+     "station": "Upper San Juan",
+     "source": "snotel"
+    },
+    {
+     "name": "Summit County",
      "cm": 0,
-     "station": "Butte",
-     "source": "snotel",
+     "source": "model",
      "featured": true
+    },
+    {
+     "name": "Aspen Snowmass",
+     "cm": 0,
+     "source": "model"
+    },
+    {
+     "name": "Steamboat",
+     "cm": 0,
+     "source": "model"
     }
    ]
   },
@@ -513,6 +473,29 @@
     }
    ]
   },
+  "https://missoulaavalanche.org/": {
+   "name": "West Central Montana Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Savage Pass",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Lost Trail",
+     "cm": 2.5,
+     "station": "Saddle Mtn.",
+     "source": "snotel"
+    },
+    {
+     "name": "Montana Snowbowl",
+     "cm": 0,
+     "station": "Stuart Mountain",
+     "source": "snotel",
+     "featured": true
+    }
+   ]
+  },
   "https://www.mtavalanche.com/": {
    "name": "Gallatin NF Avalanche Center",
    "units": "in",
@@ -594,6 +577,23 @@
      "cm": 0,
      "station": "Klondike Narrows",
      "source": "snotel"
+    }
+   ]
+  },
+  "https://cbavalanchecenter.org/": {
+   "name": "Crested Butte Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Schofield Pass",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Crested Butte",
+     "cm": 0,
+     "station": "Butte",
+     "source": "snotel",
+     "featured": true
     }
    ]
   },
@@ -688,28 +688,28 @@
  },
  "deepest": [
   {
-   "href": "https://alaskasnow.org/",
-   "name": "Alaska Avalanche Information Center",
-   "place": "Thompson Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 76
-  },
-  {
    "href": "https://www.cnfaic.org/",
    "name": "Chugach NF Avalanche Information Center",
    "place": "Turnagain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 39
+   "cm": 34
   },
   {
-   "href": "https://hpavalanche.org/",
-   "name": "Hatcher Pass Avalanche Center",
-   "place": "Hatcher Pass",
+   "href": "https://alaskasnow.org/",
+   "name": "Alaska Avalanche Information Center",
+   "place": "Thompson Pass",
    "region": "North America",
    "units": "in",
-   "cm": 38
+   "cm": 32
+  },
+  {
+   "href": "https://www.coastalakavalanche.org/",
+   "name": "Coastal Alaska Avalanche Center",
+   "place": "Mt Juneau",
+   "region": "North America",
+   "units": "in",
+   "cm": 30
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -720,12 +720,12 @@
    "cm": 30
   },
   {
-   "href": "https://www.coastalakavalanche.org/",
-   "name": "Coastal Alaska Avalanche Center",
-   "place": "Mt Juneau",
+   "href": "https://hpavalanche.org/",
+   "name": "Hatcher Pass Avalanche Center",
+   "place": "Hatcher Pass",
    "region": "North America",
    "units": "in",
-   "cm": 29
+   "cm": 27
   }
  ]
 }
