@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-19T13:04:12.475Z",
+ "updated": "2026-10-19T15:52:01.242Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-19T13:00Z",
+ "binsStart": "2026-10-19T15:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -30,14 +30,14 @@
    "snow72cm": 25,
    "place": "Turnagain Pass",
    "bins": [
-    7.4,
-    4.7,
-    2.1,
-    6.2,
-    2,
-    0,
-    1.5,
+    9.7,
+    1.9,
+    3.1,
+    6.1,
+    0.6,
     0.1,
+    1.4,
+    0,
     0,
     0,
     0,
@@ -57,24 +57,24 @@
    "snow72cm": 30,
    "place": "Hatcher Pass",
    "bins": [
-    5.5,
-    5.7,
-    2.2,
+    6.4,
+    3.6,
+    3.4,
     4.9,
-    5.3,
-    2,
-    1,
+    4.8,
+    1.4,
     0.8,
+    0.6,
     0.4,
-    0.6,
-    0.6,
-    0.2
+    0.7,
+    0.5,
+    0.1
    ],
    "snowingAt": [
     "Hatcher Pass"
    ],
    "alerts": [],
-   "recentCm": 2.5
+   "recentCm": 10
   },
   "https://alaskasnow.org/": {
    "name": "Alaska Avalanche Information Center",
@@ -85,16 +85,16 @@
    "place": "Haines",
    "bins": [
     0,
+    0.1,
+    3.4,
+    11.8,
+    10.6,
     0,
-    1.4,
-    10.2,
-    11.7,
-    2.6,
     0,
-    0.9,
+    1.1,
     0.6,
-    0.8,
-    0.8,
+    1.1,
+    0.4,
     0.1
    ],
    "snowingAt": [
@@ -111,18 +111,18 @@
    "snow72cm": 50,
    "place": "Mt Juneau",
    "bins": [
-    1.6,
-    0.2,
-    0.6,
-    10,
-    5.7,
-    0,
+    1.3,
     0,
     2.6,
+    11.6,
+    2.2,
+    0,
+    0.5,
+    4.4,
+    7.5,
+    8.3,
     7.1,
-    9.3,
-    6.4,
-    5.5
+    4.8
    ],
    "snowingAt": [
     "Mt Juneau"
@@ -138,21 +138,21 @@
    "snow72cm": 40,
    "place": "White Pass, Yukon",
    "bins": [
-    0.3,
     0.1,
-    1.1,
-    6.7,
-    9,
-    18.5,
+    0.2,
+    2,
+    8.3,
+    12.6,
+    12.8,
+    0.1,
+    0.5,
+    0.2,
     0.6,
-    0.4,
-    0.3,
-    0.7,
-    0,
+    0.1,
     1.5
    ],
    "snowingAt": [
-    "White Pass, Yukon"
+    "Pine Pass"
    ],
    "alerts": [],
    "recentCm": 20
@@ -162,46 +162,21 @@
    "units": "cm",
    "region": "Europe",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 15,
    "place": "Zermatt",
    "bins": [
     0,
     0,
     0,
     0,
+    2,
+    7.6,
+    2.5,
     0,
-    4.4,
-    7.5,
-    6.5,
-    2.6,
-    0.9,
+    3.4,
+    0.4,
     0,
     0
-   ],
-   "snowingAt": [],
-   "alerts": [],
-   "recentCm": null
-  },
-  "https://www.vorarlberg.at/lawine": {
-   "name": "Vorarlberg Avalanche Warning Service",
-   "units": "cm",
-   "region": "Europe",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "Lech",
-   "bins": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    4.1,
-    7.4,
-    4.4,
-    2.9
    ],
    "snowingAt": [],
    "alerts": [],
@@ -223,10 +198,10 @@
     0,
     0,
     0,
-    3.1,
-    5.7,
-    5,
-    1.3
+    5.6,
+    4.7,
+    4.1,
+    0.6
    ],
    "snowingAt": [],
    "alerts": [],
@@ -304,6 +279,15 @@
    "source": "model",
    "resorts": []
   },
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 10,
+   "place": "Independence Mine",
+   "source": "snotel",
+   "resorts": []
+  },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
    "units": "in",
@@ -312,6 +296,12 @@
    "place": "Spud Mountain",
    "source": "snotel",
    "resorts": [
+    {
+     "name": "Vail and Beaver Creek",
+     "cm": 2.5,
+     "station": "Vail Mountain",
+     "source": "snotel"
+    },
     {
      "name": "Winter Park",
      "cm": 2.5,
@@ -335,12 +325,6 @@
      "cm": 0,
      "source": "model",
      "featured": true
-    },
-    {
-     "name": "Vail and Beaver Creek",
-     "cm": 0,
-     "station": "Vail Mountain",
-     "source": "snotel"
     },
     {
      "name": "Aspen Snowmass",
@@ -442,7 +426,7 @@
     {
      "name": "Cottonwood Canyons",
      "cm": 2.5,
-     "station": "Snowbird",
+     "station": "Mill-D North",
      "source": "snotel",
      "featured": true
     },
@@ -486,15 +470,6 @@
    "cm": 5,
    "place": "Taisetsu-Tokachi",
    "source": "model",
-   "resorts": []
-  },
-  "https://hpavalanche.org/": {
-   "name": "Hatcher Pass Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Independence Mine",
-   "source": "snotel",
    "resorts": []
   },
   "https://www.coavalanche.org/": {
@@ -556,15 +531,6 @@
      "source": "snotel"
     }
    ]
-  },
-  "https://www.bridgeportavalanchecenter.org/": {
-   "name": "Bridgeport Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Sonora Pass",
-   "source": "snotel",
-   "resorts": []
   },
   "https://www.idahopanhandleavalanche.org/": {
    "name": "Idaho Panhandle Avalanche Center",
@@ -632,12 +598,12 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Lone Mountain",
+   "place": "White Mill",
    "source": "snotel",
    "resorts": [
     {
      "name": "Big Sky",
-     "cm": 2.5,
+     "cm": 0,
      "station": "Lone Mountain",
      "source": "snotel",
      "featured": true
@@ -784,7 +750,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 49
+   "cm": 50
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -795,14 +761,6 @@
    "cm": 39
   },
   {
-   "href": "https://hpavalanche.org/",
-   "name": "Hatcher Pass Avalanche Center",
-   "place": "Hatcher Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 29
-  },
-  {
    "href": "https://alaskasnow.org/",
    "name": "Alaska Avalanche Information Center",
    "place": "Haines",
@@ -811,12 +769,20 @@
    "cm": 29
   },
   {
+   "href": "https://hpavalanche.org/",
+   "name": "Hatcher Pass Avalanche Center",
+   "place": "Hatcher Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 28
+  },
+  {
    "href": "https://www.cnfaic.org/",
    "name": "Chugach NF Avalanche Information Center",
    "place": "Turnagain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 24
+   "cm": 23
   }
  ]
 }
