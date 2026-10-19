@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-19T03:54:23.235Z",
+ "updated": "2026-10-19T07:10:29.833Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-19T03:00Z",
+ "binsStart": "2026-10-19T07:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -27,19 +27,19 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Turnagain Pass",
    "bins": [
-    0,
-    2.7,
-    12.3,
-    0.8,
+    1.5,
+    9.7,
+    3.7,
+    0.9,
+    5.5,
+    2.9,
     0.5,
-    1.7,
-    0.6,
-    0.2,
-    0.1,
-    0.1,
+    1.1,
+    0.3,
+    0,
     0,
     0
    ],
@@ -52,21 +52,21 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Hatcher Pass",
    "bins": [
-    0,
-    3.3,
-    7.4,
-    3.4,
-    0,
-    1.1,
-    1.9,
-    1.4,
+    1.2,
+    6.2,
+    4.1,
     0.6,
+    4.1,
+    3.6,
+    3.3,
+    1.3,
+    0.7,
     0.1,
     0,
-    0
+    0.1
    ],
    "snowingAt": [],
    "alerts": [],
@@ -83,15 +83,15 @@
     0,
     0,
     0,
+    1.3,
+    9.2,
+    10.4,
     0,
-    3.2,
-    12.5,
-    10.1,
     0,
-    0,
-    0.1,
+    0.5,
     0.4,
-    0.5
+    4,
+    0.6
    ],
    "snowingAt": [],
    "alerts": [],
@@ -102,21 +102,21 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 45,
+   "snow72cm": 50,
    "place": "Mt Juneau",
    "bins": [
     0,
-    0.4,
-    0.6,
+    1.4,
+    0.1,
+    1,
+    9.6,
+    5.7,
     0,
-    2.1,
-    12.5,
-    3,
-    0,
-    5.3,
-    6.6,
-    9.2,
-    7.2
+    0.1,
+    6.5,
+    9.9,
+    8.1,
+    7.6
    ],
    "snowingAt": [],
    "alerts": [],
@@ -133,14 +133,14 @@
     0,
     0,
     0,
-    0.1,
-    2.2,
-    9,
-    10.6,
-    9.3,
-    0.3,
-    1.3,
-    0.4,
+    0.9,
+    6.4,
+    8.1,
+    15.1,
+    0.5,
+    0.7,
+    1,
+    0.2,
     0
    ],
    "snowingAt": [
@@ -286,6 +286,45 @@
     }
    ]
   },
+  "https://nwac.us/": {
+   "name": "Northwest Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Sasse Ridge",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Snoqualmie Pass",
+     "cm": 2.5,
+     "station": "Olallie Meadows",
+     "source": "snotel"
+    },
+    {
+     "name": "Crystal Mountain",
+     "cm": 2.5,
+     "station": "Cayuse Pass",
+     "source": "snotel"
+    },
+    {
+     "name": "Mt Hood Meadows and Timberline",
+     "cm": 2.5,
+     "station": "Mt Hood Test Site",
+     "source": "snotel"
+    },
+    {
+     "name": "Mt Baker Ski Area",
+     "cm": 0,
+     "source": "model",
+     "featured": true
+    },
+    {
+     "name": "Stevens Pass",
+     "cm": 0,
+     "source": "model"
+    }
+   ]
+  },
   "https://missoulaavalanche.org/": {
    "name": "West Central Montana Avalanche Center",
    "units": "in",
@@ -374,45 +413,6 @@
    "place": "Independence Mine",
    "source": "snotel",
    "resorts": []
-  },
-  "https://nwac.us/": {
-   "name": "Northwest Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "MF Nooksack",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Snoqualmie Pass",
-     "cm": 2.5,
-     "station": "Olallie Meadows",
-     "source": "snotel"
-    },
-    {
-     "name": "Crystal Mountain",
-     "cm": 2.5,
-     "station": "Cayuse Pass",
-     "source": "snotel"
-    },
-    {
-     "name": "Mt Hood Meadows and Timberline",
-     "cm": 2.5,
-     "station": "Mt Hood Test Site",
-     "source": "snotel"
-    },
-    {
-     "name": "Mt Baker Ski Area",
-     "cm": 0,
-     "source": "model",
-     "featured": true
-    },
-    {
-     "name": "Stevens Pass",
-     "cm": 0,
-     "source": "model"
-    }
-   ]
   },
   "https://www.coavalanche.org/": {
    "name": "Central Oregon Avalanche Center",
@@ -594,12 +594,12 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Schofield Pass",
+   "place": "Butte",
    "source": "snotel",
    "resorts": [
     {
      "name": "Crested Butte",
-     "cm": 0,
+     "cm": 2.5,
      "station": "Butte",
      "source": "snotel",
      "featured": true
@@ -701,7 +701,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 47
+   "cm": 50
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -717,15 +717,7 @@
    "place": "Haines",
    "region": "North America",
    "units": "in",
-   "cm": 27
-  },
-  {
-   "href": "https://hpavalanche.org/",
-   "name": "Hatcher Pass Avalanche Center",
-   "place": "Hatcher Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 19
+   "cm": 26
   },
   {
    "href": "https://www.cnfaic.org/",
@@ -733,7 +725,15 @@
    "place": "Turnagain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 19
+   "cm": 26
+  },
+  {
+   "href": "https://hpavalanche.org/",
+   "name": "Hatcher Pass Avalanche Center",
+   "place": "Hatcher Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 25
   }
  ]
 }
