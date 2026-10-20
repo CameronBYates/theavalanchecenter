@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-20T03:52:09.772Z",
+ "updated": "2026-10-20T07:06:00.195Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-20T03:00Z",
+ "binsStart": "2026-10-20T07:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -40,28 +40,15 @@
    "name": "Hatcher Pass Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 15,
-   "place": "Hatcher Pass",
-   "bins": [
-    3.6,
-    3.7,
-    4.7,
-    2,
-    1.1,
-    0.4,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
    "snowingAt": [
     "Hatcher Pass"
    ],
    "alerts": [],
-   "recentCm": 30
+   "recentCm": 32.5
   },
   "https://alaskasnow.org/": {
    "name": "Alaska Avalanche Information Center",
@@ -69,19 +56,19 @@
    "region": "North America",
    "level": "heavy",
    "snow72cm": 35,
-   "place": "Haines",
+   "place": "Thompson Pass",
    "bins": [
-    4.9,
-    14.1,
-    11.6,
-    0,
-    0,
-    0.7,
-    0.6,
-    0.2,
-    0,
+    13.2,
+    15.6,
+    2.2,
+    2.9,
+    0.4,
+    0.3,
     0.1,
-    0.5,
+    0,
+    0,
+    0,
+    0,
     0
    ],
    "snowingAt": [
@@ -89,7 +76,7 @@
     "Haines"
    ],
    "alerts": [],
-   "recentCm": 5
+   "recentCm": 7.5
   },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
@@ -99,38 +86,24 @@
    "snow72cm": 60,
    "place": "Mt Juneau",
    "bins": [
-    3.8,
-    13.4,
-    1.1,
-    0,
-    2,
-    4.8,
+    10.9,
+    6.9,
+    0.1,
+    0.4,
+    4.4,
     10.5,
-    8.7,
-    6.7,
+    7.6,
+    7.9,
     4.8,
-    4.2,
-    0.1
+    5,
+    1.2,
+    0
    ],
    "snowingAt": [
     "Mt Juneau"
    ],
    "alerts": [],
-   "recentCm": 20
-  },
-  "https://avalanche.state.co.us/": {
-   "name": "Colorado Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Berthoud Pass"
-   ],
-   "alerts": [],
-   "recentCm": 7.5
+   "recentCm": 15
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
@@ -140,74 +113,24 @@
    "snow72cm": 40,
    "place": "White Pass, Yukon",
    "bins": [
-    2.7,
-    9,
-    12.7,
-    10.6,
+    7.1,
+    12.5,
+    14.1,
     0,
-    1,
-    0.1,
+    0.4,
+    0.7,
     0.3,
-    0.3,
+    0,
     1.3,
     1.1,
-    0.6
+    0.6,
+    0.1
    ],
    "snowingAt": [
     "White Pass, Yukon"
    ],
    "alerts": [],
-   "recentCm": 20
-  },
-  "https://lawine.salzburg.at/": {
-   "name": "Salzburg Avalanche Warning Service",
-   "units": "cm",
-   "region": "Europe",
-   "level": "notable",
-   "snow72cm": 15,
-   "place": "Gastein",
-   "bins": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    3,
-    9.1,
-    3,
-    0.1,
-    0,
-    0
-   ],
-   "snowingAt": [],
-   "alerts": [],
-   "recentCm": null
-  },
-  "https://www.meteo.si/pozor/plaz": {
-   "name": "ARSO Slovenia",
-   "units": "cm",
-   "region": "Europe",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "Julian Alps",
-   "bins": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    3.4,
-    12.5,
-    3.4,
-    0,
-    0
-   ],
-   "snowingAt": [],
-   "alerts": [],
-   "recentCm": null
+   "recentCm": 17.5
   },
   "https://nadare.jp/": {
    "name": "Japan Avalanche Network",
@@ -222,17 +145,17 @@
     0,
     0,
     0,
+    2.3,
+    6.8,
+    5.5,
+    1.5,
+    0.3,
     0,
-    4.8,
-    5.8,
-    4.6,
-    0.9,
-    0.1,
     0
    ],
    "snowingAt": [],
    "alerts": [],
-   "recentCm": 2.5
+   "recentCm": null
   }
  },
  "recent": {
@@ -240,25 +163,16 @@
    "name": "Hatcher Pass Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 30,
-   "place": "Independence Mine",
+   "cm": 32.5,
+   "place": "Frostbite Bottom",
    "source": "snotel",
-   "resorts": []
-  },
-  "https://www.coastalakavalanche.org/": {
-   "name": "Coastal Alaska Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 20,
-   "place": "Mt Juneau",
-   "source": "model",
    "resorts": []
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 20,
+   "cm": 17.5,
    "place": "Terrace",
    "source": "model",
    "resorts": [
@@ -315,6 +229,15 @@
     }
    ]
   },
+  "https://www.coastalakavalanche.org/": {
+   "name": "Coastal Alaska Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 15,
+   "place": "Mt Juneau",
+   "source": "model",
+   "resorts": []
+  },
   "https://www.cnfaic.org/": {
    "name": "Chugach NF Avalanche Information Center",
    "units": "in",
@@ -325,12 +248,21 @@
    "resorts": [
     {
      "name": "Alyeska",
-     "cm": 7.5,
+     "cm": 5,
      "station": "Mt. Alyeska",
      "source": "snotel",
      "featured": true
     }
    ]
+  },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 7.5,
+   "place": "Upper Tsaina River",
+   "source": "snotel",
+   "resorts": []
   },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
@@ -387,15 +319,6 @@
      "source": "snotel"
     }
    ]
-  },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Upper Tsaina River",
-   "source": "snotel",
-   "resorts": []
   },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
@@ -580,15 +503,6 @@
     }
    ]
   },
-  "https://www.bridgeportavalanchecenter.org/": {
-   "name": "Bridgeport Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Poison Flat",
-   "source": "snotel",
-   "resorts": []
-  },
   "https://www.sawtoothavalanche.com/": {
    "name": "Sawtooth Avalanche Center",
    "units": "in",
@@ -699,15 +613,6 @@
     }
    ]
   },
-  "https://nadare.jp/": {
-   "name": "Japan Avalanche Network",
-   "units": "cm",
-   "region": "Japan",
-   "cm": 2.5,
-   "place": "Taisetsu-Tokachi",
-   "source": "model",
-   "resorts": []
-  },
   "https://www.esavalanche.org/": {
    "name": "Eastern Sierra Avalanche Center",
    "units": "in",
@@ -784,23 +689,15 @@
    "place": "White Pass, Yukon",
    "region": "North America",
    "units": "cm",
-   "cm": 39
+   "cm": 38
   },
   {
    "href": "https://alaskasnow.org/",
    "name": "Alaska Avalanche Information Center",
-   "place": "Haines",
+   "place": "Thompson Pass",
    "region": "North America",
    "units": "in",
-   "cm": 33
-  },
-  {
-   "href": "https://www.meteo.si/pozor/plaz",
-   "name": "ARSO Slovenia",
-   "place": "Julian Alps",
-   "region": "Europe",
-   "units": "cm",
-   "cm": 19
+   "cm": 35
   },
   {
    "href": "https://nadare.jp/",
@@ -809,6 +706,14 @@
    "region": "Japan",
    "units": "cm",
    "cm": 16
+  },
+  {
+   "href": "https://lawine.salzburg.at/",
+   "name": "Salzburg Avalanche Warning Service",
+   "place": "Gastein",
+   "region": "Europe",
+   "units": "cm",
+   "cm": 14
   }
  ]
 }
