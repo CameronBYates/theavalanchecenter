@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-20T18:59:08.607Z",
+ "updated": "2026-10-20T21:50:30.075Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-20T18:00Z",
+ "binsStart": "2026-10-20T21:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -34,7 +34,7 @@
     "Hatcher Pass"
    ],
    "alerts": [],
-   "recentCm": 37.5
+   "recentCm": 40
   },
   "https://alaskasnow.org/": {
    "name": "Alaska Avalanche Information Center",
@@ -45,7 +45,7 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Haines"
+    "Thompson Pass"
    ],
    "alerts": [],
    "recentCm": 22.5
@@ -55,69 +55,97 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 45,
+   "snow72cm": 50,
    "place": "Mt Juneau",
    "bins": [
-    0,
-    0.1,
-    5.2,
-    6,
-    12.5,
-    6.9,
-    3.7,
-    4.1,
-    1.1,
-    2.9,
-    0.7,
-    1
+    1,
+    4,
+    4.8,
+    15,
+    10.9,
+    5.7,
+    3.5,
+    1.2,
+    2.2,
+    1.8,
+    1,
+    0.1
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Mt Juneau"
+   ],
    "alerts": [],
-   "recentCm": 35
+   "recentCm": 30
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "White Pass, Yukon",
-   "bins": [
-    16,
-    0.6,
-    0.1,
-    1.2,
-    0.2,
-    0.2,
-    0.8,
-    1.2,
-    0.6,
-    0,
-    0.1,
-    0
-   ],
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
    "snowingAt": [
     "White Pass, Yukon"
    ],
    "alerts": [],
-   "recentCm": 22.5
+   "recentCm": 27.5
+  },
+  "https://www.slf.ch/en/avalanche-bulletin-and-snow-situation/": {
+   "name": "SLF Swiss Avalanche Bulletin",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Zermatt"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://www.vorarlberg.at/lawine": {
+   "name": "Vorarlberg Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "Lech",
+   "bins": [
+    0,
+    0,
+    0,
+    8.3,
+    6.3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": null
   },
   "https://nadare.jp/": {
    "name": "Japan Avalanche Network",
    "units": "cm",
    "region": "Japan",
    "level": "notable",
-   "snow72cm": 15,
+   "snow72cm": 20,
    "place": "Taisetsu-Tokachi",
    "bins": [
     0,
     0,
     0,
+    5.5,
+    5.7,
+    5.3,
     1.4,
-    6.2,
-    5.2,
-    4.1,
-    0.2,
+    0.1,
     0,
     0,
     0,
@@ -133,7 +161,7 @@
    "name": "Hatcher Pass Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 37.5,
+   "cm": 40,
    "place": "Independence Mine",
    "source": "snotel",
    "resorts": []
@@ -142,25 +170,16 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 35,
+   "cm": 30,
    "place": "Mt Juneau",
    "source": "model",
-   "resorts": []
-  },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 22.5,
-   "place": "Upper Tsaina River",
-   "source": "snotel",
    "resorts": []
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 22.5,
+   "cm": 27.5,
    "place": "White Pass, Yukon",
    "source": "model",
    "resorts": [
@@ -217,6 +236,15 @@
     }
    ]
   },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 22.5,
+   "place": "Upper Tsaina River",
+   "source": "snotel",
+   "resorts": []
+  },
   "https://www.cnfaic.org/": {
    "name": "Chugach NF Avalanche Information Center",
    "units": "in",
@@ -261,12 +289,6 @@
      "source": "snotel"
     },
     {
-     "name": "Wolf Creek",
-     "cm": 2.5,
-     "station": "Upper San Juan",
-     "source": "snotel"
-    },
-    {
      "name": "Summit County",
      "cm": 0,
      "source": "model",
@@ -287,6 +309,12 @@
      "name": "Steamboat",
      "cm": 0,
      "source": "model"
+    },
+    {
+     "name": "Wolf Creek",
+     "cm": 0,
+     "station": "Wolf Creek Summit",
+     "source": "snotel"
     }
    ]
   },
@@ -652,15 +680,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 44
-  },
-  {
-   "href": "https://www.avalanche.ca/map",
-   "name": "Avalanche Canada",
-   "place": "White Pass, Yukon",
-   "region": "North America",
-   "units": "cm",
-   "cm": 21
+   "cm": 51
   },
   {
    "href": "https://nadare.jp/",
@@ -668,23 +688,31 @@
    "place": "Taisetsu-Tokachi",
    "region": "Japan",
    "units": "cm",
-   "cm": 17
+   "cm": 18
   },
   {
-   "href": "https://meteofrance.com/meteo-montagne",
-   "name": "Météo-France (BERA)",
-   "place": "Chamonix",
+   "href": "https://www.vorarlberg.at/lawine",
+   "name": "Vorarlberg Avalanche Warning Service",
+   "place": "Lech",
    "region": "Europe",
+   "units": "cm",
+   "cm": 16
+  },
+  {
+   "href": "https://www.avalanche.ca/map",
+   "name": "Avalanche Canada",
+   "place": "White Pass, Yukon",
+   "region": "North America",
    "units": "cm",
    "cm": 15
   },
   {
-   "href": "https://lawinenwarndienst.bayern.de/",
-   "name": "Bavarian Avalanche Warning Service",
-   "place": "Zugspitze",
-   "region": "Europe",
-   "units": "cm",
-   "cm": 15
+   "href": "https://www.shastaavalanche.org/",
+   "name": "Mount Shasta Avalanche Center",
+   "place": "Mt Shasta",
+   "region": "North America",
+   "units": "in",
+   "cm": 13
   }
  ]
 }
