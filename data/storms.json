@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-21T03:57:57.019Z",
+ "updated": "2026-10-21T07:12:35.654Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-21T03:00Z",
+ "binsStart": "2026-10-21T07:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -22,20 +22,6 @@
   }
  ],
  "centers": {
-  "https://www.cnfaic.org/": {
-   "name": "Chugach NF Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Turnagain Pass"
-   ],
-   "alerts": [],
-   "recentCm": 15
-  },
   "https://hpavalanche.org/": {
    "name": "Hatcher Pass Avalanche Center",
    "units": "in",
@@ -72,47 +58,24 @@
    "snow72cm": 55,
    "place": "Mt Juneau",
    "bins": [
-    4,
-    6.2,
-    10.3,
-    15.1,
-    5.5,
-    4.4,
-    3.4,
-    0.4,
-    3.6,
-    1.3,
-    0.4,
-    0
-   ],
-   "snowingAt": [],
-   "alerts": [],
-   "recentCm": 27.5
-  },
-  "https://www.sierraavalanchecenter.org/": {
-   "name": "Sierra Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": "notable",
-   "snow72cm": 15,
-   "place": "Donner Summit",
-   "bins": [
-    0,
-    0,
-    0,
+    4.6,
+    10.6,
+    13.5,
+    9.8,
+    4.8,
     4.1,
-    1.8,
-    0.1,
-    7.8,
-    0.8,
-    0.3,
-    1,
+    0.7,
+    3.6,
+    0.7,
+    1.2,
     0,
     0
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Mt Juneau"
+   ],
    "alerts": [],
-   "recentCm": 2.5
+   "recentCm": 30
   },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
@@ -125,12 +88,12 @@
     0,
     0,
     0,
+    0.2,
+    2.9,
+    2.2,
+    2.2,
+    13.7,
     0.1,
-    0.1,
-    4.5,
-    1,
-    3.2,
-    9.4,
     0,
     0,
     0
@@ -138,6 +101,20 @@
    "snowingAt": [],
    "alerts": [],
    "recentCm": 7.5
+  },
+  "https://www.avalanche.ca/map": {
+   "name": "Avalanche Canada",
+   "units": "cm",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Terrace"
+   ],
+   "alerts": [],
+   "recentCm": 35
   },
   "https://meteofrance.com/meteo-montagne": {
    "name": "Météo-France (BERA)",
@@ -148,19 +125,21 @@
    "place": "Chamonix",
    "bins": [
     0,
-    0.3,
-    5.2,
-    1.5,
+    3.9,
+    0.6,
     0,
     0,
     0,
     0,
     0,
-    7.7,
-    3.8,
-    3.3
+    4.2,
+    5.9,
+    3.2,
+    3.5
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Chamonix"
+   ],
    "alerts": [],
    "recentCm": null
   },
@@ -169,21 +148,21 @@
    "units": "cm",
    "region": "Europe",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 15,
    "place": "Davos",
    "bins": [
     0,
-    0,
-    8.8,
-    5,
-    0,
+    4.1,
+    7.6,
+    0.7,
     0,
     0,
     0,
     0,
     0,
     0.6,
-    3.7
+    2.1,
+    2.1
    ],
    "snowingAt": [
     "Zermatt"
@@ -200,17 +179,17 @@
    "place": "Lech",
    "bins": [
     0,
-    0,
-    7.1,
-    5.7,
-    0.6,
-    0,
+    6.1,
+    7,
+    1,
     0,
     0,
     0,
     0,
-    4.3,
-    2.5
+    0,
+    2.9,
+    3.9,
+    0.1
    ],
    "snowingAt": [],
    "alerts": [],
@@ -239,12 +218,12 @@
    "place": "Taisetsu-Tokachi",
    "bins": [
     0,
-    0,
-    5,
-    5.7,
-    6.1,
-    2,
+    3.2,
+    6,
+    6.2,
+    3.6,
     0.1,
+    0,
     0,
     0,
     0,
@@ -331,7 +310,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 27.5,
+   "cm": 30,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -371,15 +350,15 @@
    "source": "snotel",
    "resorts": [
     {
-     "name": "Loveland",
-     "cm": 5,
-     "station": "Loveland Basin",
-     "source": "snotel"
-    },
-    {
      "name": "Winter Park",
      "cm": 2.5,
      "station": "Berthoud Summit",
+     "source": "snotel"
+    },
+    {
+     "name": "Loveland",
+     "cm": 2.5,
+     "station": "Loveland Basin",
      "source": "snotel"
     },
     {
@@ -433,6 +412,12 @@
      "source": "snotel"
     },
     {
+     "name": "Mt Hood Meadows and Timberline",
+     "cm": 2.5,
+     "station": "Mt Hood Test Site",
+     "source": "snotel"
+    },
+    {
      "name": "Mt Baker Ski Area",
      "cm": 0,
      "source": "model",
@@ -447,12 +432,6 @@
      "name": "Crystal Mountain",
      "cm": 0,
      "station": "Morse Lake",
-     "source": "snotel"
-    },
-    {
-     "name": "Mt Hood Meadows and Timberline",
-     "cm": 0,
-     "station": "Mt Hood Test Site",
      "source": "snotel"
     }
    ]
@@ -792,12 +771,20 @@
    "cm": 54
   },
   {
+   "href": "https://avalanche.state.co.us/",
+   "name": "Colorado Avalanche Information Center",
+   "place": "Red Mountain Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 21
+  },
+  {
    "href": "https://meteofrance.com/meteo-montagne",
    "name": "Météo-France (BERA)",
    "place": "Chamonix",
    "region": "Europe",
    "units": "cm",
-   "cm": 22
+   "cm": 21
   },
   {
    "href": "https://www.vorarlberg.at/lawine",
@@ -805,7 +792,7 @@
    "place": "Lech",
    "region": "Europe",
    "units": "cm",
-   "cm": 20
+   "cm": 21
   },
   {
    "href": "https://nadare.jp/",
@@ -814,14 +801,6 @@
    "region": "Japan",
    "units": "cm",
    "cm": 19
-  },
-  {
-   "href": "https://avalanche.state.co.us/",
-   "name": "Colorado Avalanche Information Center",
-   "place": "Red Mountain Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 18
   }
  ]
 }
