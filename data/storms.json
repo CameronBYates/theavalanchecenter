@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-21T15:54:20.716Z",
+ "updated": "2026-10-21T19:01:07.181Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-21T15:00Z",
+ "binsStart": "2026-10-21T18:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -31,7 +31,7 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Thompson Pass"
+    "Haines"
    ],
    "alerts": [],
    "recentCm": 22.5
@@ -41,18 +41,18 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 35,
    "place": "Mt Juneau",
    "bins": [
     10.6,
-    12.7,
-    7,
-    5.5,
-    3,
-    2.2,
+    11.7,
+    4.6,
+    5.3,
     0.9,
+    2.9,
     0.3,
-    0.1,
+    0.2,
+    0,
     0,
     0,
     0
@@ -61,7 +61,32 @@
     "Mt Juneau"
    ],
    "alerts": [],
-   "recentCm": 37.5
+   "recentCm": 40
+  },
+  "https://www.bridgeportavalanchecenter.org/": {
+   "name": "Bridgeport Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Sonora Pass",
+   "bins": [
+    2.8,
+    7.4,
+    5.8,
+    0.3,
+    0.8,
+    0,
+    0.8,
+    3.1,
+    0.4,
+    0,
+    0,
+    0
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": 2.5
   },
   "https://www.esavalanche.org/": {
    "name": "Eastern Sierra Avalanche Center",
@@ -71,14 +96,14 @@
    "snow72cm": 20,
    "place": "Mammoth Lakes",
    "bins": [
-    0.1,
     0.4,
-    6.6,
-    5.6,
-    2,
-    4.3,
     1.3,
-    0.1,
+    8.4,
+    0,
+    4.6,
+    3,
+    0,
+    0,
     0,
     0,
     0,
@@ -93,7 +118,7 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 30,
+   "snow72cm": 20,
    "place": "Galena Summit",
    "bins": [
     0,
@@ -101,12 +126,12 @@
     0,
     0,
     0,
-    0.3,
-    5.5,
-    7.1,
-    10.9,
-    5.3,
-    0.4,
+    1.3,
+    5.4,
+    4.6,
+    8.6,
+    1.5,
+    0,
     0
    ],
    "snowingAt": [],
@@ -121,13 +146,13 @@
    "snow72cm": 25,
    "place": "Wolf Creek Pass",
    "bins": [
+    0.1,
+    3.5,
+    0.6,
     0,
-    1.9,
-    0.8,
-    0.1,
-    2.8,
-    0.1,
-    19.5,
+    2.9,
+    9.9,
+    9.6,
     0,
     0,
     0,
@@ -137,6 +162,20 @@
    "snowingAt": [],
    "alerts": [],
    "recentCm": 5
+  },
+  "https://kachinapeaks.org/": {
+   "name": "Kachina Peaks Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "San Francisco Peaks"
+   ],
+   "alerts": [],
+   "recentCm": 2.5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
@@ -157,7 +196,7 @@
    "units": "cm",
    "region": "Europe",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 20,
    "place": "Chamonix",
    "bins": [
     0,
@@ -166,16 +205,15 @@
     0,
     0,
     0,
-    0,
-    6.9,
-    4.9,
-    6.4,
+    2.7,
+    4.7,
+    6.7,
     3.1,
-    1.6
+    3.8,
+    0.1
    ],
    "snowingAt": [
-    "Chamonix",
-    "Vanoise"
+    "Chamonix"
    ],
    "alerts": [],
    "recentCm": null
@@ -189,9 +227,9 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Zermatt",
     "Engelberg",
-    "Davos"
+    "Davos",
+    "Engadin"
    ],
    "alerts": [],
    "recentCm": null
@@ -205,7 +243,8 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "St Anton"
+    "St Anton",
+    "Obergurgl"
    ],
    "alerts": [],
    "recentCm": null
@@ -229,7 +268,7 @@
    "units": "cm",
    "region": "Europe",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 15,
    "place": "Courmayeur",
    "bins": [
     0,
@@ -238,14 +277,16 @@
     0,
     0,
     0,
-    0,
-    6.6,
-    2.5,
-    6.7,
-    1.6,
-    0.8
+    2.2,
+    4.6,
+    6.4,
+    2.4,
+    1.7,
+    0.1
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Livigno"
+   ],
    "alerts": [],
    "recentCm": null
   },
@@ -265,10 +306,10 @@
     0,
     0,
     0,
-    0,
-    5.8,
-    8.9,
-    1.3
+    4.3,
+    5.4,
+    5.7,
+    0.5
    ],
    "snowingAt": [
     "Allgäu",
@@ -281,25 +322,26 @@
    "name": "Japan Avalanche Network",
    "units": "cm",
    "region": "Japan",
-   "level": "notable",
-   "snow72cm": 15,
-   "place": "Taisetsu-Tokachi",
-   "bins": [
-    4.8,
-    5.4,
-    4.7,
-    1.3,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
    "snowingAt": [
     "Taisetsu-Tokachi"
+   ],
+   "alerts": [],
+   "recentCm": 2.5
+  },
+  "https://niseko.nadare.info/": {
+   "name": "Niseko Avalanche Information",
+   "units": "cm",
+   "region": "Japan",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Niseko"
    ],
    "alerts": [],
    "recentCm": null
@@ -319,7 +361,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 37.5,
+   "cm": 40,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -426,12 +468,6 @@
      "source": "snotel"
     },
     {
-     "name": "Crystal Mountain",
-     "cm": 2.5,
-     "station": "Cayuse Pass",
-     "source": "snotel"
-    },
-    {
      "name": "Mt Hood Meadows and Timberline",
      "cm": 2.5,
      "station": "Mt Hood Test Site",
@@ -447,6 +483,12 @@
      "name": "Stevens Pass",
      "cm": 0,
      "source": "model"
+    },
+    {
+     "name": "Crystal Mountain",
+     "cm": 0,
+     "station": "Morse Lake",
+     "source": "snotel"
     }
    ]
   },
@@ -613,21 +655,21 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Css Lab",
+   "place": "Burnside Lake",
    "source": "snotel",
    "resorts": [
-    {
-     "name": "Sugar Bowl",
-     "cm": 2.5,
-     "station": "Css Lab",
-     "source": "snotel"
-    },
     {
      "name": "Palisades Tahoe",
      "cm": 0,
      "station": "Palisades Tahoe",
      "source": "snotel",
      "featured": true
+    },
+    {
+     "name": "Sugar Bowl",
+     "cm": 0,
+     "station": "Css Lab",
+     "source": "snotel"
     },
     {
      "name": "Heavenly",
@@ -770,6 +812,15 @@
     }
    ]
   },
+  "https://nadare.jp/": {
+   "name": "Japan Avalanche Network",
+   "units": "cm",
+   "region": "Japan",
+   "cm": 2.5,
+   "place": "Taisetsu-Tokachi",
+   "source": "model",
+   "resorts": []
+  },
   "https://www.esavalanche.org/": {
    "name": "Eastern Sierra Avalanche Center",
    "units": "in",
@@ -838,15 +889,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 42
-  },
-  {
-   "href": "https://www.sawtoothavalanche.com/",
-   "name": "Sawtooth Avalanche Center",
-   "place": "Galena Summit",
-   "region": "North America",
-   "units": "in",
-   "cm": 29
+   "cm": 36
   },
   {
    "href": "https://avalanche.state.co.us/",
@@ -854,7 +897,23 @@
    "place": "Wolf Creek Pass",
    "region": "North America",
    "units": "in",
-   "cm": 25
+   "cm": 26
+  },
+  {
+   "href": "https://www.sawtoothavalanche.com/",
+   "name": "Sawtooth Avalanche Center",
+   "place": "Galena Summit",
+   "region": "North America",
+   "units": "in",
+   "cm": 21
+  },
+  {
+   "href": "https://www.bridgeportavalanchecenter.org/",
+   "name": "Bridgeport Avalanche Center",
+   "place": "Sonora Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 21
   },
   {
    "href": "https://meteofrance.com/meteo-montagne",
@@ -862,15 +921,7 @@
    "place": "Chamonix",
    "region": "Europe",
    "units": "cm",
-   "cm": 23
-  },
-  {
-   "href": "https://www.esavalanche.org/",
-   "name": "Eastern Sierra Avalanche Center",
-   "place": "Mammoth Lakes",
-   "region": "North America",
-   "units": "in",
-   "cm": 20
+   "cm": 21
   }
  ]
 }
