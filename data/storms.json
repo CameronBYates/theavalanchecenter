@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-20T21:50:30.075Z",
+ "updated": "2026-10-21T01:04:24.548Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-20T21:00Z",
+ "binsStart": "2026-10-21T01:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -36,72 +36,133 @@
    "alerts": [],
    "recentCm": 40
   },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Thompson Pass"
-   ],
-   "alerts": [],
-   "recentCm": 22.5
-  },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 50,
+   "snow72cm": 55,
    "place": "Mt Juneau",
    "bins": [
-    1,
-    4,
-    4.8,
-    15,
-    10.9,
-    5.7,
-    3.5,
     1.2,
-    2.2,
-    1.8,
-    1,
-    0.1
+    6.7,
+    8.1,
+    13.5,
+    9.8,
+    4.8,
+    4.1,
+    0.7,
+    3.6,
+    0.7,
+    1.2,
+    0
    ],
-   "snowingAt": [
-    "Mt Juneau"
-   ],
-   "alerts": [],
-   "recentCm": 30
-  },
-  "https://www.avalanche.ca/map": {
-   "name": "Avalanche Canada",
-   "units": "cm",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "White Pass, Yukon"
-   ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": 27.5
+  },
+  "https://avalanche.state.co.us/": {
+   "name": "Colorado Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Red Mountain Pass",
+   "bins": [
+    0,
+    0,
+    0.6,
+    2.7,
+    0.9,
+    0.5,
+    2.7,
+    0.1,
+    10.8,
+    0,
+    0,
+    0
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": 7.5
+  },
+  "https://meteofrance.com/meteo-montagne": {
+   "name": "Météo-France (BERA)",
+   "units": "cm",
+   "region": "Europe",
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "Chamonix",
+   "bins": [
+    0,
+    0,
+    3.2,
+    0.1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1.5,
+    8.9,
+    3.1
+   ],
+   "snowingAt": [
+    "Vanoise",
+    "Briançon"
+   ],
+   "alerts": [],
+   "recentCm": null
   },
   "https://www.slf.ch/en/avalanche-bulletin-and-snow-situation/": {
    "name": "SLF Swiss Avalanche Bulletin",
    "units": "cm",
    "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "Davos",
+   "bins": [
+    0,
+    0,
+    6.4,
+    4.4,
+    0.6,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3.4,
+    2.6
+   ],
    "snowingAt": [
     "Zermatt"
    ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://avalanche.report/": {
+   "name": "Avalanche.report (Euregio)",
+   "units": "cm",
+   "region": "Europe",
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "St Anton",
+   "bins": [
+    0,
+    0,
+    3.3,
+    3.1,
+    0.8,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1.9,
+    7.2
+   ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": null
   },
@@ -110,23 +171,37 @@
    "units": "cm",
    "region": "Europe",
    "level": "notable",
-   "snow72cm": 15,
+   "snow72cm": 20,
    "place": "Lech",
    "bins": [
     0,
     0,
-    0,
-    8.3,
-    6.3,
-    0,
-    0,
+    4.9,
+    5,
+    1.8,
     0,
     0,
     0,
     0,
-    1
+    0,
+    1.6,
+    4.6
    ],
    "snowingAt": [],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://www.aineva.it/bollettini/": {
+   "name": "AINEVA",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Courmayeur"
+   ],
    "alerts": [],
    "recentCm": null
   },
@@ -140,12 +215,12 @@
    "bins": [
     0,
     0,
-    0,
-    5.5,
-    5.7,
-    5.3,
-    1.4,
+    2.4,
+    6.5,
+    6.2,
+    3.6,
     0.1,
+    0,
     0,
     0,
     0,
@@ -166,20 +241,11 @@
    "source": "snotel",
    "resorts": []
   },
-  "https://www.coastalakavalanche.org/": {
-   "name": "Coastal Alaska Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 30,
-   "place": "Mt Juneau",
-   "source": "model",
-   "resorts": []
-  },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 27.5,
+   "cm": 35,
    "place": "White Pass, Yukon",
    "source": "model",
    "resorts": [
@@ -235,6 +301,15 @@
      "source": "model"
     }
    ]
+  },
+  "https://www.coastalakavalanche.org/": {
+   "name": "Coastal Alaska Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 27.5,
+   "place": "Mt Juneau",
+   "source": "model",
+   "resorts": []
   },
   "https://alaskasnow.org/": {
    "name": "Alaska Avalanche Information Center",
@@ -487,21 +562,21 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Css Lab",
+   "place": "Burnside Lake",
    "source": "snotel",
    "resorts": [
-    {
-     "name": "Sugar Bowl",
-     "cm": 2.5,
-     "station": "Css Lab",
-     "source": "snotel"
-    },
     {
      "name": "Palisades Tahoe",
      "cm": 0,
      "station": "Palisades Tahoe",
      "source": "snotel",
      "featured": true
+    },
+    {
+     "name": "Sugar Bowl",
+     "cm": 0,
+     "station": "Css Lab",
+     "source": "snotel"
     },
     {
      "name": "Heavenly",
@@ -680,7 +755,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 51
+   "cm": 54
   },
   {
    "href": "https://nadare.jp/",
@@ -688,6 +763,14 @@
    "place": "Taisetsu-Tokachi",
    "region": "Japan",
    "units": "cm",
+   "cm": 19
+  },
+  {
+   "href": "https://avalanche.state.co.us/",
+   "name": "Colorado Avalanche Information Center",
+   "place": "Red Mountain Pass",
+   "region": "North America",
+   "units": "in",
    "cm": 18
   },
   {
@@ -696,23 +779,15 @@
    "place": "Lech",
    "region": "Europe",
    "units": "cm",
-   "cm": 16
+   "cm": 18
   },
   {
-   "href": "https://www.avalanche.ca/map",
-   "name": "Avalanche Canada",
-   "place": "White Pass, Yukon",
-   "region": "North America",
+   "href": "https://www.slf.ch/en/avalanche-bulletin-and-snow-situation/",
+   "name": "SLF Swiss Avalanche Bulletin",
+   "place": "Davos",
+   "region": "Europe",
    "units": "cm",
-   "cm": 15
-  },
-  {
-   "href": "https://www.shastaavalanche.org/",
-   "name": "Mount Shasta Avalanche Center",
-   "place": "Mt Shasta",
-   "region": "North America",
-   "units": "in",
-   "cm": 13
+   "cm": 17
   }
  ]
 }
