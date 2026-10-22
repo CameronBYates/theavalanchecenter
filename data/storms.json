@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-22T19:00:58.074Z",
+ "updated": "2026-10-22T21:49:29.940Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-22T18:00Z",
+ "binsStart": "2026-10-22T21:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -34,10 +34,10 @@
     "Haines"
    ],
    "alerts": [],
-   "recentCm": 22.5
+   "recentCm": 20
   },
-  "https://www.shastaavalanche.org/": {
-   "name": "Mount Shasta Avalanche Center",
+  "https://www.coastalakavalanche.org/": {
+   "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": null,
@@ -45,25 +45,53 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Mt Shasta"
+    "Mt Juneau"
    ],
    "alerts": [],
-   "recentCm": null
+   "recentCm": 60
+  },
+  "https://www.sierraavalanchecenter.org/": {
+   "name": "Sierra Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Carson Pass"
+   ],
+   "alerts": [],
+   "recentCm": 2.5
+  },
+  "https://www.bridgeportavalanchecenter.org/": {
+   "name": "Bridgeport Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Sonora Pass"
+   ],
+   "alerts": [],
+   "recentCm": 5
   },
   "https://www.mtavalanche.com/": {
    "name": "Gallatin NF Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 20,
    "place": "Big Sky",
    "bins": [
     0,
     0,
-    0,
-    4.1,
-    17.2,
-    2.1,
+    1.3,
+    9.2,
+    8.5,
+    0.3,
     0,
     0,
     0,
@@ -80,25 +108,64 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 35,
    "place": "Wolf Creek Pass",
    "bins": [
+    2.4,
+    22.5,
+    5,
+    2.2,
+    0,
+    0,
+    0,
+    0,
+    0,
     0.4,
-    11.8,
-    7.9,
-    14.1,
-    3.2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
+    1.6,
     0
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": 7.5
+  },
+  "https://taosavalanchecenter.org/": {
+   "name": "Taos Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Taos Ski Valley",
+   "bins": [
+    0,
+    0.9,
+    0.8,
+    0,
+    8.8,
+    6.7,
+    1.7,
+    0.1,
+    0,
+    0,
+    0.8,
+    0
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": 2.5
+  },
+  "https://www.avalanche.ca/map": {
+   "name": "Avalanche Canada",
+   "units": "cm",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "White Pass, Yukon"
+   ],
+   "alerts": [],
+   "recentCm": 40
   },
   "https://meteofrance.com/meteo-montagne": {
    "name": "Météo-France (BERA)",
@@ -108,16 +175,16 @@
    "snow72cm": 20,
    "place": "Chamonix",
    "bins": [
-    0,
+    0.2,
+    0.7,
     0.4,
     0,
-    0.3,
-    1.7,
-    2.7,
-    5.3,
-    0.4,
-    2.5,
-    4.4,
+    0.6,
+    7.7,
+    3.9,
+    0.2,
+    3.7,
+    1.4,
     0,
     0
    ],
@@ -210,7 +277,7 @@
    "name": "Alaska Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 22.5,
+   "cm": 20,
    "place": "Upper Tsaina River",
    "source": "snotel",
    "resorts": []
@@ -219,7 +286,7 @@
    "name": "Chugach NF Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 15,
+   "cm": 12.5,
    "place": "Turnagain Pass",
    "source": "snotel",
    "resorts": [
@@ -236,7 +303,7 @@
    "name": "Hatcher Pass Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 15,
+   "cm": 12.5,
    "place": "Independence Mine",
    "source": "snotel",
    "resorts": []
@@ -557,7 +624,7 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "White Mill",
+   "place": "Fisher Creek",
    "source": "snotel",
    "resorts": [
     {
@@ -677,7 +744,15 @@
    "place": "Wolf Creek Pass",
    "region": "North America",
    "units": "in",
-   "cm": 39
+   "cm": 34
+  },
+  {
+   "href": "https://taosavalanchecenter.org/",
+   "name": "Taos Avalanche Center",
+   "place": "Taos Ski Valley",
+   "region": "North America",
+   "units": "in",
+   "cm": 20
   },
   {
    "href": "https://www.mtavalanche.com/",
@@ -685,7 +760,7 @@
    "place": "Big Sky",
    "region": "North America",
    "units": "in",
-   "cm": 23
+   "cm": 19
   },
   {
    "href": "https://meteofrance.com/meteo-montagne",
@@ -693,23 +768,15 @@
    "place": "Chamonix",
    "region": "Europe",
    "units": "cm",
-   "cm": 18
+   "cm": 19
   },
   {
-   "href": "https://www.wallowaavalanchecenter.org/",
-   "name": "Wallowa Avalanche Center",
-   "place": "Wallowa Mountains",
+   "href": "https://jhavalanche.org/",
+   "name": "Bridger-Teton Avalanche Center",
+   "place": "Teton Pass",
    "region": "North America",
    "units": "in",
-   "cm": 13
-  },
-  {
-   "href": "https://www.sawtoothavalanche.com/",
-   "name": "Sawtooth Avalanche Center",
-   "place": "Galena Summit",
-   "region": "North America",
-   "units": "in",
-   "cm": 13
+   "cm": 14
   }
  ]
 }
