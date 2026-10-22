@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-22T09:54:27.169Z",
+ "updated": "2026-10-22T13:05:36.699Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-22T09:00Z",
+ "binsStart": "2026-10-22T13:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -22,20 +22,6 @@
   }
  ],
  "centers": {
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Haines"
-   ],
-   "alerts": [],
-   "recentCm": 22.5
-  },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
@@ -48,23 +34,37 @@
     "Mt Juneau"
    ],
    "alerts": [],
-   "recentCm": 57.5
+   "recentCm": 62.5
+  },
+  "https://www.esavalanche.org/": {
+   "name": "Eastern Sierra Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Mammoth Lakes"
+   ],
+   "alerts": [],
+   "recentCm": 10
   },
   "https://www.sawtoothavalanche.com/": {
    "name": "Sawtooth Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 15,
    "place": "Galena Summit",
    "bins": [
     0,
+    0.5,
     0,
-    6.8,
+    4.6,
+    9.5,
+    1.8,
     0,
-    9.1,
-    6.3,
-    0.6,
     0,
     0,
     0,
@@ -80,21 +80,21 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 55,
+   "snow72cm": 50,
    "place": "Wolf Creek Pass",
    "bins": [
-    0.3,
-    1,
-    2.6,
-    22.5,
-    18.2,
+    0.2,
+    4.9,
+    12.9,
     4.6,
+    18.3,
     6.4,
     0,
     0,
     0,
     0,
-    0
+    0,
+    2.5
    ],
    "snowingAt": [],
    "alerts": [],
@@ -119,39 +119,64 @@
    "units": "cm",
    "region": "Europe",
    "level": "notable",
-   "snow72cm": 20,
-   "place": "Vanoise",
+   "snow72cm": 25,
+   "place": "Chamonix",
    "bins": [
     0,
     0,
     0,
-    0,
-    1.8,
-    2.3,
-    1.5,
-    6.9,
+    4.8,
     2.7,
-    0.1,
-    2.4,
+    3.6,
+    5.7,
+    1.2,
+    0,
+    2.5,
+    3.3,
     0
    ],
    "snowingAt": [],
    "alerts": [],
-   "recentCm": null
+   "recentCm": 7.5
   },
-  "https://nadare.jp/": {
-   "name": "Japan Avalanche Network",
+  "https://www.aineva.it/bollettini/": {
+   "name": "AINEVA",
    "units": "cm",
-   "region": "Japan",
+   "region": "Europe",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Courmayeur",
+   "bins": [
+    0,
+    0,
+    0.3,
+    5.5,
+    2,
+    2.1,
+    2.1,
+    0.8,
+    0,
+    2.7,
+    4.3,
+    0
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": 7.5
+  },
+  "https://www.meteo.si/pozor/plaz": {
+   "name": "ARSO Slovenia",
+   "units": "cm",
+   "region": "Europe",
    "level": null,
    "snow72cm": null,
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Taisetsu-Tokachi"
+    "Julian Alps"
    ],
    "alerts": [],
-   "recentCm": 22.5
+   "recentCm": null
   }
  },
  "recent": {
@@ -159,18 +184,9 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 57.5,
+   "cm": 62.5,
    "place": "Mt Juneau",
    "source": "model",
-   "resorts": []
-  },
-  "https://hpavalanche.org/": {
-   "name": "Hatcher Pass Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 40,
-   "place": "Independence Mine",
-   "source": "snotel",
    "resorts": []
   },
   "https://www.avalanche.ca/map": {
@@ -234,12 +250,12 @@
     }
    ]
   },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 22.5,
-   "place": "Upper Tsaina River",
+   "cm": 30,
+   "place": "Independence Mine",
    "source": "snotel",
    "resorts": []
   },
@@ -247,9 +263,18 @@
    "name": "Japan Avalanche Network",
    "units": "cm",
    "region": "Japan",
-   "cm": 22.5,
+   "cm": 25,
    "place": "Taisetsu-Tokachi",
    "source": "model",
+   "resorts": []
+  },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 22.5,
+   "place": "Upper Tsaina River",
+   "source": "snotel",
    "resorts": []
   },
   "https://www.cnfaic.org/": {
@@ -273,13 +298,13 @@
    "name": "Eastern Sierra Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 7.5,
+   "cm": 10,
    "place": "Mammoth Lakes",
    "source": "model",
    "resorts": [
     {
      "name": "Mammoth Mountain",
-     "cm": 7.5,
+     "cm": 10,
      "source": "model",
      "featured": true
     },
@@ -289,6 +314,15 @@
      "source": "model"
     }
    ]
+  },
+  "https://www.slf.ch/en/avalanche-bulletin-and-snow-situation/": {
+   "name": "SLF Swiss Avalanche Bulletin",
+   "units": "cm",
+   "region": "Europe",
+   "cm": 10,
+   "place": "Davos",
+   "source": "model",
+   "resorts": []
   },
   "https://payetteavalanche.org/": {
    "name": "Payette Avalanche Center",
@@ -385,6 +419,42 @@
     }
    ]
   },
+  "https://meteofrance.com/meteo-montagne": {
+   "name": "Météo-France (BERA)",
+   "units": "cm",
+   "region": "Europe",
+   "cm": 7.5,
+   "place": "Chamonix",
+   "source": "model",
+   "resorts": []
+  },
+  "https://avalanche.report/": {
+   "name": "Avalanche.report (Euregio)",
+   "units": "cm",
+   "region": "Europe",
+   "cm": 7.5,
+   "place": "Obergurgl",
+   "source": "model",
+   "resorts": []
+  },
+  "https://www.vorarlberg.at/lawine": {
+   "name": "Vorarlberg Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "cm": 7.5,
+   "place": "Lech",
+   "source": "model",
+   "resorts": []
+  },
+  "https://www.aineva.it/bollettini/": {
+   "name": "AINEVA",
+   "units": "cm",
+   "region": "Europe",
+   "cm": 7.5,
+   "place": "Livigno",
+   "source": "model",
+   "resorts": []
+  },
   "https://niseko.nadare.info/": {
    "name": "Niseko Avalanche Information",
    "units": "cm",
@@ -411,7 +481,7 @@
     {
      "name": "Crystal Mountain",
      "cm": 2.5,
-     "station": "Morse Lake",
+     "station": "Cayuse Pass",
      "source": "snotel"
     },
     {
@@ -488,6 +558,24 @@
     }
    ]
   },
+  "https://lawine.salzburg.at/": {
+   "name": "Salzburg Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "cm": 5,
+   "place": "Gastein",
+   "source": "model",
+   "resorts": []
+  },
+  "https://lawinenwarndienst.bayern.de/": {
+   "name": "Bavarian Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "cm": 5,
+   "place": "Zugspitze",
+   "source": "model",
+   "resorts": []
+  },
   "https://www.coavalanche.org/": {
    "name": "Central Oregon Avalanche Center",
    "units": "in",
@@ -553,7 +641,7 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Poison Flat",
+   "place": "Sonora Pass",
    "source": "snotel",
    "resorts": []
   },
@@ -705,23 +793,15 @@
    "place": "Wolf Creek Pass",
    "region": "North America",
    "units": "in",
-   "cm": 56
-  },
-  {
-   "href": "https://www.sawtoothavalanche.com/",
-   "name": "Sawtooth Avalanche Center",
-   "place": "Galena Summit",
-   "region": "North America",
-   "units": "in",
-   "cm": 23
+   "cm": 50
   },
   {
    "href": "https://meteofrance.com/meteo-montagne",
    "name": "Météo-France (BERA)",
-   "place": "Vanoise",
+   "place": "Chamonix",
    "region": "Europe",
    "units": "cm",
-   "cm": 18
+   "cm": 24
   },
   {
    "href": "https://www.aineva.it/bollettini/",
@@ -729,15 +809,23 @@
    "place": "Courmayeur",
    "region": "Europe",
    "units": "cm",
-   "cm": 14
+   "cm": 20
   },
   {
-   "href": "https://www.mtavalanche.com/",
-   "name": "Gallatin NF Avalanche Center",
-   "place": "Big Sky",
+   "href": "https://www.sawtoothavalanche.com/",
+   "name": "Sawtooth Avalanche Center",
+   "place": "Galena Summit",
    "region": "North America",
    "units": "in",
-   "cm": 13
+   "cm": 16
+  },
+  {
+   "href": "https://www.slf.ch/en/avalanche-bulletin-and-snow-situation/",
+   "name": "SLF Swiss Avalanche Bulletin",
+   "place": "Zermatt",
+   "region": "Europe",
+   "units": "cm",
+   "cm": 15
   }
  ]
 }
