@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-22T15:52:19.031Z",
+ "updated": "2026-10-22T19:00:58.074Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-22T15:00Z",
+ "binsStart": "2026-10-22T18:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -36,30 +36,19 @@
    "alerts": [],
    "recentCm": 22.5
   },
-  "https://www.wallowaavalanchecenter.org/": {
-   "name": "Wallowa Avalanche Center",
+  "https://www.shastaavalanche.org/": {
+   "name": "Mount Shasta Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "Wallowa Mountains",
-   "bins": [
-    0,
-    0,
-    4.4,
-    14.1,
-    0.8,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Mt Shasta"
    ],
-   "snowingAt": [],
    "alerts": [],
-   "recentCm": 2.5
+   "recentCm": null
   },
   "https://www.mtavalanche.com/": {
    "name": "Gallatin NF Avalanche Center",
@@ -72,10 +61,10 @@
     0,
     0,
     0,
+    4.1,
+    17.2,
+    2.1,
     0,
-    14,
-    9.2,
-    0.3,
     0,
     0,
     0,
@@ -86,55 +75,28 @@
    "alerts": [],
    "recentCm": 2.5
   },
-  "https://utahavalanchecenter.org/": {
-   "name": "Utah Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": "notable",
-   "snow72cm": 15,
-   "place": "Uintas",
-   "bins": [
-    0.4,
-    0,
-    9.5,
-    4.3,
-    0,
-    0,
-    0,
-    0,
-    0.2,
-    0.8,
-    0,
-    0
-   ],
-   "snowingAt": [],
-   "alerts": [],
-   "recentCm": 5
-  },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 45,
+   "snow72cm": 40,
    "place": "Wolf Creek Pass",
    "bins": [
-    1.1,
-    3.6,
-    19,
-    11.9,
-    5.5,
+    0.4,
+    11.8,
+    7.9,
+    14.1,
+    3.2,
     0,
     0,
     0,
     0,
     0,
-    0.1,
-    2.4
+    2,
+    0
    ],
-   "snowingAt": [
-    "Wolf Creek Pass"
-   ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": 7.5
   },
@@ -143,45 +105,20 @@
    "units": "cm",
    "region": "Europe",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 20,
    "place": "Chamonix",
    "bins": [
     0,
-    0,
-    0.6,
-    0.3,
-    1,
-    4.2,
-    7.9,
-    2.5,
     0.4,
-    5.6,
-    1.1,
-    0
-   ],
-   "snowingAt": [],
-   "alerts": [],
-   "recentCm": null
-  },
-  "https://www.vorarlberg.at/lawine": {
-   "name": "Vorarlberg Avalanche Warning Service",
-   "units": "cm",
-   "region": "Europe",
-   "level": "notable",
-   "snow72cm": 15,
-   "place": "Lech",
-   "bins": [
     0,
-    0,
-    0,
-    0.6,
-    4.4,
-    1.1,
-    3.6,
-    0.9,
-    1.2,
-    0.9,
+    0.3,
+    1.7,
     2.7,
+    5.3,
+    0.4,
+    2.5,
+    4.4,
+    0,
     0
    ],
    "snowingAt": [],
@@ -194,7 +131,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 57.5,
+   "cm": 60,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -282,13 +219,13 @@
    "name": "Chugach NF Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 20,
+   "cm": 15,
    "place": "Turnagain Pass",
    "source": "snotel",
    "resorts": [
     {
      "name": "Alyeska",
-     "cm": 12.5,
+     "cm": 7.5,
      "station": "Mt. Alyeska",
      "source": "snotel",
      "featured": true
@@ -299,7 +236,7 @@
    "name": "Hatcher Pass Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 20,
+   "cm": 15,
    "place": "Independence Mine",
    "source": "snotel",
    "resorts": []
@@ -740,7 +677,7 @@
    "place": "Wolf Creek Pass",
    "region": "North America",
    "units": "in",
-   "cm": 44
+   "cm": 39
   },
   {
    "href": "https://www.mtavalanche.com/",
@@ -756,7 +693,7 @@
    "place": "Chamonix",
    "region": "Europe",
    "units": "cm",
-   "cm": 23
+   "cm": 18
   },
   {
    "href": "https://www.wallowaavalanchecenter.org/",
@@ -764,15 +701,15 @@
    "place": "Wallowa Mountains",
    "region": "North America",
    "units": "in",
-   "cm": 19
+   "cm": 13
   },
   {
-   "href": "https://www.vorarlberg.at/lawine",
-   "name": "Vorarlberg Avalanche Warning Service",
-   "place": "Lech",
-   "region": "Europe",
-   "units": "cm",
-   "cm": 15
+   "href": "https://www.sawtoothavalanche.com/",
+   "name": "Sawtooth Avalanche Center",
+   "place": "Galena Summit",
+   "region": "North America",
+   "units": "in",
+   "cm": 13
   }
  ]
 }
