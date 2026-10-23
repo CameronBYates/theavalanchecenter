@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-23T09:52:56.420Z",
+ "updated": "2026-10-23T13:02:56.172Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-23T09:00Z",
+ "binsStart": "2026-10-23T13:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -22,6 +22,20 @@
   }
  ],
  "centers": {
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Haines"
+   ],
+   "alerts": [],
+   "recentCm": 7.5
+  },
   "https://www.wallowaavalanchecenter.org/": {
    "name": "Wallowa Avalanche Center",
    "units": "in",
@@ -34,10 +48,10 @@
     "Wallowa Mountains"
    ],
    "alerts": [],
-   "recentCm": 2.5
+   "recentCm": 15
   },
-  "https://www.sierraavalanchecenter.org/": {
-   "name": "Sierra Avalanche Center",
+  "https://www.sawtoothavalanche.com/": {
+   "name": "Sawtooth Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": null,
@@ -45,49 +59,33 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Donner Summit"
+    "Galena Summit"
    ],
    "alerts": [],
    "recentCm": 2.5
-  },
-  "https://utahavalanchecenter.org/": {
-   "name": "Utah Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Logan"
-   ],
-   "alerts": [],
-   "recentCm": 5
   },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 45,
+   "snow72cm": 35,
    "place": "Wolf Creek Pass",
    "bins": [
-    5.3,
-    12.9,
-    7.9,
-    0,
+    9.7,
+    4.6,
+    1.7,
     9,
-    5.3,
-    3,
+    0,
+    7.8,
+    0.6,
+    0.4,
     0.1,
-    1,
     0,
     0,
     0
    ],
-   "snowingAt": [
-    "Red Mountain Pass"
-   ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": 20
   },
@@ -100,12 +98,12 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Rogers Pass",
     "Purcells",
+    "Kananaskis",
     "Jasper"
    ],
    "alerts": [],
-   "recentCm": 37.5
+   "recentCm": 32.5
   },
   "https://meteofrance.com/meteo-montagne": {
    "name": "Météo-France (BERA)",
@@ -131,8 +129,35 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Zermatt",
-    "Davos"
+    "Zermatt"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://avalanche.report/": {
+   "name": "Avalanche.report (Euregio)",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Trentino"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://www.vorarlberg.at/lawine": {
+   "name": "Vorarlberg Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Lech"
    ],
    "alerts": [],
    "recentCm": null
@@ -157,7 +182,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 57.5,
+   "cm": 50,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -166,10 +191,15 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 37.5,
+   "cm": 32.5,
    "place": "White Pass, Yukon",
    "source": "model",
    "resorts": [
+    {
+     "name": "Sunshine Village",
+     "cm": 2.5,
+     "source": "model"
+    },
     {
      "name": "Whistler Blackcomb",
      "cm": 0,
@@ -183,11 +213,6 @@
     },
     {
      "name": "Kicking Horse",
-     "cm": 0,
-     "source": "model"
-    },
-    {
-     "name": "Sunshine Village",
      "cm": 0,
      "source": "model"
     },
@@ -288,29 +313,12 @@
     }
    ]
   },
-  "https://www.cnfaic.org/": {
-   "name": "Chugach NF Avalanche Information Center",
+  "https://www.wallowaavalanchecenter.org/": {
+   "name": "Wallowa Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 10,
-   "place": "Turnagain Pass",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Alyeska",
-     "cm": 2.5,
-     "station": "Mt. Alyeska",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 10,
-   "place": "Flower Mountain",
+   "cm": 15,
+   "place": "Mt. Howard",
    "source": "snotel",
    "resorts": []
   },
@@ -335,12 +343,29 @@
     }
    ]
   },
-  "https://hpavalanche.org/": {
-   "name": "Hatcher Pass Avalanche Center",
+  "https://www.cnfaic.org/": {
+   "name": "Chugach NF Avalanche Information Center",
    "units": "in",
    "region": "North America",
    "cm": 7.5,
-   "place": "Spring Creek",
+   "place": "Turnagain Pass",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Alyeska",
+     "cm": 2.5,
+     "station": "Mt. Alyeska",
+     "source": "snotel",
+     "featured": true
+    }
+   ]
+  },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 7.5,
+   "place": "Upper Tsaina River",
    "source": "snotel",
    "resorts": []
   },
@@ -392,6 +417,15 @@
    "source": "model",
    "resorts": []
   },
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Spring Creek",
+   "source": "snotel",
+   "resorts": []
+  },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
    "units": "in",
@@ -439,22 +473,6 @@
    "place": "Summit Meadow",
    "source": "snotel",
    "resorts": []
-  },
-  "https://www.sawtoothavalanche.com/": {
-   "name": "Sawtooth Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Galena Summit",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Sun Valley",
-     "cm": 0,
-     "source": "model",
-     "featured": true
-    }
-   ]
   },
   "https://utahavalanchecenter.org/": {
    "name": "Utah Avalanche Center",
@@ -511,15 +529,6 @@
     }
    ]
   },
-  "https://www.wallowaavalanchecenter.org/": {
-   "name": "Wallowa Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Mt. Howard",
-   "source": "snotel",
-   "resorts": []
-  },
   "https://www.shastaavalanche.org/": {
    "name": "Mount Shasta Avalanche Center",
    "units": "in",
@@ -561,6 +570,22 @@
      "cm": 0,
      "station": "Heavenly Valley",
      "source": "snotel"
+    }
+   ]
+  },
+  "https://www.sawtoothavalanche.com/": {
+   "name": "Sawtooth Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Galena Summit",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Sun Valley",
+     "cm": 0,
+     "source": "model",
+     "featured": true
     }
    ]
   },
@@ -712,15 +737,15 @@
    "place": "Wolf Creek Pass",
    "region": "North America",
    "units": "in",
-   "cm": 45
+   "cm": 34
   },
   {
-   "href": "https://utahavalanchecenter.org/",
-   "name": "Utah Avalanche Center",
-   "place": "Logan",
+   "href": "https://cbavalanchecenter.org/",
+   "name": "Crested Butte Avalanche Center",
+   "place": "Crested Butte",
    "region": "North America",
    "units": "in",
-   "cm": 12
+   "cm": 13
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -731,20 +756,20 @@
    "cm": 12
   },
   {
-   "href": "https://taosavalanchecenter.org/",
-   "name": "Taos Avalanche Center",
-   "place": "Taos Ski Valley",
+   "href": "https://hpavalanche.org/",
+   "name": "Hatcher Pass Avalanche Center",
+   "place": "Hatcher Pass",
    "region": "North America",
    "units": "in",
-   "cm": 11
+   "cm": 12
   },
   {
-   "href": "https://cbavalanchecenter.org/",
-   "name": "Crested Butte Avalanche Center",
-   "place": "Crested Butte",
+   "href": "https://jhavalanche.org/",
+   "name": "Bridger-Teton Avalanche Center",
+   "place": "Teton Pass",
    "region": "North America",
    "units": "in",
-   "cm": 11
+   "cm": 12
   }
  ]
 }
