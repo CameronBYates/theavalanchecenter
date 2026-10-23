@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-23T13:02:56.172Z",
+ "updated": "2026-10-23T15:55:21.589Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-23T13:00Z",
+ "binsStart": "2026-10-23T15:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -22,8 +22,8 @@
   }
  ],
  "centers": {
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
+  "https://www.sierraavalanchecenter.org/": {
+   "name": "Sierra Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": null,
@@ -31,24 +31,10 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Haines"
+    "Carson Pass"
    ],
    "alerts": [],
-   "recentCm": 7.5
-  },
-  "https://www.wallowaavalanchecenter.org/": {
-   "name": "Wallowa Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Wallowa Mountains"
-   ],
-   "alerts": [],
-   "recentCm": 15
+   "recentCm": 2.5
   },
   "https://www.sawtoothavalanche.com/": {
    "name": "Sawtooth Avalanche Center",
@@ -64,22 +50,65 @@
    "alerts": [],
    "recentCm": 2.5
   },
+  "https://www.flatheadavalanche.org/": {
+   "name": "Flathead Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Marias Pass"
+   ],
+   "alerts": [],
+   "recentCm": 0
+  },
+  "https://www.mtavalanche.com/": {
+   "name": "Gallatin NF Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Big Sky",
+    "Cooke City"
+   ],
+   "alerts": [],
+   "recentCm": 2.5
+  },
+  "https://utahavalanchecenter.org/": {
+   "name": "Utah Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Logan"
+   ],
+   "alerts": [],
+   "recentCm": 5
+  },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 35,
-   "place": "Wolf Creek Pass",
+   "snow72cm": 40,
+   "place": "Red Mountain Pass",
    "bins": [
-    9.7,
-    4.6,
-    1.7,
-    9,
+    0.2,
     0,
-    7.8,
-    0.6,
-    0.4,
+    0.2,
+    2.8,
+    16.4,
+    3.3,
+    4.1,
+    10.6,
     0.1,
     0,
     0,
@@ -98,12 +127,10 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Purcells",
-    "Kananaskis",
-    "Jasper"
+    "Kananaskis"
    ],
    "alerts": [],
-   "recentCm": 32.5
+   "recentCm": 30
   },
   "https://meteofrance.com/meteo-montagne": {
    "name": "Météo-France (BERA)",
@@ -129,7 +156,8 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Zermatt"
+    "Davos",
+    "Engadin"
    ],
    "alerts": [],
    "recentCm": null
@@ -143,6 +171,8 @@
    "place": null,
    "bins": null,
    "snowingAt": [
+    "St Anton",
+    "Dolomites",
     "Trentino"
    ],
    "alerts": [],
@@ -171,7 +201,7 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Courmayeur"
+    "Livigno"
    ],
    "alerts": [],
    "recentCm": null
@@ -182,7 +212,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 50,
+   "cm": 45,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -191,7 +221,7 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 32.5,
+   "cm": 30,
    "place": "White Pass, Yukon",
    "source": "model",
    "resorts": [
@@ -317,7 +347,7 @@
    "name": "Wallowa Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 15,
+   "cm": 17.5,
    "place": "Mt. Howard",
    "source": "snotel",
    "resorts": []
@@ -365,7 +395,7 @@
    "units": "in",
    "region": "North America",
    "cm": 7.5,
-   "place": "Upper Tsaina River",
+   "place": "Flower Mountain",
    "source": "snotel",
    "resorts": []
   },
@@ -583,7 +613,7 @@
    "resorts": [
     {
      "name": "Sun Valley",
-     "cm": 0,
+     "cm": 2.5,
      "source": "model",
      "featured": true
     }
@@ -734,10 +764,18 @@
   {
    "href": "https://avalanche.state.co.us/",
    "name": "Colorado Avalanche Information Center",
-   "place": "Wolf Creek Pass",
+   "place": "Red Mountain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 34
+   "cm": 38
+  },
+  {
+   "href": "https://www.mtavalanche.com/",
+   "name": "Gallatin NF Avalanche Center",
+   "place": "Big Sky",
+   "region": "North America",
+   "units": "in",
+   "cm": 14
   },
   {
    "href": "https://cbavalanchecenter.org/",
@@ -759,14 +797,6 @@
    "href": "https://hpavalanche.org/",
    "name": "Hatcher Pass Avalanche Center",
    "place": "Hatcher Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 12
-  },
-  {
-   "href": "https://jhavalanche.org/",
-   "name": "Bridger-Teton Avalanche Center",
-   "place": "Teton Pass",
    "region": "North America",
    "units": "in",
    "cm": 12
