@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-24T09:48:58.825Z",
+ "updated": "2026-10-24T12:58:25.499Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-24T09:00Z",
+ "binsStart": "2026-10-24T12:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -31,16 +31,16 @@
    "place": "Hatcher Pass",
    "bins": [
     0,
-    0.2,
-    0.3,
-    1.8,
-    1.7,
-    3.2,
-    5.7,
-    0.3,
-    3,
-    2.2,
-    0.4,
+    0.1,
+    0.9,
+    1.6,
+    2,
+    6.9,
+    2.9,
+    0.5,
+    4.3,
+    1.5,
+    0.1,
     0
    ],
    "snowingAt": [],
@@ -52,17 +52,17 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 30,
    "place": "Wolf Creek Pass",
    "bins": [
     0,
-    8.6,
-    13,
-    5.3,
-    11.8,
+    10.6,
+    5.1,
+    8.1,
+    5,
     0,
-    1,
-    2.5,
+    3.5,
+    0,
     0,
     0,
     0,
@@ -70,24 +70,24 @@
    ],
    "snowingAt": [],
    "alerts": [],
-   "recentCm": 20
+   "recentCm": 22.5
   },
   "https://cbavalanchecenter.org/": {
    "name": "Crested Butte Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 30,
+   "snow72cm": 25,
    "place": "Crested Butte",
    "bins": [
     0,
-    8.4,
-    8.4,
-    4.3,
+    13.4,
+    3.6,
     1.8,
     0.6,
     0,
     4.8,
+    0.1,
     0,
     0,
     0,
@@ -102,16 +102,16 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 30,
+   "snow72cm": 20,
    "place": "Taos Ski Valley",
    "bins": [
-    1,
-    0.2,
-    14.9,
-    2.6,
-    3.9,
-    0.9,
-    5.1,
+    0,
+    2.2,
+    6.9,
+    4.1,
+    1.8,
+    4.8,
+    0.8,
     0,
     0,
     0,
@@ -127,15 +127,15 @@
    "units": "cm",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 15,
+   "snow72cm": 20,
    "place": "Vancouver Island",
    "bins": [
-    3.4,
-    5.7,
-    2.5,
-    3.6,
+    5.2,
+    6.1,
+    6.8,
+    1.1,
     0.1,
-    0.1,
+    0,
     0,
     0,
     0,
@@ -171,11 +171,10 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Engelberg",
     "Davos"
    ],
    "alerts": [],
-   "recentCm": null
+   "recentCm": 2.5
   },
   "https://avalanche.report/": {
    "name": "Avalanche.report (Euregio)",
@@ -233,48 +232,6 @@
    "alerts": [],
    "recentCm": null
   },
-  "https://www.lawine-steiermark.at/": {
-   "name": "Styria Avalanche Warning Service",
-   "units": "cm",
-   "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Dachstein"
-   ],
-   "alerts": [],
-   "recentCm": null
-  },
-  "https://oberoesterreich.avalanche-warnings.eu/": {
-   "name": "Upper Austria Avalanche Warning Service",
-   "units": "cm",
-   "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Hinterstoder"
-   ],
-   "alerts": [],
-   "recentCm": null
-  },
-  "https://www.aineva.it/bollettini/": {
-   "name": "AINEVA",
-   "units": "cm",
-   "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Courmayeur"
-   ],
-   "alerts": [],
-   "recentCm": null
-  },
   "https://lawinenwarndienst.bayern.de/": {
    "name": "Bavarian Avalanche Warning Service",
    "units": "cm",
@@ -284,7 +241,8 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Allgäu"
+    "Zugspitze",
+    "Berchtesgaden"
    ],
    "alerts": [],
    "recentCm": null
@@ -309,7 +267,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 37.5,
+   "cm": 35,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -327,7 +285,7 @@
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 20,
+   "cm": 22.5,
    "place": "Elwood Pass",
    "source": "snotel",
    "resorts": [
@@ -392,13 +350,13 @@
    "name": "Bridger-Teton Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 15,
+   "cm": 17.5,
    "place": "Grand Targhee",
    "source": "snotel",
    "resorts": [
     {
      "name": "Grand Targhee",
-     "cm": 15,
+     "cm": 17.5,
      "station": "Grand Targhee",
      "source": "snotel"
     },
@@ -410,26 +368,17 @@
     }
    ]
   },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 10,
-   "place": "Flower Mountain",
-   "source": "snotel",
-   "resorts": []
-  },
   "https://www.sierraavalanchecenter.org/": {
    "name": "Sierra Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 10,
+   "cm": 15,
    "place": "Css Lab",
    "source": "snotel",
    "resorts": [
     {
      "name": "Sugar Bowl",
-     "cm": 10,
+     "cm": 15,
      "station": "Css Lab",
      "source": "snotel"
     },
@@ -453,6 +402,15 @@
      "source": "snotel"
     }
    ]
+  },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 10,
+   "place": "Flower Mountain",
+   "source": "snotel",
+   "resorts": []
   },
   "https://www.esavalanche.org/": {
    "name": "Eastern Sierra Avalanche Center",
@@ -491,7 +449,7 @@
     },
     {
      "name": "Montana Snowbowl",
-     "cm": 2.5,
+     "cm": 5,
      "station": "Stuart Mountain",
      "source": "snotel",
      "featured": true
@@ -554,28 +512,6 @@
     },
     {
      "name": "Sun Peaks",
-     "cm": 0,
-     "source": "model"
-    }
-   ]
-  },
-  "https://payetteavalanche.org/": {
-   "name": "Payette Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 7.5,
-   "place": "Brundage Reservoir",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Brundage",
-     "cm": 7.5,
-     "station": "Brundage Reservoir",
-     "source": "snotel",
-     "featured": true
-    },
-    {
-     "name": "Tamarack",
      "cm": 0,
      "source": "model"
     }
@@ -670,6 +606,28 @@
    "place": "Summit Meadow",
    "source": "snotel",
    "resorts": []
+  },
+  "https://payetteavalanche.org/": {
+   "name": "Payette Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Brundage Reservoir",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Brundage",
+     "cm": 5,
+     "station": "Brundage Reservoir",
+     "source": "snotel",
+     "featured": true
+    },
+    {
+     "name": "Tamarack",
+     "cm": 0,
+     "source": "model"
+    }
+   ]
   },
   "https://www.mtavalanche.com/": {
    "name": "Gallatin NF Avalanche Center",
@@ -826,6 +784,15 @@
    "source": "model",
    "resorts": []
   },
+  "https://www.slf.ch/en/avalanche-bulletin-and-snow-situation/": {
+   "name": "SLF Swiss Avalanche Bulletin",
+   "units": "cm",
+   "region": "Europe",
+   "cm": 2.5,
+   "place": "Davos",
+   "source": "model",
+   "resorts": []
+  },
   "https://www.idahopanhandleavalanche.org/": {
    "name": "Idaho Panhandle Avalanche Center",
    "units": "in",
@@ -873,15 +840,7 @@
    "place": "Wolf Creek Pass",
    "region": "North America",
    "units": "in",
-   "cm": 42
-  },
-  {
-   "href": "https://taosavalanchecenter.org/",
-   "name": "Taos Avalanche Center",
-   "place": "Taos Ski Valley",
-   "region": "North America",
-   "units": "in",
-   "cm": 29
+   "cm": 32
   },
   {
    "href": "https://cbavalanchecenter.org/",
@@ -889,7 +848,7 @@
    "place": "Crested Butte",
    "region": "North America",
    "units": "in",
-   "cm": 28
+   "cm": 24
   },
   {
    "href": "https://hpavalanche.org/",
@@ -897,7 +856,15 @@
    "place": "Hatcher Pass",
    "region": "North America",
    "units": "in",
-   "cm": 19
+   "cm": 21
+  },
+  {
+   "href": "https://taosavalanchecenter.org/",
+   "name": "Taos Avalanche Center",
+   "place": "Taos Ski Valley",
+   "region": "North America",
+   "units": "in",
+   "cm": 21
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -905,7 +872,7 @@
    "place": "Vancouver Island",
    "region": "North America",
    "units": "cm",
-   "cm": 15
+   "cm": 19
   }
  ]
 }
