@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-23T21:49:54.296Z",
+ "updated": "2026-10-24T01:09:52.316Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-23T21:00Z",
+ "binsStart": "2026-10-24T01:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -22,6 +22,45 @@
   }
  ],
  "centers": {
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Hatcher Pass",
+   "bins": [
+    0,
+    0,
+    0.6,
+    0.4,
+    1.8,
+    2,
+    2.8,
+    5.3,
+    3.1,
+    0.6,
+    2.5,
+    0.4
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": 2.5
+  },
+  "https://missoulaavalanche.org/": {
+   "name": "West Central Montana Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Lolo Pass"
+   ],
+   "alerts": [],
+   "recentCm": 7.5
+  },
   "https://www.mtavalanche.com/": {
    "name": "Gallatin NF Avalanche Center",
    "units": "in",
@@ -37,8 +76,8 @@
    "alerts": [],
    "recentCm": 2.5
   },
-  "https://utahavalanchecenter.org/": {
-   "name": "Utah Avalanche Center",
+  "https://jhavalanche.org/": {
+   "name": "Bridger-Teton Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": null,
@@ -46,52 +85,75 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Logan"
+    "Teton Pass"
    ],
    "alerts": [],
-   "recentCm": 5
+   "recentCm": 2.5
   },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 30,
    "place": "Wolf Creek Pass",
    "bins": [
-    8.3,
     0,
-    0.4,
-    2.9,
-    7.6,
-    8.6,
+    0.6,
+    1.9,
+    5.5,
+    12.7,
     9.8,
     0,
+    0.1,
+    0.2,
+    0,
+    0,
+    0
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": 20
+  },
+  "https://cbavalanchecenter.org/": {
+   "name": "Crested Butte Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Crested Butte",
+   "bins": [
+    0,
+    0,
+    3.7,
+    9.9,
+    3.3,
+    0.6,
+    0,
+    1.1,
     0,
     0,
     0,
     0
    ],
-   "snowingAt": [
-    "Wolf Creek Pass"
-   ],
+   "snowingAt": [],
    "alerts": [],
-   "recentCm": 20
+   "recentCm": 7.5
   },
   "https://taosavalanchecenter.org/": {
    "name": "Taos Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 15,
    "place": "Taos Ski Valley",
    "bins": [
-    0.4,
-    3.2,
+    1.8,
     0,
-    7.8,
-    0.5,
-    8.1,
+    0,
+    6.9,
+    4.8,
+    3.3,
     0,
     0,
     0,
@@ -127,7 +189,9 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Engelberg"
+    "Zermatt",
+    "Engelberg",
+    "Davos"
    ],
    "alerts": [],
    "recentCm": null
@@ -141,8 +205,7 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "St Anton",
-    "Dolomites"
+    "St Anton"
    ],
    "alerts": [],
    "recentCm": null
@@ -161,8 +224,8 @@
    "alerts": [],
    "recentCm": null
   },
-  "https://lawinenwarndienst.ktn.gv.at/": {
-   "name": "Carinthia Avalanche Warning Service",
+  "https://lawine.salzburg.at/": {
+   "name": "Salzburg Avalanche Warning Service",
    "units": "cm",
    "region": "Europe",
    "level": null,
@@ -170,7 +233,63 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Nassfeld"
+    "Gastein"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://www.lawine-steiermark.at/": {
+   "name": "Styria Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Dachstein"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://oberoesterreich.avalanche-warnings.eu/": {
+   "name": "Upper Austria Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Hinterstoder"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://www.lawinenwarndienst-niederoesterreich.at/": {
+   "name": "Lower Austria Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Rax"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://www.aineva.it/bollettini/": {
+   "name": "AINEVA",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Courmayeur"
    ],
    "alerts": [],
    "recentCm": null
@@ -184,22 +303,8 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Zugspitze",
+    "Allgäu",
     "Berchtesgaden"
-   ],
-   "alerts": [],
-   "recentCm": null
-  },
-  "https://www.meteo.si/pozor/plaz": {
-   "name": "ARSO Slovenia",
-   "units": "cm",
-   "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Julian Alps"
    ],
    "alerts": [],
    "recentCm": null
@@ -280,12 +385,51 @@
     }
    ]
   },
+  "https://www.wallowaavalanchecenter.org/": {
+   "name": "Wallowa Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 17.5,
+   "place": "Mt. Howard",
+   "source": "snotel",
+   "resorts": []
+  },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 10,
+   "place": "Flower Mountain",
+   "source": "snotel",
+   "resorts": []
+  },
+  "https://www.esavalanche.org/": {
+   "name": "Eastern Sierra Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 10,
+   "place": "Mammoth Lakes",
+   "source": "model",
+   "resorts": [
+    {
+     "name": "Mammoth Mountain",
+     "cm": 10,
+     "source": "model",
+     "featured": true
+    },
+    {
+     "name": "June Mountain",
+     "cm": 2.5,
+     "source": "model"
+    }
+   ]
+  },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 20,
-   "place": "White Pass, Yukon",
+   "cm": 10,
+   "place": "Jasper",
    "source": "model",
    "resorts": [
     {
@@ -341,36 +485,6 @@
     }
    ]
   },
-  "https://www.wallowaavalanchecenter.org/": {
-   "name": "Wallowa Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 17.5,
-   "place": "Mt. Howard",
-   "source": "snotel",
-   "resorts": []
-  },
-  "https://www.esavalanche.org/": {
-   "name": "Eastern Sierra Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 10,
-   "place": "Mammoth Lakes",
-   "source": "model",
-   "resorts": [
-    {
-     "name": "Mammoth Mountain",
-     "cm": 10,
-     "source": "model",
-     "featured": true
-    },
-    {
-     "name": "June Mountain",
-     "cm": 2.5,
-     "source": "model"
-    }
-   ]
-  },
   "https://www.cnfaic.org/": {
    "name": "Chugach NF Avalanche Information Center",
    "units": "in",
@@ -387,15 +501,6 @@
      "featured": true
     }
    ]
-  },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 7.5,
-   "place": "Flower Mountain",
-   "source": "snotel",
-   "resorts": []
   },
   "https://payetteavalanche.org/": {
    "name": "Payette Avalanche Center",
@@ -416,6 +521,29 @@
      "name": "Tamarack",
      "cm": 0,
      "source": "model"
+    }
+   ]
+  },
+  "https://missoulaavalanche.org/": {
+   "name": "West Central Montana Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 7.5,
+   "place": "Saddle Mtn.",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Lost Trail",
+     "cm": 7.5,
+     "station": "Saddle Mtn.",
+     "source": "snotel"
+    },
+    {
+     "name": "Montana Snowbowl",
+     "cm": 0,
+     "station": "Stuart Mountain",
+     "source": "snotel",
+     "featured": true
     }
    ]
   },
@@ -617,29 +745,6 @@
     }
    ]
   },
-  "https://missoulaavalanche.org/": {
-   "name": "West Central Montana Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Savage Pass",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Lost Trail",
-     "cm": 2.5,
-     "station": "Saddle Mtn.",
-     "source": "snotel"
-    },
-    {
-     "name": "Montana Snowbowl",
-     "cm": 0,
-     "station": "Stuart Mountain",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
   "https://www.mtavalanche.com/": {
    "name": "Gallatin NF Avalanche Center",
    "units": "in",
@@ -671,16 +776,16 @@
    "source": "snotel",
    "resorts": [
     {
+     "name": "Jackson Hole",
+     "cm": 2.5,
+     "source": "model",
+     "featured": true
+    },
+    {
      "name": "Grand Targhee",
      "cm": 2.5,
      "station": "Grand Targhee",
      "source": "snotel"
-    },
-    {
-     "name": "Jackson Hole",
-     "cm": 0,
-     "source": "model",
-     "featured": true
     }
    ]
   },
@@ -765,23 +870,7 @@
    "place": "Wolf Creek Pass",
    "region": "North America",
    "units": "in",
-   "cm": 38
-  },
-  {
-   "href": "https://taosavalanchecenter.org/",
-   "name": "Taos Avalanche Center",
-   "place": "Taos Ski Valley",
-   "region": "North America",
-   "units": "in",
-   "cm": 20
-  },
-  {
-   "href": "https://cbavalanchecenter.org/",
-   "name": "Crested Butte Avalanche Center",
-   "place": "Crested Butte",
-   "region": "North America",
-   "units": "in",
-   "cm": 14
+   "cm": 31
   },
   {
    "href": "https://hpavalanche.org/",
@@ -789,7 +878,23 @@
    "place": "Hatcher Pass",
    "region": "North America",
    "units": "in",
-   "cm": 12
+   "cm": 19
+  },
+  {
+   "href": "https://cbavalanchecenter.org/",
+   "name": "Crested Butte Avalanche Center",
+   "place": "Crested Butte",
+   "region": "North America",
+   "units": "in",
+   "cm": 19
+  },
+  {
+   "href": "https://taosavalanchecenter.org/",
+   "name": "Taos Avalanche Center",
+   "place": "Taos Ski Valley",
+   "region": "North America",
+   "units": "in",
+   "cm": 17
   },
   {
    "href": "https://utahavalanchecenter.org/",
@@ -797,7 +902,7 @@
    "place": "Uintas",
    "region": "North America",
    "units": "in",
-   "cm": 10
+   "cm": 11
   }
  ]
 }
