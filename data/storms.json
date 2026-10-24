@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-24T03:52:03.337Z",
+ "updated": "2026-10-24T07:02:02.645Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-24T03:00Z",
+ "binsStart": "2026-10-24T07:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -32,32 +32,18 @@
    "bins": [
     0,
     0,
-    0.6,
+    0.3,
+    1.5,
+    1.5,
+    2.7,
+    6.3,
     0.8,
-    1.9,
-    2.2,
-    4,
-    4.8,
-    1.7,
-    1.2,
-    2.2,
-    0.1
+    0.6,
+    4.4,
+    0.7,
+    0
    ],
    "snowingAt": [],
-   "alerts": [],
-   "recentCm": 2.5
-  },
-  "https://jhavalanche.org/": {
-   "name": "Bridger-Teton Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Teton Pass"
-   ],
    "alerts": [],
    "recentCm": 2.5
   },
@@ -66,18 +52,18 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Wolf Creek Pass",
    "bins": [
     0,
-    1.9,
-    3.1,
-    5.2,
-    7.6,
-    0,
+    9,
+    9.5,
+    4.1,
+    4.1,
     0.8,
-    0.1,
-    0.1,
+    0,
+    0,
+    0,
     0,
     0,
     0
@@ -95,13 +81,13 @@
    "place": "Crested Butte",
    "bins": [
     0,
-    0.9,
-    5.8,
-    3.2,
-    0,
+    2.5,
+    7.3,
+    0.8,
     5.3,
     0,
-    0.3,
+    0,
+    0,
     0,
     0,
     0,
@@ -119,14 +105,14 @@
    "snow72cm": 20,
    "place": "Taos Ski Valley",
    "bins": [
-    0.1,
     0,
-    2.6,
-    4.8,
+    0.7,
+    10.2,
     5.5,
     0,
-    4.1,
-    2,
+    0,
+    6,
+    0,
     0,
     0,
     0,
@@ -149,7 +135,7 @@
     "Vanoise"
    ],
    "alerts": [],
-   "recentCm": null
+   "recentCm": 2.5
   },
   "https://www.slf.ch/en/avalanche-bulletin-and-snow-situation/": {
    "name": "SLF Swiss Avalanche Bulletin",
@@ -160,9 +146,8 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Engelberg",
-    "Davos",
-    "Engadin"
+    "Zermatt",
+    "Engelberg"
    ],
    "alerts": [],
    "recentCm": null
@@ -177,7 +162,7 @@
    "bins": null,
    "snowingAt": [
     "St Anton",
-    "Obergurgl"
+    "Dolomites"
    ],
    "alerts": [],
    "recentCm": null
@@ -206,6 +191,20 @@
    "bins": null,
    "snowingAt": [
     "Gastein"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://lawinenwarndienst.ktn.gv.at/": {
+   "name": "Carinthia Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Nassfeld"
    ],
    "alerts": [],
    "recentCm": null
@@ -252,20 +251,6 @@
    "alerts": [],
    "recentCm": null
   },
-  "https://www.aineva.it/bollettini/": {
-   "name": "AINEVA",
-   "units": "cm",
-   "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Livigno"
-   ],
-   "alerts": [],
-   "recentCm": null
-  },
   "https://lawinenwarndienst.bayern.de/": {
    "name": "Bavarian Avalanche Warning Service",
    "units": "cm",
@@ -276,8 +261,21 @@
    "bins": null,
    "snowingAt": [
     "Allgäu",
-    "Zugspitze",
     "Berchtesgaden"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://www.meteo.si/pozor/plaz": {
+   "name": "ARSO Slovenia",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Julian Alps"
    ],
    "alerts": [],
    "recentCm": null
@@ -288,7 +286,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 42.5,
+   "cm": 40,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -366,6 +364,28 @@
    "place": "Mt. Howard",
    "source": "snotel",
    "resorts": []
+  },
+  "https://jhavalanche.org/": {
+   "name": "Bridger-Teton Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 15,
+   "place": "Grand Targhee",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Grand Targhee",
+     "cm": 15,
+     "station": "Grand Targhee",
+     "source": "snotel"
+    },
+    {
+     "name": "Jackson Hole",
+     "cm": 5,
+     "source": "model",
+     "featured": true
+    }
+   ]
   },
   "https://alaskasnow.org/": {
    "name": "Alaska Avalanche Information Center",
@@ -545,23 +565,6 @@
    "source": "model",
    "resorts": []
   },
-  "https://www.cnfaic.org/": {
-   "name": "Chugach NF Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Turnagain Pass",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Alyeska",
-     "cm": 2.5,
-     "station": "Mt. Alyeska",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
    "units": "in",
@@ -601,6 +604,41 @@
     }
    ]
   },
+  "https://www.sierraavalanchecenter.org/": {
+   "name": "Sierra Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Css Lab",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Sugar Bowl",
+     "cm": 5,
+     "station": "Css Lab",
+     "source": "snotel"
+    },
+    {
+     "name": "Kirkwood",
+     "cm": 2.5,
+     "station": "Carson Pass",
+     "source": "snotel"
+    },
+    {
+     "name": "Palisades Tahoe",
+     "cm": 0,
+     "station": "Palisades Tahoe",
+     "source": "snotel",
+     "featured": true
+    },
+    {
+     "name": "Heavenly",
+     "cm": 0,
+     "station": "Heavenly Valley",
+     "source": "snotel"
+    }
+   ]
+  },
   "https://www.bridgeportavalanchecenter.org/": {
    "name": "Bridgeport Avalanche Center",
    "units": "in",
@@ -609,6 +647,28 @@
    "place": "Summit Meadow",
    "source": "snotel",
    "resorts": []
+  },
+  "https://www.mtavalanche.com/": {
+   "name": "Gallatin NF Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Fisher Creek",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Bridger Bowl",
+     "cm": 2.5,
+     "source": "model"
+    },
+    {
+     "name": "Big Sky",
+     "cm": 0,
+     "station": "Lone Mountain",
+     "source": "snotel",
+     "featured": true
+    }
+   ]
   },
   "https://utahavalanchecenter.org/": {
    "name": "Utah Avalanche Center",
@@ -649,6 +709,23 @@
     }
    ]
   },
+  "https://www.cnfaic.org/": {
+   "name": "Chugach NF Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Turnagain Pass",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Alyeska",
+     "cm": 2.5,
+     "station": "Mt. Alyeska",
+     "source": "snotel",
+     "featured": true
+    }
+   ]
+  },
   "https://hpavalanche.org/": {
    "name": "Hatcher Pass Avalanche Center",
    "units": "in",
@@ -683,85 +760,6 @@
    "source": "model",
    "resorts": []
   },
-  "https://www.sierraavalanchecenter.org/": {
-   "name": "Sierra Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Css Lab",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Sugar Bowl",
-     "cm": 2.5,
-     "station": "Css Lab",
-     "source": "snotel"
-    },
-    {
-     "name": "Kirkwood",
-     "cm": 2.5,
-     "station": "Carson Pass",
-     "source": "snotel"
-    },
-    {
-     "name": "Palisades Tahoe",
-     "cm": 0,
-     "station": "Palisades Tahoe",
-     "source": "snotel",
-     "featured": true
-    },
-    {
-     "name": "Heavenly",
-     "cm": 0,
-     "station": "Heavenly Valley",
-     "source": "snotel"
-    }
-   ]
-  },
-  "https://www.mtavalanche.com/": {
-   "name": "Gallatin NF Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Fisher Creek",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Bridger Bowl",
-     "cm": 2.5,
-     "source": "model"
-    },
-    {
-     "name": "Big Sky",
-     "cm": 0,
-     "station": "Lone Mountain",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
-  "https://jhavalanche.org/": {
-   "name": "Bridger-Teton Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Pine Creek Pass",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Jackson Hole",
-     "cm": 5,
-     "source": "model",
-     "featured": true
-    },
-    {
-     "name": "Grand Targhee",
-     "cm": 2.5,
-     "station": "Grand Targhee",
-     "source": "snotel"
-    }
-   ]
-  },
   "https://taosavalanchecenter.org/": {
    "name": "Taos Avalanche Center",
    "units": "in",
@@ -795,6 +793,15 @@
      "featured": true
     }
    ]
+  },
+  "https://meteofrance.com/meteo-montagne": {
+   "name": "Météo-France (BERA)",
+   "units": "cm",
+   "region": "Europe",
+   "cm": 2.5,
+   "place": "Chamonix",
+   "source": "model",
+   "resorts": []
   },
   "https://www.idahopanhandleavalanche.org/": {
    "name": "Idaho Panhandle Avalanche Center",
@@ -838,12 +845,12 @@
  },
  "deepest": [
   {
-   "href": "https://hpavalanche.org/",
-   "name": "Hatcher Pass Avalanche Center",
-   "place": "Hatcher Pass",
+   "href": "https://avalanche.state.co.us/",
+   "name": "Colorado Avalanche Information Center",
+   "place": "Wolf Creek Pass",
    "region": "North America",
    "units": "in",
-   "cm": 19
+   "cm": 27
   },
   {
    "href": "https://taosavalanchecenter.org/",
@@ -851,12 +858,12 @@
    "place": "Taos Ski Valley",
    "region": "North America",
    "units": "in",
-   "cm": 19
+   "cm": 22
   },
   {
-   "href": "https://avalanche.state.co.us/",
-   "name": "Colorado Avalanche Information Center",
-   "place": "Wolf Creek Pass",
+   "href": "https://hpavalanche.org/",
+   "name": "Hatcher Pass Avalanche Center",
+   "place": "Hatcher Pass",
    "region": "North America",
    "units": "in",
    "cm": 19
@@ -867,7 +874,7 @@
    "place": "Crested Butte",
    "region": "North America",
    "units": "in",
-   "cm": 15
+   "cm": 16
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -875,7 +882,7 @@
    "place": "Whistler",
    "region": "North America",
    "units": "cm",
-   "cm": 13
+   "cm": 12
   }
  ]
 }
