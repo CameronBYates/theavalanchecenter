@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-24T12:58:25.499Z",
+ "updated": "2026-10-24T15:47:52.647Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-24T12:00Z",
+ "binsStart": "2026-10-24T15:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -31,16 +31,16 @@
    "place": "Hatcher Pass",
    "bins": [
     0,
-    0.1,
-    0.9,
-    1.6,
+    0.3,
+    1.2,
     2,
-    6.9,
-    2.9,
-    0.5,
-    4.3,
-    1.5,
-    0.1,
+    3.8,
+    6.7,
+    0.7,
+    1.8,
+    4.1,
+    0.3,
+    0,
     0
    ],
    "snowingAt": [],
@@ -52,23 +52,25 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 30,
+   "snow72cm": 35,
    "place": "Wolf Creek Pass",
    "bins": [
+    12.3,
+    14,
+    7.9,
+    1.5,
     0,
-    10.6,
-    5.1,
-    8.1,
-    5,
+    1.3,
     0,
-    3.5,
     0,
     0,
     0,
     0,
     0
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Red Mountain Pass"
+   ],
    "alerts": [],
    "recentCm": 22.5
   },
@@ -77,17 +79,17 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 15,
    "place": "Crested Butte",
    "bins": [
-    0,
-    13.4,
-    3.6,
+    3.5,
+    7,
+    3.3,
+    1.3,
     1.8,
-    0.6,
+    0.3,
+    0.3,
     0,
-    4.8,
-    0.1,
     0,
     0,
     0,
@@ -97,44 +99,19 @@
    "alerts": [],
    "recentCm": 7.5
   },
-  "https://taosavalanchecenter.org/": {
-   "name": "Taos Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "Taos Ski Valley",
-   "bins": [
-    0,
-    2.2,
-    6.9,
-    4.1,
-    1.8,
-    4.8,
-    0.8,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "snowingAt": [],
-   "alerts": [],
-   "recentCm": 2.5
-  },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Vancouver Island",
    "bins": [
-    5.2,
-    6.1,
-    6.8,
-    1.1,
-    0.1,
+    9.7,
+    6.5,
+    5.1,
+    1.5,
+    0,
     0,
     0,
     0,
@@ -143,7 +120,11 @@
     0,
     0
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Vancouver Island",
+    "North Shore",
+    "Whistler"
+   ],
    "alerts": [],
    "recentCm": 10
   },
@@ -156,8 +137,7 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Chamonix",
-    "Vanoise"
+    "Chamonix"
    ],
    "alerts": [],
    "recentCm": 2.5
@@ -204,34 +184,6 @@
    "alerts": [],
    "recentCm": null
   },
-  "https://lawine.salzburg.at/": {
-   "name": "Salzburg Avalanche Warning Service",
-   "units": "cm",
-   "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Gastein"
-   ],
-   "alerts": [],
-   "recentCm": null
-  },
-  "https://lawinenwarndienst.ktn.gv.at/": {
-   "name": "Carinthia Avalanche Warning Service",
-   "units": "cm",
-   "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Nassfeld"
-   ],
-   "alerts": [],
-   "recentCm": null
-  },
   "https://lawinenwarndienst.bayern.de/": {
    "name": "Bavarian Avalanche Warning Service",
    "units": "cm",
@@ -267,7 +219,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 35,
+   "cm": 32.5,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -302,6 +254,12 @@
      "source": "snotel"
     },
     {
+     "name": "Telluride",
+     "cm": 2.5,
+     "station": "Alta Lakes",
+     "source": "snotel"
+    },
+    {
      "name": "Summit County",
      "cm": 0,
      "source": "model",
@@ -328,11 +286,40 @@
      "name": "Steamboat",
      "cm": 0,
      "source": "model"
+    }
+   ]
+  },
+  "https://www.sierraavalanchecenter.org/": {
+   "name": "Sierra Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 20,
+   "place": "Css Lab",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Sugar Bowl",
+     "cm": 20,
+     "station": "Css Lab",
+     "source": "snotel"
     },
     {
-     "name": "Telluride",
+     "name": "Kirkwood",
+     "cm": 2.5,
+     "station": "Carson Pass",
+     "source": "snotel"
+    },
+    {
+     "name": "Palisades Tahoe",
      "cm": 0,
-     "station": "Alta Lakes",
+     "station": "Palisades Tahoe",
+     "source": "snotel",
+     "featured": true
+    },
+    {
+     "name": "Heavenly",
+     "cm": 0,
+     "station": "Heavenly Valley",
      "source": "snotel"
     }
    ]
@@ -365,41 +352,6 @@
      "cm": 5,
      "source": "model",
      "featured": true
-    }
-   ]
-  },
-  "https://www.sierraavalanchecenter.org/": {
-   "name": "Sierra Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 15,
-   "place": "Css Lab",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Sugar Bowl",
-     "cm": 15,
-     "station": "Css Lab",
-     "source": "snotel"
-    },
-    {
-     "name": "Kirkwood",
-     "cm": 2.5,
-     "station": "Carson Pass",
-     "source": "snotel"
-    },
-    {
-     "name": "Palisades Tahoe",
-     "cm": 0,
-     "station": "Palisades Tahoe",
-     "source": "snotel",
-     "featured": true
-    },
-    {
-     "name": "Heavenly",
-     "cm": 0,
-     "station": "Heavenly Valley",
-     "source": "snotel"
     }
    ]
   },
@@ -840,15 +792,15 @@
    "place": "Wolf Creek Pass",
    "region": "North America",
    "units": "in",
-   "cm": 32
+   "cm": 37
   },
   {
-   "href": "https://cbavalanchecenter.org/",
-   "name": "Crested Butte Avalanche Center",
-   "place": "Crested Butte",
+   "href": "https://www.avalanche.ca/map",
+   "name": "Avalanche Canada",
+   "place": "Vancouver Island",
    "region": "North America",
-   "units": "in",
-   "cm": 24
+   "units": "cm",
+   "cm": 23
   },
   {
    "href": "https://hpavalanche.org/",
@@ -859,20 +811,20 @@
    "cm": 21
   },
   {
-   "href": "https://taosavalanchecenter.org/",
-   "name": "Taos Avalanche Center",
-   "place": "Taos Ski Valley",
+   "href": "https://cbavalanchecenter.org/",
+   "name": "Crested Butte Avalanche Center",
+   "place": "Crested Butte",
    "region": "North America",
    "units": "in",
-   "cm": 21
+   "cm": 17
   },
   {
-   "href": "https://www.avalanche.ca/map",
-   "name": "Avalanche Canada",
-   "place": "Vancouver Island",
+   "href": "https://utahavalanchecenter.org/",
+   "name": "Utah Avalanche Center",
+   "place": "Uintas",
    "region": "North America",
-   "units": "cm",
-   "cm": 19
+   "units": "in",
+   "cm": 13
   }
  ]
 }
