@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-25T09:48:47.144Z",
+ "updated": "2026-10-25T12:57:50.131Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-25T09:00Z",
+ "binsStart": "2026-10-25T12:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -44,13 +44,13 @@
    "snow72cm": 15,
    "place": "Hatcher Pass",
    "bins": [
-    2.8,
-    4.1,
-    4.6,
+    2.6,
+    6.1,
+    1.8,
     0.6,
-    3.6,
-    1.2,
-    0.2,
+    4.6,
+    0.9,
+    0,
     0,
     0,
     0,
@@ -63,28 +63,44 @@
    "alerts": [],
    "recentCm": 5
   },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Thompson Pass"
+   ],
+   "alerts": [],
+   "recentCm": 2.5
+  },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 30,
+   "level": "heavy",
+   "snow72cm": 35,
    "place": "Mt Hood",
    "bins": [
     0,
     0,
-    0,
-    3.1,
-    6,
-    5.1,
-    14.8,
-    0,
+    3.4,
+    3.5,
+    9.9,
+    4.3,
+    11.3,
+    0.1,
     0.1,
     0,
     0,
     0
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Mt Baker"
+   ],
    "alerts": [],
    "recentCm": 5
   },
@@ -99,46 +115,19 @@
     0,
     0,
     0,
+    10.6,
+    4.8,
+    0.9,
     5.5,
-    7.6,
-    2.4,
-    5,
-    1.2,
-    1.2,
-    0.2,
+    1.6,
+    0.8,
+    0,
     0,
     0
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": 2.5
-  },
-  "https://avalanche.state.co.us/": {
-   "name": "Colorado Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "Wolf Creek Pass",
-   "bins": [
-    1.2,
-    0.3,
-    13.2,
-    6.8,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "snowingAt": [
-    "Red Mountain Pass"
-   ],
-   "alerts": [],
-   "recentCm": 37.5
   },
   "https://taosavalanchecenter.org/": {
    "name": "Taos Avalanche Center",
@@ -149,9 +138,9 @@
    "place": "Taos Ski Valley",
    "bins": [
     0,
-    1.1,
-    13.4,
-    6.6,
+    9.9,
+    7.7,
+    0,
     0,
     0,
     0,
@@ -174,8 +163,10 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Whistler",
+    "Vancouver Island",
     "Coquihalla",
+    "Cariboos",
+    "Revelstoke",
     "Rogers Pass"
    ],
    "alerts": [],
@@ -186,25 +177,25 @@
    "units": "cm",
    "region": "Japan",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Taisetsu-Tokachi",
    "bins": [
-    0,
-    0.6,
-    0,
-    0,
+    0.2,
+    0.1,
     0,
     0,
     0,
-    1.5,
-    1.5,
-    7.2,
-    6.3,
-    4.8
+    0.1,
+    0.8,
+    0.3,
+    5.1,
+    5.5,
+    6,
+    5.8
    ],
    "snowingAt": [],
    "alerts": [],
-   "recentCm": 2.5
+   "recentCm": null
   }
  },
  "recent": {
@@ -218,13 +209,13 @@
    "resorts": [
     {
      "name": "Wolf Creek",
-     "cm": 27.5,
+     "cm": 30,
      "station": "Wolf Creek Summit",
      "source": "snotel"
     },
     {
      "name": "Telluride",
-     "cm": 15,
+     "cm": 17.5,
      "station": "Alta Lakes",
      "source": "snotel"
     },
@@ -284,6 +275,11 @@
      "featured": true
     },
     {
+     "name": "Revelstoke Mountain",
+     "cm": 2.5,
+     "source": "model"
+    },
+    {
      "name": "Big White",
      "cm": 2.5,
      "source": "model"
@@ -291,11 +287,6 @@
     {
      "name": "Sun Peaks",
      "cm": 2.5,
-     "source": "model"
-    },
-    {
-     "name": "Revelstoke Mountain",
-     "cm": 0,
      "source": "model"
     },
     {
@@ -431,15 +422,6 @@
     }
    ]
   },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 10,
-   "place": "Flower Mountain",
-   "source": "snotel",
-   "resorts": []
-  },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
@@ -453,13 +435,13 @@
    "name": "Payette Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 10,
+   "cm": 7.5,
    "place": "Brundage Reservoir",
    "source": "snotel",
    "resorts": [
     {
      "name": "Brundage",
-     "cm": 10,
+     "cm": 7.5,
      "station": "Brundage Reservoir",
      "source": "snotel",
      "featured": true
@@ -506,12 +488,6 @@
    "source": "snotel",
    "resorts": [
     {
-     "name": "Mt Hood Meadows and Timberline",
-     "cm": 5,
-     "station": "Mt Hood Test Site",
-     "source": "snotel"
-    },
-    {
      "name": "Snoqualmie Pass",
      "cm": 2.5,
      "station": "Olallie Meadows",
@@ -520,7 +496,13 @@
     {
      "name": "Crystal Mountain",
      "cm": 2.5,
-     "station": "Morse Lake",
+     "station": "Cayuse Pass",
+     "source": "snotel"
+    },
+    {
+     "name": "Mt Hood Meadows and Timberline",
+     "cm": 2.5,
+     "station": "Mt Hood Test Site",
      "source": "snotel"
     },
     {
@@ -656,6 +638,15 @@
     }
    ]
   },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Upper Tsaina River",
+   "source": "snotel",
+   "resorts": []
+  },
   "https://www.coavalanche.org/": {
    "name": "Central Oregon Avalanche Center",
    "units": "in",
@@ -697,7 +688,7 @@
     },
     {
      "name": "June Mountain",
-     "cm": 2.5,
+     "cm": 0,
      "source": "model"
     }
    ]
@@ -717,15 +708,6 @@
    "region": "Europe",
    "cm": 2.5,
    "place": "Davos",
-   "source": "model",
-   "resorts": []
-  },
-  "https://nadare.jp/": {
-   "name": "Japan Avalanche Network",
-   "units": "cm",
-   "region": "Japan",
-   "cm": 2.5,
-   "place": "Taisetsu-Tokachi",
    "source": "model",
    "resorts": []
   },
@@ -776,7 +758,7 @@
    "place": "Mt Hood",
    "region": "North America",
    "units": "in",
-   "cm": 29
+   "cm": 33
   },
   {
    "href": "https://www.coavalanche.org/",
@@ -784,7 +766,7 @@
    "place": "Mt Bachelor",
    "region": "North America",
    "units": "in",
-   "cm": 23
+   "cm": 24
   },
   {
    "href": "https://nadare.jp/",
@@ -792,15 +774,7 @@
    "place": "Taisetsu-Tokachi",
    "region": "Japan",
    "units": "cm",
-   "cm": 22
-  },
-  {
-   "href": "https://avalanche.state.co.us/",
-   "name": "Colorado Avalanche Information Center",
-   "place": "Wolf Creek Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 21
+   "cm": 24
   },
   {
    "href": "https://taosavalanchecenter.org/",
@@ -808,7 +782,15 @@
    "place": "Taos Ski Valley",
    "region": "North America",
    "units": "in",
-   "cm": 21
+   "cm": 18
+  },
+  {
+   "href": "https://hpavalanche.org/",
+   "name": "Hatcher Pass Avalanche Center",
+   "place": "Hatcher Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 17
   }
  ]
 }
