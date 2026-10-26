@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-26T10:02:23.020Z",
+ "updated": "2026-10-26T14:58:38.118Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-26T10:00Z",
+ "binsStart": "2026-10-26T14:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -22,8 +22,8 @@
   }
  ],
  "centers": {
-  "https://www.cnfaic.org/": {
-   "name": "Chugach NF Avalanche Information Center",
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": null,
@@ -31,33 +31,35 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Turnagain Pass"
+    "Hatcher Pass"
    ],
    "alerts": [],
-   "recentCm": 2.5
+   "recentCm": 27.5
   },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 45,
+   "snow72cm": 55,
    "place": "Paradise",
    "bins": [
-    0.9,
-    2.3,
-    0.3,
+    4.3,
     0,
-    0.1,
-    2,
-    0,
-    8.4,
-    6,
-    18.3,
-    5.9,
-    2.5
+    0.2,
+    2.5,
+    3.5,
+    2.4,
+    8.8,
+    8.7,
+    14.1,
+    4.3,
+    3.7,
+    2.3
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Mt Hood"
+   ],
    "alerts": [],
    "recentCm": 20
   },
@@ -66,111 +68,73 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 15,
    "place": "Mt Bachelor",
    "bins": [
-    2.5,
-    3.9,
-    3.7,
-    1.8,
+    1.1,
+    3.2,
+    1.9,
+    2.1,
+    3.6,
     1.3,
     1.1,
-    1.8,
-    1.4,
-    0.4,
-    0.4,
-    0,
-    0
-   ],
-   "snowingAt": [],
-   "alerts": [],
-   "recentCm": 2.5
-  },
-  "https://payetteavalanche.org/": {
-   "name": "Payette Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "McCall",
-   "bins": [
-    0,
-    1.5,
-    8.4,
-    0,
-    1.1,
-    5.7,
-    1.1,
-    0.5,
-    1.5,
+    2.7,
+    0.3,
     0.1,
-    0,
+    0.1,
     0
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Mt Bachelor"
+   ],
    "alerts": [],
-   "recentCm": 7.5
+   "recentCm": 5
   },
   "https://www.flatheadavalanche.org/": {
    "name": "Flathead Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "heavy",
-   "snow72cm": 30,
+   "level": "notable",
+   "snow72cm": 20,
    "place": "Whitefish Range",
    "bins": [
     0,
     0,
+    2.6,
+    8.1,
+    0.3,
     0,
-    9.5,
-    7.8,
-    3.8,
+    1.5,
     3,
-    1.3,
-    2,
     1.1,
-    1.1,
-    1.2
+    3.4,
+    0.5,
+    1.8
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": 0
-  },
-  "https://avalanche.state.co.us/": {
-   "name": "Colorado Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Berthoud Pass",
-    "Vail Pass"
-   ],
-   "alerts": [],
-   "recentCm": 40
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
-   "place": "Waterton",
+   "snow72cm": 30,
+   "place": "Fernie",
    "bins": [
     0,
     0,
     0,
-    0,
-    4.5,
-    1.9,
+    5.7,
+    4,
+    6,
+    2.4,
+    0.7,
     1.5,
-    0.2,
-    6.5,
-    3.7,
-    2.5,
-    0.6
+    2.2,
+    0.8,
+    4.3
    ],
    "snowingAt": [],
    "alerts": [],
@@ -180,22 +144,22 @@
    "name": "Japan Avalanche Network",
    "units": "cm",
    "region": "Japan",
-   "level": "notable",
-   "snow72cm": 30,
+   "level": "heavy",
+   "snow72cm": 35,
    "place": "Taisetsu-Tokachi",
    "bins": [
-    0,
-    0,
     0.1,
-    1.1,
-    4.9,
-    6,
-    5.5,
-    6.8,
-    2.9,
+    0.1,
     0.4,
-    0,
-    0.6
+    2.6,
+    5.5,
+    6.4,
+    6.4,
+    5.3,
+    0.4,
+    0.1,
+    0.1,
+    6.3
    ],
    "snowingAt": [],
    "alerts": [],
@@ -207,8 +171,8 @@
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 40,
-   "place": "Elwood Pass",
+   "cm": 32.5,
+   "place": "Beartown",
    "source": "snotel",
    "resorts": [
     {
@@ -225,19 +189,19 @@
     },
     {
      "name": "Loveland",
-     "cm": 5,
+     "cm": 7.5,
      "station": "Grizzly Peak",
      "source": "snotel"
     },
     {
      "name": "Summit County",
-     "cm": 0,
+     "cm": 2.5,
      "source": "model",
      "featured": true
     },
     {
      "name": "Vail and Beaver Creek",
-     "cm": 0,
+     "cm": 2.5,
      "station": "Vail Mountain",
      "source": "snotel"
     },
@@ -259,6 +223,15 @@
     }
    ]
   },
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 27.5,
+   "place": "Independence Mine",
+   "source": "snotel",
+   "resorts": []
+  },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
@@ -274,17 +247,17 @@
      "featured": true
     },
     {
-     "name": "Sunshine Village",
-     "cm": 5,
-     "source": "model"
-    },
-    {
      "name": "Sun Peaks",
      "cm": 5,
      "source": "model"
     },
     {
      "name": "Revelstoke Mountain",
+     "cm": 2.5,
+     "source": "model"
+    },
+    {
+     "name": "Sunshine Village",
      "cm": 2.5,
      "source": "model"
     },
@@ -319,15 +292,6 @@
      "source": "model"
     }
    ]
-  },
-  "https://hpavalanche.org/": {
-   "name": "Hatcher Pass Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 25,
-   "place": "Independence Mine",
-   "source": "snotel",
-   "resorts": []
   },
   "https://www.sierraavalanchecenter.org/": {
    "name": "Sierra Avalanche Center",
@@ -504,15 +468,6 @@
     }
    ]
   },
-  "https://www.wallowaavalanchecenter.org/": {
-   "name": "Wallowa Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 10,
-   "place": "Aneroid Lake #2",
-   "source": "snotel",
-   "resorts": []
-  },
   "https://payetteavalanche.org/": {
    "name": "Payette Avalanche Center",
    "units": "in",
@@ -552,6 +507,31 @@
     }
    ]
   },
+  "https://www.coavalanche.org/": {
+   "name": "Central Oregon Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Mckenzie",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Mt Bachelor",
+     "cm": 2.5,
+     "source": "model",
+     "featured": true
+    }
+   ]
+  },
+  "https://www.wallowaavalanchecenter.org/": {
+   "name": "Wallowa Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Aneroid Lake #2",
+   "source": "snotel",
+   "resorts": []
+  },
   "https://www.bridgeportavalanchecenter.org/": {
    "name": "Bridgeport Avalanche Center",
    "units": "in",
@@ -571,7 +551,7 @@
    "resorts": [
     {
      "name": "Sun Valley",
-     "cm": 2.5,
+     "cm": 0,
      "source": "model",
      "featured": true
     }
@@ -642,22 +622,6 @@
    "source": "snotel",
    "resorts": []
   },
-  "https://www.coavalanche.org/": {
-   "name": "Central Oregon Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Mckenzie",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Mt Bachelor",
-     "cm": 2.5,
-     "source": "model",
-     "featured": true
-    }
-   ]
-  },
   "https://meteofrance.com/meteo-montagne": {
    "name": "Météo-France (BERA)",
    "units": "cm",
@@ -673,15 +637,6 @@
    "region": "Europe",
    "cm": 2.5,
    "place": "Davos",
-   "source": "model",
-   "resorts": []
-  },
-  "https://lawinenwarndienst.bayern.de/": {
-   "name": "Bavarian Avalanche Warning Service",
-   "units": "cm",
-   "region": "Europe",
-   "cm": 2.5,
-   "place": "Zugspitze",
    "source": "model",
    "resorts": []
   },
@@ -753,15 +708,7 @@
    "place": "Paradise",
    "region": "North America",
    "units": "in",
-   "cm": 47
-  },
-  {
-   "href": "https://www.flatheadavalanche.org/",
-   "name": "Flathead Avalanche Center",
-   "place": "Whitefish Range",
-   "region": "North America",
-   "units": "in",
-   "cm": 31
+   "cm": 55
   },
   {
    "href": "https://nadare.jp/",
@@ -769,23 +716,31 @@
    "place": "Taisetsu-Tokachi",
    "region": "Japan",
    "units": "cm",
-   "cm": 28
+   "cm": 34
   },
   {
    "href": "https://www.avalanche.ca/map",
    "name": "Avalanche Canada",
-   "place": "Waterton",
+   "place": "Fernie",
    "region": "North America",
    "units": "cm",
-   "cm": 21
+   "cm": 28
   },
   {
-   "href": "https://payetteavalanche.org/",
-   "name": "Payette Avalanche Center",
-   "place": "McCall",
+   "href": "https://www.flatheadavalanche.org/",
+   "name": "Flathead Avalanche Center",
+   "place": "Whitefish Range",
    "region": "North America",
    "units": "in",
-   "cm": 20
+   "cm": 22
+  },
+  {
+   "href": "https://www.coavalanche.org/",
+   "name": "Central Oregon Avalanche Center",
+   "place": "Mt Bachelor",
+   "region": "North America",
+   "units": "in",
+   "cm": 17
   }
  ]
 }
