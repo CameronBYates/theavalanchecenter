@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-26T03:55:17.007Z",
+ "updated": "2026-10-26T07:11:33.647Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-26T03:00Z",
+ "binsStart": "2026-10-26T07:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -34,32 +34,30 @@
     "Hatcher Pass"
    ],
    "alerts": [],
-   "recentCm": 22.5
+   "recentCm": 25
   },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 55,
-   "place": "Mt Hood",
+   "snow72cm": 45,
+   "place": "Paradise",
    "bins": [
-    16.7,
-    5.9,
-    4,
-    17.2,
+    0,
+    0.8,
     0.1,
-    0.4,
-    3.3,
-    1.7,
-    0.9,
-    1.3,
-    1.3,
-    0
+    1.5,
+    0,
+    0,
+    2.2,
+    6.9,
+    6.4,
+    15.7,
+    9.9,
+    2.7
    ],
-   "snowingAt": [
-    "Mt Hood"
-   ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": 20
   },
@@ -68,103 +66,102 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 35,
    "place": "Mt Bachelor",
    "bins": [
+    5.1,
+    2.7,
+    7.5,
+    9.9,
+    2.8,
+    5,
+    2.1,
+    0.1,
+    0.1,
+    0.5,
+    0.1,
+    0
+   ],
+   "snowingAt": [
+    "Mt Bachelor"
+   ],
+   "alerts": [],
+   "recentCm": 2.5
+  },
+  "https://payetteavalanche.org/": {
+   "name": "Payette Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "McCall",
+   "bins": [
     0,
-    7.1,
-    4.8,
-    9.6,
-    7.7,
-    1.8,
+    0,
     6.3,
     0,
+    0.3,
+    1.8,
+    6.4,
+    0.3,
+    1.5,
+    0.5,
     0,
-    0.4,
-    0.4,
-    0.1
+    0
    ],
    "snowingAt": [],
    "alerts": [],
-   "recentCm": 2.5
+   "recentCm": 7.5
   },
   "https://www.flatheadavalanche.org/": {
    "name": "Flathead Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "heavy",
-   "snow72cm": 35,
+   "level": "notable",
+   "snow72cm": 30,
    "place": "Whitefish Range",
    "bins": [
     0,
     0,
     0,
-    0,
-    8.6,
-    7,
     5.3,
-    3.5,
-    1.3,
+    9.3,
+    4.5,
+    4.9,
+    0.4,
     2,
-    4.3,
-    4.5
+    0.8,
+    1.6,
+    0.6
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": 0
-  },
-  "https://taosavalanchecenter.org/": {
-   "name": "Taos Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Taos Ski Valley"
-   ],
-   "alerts": [],
-   "recentCm": 5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Waterton",
    "bins": [
     0,
     0,
     0,
-    0,
-    1.8,
-    6,
-    3.3,
-    0.6,
+    0.3,
+    5.5,
+    4.5,
+    1.4,
     0.1,
-    3.6,
-    2.4,
-    4.6
+    2.8,
+    6.4,
+    2.3,
+    1.5
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": 27.5
-  },
-  "https://lawine.salzburg.at/": {
-   "name": "Salzburg Avalanche Warning Service",
-   "units": "cm",
-   "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Gastein"
-   ],
-   "alerts": [],
-   "recentCm": null
   },
   "https://www.lawine-steiermark.at/": {
    "name": "Styria Avalanche Warning Service",
@@ -208,25 +205,39 @@
    "alerts": [],
    "recentCm": null
   },
+  "https://lawinenwarndienst.bayern.de/": {
+   "name": "Bavarian Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Berchtesgaden"
+   ],
+   "alerts": [],
+   "recentCm": 2.5
+  },
   "https://nadare.jp/": {
    "name": "Japan Avalanche Network",
    "units": "cm",
    "region": "Japan",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 30,
    "place": "Taisetsu-Tokachi",
    "bins": [
     0,
     0,
-    0.2,
-    0,
-    0.7,
-    4.6,
-    4.8,
-    6.2,
+    0.1,
+    0.1,
+    3.9,
+    4.5,
+    6.3,
+    5.5,
     6.4,
-    2.3,
-    0.4,
+    0.7,
+    0.1,
     0
    ],
    "snowingAt": [],
@@ -251,13 +262,13 @@
     },
     {
      "name": "Telluride",
-     "cm": 17.5,
+     "cm": 20,
      "station": "Alta Lakes",
      "source": "snotel"
     },
     {
      "name": "Loveland",
-     "cm": 2.5,
+     "cm": 5,
      "station": "Grizzly Peak",
      "source": "snotel"
     },
@@ -356,7 +367,7 @@
    "name": "Hatcher Pass Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 22.5,
+   "cm": 25,
    "place": "Independence Mine",
    "source": "snotel",
    "resorts": []
@@ -636,12 +647,12 @@
    "units": "in",
    "region": "North America",
    "cm": 5,
-   "place": "Tolby",
+   "place": "Taos Powderhorn",
    "source": "snotel",
    "resorts": [
     {
      "name": "Taos Ski Valley",
-     "cm": 2.5,
+     "cm": 5,
      "station": "Taos Powderhorn",
      "source": "snotel",
      "featured": true
@@ -791,10 +802,10 @@
   {
    "href": "https://nwac.us/",
    "name": "Northwest Avalanche Center",
-   "place": "Mt Hood",
+   "place": "Paradise",
    "region": "North America",
    "units": "in",
-   "cm": 53
+   "cm": 46
   },
   {
    "href": "https://www.coavalanche.org/",
@@ -802,7 +813,7 @@
    "place": "Mt Bachelor",
    "region": "North America",
    "units": "in",
-   "cm": 38
+   "cm": 36
   },
   {
    "href": "https://www.flatheadavalanche.org/",
@@ -810,7 +821,7 @@
    "place": "Whitefish Range",
    "region": "North America",
    "units": "in",
-   "cm": 36
+   "cm": 29
   },
   {
    "href": "https://nadare.jp/",
@@ -818,7 +829,7 @@
    "place": "Taisetsu-Tokachi",
    "region": "Japan",
    "units": "cm",
-   "cm": 25
+   "cm": 28
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -826,7 +837,7 @@
    "place": "Waterton",
    "region": "North America",
    "units": "cm",
-   "cm": 22
+   "cm": 25
   }
  ]
 }
