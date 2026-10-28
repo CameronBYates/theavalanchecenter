@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-28T07:19:30.137Z",
+ "updated": "2026-10-28T10:04:39.488Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-28T07:00Z",
+ "binsStart": "2026-10-28T10:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -33,15 +33,15 @@
     0,
     0,
     0,
-    0,
-    0.6,
-    1.4,
+    0.1,
+    1.5,
+    0.8,
     0.4,
-    3,
-    10.9,
-    14,
-    8.9,
-    0.2
+    7.3,
+    12.1,
+    13,
+    4,
+    0.1
    ],
    "snowingAt": [],
    "alerts": [],
@@ -58,15 +58,15 @@
     0,
     0,
     0,
-    0,
-    2.2,
-    2.3,
-    1.3,
-    2.9,
-    4.1,
-    4.2,
-    3.4,
-    3.5
+    0.2,
+    3.6,
+    1.9,
+    0.8,
+    4.6,
+    3.5,
+    4.4,
+    3.5,
+    3.4
    ],
    "snowingAt": [],
    "alerts": [],
@@ -87,11 +87,11 @@
     0,
     0,
     0,
-    0.1,
-    3.7,
-    8.5,
-    7.3,
-    0
+    0.8,
+    7,
+    11.7,
+    0,
+    2.4
    ],
    "snowingAt": [],
    "alerts": [],
@@ -102,27 +102,28 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 35,
+   "snow72cm": 40,
    "place": "Mt Hood",
    "bins": [
-    3.4,
-    18.8,
-    10.7,
+    11.7,
+    10.4,
+    11.6,
     0.3,
-    0.3,
+    2.2,
     0,
     0,
     0,
+    1.4,
+    1.2,
     0,
-    2.5,
-    0.1,
     0
    ],
    "snowingAt": [
     "Mt Baker",
     "Stevens Pass",
     "Snoqualmie Pass",
-    "Paradise"
+    "Paradise",
+    "Mt Hood"
    ],
    "alerts": [],
    "recentCm": 20
@@ -131,42 +132,46 @@
    "name": "Idaho Panhandle Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "Selkirks",
-   "bins": [
-    3.7,
-    3.2,
-    5,
-    5,
-    2.5,
-    0.3,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Selkirks"
    ],
-   "snowingAt": [],
    "alerts": [],
-   "recentCm": 2.5
+   "recentCm": 5
+  },
+  "https://www.flatheadavalanche.org/": {
+   "name": "Flathead Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Whitefish Range",
+    "Marias Pass"
+   ],
+   "alerts": [],
+   "recentCm": 5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
-   "place": "Nelson",
+   "snow72cm": 15,
+   "place": "Rossland",
    "bins": [
-    3.4,
-    2.7,
-    4.3,
-    5.8,
+    0.9,
+    9.7,
+    2.4,
     0,
     1.5,
-    1.8,
+    2.5,
+    0,
     0,
     0,
     0,
@@ -174,11 +179,25 @@
     0
    ],
    "snowingAt": [
-    "Whistler",
-    "Cariboos"
+    "North Shore",
+    "Coquihalla"
    ],
    "alerts": [],
    "recentCm": 12.5
+  },
+  "https://avalanche.report/": {
+   "name": "Avalanche.report (Euregio)",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Obergurgl"
+   ],
+   "alerts": [],
+   "recentCm": null
   },
   "https://nadare.jp/": {
    "name": "Japan Avalanche Network",
@@ -192,21 +211,7 @@
     "Taisetsu-Tokachi"
    ],
    "alerts": [],
-   "recentCm": 22.5
-  },
-  "https://niseko.nadare.info/": {
-   "name": "Niseko Avalanche Information",
-   "units": "cm",
-   "region": "Japan",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Niseko"
-   ],
-   "alerts": [],
-   "recentCm": 10
+   "recentCm": 25
   }
  },
  "recent": {
@@ -214,7 +219,7 @@
    "name": "Japan Avalanche Network",
    "units": "cm",
    "region": "Japan",
-   "cm": 22.5,
+   "cm": 25,
    "place": "Taisetsu-Tokachi",
    "source": "model",
    "resorts": []
@@ -244,26 +249,26 @@
     },
     {
      "name": "Mt Baker Ski Area",
-     "cm": 5,
+     "cm": 10,
      "source": "model",
      "featured": true
+    },
+    {
+     "name": "Mt Hood Meadows and Timberline",
+     "cm": 7.5,
+     "station": "Mt Hood Test Site",
+     "source": "snotel"
+    },
+    {
+     "name": "Stevens Pass",
+     "cm": 5,
+     "source": "model"
     },
     {
      "name": "Snoqualmie Pass",
      "cm": 5,
      "station": "Olallie Meadows",
      "source": "snotel"
-    },
-    {
-     "name": "Mt Hood Meadows and Timberline",
-     "cm": 5,
-     "station": "Mt Hood Test Site",
-     "source": "snotel"
-    },
-    {
-     "name": "Stevens Pass",
-     "cm": 2.5,
-     "source": "model"
     }
    ]
   },
@@ -306,67 +311,12 @@
     }
    ]
   },
-  "https://avalanche.state.co.us/": {
-   "name": "Colorado Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 15,
-   "place": "Elwood Pass",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Loveland",
-     "cm": 7.5,
-     "station": "Grizzly Peak",
-     "source": "snotel"
-    },
-    {
-     "name": "Wolf Creek",
-     "cm": 7.5,
-     "station": "Wolf Creek Summit",
-     "source": "snotel"
-    },
-    {
-     "name": "Telluride",
-     "cm": 5,
-     "station": "Alta Lakes",
-     "source": "snotel"
-    },
-    {
-     "name": "Summit County",
-     "cm": 2.5,
-     "source": "model",
-     "featured": true
-    },
-    {
-     "name": "Vail and Beaver Creek",
-     "cm": 2.5,
-     "station": "Vail Mountain",
-     "source": "snotel"
-    },
-    {
-     "name": "Winter Park",
-     "cm": 0,
-     "source": "model"
-    },
-    {
-     "name": "Aspen Snowmass",
-     "cm": 0,
-     "source": "model"
-    },
-    {
-     "name": "Steamboat",
-     "cm": 0,
-     "source": "model"
-    }
-   ]
-  },
   "https://missoulaavalanche.org/": {
    "name": "West Central Montana Avalanche Center",
    "units": "in",
    "region": "North America",
    "cm": 12.5,
-   "place": "Stuart Mountain",
+   "place": "Savage Pass",
    "source": "snotel",
    "resorts": [
     {
@@ -384,6 +334,84 @@
     }
    ]
   },
+  "https://jhavalanche.org/": {
+   "name": "Bridger-Teton Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 12.5,
+   "place": "Grand Targhee",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Grand Targhee",
+     "cm": 12.5,
+     "station": "Grand Targhee",
+     "source": "snotel"
+    },
+    {
+     "name": "Jackson Hole",
+     "cm": 5,
+     "source": "model",
+     "featured": true
+    }
+   ]
+  },
+  "https://avalanche.state.co.us/": {
+   "name": "Colorado Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 12.5,
+   "place": "Elwood Pass",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Loveland",
+     "cm": 7.5,
+     "station": "Grizzly Peak",
+     "source": "snotel"
+    },
+    {
+     "name": "Wolf Creek",
+     "cm": 5,
+     "station": "Wolf Creek Summit",
+     "source": "snotel"
+    },
+    {
+     "name": "Summit County",
+     "cm": 2.5,
+     "source": "model",
+     "featured": true
+    },
+    {
+     "name": "Vail and Beaver Creek",
+     "cm": 2.5,
+     "station": "Vail Mountain",
+     "source": "snotel"
+    },
+    {
+     "name": "Telluride",
+     "cm": 2.5,
+     "station": "Alta Lakes",
+     "source": "snotel"
+    },
+    {
+     "name": "Winter Park",
+     "cm": 0,
+     "station": "Berthoud Summit",
+     "source": "snotel"
+    },
+    {
+     "name": "Aspen Snowmass",
+     "cm": 0,
+     "source": "model"
+    },
+    {
+     "name": "Steamboat",
+     "cm": 0,
+     "source": "model"
+    }
+   ]
+  },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
@@ -394,13 +422,14 @@
    "resorts": [
     {
      "name": "Big White",
-     "cm": 7.5,
+     "cm": 10,
      "source": "model"
     },
     {
-     "name": "Revelstoke Mountain",
+     "name": "Whistler Blackcomb",
      "cm": 5,
-     "source": "model"
+     "source": "model",
+     "featured": true
     },
     {
      "name": "Red Mountain",
@@ -408,10 +437,9 @@
      "source": "model"
     },
     {
-     "name": "Whistler Blackcomb",
+     "name": "Revelstoke Mountain",
      "cm": 2.5,
-     "source": "model",
-     "featured": true
+     "source": "model"
     },
     {
      "name": "Whitewater",
@@ -523,28 +551,6 @@
     }
    ]
   },
-  "https://jhavalanche.org/": {
-   "name": "Bridger-Teton Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 7.5,
-   "place": "Grand Targhee",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Grand Targhee",
-     "cm": 7.5,
-     "station": "Grand Targhee",
-     "source": "snotel"
-    },
-    {
-     "name": "Jackson Hole",
-     "cm": 5,
-     "source": "model",
-     "featured": true
-    }
-   ]
-  },
   "https://cbavalanchecenter.org/": {
    "name": "Crested Butte Avalanche Center",
    "units": "in",
@@ -586,6 +592,29 @@
    "place": "Poison Flat",
    "source": "snotel",
    "resorts": []
+  },
+  "https://www.idahopanhandleavalanche.org/": {
+   "name": "Idaho Panhandle Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Lookout",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Lookout Pass",
+     "cm": 5,
+     "station": "Lookout",
+     "source": "snotel"
+    },
+    {
+     "name": "Schweitzer",
+     "cm": 2.5,
+     "station": "Schweitzer Basin",
+     "source": "snotel",
+     "featured": true
+    }
+   ]
   },
   "https://www.flatheadavalanche.org/": {
    "name": "Flathead Avalanche Center",
@@ -681,29 +710,6 @@
     }
    ]
   },
-  "https://www.idahopanhandleavalanche.org/": {
-   "name": "Idaho Panhandle Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Schweitzer Basin",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Schweitzer",
-     "cm": 2.5,
-     "station": "Schweitzer Basin",
-     "source": "snotel",
-     "featured": true
-    },
-    {
-     "name": "Lookout Pass",
-     "cm": 2.5,
-     "station": "Lookout",
-     "source": "snotel"
-    }
-   ]
-  },
   "https://www.esavalanche.org/": {
    "name": "Eastern Sierra Avalanche Center",
    "units": "in",
@@ -758,7 +764,7 @@
    "place": "Mt Hood",
    "region": "North America",
    "units": "in",
-   "cm": 36
+   "cm": 39
   },
   {
    "href": "https://hpavalanche.org/",
@@ -766,15 +772,7 @@
    "place": "Hatcher Pass",
    "region": "North America",
    "units": "in",
-   "cm": 24
-  },
-  {
-   "href": "https://www.idahopanhandleavalanche.org/",
-   "name": "Idaho Panhandle Avalanche Center",
-   "place": "Selkirks",
-   "region": "North America",
-   "units": "in",
-   "cm": 20
+   "cm": 26
   },
   {
    "href": "https://alaskasnow.org/",
@@ -782,7 +780,15 @@
    "place": "Thompson Pass",
    "region": "North America",
    "units": "in",
-   "cm": 20
+   "cm": 22
+  },
+  {
+   "href": "https://www.avalanche.ca/map",
+   "name": "Avalanche Canada",
+   "place": "Rossland",
+   "region": "North America",
+   "units": "cm",
+   "cm": 17
   }
  ]
 }
