@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-29T10:07:03.414Z",
+ "updated": "2026-10-29T13:19:08.158Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-29T10:00Z",
+ "binsStart": "2026-10-29T13:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -27,23 +27,25 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 35,
+   "snow72cm": 30,
    "place": "Turnagain Pass",
    "bins": [
-    0.6,
+    0.9,
     0.4,
-    1,
-    8.5,
-    12.3,
-    7.4,
     3.5,
+    10.2,
+    8.4,
+    6,
+    0.9,
     0.3,
-    0,
-    0.6,
     0.1,
-    0.1
+    0,
+    0.4,
+    0.3
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Turnagain Pass"
+   ],
    "alerts": [],
    "recentCm": 2.5
   },
@@ -51,22 +53,22 @@
    "name": "Hatcher Pass Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "heavy",
-   "snow72cm": 30,
+   "level": "notable",
+   "snow72cm": 25,
    "place": "Hatcher Pass",
    "bins": [
-    3.5,
-    1.5,
-    3.2,
-    4.8,
-    3.7,
-    3.2,
-    4.6,
-    0.5,
-    0.8,
+    2.9,
+    2.4,
+    3.9,
+    3.6,
+    4.2,
+    2.8,
+    2.7,
+    1.4,
     0.7,
-    4.1,
-    0.8
+    0.1,
+    0.1,
+    0.5
    ],
    "snowingAt": [
     "Hatcher Pass"
@@ -79,25 +81,50 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 35,
    "place": "Thompson Pass",
    "bins": [
     0,
     0,
+    0.1,
+    5,
+    14.5,
+    10,
+    3.7,
+    0.4,
+    1.1,
     0,
-    1.8,
-    9.4,
-    15.6,
-    7.3,
-    2.1,
-    1.6,
-    0.1,
-    0.1,
-    0
+    0,
+    1.8
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": 2.5
+  },
+  "https://www.coastalakavalanche.org/": {
+   "name": "Coastal Alaska Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Mt Juneau",
+   "bins": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3,
+    7.2,
+    7.6
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": null
   },
   "https://www.sierraavalanchecenter.org/": {
    "name": "Sierra Avalanche Center",
@@ -109,16 +136,16 @@
    "bins": [
     0,
     0,
-    0.2,
-    2,
-    7.6,
-    0,
-    0,
     0.6,
-    5.2,
-    2.3,
-    15.7,
-    6.8
+    6.3,
+    3.3,
+    0,
+    0.5,
+    2.5,
+    1.9,
+    3,
+    8.8,
+    10.9
    ],
    "snowingAt": [],
    "alerts": [],
@@ -129,78 +156,105 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 20,
    "place": "Sonora Pass",
    "bins": [
     0,
     0,
     0,
-    0,
-    1.1,
-    0,
-    0,
-    0.2,
+    0.7,
     0.4,
-    0.9,
-    12.5,
-    8.5
+    0,
+    0.4,
+    1.1,
+    0.4,
+    2.8,
+    8.6,
+    3.6
    ],
    "snowingAt": [],
    "alerts": [],
-   "recentCm": 5
+   "recentCm": 2.5
   },
-  "https://avalanche.state.co.us/": {
-   "name": "Colorado Avalanche Information Center",
+  "https://www.esavalanche.org/": {
+   "name": "Eastern Sierra Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 15,
-   "place": "Red Mountain Pass",
+   "snow72cm": 20,
+   "place": "Mammoth Lakes",
    "bins": [
     0,
     0,
     0,
+    0.3,
     0,
     0,
-    2,
-    4.8,
-    1.8,
-    6.2,
-    1.1,
-    0.1,
-    0
+    0.2,
+    0.4,
+    0.2,
+    0.4,
+    8.8,
+    9.9
    ],
    "snowingAt": [],
    "alerts": [],
-   "recentCm": 5
+   "recentCm": 0
+  },
+  "https://www.idahopanhandleavalanche.org/": {
+   "name": "Idaho Panhandle Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Selkirks"
+   ],
+   "alerts": [],
+   "recentCm": 25
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 30,
    "place": "Vancouver Island",
    "bins": [
-    4.6,
-    0.7,
-    9.5,
-    0,
+    3.9,
+    11.1,
+    3.6,
     0,
     0.3,
-    9,
-    0.9,
-    0.2,
+    8.3,
+    1.1,
+    0.1,
+    0,
     0,
     0,
     0
    ],
    "snowingAt": [
-    "Vancouver Island",
-    "Rogers Pass"
+    "Vancouver Island"
    ],
    "alerts": [],
    "recentCm": 20
+  },
+  "https://lawine.salzburg.at/": {
+   "name": "Salzburg Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Gastein"
+   ],
+   "alerts": [],
+   "recentCm": null
   },
   "https://nadare.jp/": {
    "name": "Japan Avalanche Network",
@@ -215,15 +269,17 @@
     0,
     0,
     0,
-    1.8,
-    2.3,
-    10.2,
-    4.2,
-    0.4,
+    1.5,
+    5.8,
+    9.1,
+    1.4,
+    0.1,
     0,
     0.5
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Taisetsu-Tokachi"
+   ],
    "alerts": [],
    "recentCm": 27.5
   }
@@ -282,13 +338,13 @@
    "name": "Idaho Panhandle Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 22.5,
+   "cm": 25,
    "place": "Schweitzer Basin",
    "source": "snotel",
    "resorts": [
     {
      "name": "Schweitzer",
-     "cm": 22.5,
+     "cm": 25,
      "station": "Schweitzer Basin",
      "source": "snotel",
      "featured": true
@@ -446,6 +502,22 @@
     }
    ]
   },
+  "https://www.flatheadavalanche.org/": {
+   "name": "Flathead Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 10,
+   "place": "Pike Creek",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Whitefish Mountain",
+     "cm": 2.5,
+     "source": "model",
+     "featured": true
+    }
+   ]
+  },
   "https://www.mtavalanche.com/": {
    "name": "Gallatin NF Avalanche Center",
    "units": "in",
@@ -541,31 +613,6 @@
     }
    ]
   },
-  "https://www.bridgeportavalanchecenter.org/": {
-   "name": "Bridgeport Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Poison Flat",
-   "source": "snotel",
-   "resorts": []
-  },
-  "https://www.flatheadavalanche.org/": {
-   "name": "Flathead Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Pike Creek",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Whitefish Mountain",
-     "cm": 2.5,
-     "source": "model",
-     "featured": true
-    }
-   ]
-  },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
    "units": "in",
@@ -582,7 +629,7 @@
     },
     {
      "name": "Wolf Creek",
-     "cm": 2.5,
+     "cm": 5,
      "station": "Upper San Juan",
      "source": "snotel"
     },
@@ -708,12 +755,21 @@
     }
    ]
   },
+  "https://www.bridgeportavalanchecenter.org/": {
+   "name": "Bridgeport Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Poison Flat",
+   "source": "snotel",
+   "resorts": []
+  },
   "https://taosavalanchecenter.org/": {
    "name": "Taos Avalanche Center",
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Taos Pueblo",
+   "place": "Palo",
    "source": "snotel",
    "resorts": [
     {
@@ -771,7 +827,7 @@
    "place": "Carson Pass",
    "region": "North America",
    "units": "in",
-   "cm": 40
+   "cm": 38
   },
   {
    "href": "https://alaskasnow.org/",
@@ -779,20 +835,12 @@
    "place": "Thompson Pass",
    "region": "North America",
    "units": "in",
-   "cm": 38
+   "cm": 37
   },
   {
    "href": "https://www.cnfaic.org/",
    "name": "Chugach NF Avalanche Information Center",
    "place": "Turnagain Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 35
-  },
-  {
-   "href": "https://hpavalanche.org/",
-   "name": "Hatcher Pass Avalanche Center",
-   "place": "Hatcher Pass",
    "region": "North America",
    "units": "in",
    "cm": 31
@@ -803,6 +851,14 @@
    "place": "Vancouver Island",
    "region": "North America",
    "units": "cm",
+   "cm": 28
+  },
+  {
+   "href": "https://hpavalanche.org/",
+   "name": "Hatcher Pass Avalanche Center",
+   "place": "Hatcher Pass",
+   "region": "North America",
+   "units": "in",
    "cm": 25
   }
  ]
