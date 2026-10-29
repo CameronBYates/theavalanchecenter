@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-29T04:03:31.032Z",
+ "updated": "2026-10-29T07:19:38.252Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-29T04:00Z",
+ "binsStart": "2026-10-29T07:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -30,18 +30,18 @@
    "snow72cm": 50,
    "place": "Turnagain Pass",
    "bins": [
-    0,
-    0.8,
-    0.4,
     0.6,
-    7.7,
-    13.9,
-    15.5,
-    10.4,
+    0.4,
+    0.3,
+    3.1,
+    10.6,
+    16.4,
+    14.5,
+    3.4,
     0,
     0,
-    0.2,
-    0.5
+    0.4,
+    0.6
    ],
    "snowingAt": [],
    "alerts": [],
@@ -55,16 +55,16 @@
    "snow72cm": 25,
    "place": "Hatcher Pass",
    "bins": [
-    0.4,
-    2.9,
-    2.9,
-    2.9,
-    5.7,
+    1.8,
     2.7,
     3.2,
-    2.7,
-    3.1,
-    0.7,
+    4.7,
+    3.8,
+    3.4,
+    2,
+    3.2,
+    2.5,
+    0,
     0.1,
     0
    ],
@@ -83,81 +83,67 @@
     0,
     0,
     0,
-    0,
-    0.5,
-    6.7,
-    12,
-    5.7,
-    0,
-    0.7,
-    0.6,
-    1.6
+    0.1,
+    2.8,
+    9,
+    9.9,
+    3.2,
+    0.3,
+    0.4,
+    1.7,
+    0.5
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": 2.5
-  },
-  "https://nwac.us/": {
-   "name": "Northwest Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "Mt Baker",
-   "bins": [
-    0,
-    1.8,
-    0.6,
-    4.1,
-    2.7,
-    0.8,
-    0,
-    1.5,
-    7,
-    0,
-    0,
-    0
-   ],
-   "snowingAt": [],
-   "alerts": [],
-   "recentCm": 27.5
   },
   "https://www.sierraavalanchecenter.org/": {
    "name": "Sierra Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 25,
-   "place": "Donner Summit",
+   "level": "heavy",
+   "snow72cm": 30,
+   "place": "Carson Pass",
    "bins": [
     0,
     0,
     0,
-    0.3,
+    1.8,
+    0.6,
     0,
     0,
-    0,
-    0,
-    0,
-    2.9,
-    8.6,
-    11.8
+    1.2,
+    2.7,
+    3.8,
+    9.7,
+    11.1
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": 2.5
   },
-  "https://www.flatheadavalanche.org/": {
-   "name": "Flathead Avalanche Center",
+  "https://www.bridgeportavalanchecenter.org/": {
+   "name": "Bridgeport Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Whitefish Range"
+   "level": "notable",
+   "snow72cm": 25,
+   "place": "Sonora Pass",
+   "bins": [
+    0,
+    0,
+    0,
+    2.2,
+    0.8,
+    0.1,
+    0.3,
+    0.4,
+    0.2,
+    0.4,
+    6,
+    13.1
    ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": 5
   },
@@ -165,13 +151,26 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
+   "level": "notable",
+   "snow72cm": 25,
+   "place": "Vancouver Island",
+   "bins": [
+    5.4,
+    5.3,
+    8.2,
+    0.8,
+    0,
+    2.2,
+    1.2,
+    0.8,
+    0.5,
+    0.1,
+    0,
+    0
+   ],
    "snowingAt": [
     "Vancouver Island",
-    "Revelstoke",
+    "Cariboos",
     "Rogers Pass",
     "Pine Pass"
    ],
@@ -207,10 +206,10 @@
     0,
     0,
     2.5,
-    2.9,
-    12,
-    3.4,
-    0.4,
+    5.8,
+    9.1,
+    1.4,
+    0.1,
     0
    ],
    "snowingAt": [],
@@ -234,15 +233,16 @@
      "source": "snotel"
     },
     {
-     "name": "Stevens Pass",
-     "cm": 17.5,
-     "source": "model"
-    },
-    {
      "name": "Mt Hood Meadows and Timberline",
-     "cm": 17.5,
+     "cm": 20,
      "station": "Mt Hood Test Site",
      "source": "snotel"
+    },
+    {
+     "name": "Mt Baker Ski Area",
+     "cm": 15,
+     "source": "model",
+     "featured": true
     },
     {
      "name": "Snoqualmie Pass",
@@ -251,10 +251,10 @@
      "source": "snotel"
     },
     {
-     "name": "Mt Baker Ski Area",
-     "cm": 12.5,
-     "source": "model",
-     "featured": true
+     "name": "Stevens Pass",
+     "cm": 10,
+     "station": "Stevens Pass",
+     "source": "snotel"
     }
    ]
   },
@@ -364,7 +364,7 @@
      "source": "model"
     },
     {
-     "name": "Kicking Horse",
+     "name": "Sunshine Village",
      "cm": 2.5,
      "source": "model"
     },
@@ -374,7 +374,7 @@
      "source": "model"
     },
     {
-     "name": "Sunshine Village",
+     "name": "Kicking Horse",
      "cm": 0,
      "source": "model"
     },
@@ -599,8 +599,7 @@
     {
      "name": "Winter Park",
      "cm": 0,
-     "station": "Berthoud Summit",
-     "source": "snotel"
+     "source": "model"
     },
     {
      "name": "Aspen Snowmass",
@@ -617,23 +616,6 @@
      "cm": 0,
      "station": "Alta Lakes",
      "source": "snotel"
-    }
-   ]
-  },
-  "https://cbavalanchecenter.org/": {
-   "name": "Crested Butte Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Schofield Pass",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Crested Butte",
-     "cm": 2.5,
-     "station": "Butte",
-     "source": "snotel",
-     "featured": true
     }
    ]
   },
@@ -659,7 +641,7 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Flower Mountain",
+   "place": "Upper Tsaina River",
    "source": "snotel",
    "resorts": []
   },
@@ -695,6 +677,23 @@
      "cm": 0,
      "station": "Carson Pass",
      "source": "snotel"
+    }
+   ]
+  },
+  "https://cbavalanchecenter.org/": {
+   "name": "Crested Butte Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Butte",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Crested Butte",
+     "cm": 2.5,
+     "station": "Butte",
+     "source": "snotel",
+     "featured": true
     }
    ]
   },
@@ -764,6 +763,14 @@
    "cm": 50
   },
   {
+   "href": "https://www.sierraavalanchecenter.org/",
+   "name": "Sierra Avalanche Center",
+   "place": "Carson Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 31
+  },
+  {
    "href": "https://alaskasnow.org/",
    "name": "Alaska Avalanche Information Center",
    "place": "Thompson Pass",
@@ -780,20 +787,12 @@
    "cm": 27
   },
   {
-   "href": "https://www.sierraavalanchecenter.org/",
-   "name": "Sierra Avalanche Center",
-   "place": "Donner Summit",
+   "href": "https://www.avalanche.ca/map",
+   "name": "Avalanche Canada",
+   "place": "Vancouver Island",
    "region": "North America",
-   "units": "in",
-   "cm": 24
-  },
-  {
-   "href": "https://nadare.jp/",
-   "name": "Japan Avalanche Network",
-   "place": "Tateyama",
-   "region": "Japan",
    "units": "cm",
-   "cm": 21
+   "cm": 24
   }
  ]
 }
