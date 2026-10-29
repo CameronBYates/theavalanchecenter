@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-29T13:19:08.158Z",
+ "updated": "2026-10-29T16:14:30.226Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-10-29T13:00Z",
+ "binsStart": "2026-10-29T16:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -30,18 +30,18 @@
    "snow72cm": 30,
    "place": "Turnagain Pass",
    "bins": [
-    0.9,
+    0.6,
+    0.8,
+    6.7,
+    11.8,
+    6.1,
+    3.7,
     0.4,
-    3.5,
-    10.2,
-    8.4,
-    6,
-    0.9,
-    0.3,
-    0.1,
     0,
-    0.4,
-    0.3
+    0.1,
+    0.1,
+    0.6,
+    1.1
    ],
    "snowingAt": [
     "Turnagain Pass"
@@ -57,18 +57,18 @@
    "snow72cm": 25,
    "place": "Hatcher Pass",
    "bins": [
-    2.9,
-    2.4,
-    3.9,
-    3.6,
-    4.2,
-    2.8,
-    2.7,
+    2.5,
+    3,
+    4.1,
+    3.8,
+    3.3,
+    3.7,
+    0.5,
     1.4,
     0.7,
     0.1,
-    0.1,
-    0.5
+    0.5,
+    0.4
    ],
    "snowingAt": [
     "Hatcher Pass"
@@ -86,16 +86,16 @@
    "bins": [
     0,
     0,
-    0.1,
-    5,
-    14.5,
-    10,
-    3.7,
-    0.4,
+    2,
+    9.9,
+    15.2,
+    6.1,
+    0,
     1.1,
+    0.4,
     0,
-    0,
-    1.8
+    1.4,
+    0.4
    ],
    "snowingAt": [],
    "alerts": [],
@@ -117,10 +117,10 @@
     0,
     0,
     0,
-    0,
-    3,
-    7.2,
-    7.6
+    0.2,
+    6.4,
+    7.1,
+    8.8
    ],
    "snowingAt": [],
    "alerts": [],
@@ -136,15 +136,15 @@
    "bins": [
     0,
     0,
-    0.6,
-    6.3,
+    2.8,
+    5.4,
     3.3,
+    1.5,
     0,
-    0.5,
-    2.5,
-    1.9,
-    3,
-    8.8,
+    2.6,
+    1.3,
+    5.7,
+    7.8,
     10.9
    ],
    "snowingAt": [],
@@ -156,21 +156,21 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Sonora Pass",
    "bins": [
     0,
     0,
+    1.7,
+    3.1,
+    0.8,
+    1.5,
     0,
-    0.7,
-    0.4,
-    0,
-    0.4,
-    1.1,
-    0.4,
-    2.8,
-    8.6,
-    3.6
+    0.6,
+    0.6,
+    7.2,
+    5.9,
+    1.8
    ],
    "snowingAt": [],
    "alerts": [],
@@ -181,55 +181,66 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Mammoth Lakes",
    "bins": [
     0,
     0,
     0,
+    2.3,
     0.3,
     0,
     0,
+    0.1,
     0.2,
-    0.4,
-    0.2,
-    0.4,
-    8.8,
-    9.9
+    2.9,
+    12.7,
+    5.1
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": 0
   },
-  "https://www.idahopanhandleavalanche.org/": {
-   "name": "Idaho Panhandle Avalanche Center",
+  "https://www.sawtoothavalanche.com/": {
+   "name": "Sawtooth Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Selkirks"
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Galena Summit",
+   "bins": [
+    0,
+    0,
+    0,
+    2.8,
+    4.1,
+    0,
+    0,
+    0,
+    0.1,
+    0.1,
+    6.2,
+    7.1
    ],
+   "snowingAt": [],
    "alerts": [],
-   "recentCm": 25
+   "recentCm": 7.5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 30,
+   "level": "heavy",
+   "snow72cm": 35,
    "place": "Vancouver Island",
    "bins": [
-    3.9,
-    11.1,
-    3.6,
-    0,
-    0.3,
-    8.3,
+    7.3,
+    10.2,
+    2.4,
+    10.4,
     1.1,
+    0.5,
+    1.8,
     0.1,
     0,
     0,
@@ -269,22 +280,31 @@
     0,
     0,
     0,
-    1.5,
-    5.8,
-    9.1,
-    1.4,
-    0.1,
+    3.2,
+    10.2,
+    4.2,
+    0.4,
     0,
+    0.1,
     0.5
    ],
    "snowingAt": [
     "Taisetsu-Tokachi"
    ],
    "alerts": [],
-   "recentCm": 27.5
+   "recentCm": 30
   }
  },
  "recent": {
+  "https://nadare.jp/": {
+   "name": "Japan Avalanche Network",
+   "units": "cm",
+   "region": "Japan",
+   "cm": 30,
+   "place": "Taisetsu-Tokachi",
+   "source": "model",
+   "resorts": []
+  },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
    "units": "in",
@@ -325,26 +345,17 @@
     }
    ]
   },
-  "https://nadare.jp/": {
-   "name": "Japan Avalanche Network",
-   "units": "cm",
-   "region": "Japan",
-   "cm": 27.5,
-   "place": "Taisetsu-Tokachi",
-   "source": "model",
-   "resorts": []
-  },
   "https://www.idahopanhandleavalanche.org/": {
    "name": "Idaho Panhandle Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 25,
+   "cm": 27.5,
    "place": "Schweitzer Basin",
    "source": "snotel",
    "resorts": [
     {
      "name": "Schweitzer",
-     "cm": 25,
+     "cm": 27.5,
      "station": "Schweitzer Basin",
      "source": "snotel",
      "featured": true
@@ -629,7 +640,7 @@
     },
     {
      "name": "Wolf Creek",
-     "cm": 5,
+     "cm": 2.5,
      "station": "Upper San Juan",
      "source": "snotel"
     },
@@ -827,7 +838,7 @@
    "place": "Carson Pass",
    "region": "North America",
    "units": "in",
-   "cm": 38
+   "cm": 41
   },
   {
    "href": "https://alaskasnow.org/",
@@ -838,20 +849,20 @@
    "cm": 37
   },
   {
-   "href": "https://www.cnfaic.org/",
-   "name": "Chugach NF Avalanche Information Center",
-   "place": "Turnagain Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 31
-  },
-  {
    "href": "https://www.avalanche.ca/map",
    "name": "Avalanche Canada",
    "place": "Vancouver Island",
    "region": "North America",
    "units": "cm",
-   "cm": 28
+   "cm": 34
+  },
+  {
+   "href": "https://www.cnfaic.org/",
+   "name": "Chugach NF Avalanche Information Center",
+   "place": "Turnagain Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 32
   },
   {
    "href": "https://hpavalanche.org/",
@@ -859,7 +870,7 @@
    "place": "Hatcher Pass",
    "region": "North America",
    "units": "in",
-   "cm": 25
+   "cm": 24
   }
  ]
 }
