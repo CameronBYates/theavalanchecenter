@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-01T01:27:55.642Z",
+ "updated": "2026-11-01T04:08:37.591Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-01T01:00Z",
+ "binsStart": "2026-11-01T04:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -27,21 +27,21 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 45,
    "place": "Turnagain Pass",
    "bins": [
-    1.9,
-    3.6,
-    0.1,
-    0.5,
-    0,
-    0,
-    0.7,
-    3.5,
-    0.6,
+    1.3,
     2.7,
-    9.4,
-    15.1
+    0.2,
+    0.3,
+    0,
+    0.1,
+    2.2,
+    2.2,
+    0.7,
+    6.3,
+    12.3,
+    15.9
    ],
    "snowingAt": [
     "Turnagain Pass"
@@ -53,22 +53,22 @@
    "name": "Alaska Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "level": "heavy",
-   "snow72cm": 30,
+   "level": "notable",
+   "snow72cm": 25,
    "place": "Haines",
    "bins": [
-    9.7,
-    10.6,
-    6.2,
-    1.5,
-    0.4,
+    11.9,
+    7.8,
+    4.1,
+    0.8,
+    0,
     0.1,
-    0.4,
-    0.7,
+    0.8,
+    0.2,
     0.1,
     0,
     0,
-    0.5
+    1.3
    ],
    "snowingAt": [
     "Haines"
@@ -81,38 +81,52 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 55,
+   "snow72cm": 50,
    "place": "Mt Juneau",
    "bins": [
-    9.5,
-    8.1,
-    9.8,
-    10.1,
-    6.1,
+    8.3,
+    8.6,
+    10.4,
+    10.2,
     1.1,
+    1.1,
+    1.2,
+    5.6,
+    1.5,
     0.1,
-    4.6,
-    3.4,
-    0.5,
     0,
-    0
+    0.6
    ],
    "snowingAt": [
     "Mt Juneau"
    ],
    "alerts": [],
-   "recentCm": 10
+   "recentCm": 15
+  },
+  "https://www.wallowaavalanchecenter.org/": {
+   "name": "Wallowa Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Wallowa Mountains"
+   ],
+   "alerts": [],
+   "recentCm": 7.5
   },
   "https://www.sierraavalanchecenter.org/": {
    "name": "Sierra Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 15,
+   "snow72cm": 20,
    "place": "Donner Summit",
    "bins": [
-    2.9,
-    9.2,
+    9.9,
+    4.1,
     0,
     0,
     0,
@@ -121,41 +135,28 @@
     0,
     0,
     0,
-    0,
-    4.7
+    3.6,
+    1.1
    ],
    "snowingAt": [
     "Carson Pass"
    ],
    "alerts": [],
-   "recentCm": 22.5
+   "recentCm": 30
   },
   "https://www.bridgeportavalanchecenter.org/": {
    "name": "Bridgeport Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "Sonora Pass",
-   "bins": [
-    6.5,
-    10.2,
-    0.5,
-    0.5,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0.1
-   ],
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
    "snowingAt": [
     "Sonora Pass"
    ],
    "alerts": [],
-   "recentCm": 22.5
+   "recentCm": 30
   },
   "https://www.esavalanche.org/": {
    "name": "Eastern Sierra Avalanche Center",
@@ -165,10 +166,10 @@
    "snow72cm": 30,
    "place": "Mammoth Lakes",
    "bins": [
-    8.3,
-    12.7,
-    7.5,
-    0.3,
+    13,
+    12.3,
+    0.6,
+    2.5,
     0,
     0,
     0,
@@ -182,7 +183,32 @@
     "Mammoth Lakes"
    ],
    "alerts": [],
-   "recentCm": 0
+   "recentCm": 2.5
+  },
+  "https://jhavalanche.org/": {
+   "name": "Bridger-Teton Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "Teton Pass",
+   "bins": [
+    0.8,
+    6.3,
+    5.5,
+    1.1,
+    1.6,
+    0.8,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": 5
   },
   "https://utahavalanchecenter.org/": {
    "name": "Utah Avalanche Center",
@@ -192,14 +218,14 @@
    "snow72cm": 30,
    "place": "Alta",
    "bins": [
-    0,
-    10.8,
-    10.2,
+    1.8,
+    14.2,
+    5.6,
+    2,
     2.9,
-    2.8,
-    1.7,
-    0.2,
-    0.3,
+    2.4,
+    0,
+    0,
     0,
     0,
     0,
@@ -207,24 +233,24 @@
    ],
    "snowingAt": [],
    "alerts": [],
-   "recentCm": 20
+   "recentCm": 22.5
   },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 50,
+   "snow72cm": 45,
    "place": "Wolf Creek Pass",
    "bins": [
-    0,
-    4.4,
-    5,
-    2.4,
+    1.1,
+    4.8,
+    4.7,
     15.8,
-    21.3,
-    2,
-    0.6,
+    11.3,
+    6.1,
+    1.1,
+    0,
     0,
     0,
     0,
@@ -241,47 +267,47 @@
    ],
    "recentCm": 15
   },
-  "https://taosavalanchecenter.org/": {
-   "name": "Taos Avalanche Center",
+  "https://cbavalanchecenter.org/": {
+   "name": "Crested Butte Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 25,
-   "place": "Taos Ski Valley",
+   "snow72cm": 15,
+   "place": "Crested Butte",
    "bins": [
     0,
+    2.7,
+    3.3,
+    1.1,
+    0.8,
+    6.6,
+    0.8,
+    0.1,
     0,
-    0,
-    0,
-    12.5,
-    0.2,
-    11,
-    2.5,
-    0.4,
     0,
     0,
     0
    ],
    "snowingAt": [],
    "alerts": [],
-   "recentCm": 2.5
+   "recentCm": 5
   },
-  "https://kachinapeaks.org/": {
-   "name": "Kachina Peaks Avalanche Center",
+  "https://taosavalanchecenter.org/": {
+   "name": "Taos Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
-   "place": "San Francisco Peaks",
+   "snow72cm": 30,
+   "place": "Taos Ski Valley",
    "bins": [
-    3.4,
-    2.3,
-    1.8,
-    9.9,
-    0.7,
-    0.3,
     0,
     0,
+    0,
+    8.3,
+    7.6,
+    10.2,
+    1,
+    2.5,
     0,
     0,
     0,
@@ -300,23 +326,37 @@
    "place": "Terrace",
    "bins": [
     0,
-    0,
-    0.8,
-    2.2,
-    7.9,
-    5.9,
-    14.1,
-    13.2,
-    9.5,
-    1.9,
-    0,
-    3.3
+    0.1,
+    1.6,
+    5.3,
+    6.6,
+    10.2,
+    14.5,
+    11.2,
+    5.4,
+    0.6,
+    0.4,
+    3.5
    ],
    "snowingAt": [
     "White Pass, Yukon"
    ],
    "alerts": [],
    "recentCm": 17.5
+  },
+  "https://www.vorarlberg.at/lawine": {
+   "name": "Vorarlberg Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Lech"
+   ],
+   "alerts": [],
+   "recentCm": null
   },
   "https://lawine.salzburg.at/": {
    "name": "Salzburg Avalanche Warning Service",
@@ -328,20 +368,6 @@
    "bins": null,
    "snowingAt": [
     "Gastein"
-   ],
-   "alerts": [],
-   "recentCm": null
-  },
-  "https://www.lawine-steiermark.at/": {
-   "name": "Styria Avalanche Warning Service",
-   "units": "cm",
-   "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Dachstein"
    ],
    "alerts": [],
    "recentCm": null
@@ -435,19 +461,19 @@
    "name": "Sierra Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 22.5,
+   "cm": 30,
    "place": "Ebbetts Pass",
    "source": "snotel",
    "resorts": [
     {
      "name": "Kirkwood",
-     "cm": 15,
+     "cm": 20,
      "station": "Carson Pass",
      "source": "snotel"
     },
     {
      "name": "Palisades Tahoe",
-     "cm": 5,
+     "cm": 10,
      "station": "Palisades Tahoe",
      "source": "snotel",
      "featured": true
@@ -460,7 +486,7 @@
     },
     {
      "name": "Heavenly",
-     "cm": 2.5,
+     "cm": 5,
      "station": "Heavenly Valley",
      "source": "snotel"
     }
@@ -470,7 +496,7 @@
    "name": "Bridgeport Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 22.5,
+   "cm": 30,
    "place": "Ebbetts Pass",
    "source": "snotel",
    "resorts": []
@@ -479,8 +505,8 @@
    "name": "Utah Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 20,
-   "place": "Lakefork Basin",
+   "cm": 22.5,
+   "place": "Brown Duck",
    "source": "snotel",
    "resorts": [
     {
@@ -523,15 +549,15 @@
    "source": "model",
    "resorts": [
     {
-     "name": "Revelstoke Mountain",
-     "cm": 2.5,
-     "source": "model"
-    },
-    {
      "name": "Whistler Blackcomb",
      "cm": 0,
      "source": "model",
      "featured": true
+    },
+    {
+     "name": "Revelstoke Mountain",
+     "cm": 0,
+     "source": "model"
     },
     {
      "name": "Kicking Horse",
@@ -574,6 +600,15 @@
      "source": "model"
     }
    ]
+  },
+  "https://www.coastalakavalanche.org/": {
+   "name": "Coastal Alaska Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 15,
+   "place": "Mt Juneau",
+   "source": "model",
+   "resorts": []
   },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
@@ -649,15 +684,6 @@
    "source": "model",
    "resorts": []
   },
-  "https://www.coastalakavalanche.org/": {
-   "name": "Coastal Alaska Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 10,
-   "place": "Mt Juneau",
-   "source": "model",
-   "resorts": []
-  },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
    "units": "in",
@@ -707,6 +733,28 @@
    "source": "snotel",
    "resorts": []
   },
+  "https://payetteavalanche.org/": {
+   "name": "Payette Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 7.5,
+   "place": "Brundage Reservoir",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Brundage",
+     "cm": 7.5,
+     "station": "Brundage Reservoir",
+     "source": "snotel",
+     "featured": true
+    },
+    {
+     "name": "Tamarack",
+     "cm": 0,
+     "source": "model"
+    }
+   ]
+  },
   "https://www.sawtoothavalanche.com/": {
    "name": "Sawtooth Avalanche Center",
    "units": "in",
@@ -717,23 +765,7 @@
    "resorts": [
     {
      "name": "Sun Valley",
-     "cm": 5,
-     "source": "model",
-     "featured": true
-    }
-   ]
-  },
-  "https://www.flatheadavalanche.org/": {
-   "name": "Flathead Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 7.5,
-   "place": "Pike Creek",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Whitefish Mountain",
-     "cm": 0,
+     "cm": 7.5,
      "source": "model",
      "featured": true
     }
@@ -762,25 +794,19 @@
     }
    ]
   },
-  "https://payetteavalanche.org/": {
-   "name": "Payette Avalanche Center",
+  "https://www.flatheadavalanche.org/": {
+   "name": "Flathead Avalanche Center",
    "units": "in",
    "region": "North America",
    "cm": 5,
-   "place": "Brundage Reservoir",
+   "place": "Pike Creek",
    "source": "snotel",
    "resorts": [
     {
-     "name": "Brundage",
-     "cm": 5,
-     "station": "Brundage Reservoir",
-     "source": "snotel",
-     "featured": true
-    },
-    {
-     "name": "Tamarack",
+     "name": "Whitefish Mountain",
      "cm": 0,
-     "source": "model"
+     "source": "model",
+     "featured": true
     }
    ]
   },
@@ -811,7 +837,7 @@
    "units": "in",
    "region": "North America",
    "cm": 5,
-   "place": "Castle Peak",
+   "place": "Schofield Pass",
    "source": "snotel",
    "resorts": [
     {
@@ -836,6 +862,27 @@
      "cm": 0,
      "source": "model",
      "featured": true
+    }
+   ]
+  },
+  "https://www.esavalanche.org/": {
+   "name": "Eastern Sierra Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Mammoth Lakes",
+   "source": "model",
+   "resorts": [
+    {
+     "name": "Mammoth Mountain",
+     "cm": 2.5,
+     "source": "model",
+     "featured": true
+    },
+    {
+     "name": "June Mountain",
+     "cm": 0,
+     "source": "model"
     }
    ]
   },
@@ -918,36 +965,6 @@
      "featured": true
     }
    ]
-  },
-  "https://www.avalanchequebec.ca/": {
-   "name": "Avalanche Québec",
-   "units": "cm",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Chic-Chocs",
-   "source": "model",
-   "resorts": []
-  },
-  "https://www.esavalanche.org/": {
-   "name": "Eastern Sierra Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 0,
-   "place": "Mammoth Lakes",
-   "source": "model",
-   "resorts": [
-    {
-     "name": "Mammoth Mountain",
-     "cm": 0,
-     "source": "model",
-     "featured": true
-    },
-    {
-     "name": "June Mountain",
-     "cm": 0,
-     "source": "model"
-    }
-   ]
   }
  },
  "deepest": [
@@ -965,7 +982,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 53
+   "cm": 49
   },
   {
    "href": "https://avalanche.state.co.us/",
@@ -973,7 +990,7 @@
    "place": "Wolf Creek Pass",
    "region": "North America",
    "units": "in",
-   "cm": 51
+   "cm": 45
   },
   {
    "href": "https://www.cnfaic.org/",
@@ -981,12 +998,12 @@
    "place": "Turnagain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 38
+   "cm": 44
   },
   {
-   "href": "https://alaskasnow.org/",
-   "name": "Alaska Avalanche Information Center",
-   "place": "Haines",
+   "href": "https://taosavalanchecenter.org/",
+   "name": "Taos Avalanche Center",
+   "place": "Taos Ski Valley",
    "region": "North America",
    "units": "in",
    "cm": 30
