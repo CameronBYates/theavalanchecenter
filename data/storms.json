@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-03T07:31:03.993Z",
+ "updated": "2026-11-03T10:11:08.780Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-03T07:00Z",
+ "binsStart": "2026-11-03T10:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -27,27 +27,27 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 70,
+   "snow72cm": 65,
    "place": "Turnagain Pass",
    "bins": [
-    4.4,
-    11.3,
-    16,
-    14.9,
-    11,
-    5.7,
-    2.4,
-    0.7,
-    0.4,
+    8.2,
+    14.5,
+    15,
+    13.4,
+    8.7,
+    2.8,
+    2.5,
     0.2,
-    0.6,
+    0.3,
+    0.7,
+    0.1,
     0
    ],
    "snowingAt": [
     "Turnagain Pass"
    ],
    "alerts": [],
-   "recentCm": 2.5
+   "recentCm": 10
   },
   "https://alaskasnow.org/": {
    "name": "Alaska Avalanche Information Center",
@@ -58,21 +58,21 @@
    "place": "Haines",
    "bins": [
     0,
+    0.2,
+    1.1,
+    6.4,
+    1.3,
     0,
-    0.4,
-    3.3,
-    5.4,
     0,
-    0,
-    0.1,
-    3.6,
-    0.6,
-    5.8,
-    4.5
+    2.2,
+    1.8,
+    2,
+    6.9,
+    4.6
    ],
    "snowingAt": [],
    "alerts": [],
-   "recentCm": 25
+   "recentCm": 37.5
   },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
@@ -82,17 +82,17 @@
    "snow72cm": 40,
    "place": "Mt Juneau",
    "bins": [
-    2.7,
-    0.1,
+    1.8,
     0,
+    0.5,
+    6.2,
+    3.9,
+    0,
+    0.6,
+    6.6,
+    7.3,
     2.5,
-    8,
-    0,
-    0,
-    2.9,
-    7.1,
-    5.5,
-    5.8,
+    6.9,
     3.7
    ],
    "snowingAt": [
@@ -106,21 +106,21 @@
    "units": "cm",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 45,
    "place": "Terrace",
    "bins": [
-    0.2,
     0,
-    1.3,
-    0.5,
-    0.4,
-    3,
-    1.5,
-    6.7,
+    0,
+    1.8,
+    0,
     1.9,
+    2.1,
+    3.7,
+    5.9,
     0.4,
-    8.2,
-    17.6
+    1.8,
+    16.5,
+    10.8
    ],
    "snowingAt": [
     "Pine Pass"
@@ -128,19 +128,61 @@
    "alerts": [],
    "recentCm": 52.5
   },
-  "https://nadare.jp/": {
-   "name": "Japan Avalanche Network",
+  "https://oberoesterreich.avalanche-warnings.eu/": {
+   "name": "Upper Austria Avalanche Warning Service",
    "units": "cm",
-   "region": "Japan",
+   "region": "Europe",
    "level": null,
    "snow72cm": null,
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Taisetsu-Tokachi"
+    "Hinterstoder"
    ],
    "alerts": [],
-   "recentCm": 12.5
+   "recentCm": null
+  },
+  "https://www.lawinenwarndienst-niederoesterreich.at/": {
+   "name": "Lower Austria Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Rax"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://www.meteo.si/pozor/plaz": {
+   "name": "ARSO Slovenia",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Julian Alps"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://www.avalanche.net.nz/": {
+   "name": "NZ Avalanche Advisory",
+   "units": "cm",
+   "region": "New Zealand",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Queenstown"
+   ],
+   "alerts": [],
+   "recentCm": null
   }
  },
  "recent": {
@@ -214,81 +256,32 @@
     }
    ]
   },
-  "https://www.sierraavalanchecenter.org/": {
-   "name": "Sierra Avalanche Center",
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 47.5,
-   "place": "Ebbetts Pass",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Kirkwood",
-     "cm": 27.5,
-     "station": "Carson Pass",
-     "source": "snotel"
-    },
-    {
-     "name": "Palisades Tahoe",
-     "cm": 20,
-     "station": "Palisades Tahoe",
-     "source": "snotel",
-     "featured": true
-    },
-    {
-     "name": "Heavenly",
-     "cm": 17.5,
-     "station": "Heavenly Valley",
-     "source": "snotel"
-    },
-    {
-     "name": "Sugar Bowl",
-     "cm": 10,
-     "station": "Css Lab",
-     "source": "snotel"
-    }
-   ]
-  },
-  "https://www.bridgeportavalanchecenter.org/": {
-   "name": "Bridgeport Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 47.5,
-   "place": "Ebbetts Pass",
-   "source": "snotel",
+   "cm": 37.5,
+   "place": "Haines",
+   "source": "model",
    "resorts": []
   },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 47.5,
-   "place": "Red Mountain Pass",
-   "source": "snotel",
+   "cm": 35,
+   "place": "Wolf Creek Pass",
+   "source": "model",
    "resorts": [
     {
-     "name": "Telluride",
-     "cm": 37.5,
-     "station": "Alta Lakes",
-     "source": "snotel"
-    },
-    {
      "name": "Wolf Creek",
-     "cm": 27.5,
-     "station": "Wolf Creek Summit",
-     "source": "snotel"
+     "cm": 35,
+     "source": "model"
     },
     {
-     "name": "Winter Park",
-     "cm": 5,
-     "station": "Berthoud Summit",
-     "source": "snotel"
-    },
-    {
-     "name": "Loveland",
-     "cm": 5,
-     "station": "Grizzly Peak",
-     "source": "snotel"
+     "name": "Telluride",
+     "cm": 12.5,
+     "source": "model"
     },
     {
      "name": "Aspen Snowmass",
@@ -303,14 +296,23 @@
     {
      "name": "Vail and Beaver Creek",
      "cm": 2.5,
-     "station": "Vail Mountain",
-     "source": "snotel"
+     "source": "model"
+    },
+    {
+     "name": "Loveland",
+     "cm": 2.5,
+     "source": "model"
     },
     {
      "name": "Summit County",
      "cm": 0,
      "source": "model",
      "featured": true
+    },
+    {
+     "name": "Winter Park",
+     "cm": 0,
+     "source": "model"
     }
    ]
   },
@@ -318,28 +320,20 @@
    "name": "Utah Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 32.5,
-   "place": "Brown Duck",
-   "source": "snotel",
+   "cm": 25,
+   "place": "Alta",
+   "source": "model",
    "resorts": [
     {
      "name": "Cottonwood Canyons",
-     "cm": 22.5,
-     "station": "Snowbird",
-     "source": "snotel",
+     "cm": 17.5,
+     "source": "model",
      "featured": true
     },
     {
      "name": "Park City",
-     "cm": 10,
-     "station": "Thaynes Canyon",
-     "source": "snotel"
-    },
-    {
-     "name": "Beaver Mountain",
-     "cm": 2.5,
-     "station": "Garden City Summit",
-     "source": "snotel"
+     "cm": 5,
+     "source": "model"
     },
     {
      "name": "Snowbasin and Powder Mountain",
@@ -350,42 +344,68 @@
      "name": "Sundance",
      "cm": 0,
      "source": "model"
+    },
+    {
+     "name": "Beaver Mountain",
+     "cm": 0,
+     "source": "model"
     }
    ]
   },
-  "https://cbavalanchecenter.org/": {
-   "name": "Crested Butte Avalanche Center",
+  "https://kachinapeaks.org/": {
+   "name": "Kachina Peaks Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 32.5,
-   "place": "Schofield Pass",
-   "source": "snotel",
+   "cm": 25,
+   "place": "San Francisco Peaks",
+   "source": "model",
    "resorts": [
     {
-     "name": "Crested Butte",
-     "cm": 5,
-     "station": "Butte",
-     "source": "snotel",
+     "name": "Arizona Snowbowl",
+     "cm": 10,
+     "source": "model",
      "featured": true
     }
    ]
   },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
+  "https://www.sierraavalanchecenter.org/": {
+   "name": "Sierra Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 25,
-   "place": "Flower Mountain",
-   "source": "snotel",
-   "resorts": []
+   "cm": 22.5,
+   "place": "Carson Pass",
+   "source": "model",
+   "resorts": [
+    {
+     "name": "Kirkwood",
+     "cm": 20,
+     "source": "model"
+    },
+    {
+     "name": "Palisades Tahoe",
+     "cm": 10,
+     "source": "model",
+     "featured": true
+    },
+    {
+     "name": "Sugar Bowl",
+     "cm": 10,
+     "source": "model"
+    },
+    {
+     "name": "Heavenly",
+     "cm": 10,
+     "source": "model"
+    }
+   ]
   },
-  "https://www.wallowaavalanchecenter.org/": {
-   "name": "Wallowa Avalanche Center",
+  "https://www.bridgeportavalanchecenter.org/": {
+   "name": "Bridgeport Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 15,
-   "place": "Aneroid Lake #2",
-   "source": "snotel",
+   "cm": 17.5,
+   "place": "Sonora Pass",
+   "source": "model",
    "resorts": []
   },
   "https://taosavalanchecenter.org/": {
@@ -393,53 +413,12 @@
    "units": "in",
    "region": "North America",
    "cm": 15,
-   "place": "Taos Powderhorn",
-   "source": "snotel",
+   "place": "Taos Ski Valley",
+   "source": "model",
    "resorts": [
     {
      "name": "Taos Ski Valley",
      "cm": 15,
-     "station": "Taos Powderhorn",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
-  "https://nwac.us/": {
-   "name": "Northwest Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 12.5,
-   "place": "Wells Creek",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Mt Hood Meadows and Timberline",
-     "cm": 5,
-     "station": "Mt Hood Test Site",
-     "source": "snotel"
-    },
-    {
-     "name": "Stevens Pass",
-     "cm": 2.5,
-     "station": "Stevens Pass",
-     "source": "snotel"
-    },
-    {
-     "name": "Snoqualmie Pass",
-     "cm": 2.5,
-     "station": "Olallie Meadows",
-     "source": "snotel"
-    },
-    {
-     "name": "Crystal Mountain",
-     "cm": 2.5,
-     "station": "Morse Lake",
-     "source": "snotel"
-    },
-    {
-     "name": "Mt Baker Ski Area",
-     "cm": 0,
      "source": "model",
      "featured": true
     }
@@ -466,13 +445,29 @@
     }
    ]
   },
+  "https://www.cnfaic.org/": {
+   "name": "Chugach NF Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 10,
+   "place": "Turnagain Pass",
+   "source": "model",
+   "resorts": [
+    {
+     "name": "Alyeska",
+     "cm": 7.5,
+     "source": "model",
+     "featured": true
+    }
+   ]
+  },
   "https://www.sawtoothavalanche.com/": {
    "name": "Sawtooth Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 12.5,
-   "place": "Vienna Mine",
-   "source": "snotel",
+   "cm": 10,
+   "place": "Sun Valley",
+   "source": "model",
    "resorts": [
     {
      "name": "Sun Valley",
@@ -486,24 +481,63 @@
    "name": "Japan Avalanche Network",
    "units": "cm",
    "region": "Japan",
-   "cm": 12.5,
+   "cm": 10,
    "place": "Taisetsu-Tokachi",
    "source": "model",
    "resorts": []
   },
-  "https://www.coavalanche.org/": {
-   "name": "Central Oregon Avalanche Center",
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
    "units": "in",
    "region": "North America",
    "cm": 7.5,
-   "place": "Mckenzie",
-   "source": "snotel",
+   "place": "Hatcher Pass",
+   "source": "model",
+   "resorts": []
+  },
+  "https://cbavalanchecenter.org/": {
+   "name": "Crested Butte Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Crested Butte",
+   "source": "model",
    "resorts": [
     {
-     "name": "Mt Bachelor",
-     "cm": 0,
+     "name": "Crested Butte",
+     "cm": 2.5,
      "source": "model",
      "featured": true
+    }
+   ]
+  },
+  "https://www.wallowaavalanchecenter.org/": {
+   "name": "Wallowa Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Wallowa Mountains",
+   "source": "model",
+   "resorts": []
+  },
+  "https://missoulaavalanche.org/": {
+   "name": "West Central Montana Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Montana Snowbowl",
+   "source": "model",
+   "resorts": [
+    {
+     "name": "Montana Snowbowl",
+     "cm": 2.5,
+     "source": "model",
+     "featured": true
+    },
+    {
+     "name": "Lost Trail",
+     "cm": 0,
+     "source": "model"
     }
    ]
   },
@@ -511,15 +545,14 @@
    "name": "Gallatin NF Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 7.5,
-   "place": "Fisher Creek",
-   "source": "snotel",
+   "cm": 2.5,
+   "place": "Cooke City",
+   "source": "model",
    "resorts": [
     {
      "name": "Big Sky",
-     "cm": 5,
-     "station": "Lone Mountain",
-     "source": "snotel",
+     "cm": 0,
+     "source": "model",
      "featured": true
     },
     {
@@ -533,21 +566,102 @@
    "name": "Bridger-Teton Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 7.5,
+   "cm": 2.5,
    "place": "Grand Targhee",
-   "source": "snotel",
+   "source": "model",
    "resorts": [
     {
      "name": "Grand Targhee",
-     "cm": 7.5,
-     "station": "Grand Targhee",
-     "source": "snotel"
+     "cm": 2.5,
+     "source": "model"
     },
     {
      "name": "Jackson Hole",
-     "cm": 2.5,
+     "cm": 0,
      "source": "model",
      "featured": true
+    }
+   ]
+  },
+  "https://niseko.nadare.info/": {
+   "name": "Niseko Avalanche Information",
+   "units": "cm",
+   "region": "Japan",
+   "cm": 2.5,
+   "place": "Niseko",
+   "source": "model",
+   "resorts": []
+  },
+  "https://nwac.us/": {
+   "name": "Northwest Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 0,
+   "place": "Mt Baker",
+   "source": "model",
+   "resorts": [
+    {
+     "name": "Mt Baker Ski Area",
+     "cm": 0,
+     "source": "model",
+     "featured": true
+    },
+    {
+     "name": "Stevens Pass",
+     "cm": 0,
+     "source": "model"
+    },
+    {
+     "name": "Snoqualmie Pass",
+     "cm": 0,
+     "source": "model"
+    },
+    {
+     "name": "Crystal Mountain",
+     "cm": 0,
+     "source": "model"
+    },
+    {
+     "name": "Mt Hood Meadows and Timberline",
+     "cm": 0,
+     "source": "model"
+    }
+   ]
+  },
+  "https://www.coavalanche.org/": {
+   "name": "Central Oregon Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 0,
+   "place": "Mt Bachelor",
+   "source": "model",
+   "resorts": [
+    {
+     "name": "Mt Bachelor",
+     "cm": 0,
+     "source": "model",
+     "featured": true
+    }
+   ]
+  },
+  "https://www.idahopanhandleavalanche.org/": {
+   "name": "Idaho Panhandle Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 0,
+   "place": "Selkirks",
+   "source": "model",
+   "resorts": [
+    {
+     "name": "Schweitzer",
+     "cm": 0,
+     "source": "model",
+     "featured": true
+    },
+    {
+     "name": "Lookout Pass",
+     "cm": 0,
+     "source": "model"
     }
    ]
   },
@@ -555,15 +669,14 @@
    "name": "Payette Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 5,
-   "place": "Brundage Reservoir",
-   "source": "snotel",
+   "cm": 0,
+   "place": "McCall",
+   "source": "model",
    "resorts": [
     {
      "name": "Brundage",
-     "cm": 5,
-     "station": "Brundage Reservoir",
-     "source": "snotel",
+     "cm": 0,
+     "source": "model",
      "featured": true
     },
     {
@@ -577,9 +690,9 @@
    "name": "Flathead Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 5,
-   "place": "Pike Creek",
-   "source": "snotel",
+   "cm": 0,
+   "place": "Marias Pass",
+   "source": "model",
    "resorts": [
     {
      "name": "Whitefish Mountain",
@@ -588,104 +701,6 @@
      "featured": true
     }
    ]
-  },
-  "https://missoulaavalanche.org/": {
-   "name": "West Central Montana Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Stuart Mountain",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Montana Snowbowl",
-     "cm": 5,
-     "station": "Stuart Mountain",
-     "source": "snotel",
-     "featured": true
-    },
-    {
-     "name": "Lost Trail",
-     "cm": 5,
-     "station": "Saddle Mtn.",
-     "source": "snotel"
-    }
-   ]
-  },
-  "https://kachinapeaks.org/": {
-   "name": "Kachina Peaks Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Snowslide Canyon",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Arizona Snowbowl",
-     "cm": 5,
-     "station": "Snowslide Canyon",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
-  "https://www.cnfaic.org/": {
-   "name": "Chugach NF Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Turnagain Pass",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Alyeska",
-     "cm": 0,
-     "station": "Mt. Alyeska",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
-  "https://hpavalanche.org/": {
-   "name": "Hatcher Pass Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Frostbite Bottom",
-   "source": "snotel",
-   "resorts": []
-  },
-  "https://www.idahopanhandleavalanche.org/": {
-   "name": "Idaho Panhandle Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Schweitzer Basin",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Schweitzer",
-     "cm": 2.5,
-     "station": "Schweitzer Basin",
-     "source": "snotel",
-     "featured": true
-    },
-    {
-     "name": "Lookout Pass",
-     "cm": 2.5,
-     "station": "Lookout",
-     "source": "snotel"
-    }
-   ]
-  },
-  "https://niseko.nadare.info/": {
-   "name": "Niseko Avalanche Information",
-   "units": "cm",
-   "region": "Japan",
-   "cm": 2.5,
-   "place": "Niseko",
-   "source": "model",
-   "resorts": []
   }
  },
  "deepest": [
@@ -695,7 +710,7 @@
    "place": "Turnagain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 68
+   "cm": 66
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -703,7 +718,7 @@
    "place": "Terrace",
    "region": "North America",
    "units": "cm",
-   "cm": 42
+   "cm": 45
   },
   {
    "href": "https://www.coastalakavalanche.org/",
@@ -711,7 +726,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 38
+   "cm": 40
   },
   {
    "href": "https://alaskasnow.org/",
@@ -719,15 +734,15 @@
    "place": "Haines",
    "region": "North America",
    "units": "in",
-   "cm": 24
+   "cm": 26
   },
   {
-   "href": "https://meteofrance.com/meteo-montagne",
-   "name": "Météo-France (BERA)",
-   "place": "Briançon",
-   "region": "Europe",
-   "units": "cm",
-   "cm": 10
+   "href": "https://avalanche.state.co.us/",
+   "name": "Colorado Avalanche Information Center",
+   "place": "Berthoud Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 13
   }
  ]
 }
