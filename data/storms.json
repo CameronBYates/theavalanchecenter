@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-04T07:35:52.860Z",
+ "updated": "2026-11-04T13:26:58.464Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-04T07:00Z",
+ "binsStart": "2026-11-04T13:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -26,18 +26,18 @@
    "name": "Chugach NF Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "level": "heavy",
-   "snow72cm": 30,
+   "level": "notable",
+   "snow72cm": 20,
    "place": "Turnagain Pass",
    "bins": [
-    12.8,
-    10.9,
-    3.3,
+    11.3,
+    3.6,
     2.7,
-    0.5,
     0.1,
-    0.6,
-    0.1,
+    0,
+    0.3,
+    0,
+    0,
     0,
     0,
     0,
@@ -54,28 +54,27 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 45,
+   "snow72cm": 40,
    "place": "Haines",
    "bins": [
-    3.8,
     0,
     0,
-    2,
-    1.8,
+    1.9,
+    1.9,
     0.6,
-    4.5,
-    6.1,
-    7.1,
-    7.8,
-    9.1,
-    1.8
+    4.4,
+    5.1,
+    9.4,
+    7.6,
+    5.6,
+    0.6,
+    0.5
    ],
    "snowingAt": [
-    "Thompson Pass",
-    "Haines"
+    "Thompson Pass"
    ],
    "alerts": [],
-   "recentCm": 20
+   "recentCm": 10
   },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
@@ -85,104 +84,74 @@
    "snow72cm": 65,
    "place": "Mt Juneau",
    "bins": [
-    4,
-    0,
-    0.6,
-    6.7,
-    11,
-    6.9,
-    7.2,
-    5.3,
-    9.4,
-    3.7,
-    2.6,
-    7.1
+    1.2,
+    0.1,
+    5.9,
+    9.2,
+    8.3,
+    5.9,
+    5.4,
+    10.6,
+    1.6,
+    3.4,
+    7.1,
+    8.7
    ],
-   "snowingAt": [
-    "Mt Juneau"
-   ],
+   "snowingAt": [],
    "alerts": [],
-   "recentCm": 45
+   "recentCm": 40
   },
-  "https://www.esavalanche.org/": {
-   "name": "Eastern Sierra Avalanche Center",
+  "https://cbavalanchecenter.org/": {
+   "name": "Crested Butte Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Mammoth Lakes"
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "Crested Butte",
+   "bins": [
+    0,
+    1.1,
+    13.9,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0.1,
+    0.4,
+    0,
+    0
    ],
+   "snowingAt": [],
    "alerts": [],
-   "recentCm": 10
+   "recentCm": 30
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 50,
+   "snow72cm": 60,
    "place": "Terrace",
    "bins": [
-    1.3,
-    3.4,
-    3.5,
-    6.3,
-    1,
-    1.1,
-    13.2,
-    13.9,
     5,
-    0.8,
-    0.4,
-    2
+    3.9,
+    6.1,
+    1.1,
+    1.1,
+    12,
+    10.9,
+    7.1,
+    0.6,
+    1.4,
+    9.1,
+    0.8
    ],
    "snowingAt": [
-    "White Pass, Yukon"
+    "Terrace"
    ],
    "alerts": [],
-   "recentCm": 55
-  },
-  "https://www.avalanchequebec.ca/": {
-   "name": "Avalanche Québec",
-   "units": "cm",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Chic-Chocs"
-   ],
-   "alerts": [],
-   "recentCm": null
-  },
-  "https://meteofrance.com/meteo-montagne": {
-   "name": "Météo-France (BERA)",
-   "units": "cm",
-   "region": "Europe",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "Briançon",
-   "bins": [
-    0.4,
-    0,
-    0.4,
-    1.3,
-    0.1,
-    3.4,
-    10.8,
-    1.7,
-    0.1,
-    2.7,
-    0.5,
-    0
-   ],
-   "snowingAt": [],
-   "alerts": [],
-   "recentCm": null
+   "recentCm": 57.5
   },
   "https://lawinenwarndienst.ktn.gv.at/": {
    "name": "Carinthia Avalanche Warning Service",
@@ -202,24 +171,13 @@
    "name": "AINEVA",
    "units": "cm",
    "region": "Europe",
-   "level": "notable",
-   "snow72cm": 15,
-   "place": "Courmayeur",
-   "bins": [
-    0,
-    0,
-    0,
-    0.1,
-    0,
-    0.5,
-    1.4,
-    1.2,
-    0.5,
-    2.1,
-    9.7,
-    1.9
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Courmayeur"
    ],
-   "snowingAt": [],
    "alerts": [],
    "recentCm": null
   },
@@ -250,13 +208,13 @@
     0,
     0,
     0,
-    0,
-    0,
+    0.6,
     1,
     3,
     6.9,
     6.7,
-    5
+    5,
+    0.9
    ],
    "snowingAt": [],
    "alerts": [],
@@ -268,7 +226,7 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 55,
+   "cm": 57.5,
    "place": "Terrace",
    "source": "model",
    "resorts": [
@@ -325,11 +283,20 @@
     }
    ]
   },
+  "https://www.coastalakavalanche.org/": {
+   "name": "Coastal Alaska Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 40,
+   "place": "Mt Juneau",
+   "source": "model",
+   "resorts": []
+  },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 47.5,
+   "cm": 40,
    "place": "Red Mountain Pass",
    "source": "snotel",
    "resorts": [
@@ -381,20 +348,11 @@
     }
    ]
   },
-  "https://www.coastalakavalanche.org/": {
-   "name": "Coastal Alaska Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 45,
-   "place": "Mt Juneau",
-   "source": "model",
-   "resorts": []
-  },
   "https://cbavalanchecenter.org/": {
    "name": "Crested Butte Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 27.5,
+   "cm": 30,
    "place": "Schofield Pass",
    "source": "snotel",
    "resorts": [
@@ -411,7 +369,7 @@
    "name": "Bridgeport Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 25,
+   "cm": 17.5,
    "place": "Poison Flat",
    "source": "snotel",
    "resorts": []
@@ -420,20 +378,20 @@
    "name": "Utah Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 25,
-   "place": "Lakefork Basin",
+   "cm": 17.5,
+   "place": "Snowbird",
    "source": "snotel",
    "resorts": [
     {
      "name": "Cottonwood Canyons",
-     "cm": 20,
+     "cm": 17.5,
      "station": "Snowbird",
      "source": "snotel",
      "featured": true
     },
     {
      "name": "Park City",
-     "cm": 10,
+     "cm": 2.5,
      "station": "Thaynes Canyon",
      "source": "snotel"
     },
@@ -454,15 +412,6 @@
      "source": "model"
     }
    ]
-  },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 20,
-   "place": "Flower Mountain",
-   "source": "snotel",
-   "resorts": []
   },
   "https://taosavalanchecenter.org/": {
    "name": "Taos Avalanche Center",
@@ -521,26 +470,14 @@
     }
    ]
   },
-  "https://www.esavalanche.org/": {
-   "name": "Eastern Sierra Avalanche Center",
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
    "units": "in",
    "region": "North America",
    "cm": 10,
-   "place": "Mammoth Lakes",
-   "source": "model",
-   "resorts": [
-    {
-     "name": "Mammoth Mountain",
-     "cm": 10,
-     "source": "model",
-     "featured": true
-    },
-    {
-     "name": "June Mountain",
-     "cm": 7.5,
-     "source": "model"
-    }
-   ]
+   "place": "Flower Mountain",
+   "source": "snotel",
+   "resorts": []
   },
   "https://niseko.nadare.info/": {
    "name": "Niseko Avalanche Information",
@@ -581,7 +518,7 @@
    "units": "in",
    "region": "North America",
    "cm": 7.5,
-   "place": "Lost Lakes",
+   "place": "Echo Peak",
    "source": "snotel",
    "resorts": [
     {
@@ -592,15 +529,15 @@
      "featured": true
     },
     {
-     "name": "Sugar Bowl",
-     "cm": 5,
-     "station": "Css Lab",
-     "source": "snotel"
-    },
-    {
      "name": "Heavenly",
      "cm": 5,
      "station": "Heavenly Valley",
+     "source": "snotel"
+    },
+    {
+     "name": "Sugar Bowl",
+     "cm": 2.5,
+     "station": "Css Lab",
      "source": "snotel"
     },
     {
@@ -633,18 +570,25 @@
     }
    ]
   },
-  "https://www.sawtoothavalanche.com/": {
-   "name": "Sawtooth Avalanche Center",
+  "https://missoulaavalanche.org/": {
+   "name": "West Central Montana Avalanche Center",
    "units": "in",
    "region": "North America",
    "cm": 7.5,
-   "place": "Vienna Mine",
+   "place": "Saddle Mtn.",
    "source": "snotel",
    "resorts": [
     {
-     "name": "Sun Valley",
+     "name": "Lost Trail",
+     "cm": 7.5,
+     "station": "Saddle Mtn.",
+     "source": "snotel"
+    },
+    {
+     "name": "Montana Snowbowl",
      "cm": 5,
-     "source": "model",
+     "station": "Stuart Mountain",
+     "source": "snotel",
      "featured": true
     }
    ]
@@ -654,12 +598,12 @@
    "units": "in",
    "region": "North America",
    "cm": 7.5,
-   "place": "Fisher Creek",
+   "place": "Lone Mountain",
    "source": "snotel",
    "resorts": [
     {
      "name": "Big Sky",
-     "cm": 5,
+     "cm": 7.5,
      "station": "Lone Mountain",
      "source": "snotel",
      "featured": true
@@ -702,6 +646,43 @@
    "source": "model",
    "resorts": []
   },
+  "https://www.esavalanche.org/": {
+   "name": "Eastern Sierra Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Mammoth Lakes",
+   "source": "model",
+   "resorts": [
+    {
+     "name": "Mammoth Mountain",
+     "cm": 5,
+     "source": "model",
+     "featured": true
+    },
+    {
+     "name": "June Mountain",
+     "cm": 2.5,
+     "source": "model"
+    }
+   ]
+  },
+  "https://www.sawtoothavalanche.com/": {
+   "name": "Sawtooth Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Dollarhide Summit",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Sun Valley",
+     "cm": 0,
+     "source": "model",
+     "featured": true
+    }
+   ]
+  },
   "https://www.flatheadavalanche.org/": {
    "name": "Flathead Avalanche Center",
    "units": "in",
@@ -715,29 +696,6 @@
      "cm": 0,
      "source": "model",
      "featured": true
-    }
-   ]
-  },
-  "https://missoulaavalanche.org/": {
-   "name": "West Central Montana Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Stuart Mountain",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Montana Snowbowl",
-     "cm": 5,
-     "station": "Stuart Mountain",
-     "source": "snotel",
-     "featured": true
-    },
-    {
-     "name": "Lost Trail",
-     "cm": 5,
-     "station": "Saddle Mtn.",
-     "source": "snotel"
     }
    ]
   },
@@ -775,15 +733,6 @@
     }
    ]
   },
-  "https://hpavalanche.org/": {
-   "name": "Hatcher Pass Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Independence Mine",
-   "source": "snotel",
-   "resorts": []
-  },
   "https://www.shastaavalanche.org/": {
    "name": "Mount Shasta Avalanche Center",
    "units": "in",
@@ -815,6 +764,15 @@
      "source": "snotel"
     }
    ]
+  },
+  "https://www.avalanchequebec.ca/": {
+   "name": "Avalanche Québec",
+   "units": "cm",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Chic-Chocs",
+   "source": "model",
+   "resorts": []
   }
  },
  "deepest": [
@@ -824,7 +782,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 64
+   "cm": 67
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -832,7 +790,7 @@
    "place": "Terrace",
    "region": "North America",
    "units": "cm",
-   "cm": 52
+   "cm": 59
   },
   {
    "href": "https://alaskasnow.org/",
@@ -840,15 +798,7 @@
    "place": "Haines",
    "region": "North America",
    "units": "in",
-   "cm": 45
-  },
-  {
-   "href": "https://www.cnfaic.org/",
-   "name": "Chugach NF Avalanche Information Center",
-   "place": "Turnagain Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 31
+   "cm": 38
   },
   {
    "href": "https://nadare.jp/",
@@ -856,7 +806,15 @@
    "place": "Tateyama",
    "region": "Japan",
    "units": "cm",
-   "cm": 23
+   "cm": 24
+  },
+  {
+   "href": "https://www.cnfaic.org/",
+   "name": "Chugach NF Avalanche Information Center",
+   "place": "Turnagain Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 18
   }
  ]
 }
