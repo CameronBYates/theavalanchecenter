@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-04T13:26:58.464Z",
+ "updated": "2026-11-04T16:10:47.414Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-04T13:00Z",
+ "binsStart": "2026-11-04T16:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -26,23 +26,10 @@
    "name": "Chugach NF Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "Turnagain Pass",
-   "bins": [
-    11.3,
-    3.6,
-    2.7,
-    0.1,
-    0,
-    0.3,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
    "snowingAt": [
     "Turnagain Pass"
    ],
@@ -58,23 +45,23 @@
    "place": "Haines",
    "bins": [
     0,
-    0,
-    1.9,
-    1.9,
     0.6,
-    4.4,
-    5.1,
-    9.4,
-    7.6,
-    5.6,
-    0.6,
-    0.5
+    2.7,
+    0.8,
+    1.5,
+    6.3,
+    6.2,
+    8.4,
+    7.3,
+    3.2,
+    0.2,
+    0.4
    ],
    "snowingAt": [
     "Thompson Pass"
    ],
    "alerts": [],
-   "recentCm": 10
+   "recentCm": 7.5
   },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
@@ -84,74 +71,78 @@
    "snow72cm": 65,
    "place": "Mt Juneau",
    "bins": [
-    1.2,
-    0.1,
-    5.9,
-    9.2,
-    8.3,
-    5.9,
-    5.4,
-    10.6,
-    1.6,
-    3.4,
-    7.1,
-    8.7
+    0,
+    2.5,
+    7.7,
+    11,
+    4.2,
+    5.5,
+    8.6,
+    6,
+    3,
+    6.3,
+    5.5,
+    6.8
    ],
    "snowingAt": [],
    "alerts": [],
-   "recentCm": 40
-  },
-  "https://cbavalanchecenter.org/": {
-   "name": "Crested Butte Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": "notable",
-   "snow72cm": 15,
-   "place": "Crested Butte",
-   "bins": [
-    0,
-    1.1,
-    13.9,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0.1,
-    0.4,
-    0,
-    0
-   ],
-   "snowingAt": [],
-   "alerts": [],
-   "recentCm": 30
+   "recentCm": 35
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 60,
+   "snow72cm": 55,
    "place": "Terrace",
    "bins": [
-    5,
+    4.1,
+    5.7,
+    3.6,
+    0.4,
+    3.7,
+    15.9,
+    8.3,
+    3.8,
+    0,
+    7.2,
     3.9,
-    6.1,
-    1.1,
-    1.1,
-    12,
-    10.9,
-    7.1,
-    0.6,
-    1.4,
-    9.1,
-    0.8
+    0.4
    ],
    "snowingAt": [
     "Terrace"
    ],
    "alerts": [],
-   "recentCm": 57.5
+   "recentCm": 60
+  },
+  "https://meteofrance.com/meteo-montagne": {
+   "name": "Météo-France (BERA)",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Vanoise",
+    "Briançon"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://www.slf.ch/en/avalanche-bulletin-and-snow-situation/": {
+   "name": "SLF Swiss Avalanche Bulletin",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Engadin"
+   ],
+   "alerts": [],
+   "recentCm": null
   },
   "https://lawinenwarndienst.ktn.gv.at/": {
    "name": "Carinthia Avalanche Warning Service",
@@ -208,13 +199,13 @@
     0,
     0,
     0,
-    0.6,
-    1,
-    3,
-    6.9,
-    6.7,
-    5,
-    0.9
+    0.8,
+    1.4,
+    6.2,
+    6,
+    7,
+    2.7,
+    0.1
    ],
    "snowingAt": [],
    "alerts": [],
@@ -226,7 +217,7 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 57.5,
+   "cm": 60,
    "place": "Terrace",
    "source": "model",
    "resorts": [
@@ -283,20 +274,11 @@
     }
    ]
   },
-  "https://www.coastalakavalanche.org/": {
-   "name": "Coastal Alaska Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 40,
-   "place": "Mt Juneau",
-   "source": "model",
-   "resorts": []
-  },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 40,
+   "cm": 37.5,
    "place": "Red Mountain Pass",
    "source": "snotel",
    "resorts": [
@@ -348,11 +330,20 @@
     }
    ]
   },
+  "https://www.coastalakavalanche.org/": {
+   "name": "Coastal Alaska Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 35,
+   "place": "Mt Juneau",
+   "source": "model",
+   "resorts": []
+  },
   "https://cbavalanchecenter.org/": {
    "name": "Crested Butte Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 30,
+   "cm": 27.5,
    "place": "Schofield Pass",
    "source": "snotel",
    "resorts": [
@@ -364,15 +355,6 @@
      "featured": true
     }
    ]
-  },
-  "https://www.bridgeportavalanchecenter.org/": {
-   "name": "Bridgeport Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 17.5,
-   "place": "Poison Flat",
-   "source": "snotel",
-   "resorts": []
   },
   "https://utahavalanchecenter.org/": {
    "name": "Utah Avalanche Center",
@@ -470,12 +452,12 @@
     }
    ]
   },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
+  "https://www.bridgeportavalanchecenter.org/": {
+   "name": "Bridgeport Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 10,
-   "place": "Flower Mountain",
+   "cm": 12.5,
+   "place": "Poison Flat",
    "source": "snotel",
    "resorts": []
   },
@@ -486,6 +468,15 @@
    "cm": 10,
    "place": "Niseko",
    "source": "model",
+   "resorts": []
+  },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 7.5,
+   "place": "Upper Tsaina River",
+   "source": "snotel",
    "resorts": []
   },
   "https://www.coavalanche.org/": {
@@ -503,15 +494,6 @@
      "featured": true
     }
    ]
-  },
-  "https://www.wallowaavalanchecenter.org/": {
-   "name": "Wallowa Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 7.5,
-   "place": "Aneroid Lake #2",
-   "source": "snotel",
-   "resorts": []
   },
   "https://www.sierraavalanchecenter.org/": {
    "name": "Sierra Avalanche Center",
@@ -586,7 +568,7 @@
     },
     {
      "name": "Montana Snowbowl",
-     "cm": 5,
+     "cm": 2.5,
      "station": "Stuart Mountain",
      "source": "snotel",
      "featured": true
@@ -598,12 +580,12 @@
    "units": "in",
    "region": "North America",
    "cm": 7.5,
-   "place": "Lone Mountain",
+   "place": "Fisher Creek",
    "source": "snotel",
    "resorts": [
     {
      "name": "Big Sky",
-     "cm": 7.5,
+     "cm": 5,
      "station": "Lone Mountain",
      "source": "snotel",
      "featured": true
@@ -646,26 +628,14 @@
    "source": "model",
    "resorts": []
   },
-  "https://www.esavalanche.org/": {
-   "name": "Eastern Sierra Avalanche Center",
+  "https://www.wallowaavalanchecenter.org/": {
+   "name": "Wallowa Avalanche Center",
    "units": "in",
    "region": "North America",
    "cm": 5,
-   "place": "Mammoth Lakes",
-   "source": "model",
-   "resorts": [
-    {
-     "name": "Mammoth Mountain",
-     "cm": 5,
-     "source": "model",
-     "featured": true
-    },
-    {
-     "name": "June Mountain",
-     "cm": 2.5,
-     "source": "model"
-    }
-   ]
+   "place": "Aneroid Lake #2",
+   "source": "snotel",
+   "resorts": []
   },
   "https://www.sawtoothavalanche.com/": {
    "name": "Sawtooth Avalanche Center",
@@ -773,6 +743,27 @@
    "place": "Chic-Chocs",
    "source": "model",
    "resorts": []
+  },
+  "https://www.esavalanche.org/": {
+   "name": "Eastern Sierra Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 0,
+   "place": "Mammoth Lakes",
+   "source": "model",
+   "resorts": [
+    {
+     "name": "Mammoth Mountain",
+     "cm": 0,
+     "source": "model",
+     "featured": true
+    },
+    {
+     "name": "June Mountain",
+     "cm": 0,
+     "source": "model"
+    }
+   ]
   }
  },
  "deepest": [
@@ -790,7 +781,7 @@
    "place": "Terrace",
    "region": "North America",
    "units": "cm",
-   "cm": 59
+   "cm": 57
   },
   {
    "href": "https://alaskasnow.org/",
@@ -809,12 +800,12 @@
    "cm": 24
   },
   {
-   "href": "https://www.cnfaic.org/",
-   "name": "Chugach NF Avalanche Information Center",
-   "place": "Turnagain Pass",
+   "href": "https://cbavalanchecenter.org/",
+   "name": "Crested Butte Avalanche Center",
+   "place": "Crested Butte",
    "region": "North America",
    "units": "in",
-   "cm": 18
+   "cm": 13
   }
  ]
 }
