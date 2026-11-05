@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-05T10:21:26.947Z",
+ "updated": "2026-11-05T13:31:06.684Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-05T10:00Z",
+ "binsStart": "2026-11-05T13:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -22,6 +22,20 @@
   }
  ],
  "centers": {
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Hatcher Pass"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
   "https://alaskasnow.org/": {
    "name": "Alaska Avalanche Information Center",
    "units": "in",
@@ -30,22 +44,21 @@
    "snow72cm": 35,
    "place": "Haines",
    "bins": [
-    1.1,
-    1.5,
-    7.3,
-    3.4,
-    7.6,
-    7.8,
-    2.7,
-    1.5,
-    1,
+    0.7,
+    4.5,
+    5,
+    7,
+    8.8,
+    5.1,
+    0.8,
+    1.7,
+    0.4,
     0,
     0,
-    0
+    0.7
    ],
    "snowingAt": [
-    "Thompson Pass",
-    "Haines"
+    "Thompson Pass"
    ],
    "alerts": [],
    "recentCm": 7.5
@@ -55,27 +68,27 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 80,
+   "snow72cm": 60,
    "place": "Mt Juneau",
    "bins": [
-    9.9,
-    4.9,
-    5.9,
-    5.3,
-    13.2,
+    4.8,
     6.2,
-    5.9,
-    9.9,
-    13.5,
-    2.8,
+    5.2,
+    7.5,
+    7.9,
+    1.8,
+    4.6,
+    12.6,
+    7.4,
     0,
-    1.9
+    1,
+    2.1
    ],
    "snowingAt": [
     "Mt Juneau"
    ],
    "alerts": [],
-   "recentCm": 20
+   "recentCm": 22.5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
@@ -85,29 +98,28 @@
    "snow72cm": 50,
    "place": "Terrace",
    "bins": [
-    0.6,
-    3.9,
-    16.2,
-    6.9,
-    3.9,
-    0.1,
-    0.8,
-    1.9,
-    0.2,
-    0.4,
+    1.4,
+    11.5,
     13,
-    2.7
+    4.9,
+    0.4,
+    0.2,
+    1.3,
+    0.6,
+    0.2,
+    7.1,
+    6.3,
+    2.4
    ],
    "snowingAt": [
-    "Coquihalla",
-    "Smithers",
     "Cariboos",
     "Revelstoke",
     "Rogers Pass",
-    "White Pass, Yukon"
+    "Nelson",
+    "Rossland"
    ],
    "alerts": [],
-   "recentCm": 57.5
+   "recentCm": 52.5
   },
   "https://meteofrance.com/meteo-montagne": {
    "name": "Météo-France (BERA)",
@@ -132,17 +144,17 @@
    "place": "Tateyama",
    "bins": [
     0,
-    0,
-    0.7,
-    1.8,
-    7.3,
-    6.4,
+    0.6,
+    0.1,
+    2.7,
+    6.9,
     7.7,
-    5,
+    8.5,
+    1,
     0,
     0,
     0,
-    0.1
+    0
    ],
    "snowingAt": [],
    "alerts": [],
@@ -153,21 +165,21 @@
    "units": "cm",
    "region": "Japan",
    "level": "notable",
-   "snow72cm": 15,
+   "snow72cm": 20,
    "place": "Niseko",
    "bins": [
     0,
     0,
     0,
-    0,
-    1.1,
-    1.8,
+    0.4,
+    1.7,
+    2.1,
     2.7,
-    2.5,
+    2.3,
+    3.2,
+    3.2,
     1.8,
-    2.8,
-    2.4,
-    0.6
+    0.3
    ],
    "snowingAt": [],
    "alerts": [],
@@ -179,7 +191,7 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 57.5,
+   "cm": 52.5,
    "place": "Terrace",
    "source": "model",
    "resorts": [
@@ -236,29 +248,32 @@
     }
    ]
   },
+  "https://www.coastalakavalanche.org/": {
+   "name": "Coastal Alaska Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 22.5,
+   "place": "Mt Juneau",
+   "source": "model",
+   "resorts": []
+  },
   "https://avalanche.state.co.us/": {
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 27.5,
-   "place": "Alta Lakes",
+   "cm": 20,
+   "place": "Red Mountain Pass",
    "source": "snotel",
    "resorts": [
-    {
-     "name": "Telluride",
-     "cm": 27.5,
-     "station": "Alta Lakes",
-     "source": "snotel"
-    },
     {
      "name": "Aspen Snowmass",
      "cm": 15,
      "source": "model"
     },
     {
-     "name": "Wolf Creek",
-     "cm": 10,
-     "station": "Wolf Creek Summit",
+     "name": "Telluride",
+     "cm": 12.5,
+     "station": "Alta Lakes",
      "source": "snotel"
     },
     {
@@ -289,17 +304,14 @@
      "name": "Steamboat",
      "cm": 2.5,
      "source": "model"
+    },
+    {
+     "name": "Wolf Creek",
+     "cm": 2.5,
+     "station": "Wolf Creek Summit",
+     "source": "snotel"
     }
    ]
-  },
-  "https://www.coastalakavalanche.org/": {
-   "name": "Coastal Alaska Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 20,
-   "place": "Mt Juneau",
-   "source": "model",
-   "resorts": []
   },
   "https://cbavalanchecenter.org/": {
    "name": "Crested Butte Avalanche Center",
@@ -313,23 +325,6 @@
      "name": "Crested Butte",
      "cm": 10,
      "station": "Butte",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
-  "https://taosavalanchecenter.org/": {
-   "name": "Taos Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 15,
-   "place": "Taos Powderhorn",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Taos Ski Valley",
-     "cm": 15,
-     "station": "Taos Powderhorn",
      "source": "snotel",
      "featured": true
     }
@@ -483,6 +478,23 @@
      "name": "Montana Snowbowl",
      "cm": 2.5,
      "station": "Stuart Mountain",
+     "source": "snotel",
+     "featured": true
+    }
+   ]
+  },
+  "https://taosavalanchecenter.org/": {
+   "name": "Taos Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 7.5,
+   "place": "Taos Powderhorn",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Taos Ski Valley",
+     "cm": 7.5,
+     "station": "Taos Powderhorn",
      "source": "snotel",
      "featured": true
     }
@@ -735,7 +747,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 80
+   "cm": 61
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -743,7 +755,7 @@
    "place": "Terrace",
    "region": "North America",
    "units": "cm",
-   "cm": 50
+   "cm": 49
   },
   {
    "href": "https://alaskasnow.org/",
@@ -751,7 +763,7 @@
    "place": "Haines",
    "region": "North America",
    "units": "in",
-   "cm": 34
+   "cm": 35
   },
   {
    "href": "https://nadare.jp/",
@@ -759,7 +771,7 @@
    "place": "Tateyama",
    "region": "Japan",
    "units": "cm",
-   "cm": 29
+   "cm": 28
   },
   {
    "href": "https://niseko.nadare.info/",
@@ -767,7 +779,7 @@
    "place": "Niseko",
    "region": "Japan",
    "units": "cm",
-   "cm": 16
+   "cm": 18
   }
  ]
 }
