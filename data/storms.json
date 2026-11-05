@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-04T22:02:38.167Z",
+ "updated": "2026-11-05T01:27:40.174Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-04T22:00Z",
+ "binsStart": "2026-11-05T01:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -36,32 +36,44 @@
    "alerts": [],
    "recentCm": 2.5
   },
+  "https://hpavalanche.org/": {
+   "name": "Hatcher Pass Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Hatcher Pass"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
   "https://alaskasnow.org/": {
    "name": "Alaska Avalanche Information Center",
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 35,
+   "snow72cm": 40,
    "place": "Haines",
    "bins": [
-    0.1,
-    1.3,
-    1.3,
-    2.3,
-    7.1,
+    0.5,
+    2.5,
+    0.5,
     5.3,
-    7.8,
-    6.8,
-    1.8,
-    1.9,
-    0.1,
-    0.4
+    4.8,
+    7.5,
+    8.9,
+    3.4,
+    3.9,
+    2.2,
+    0.3,
+    0.1
    ],
-   "snowingAt": [
-    "Thompson Pass"
-   ],
+   "snowingAt": [],
    "alerts": [],
-   "recentCm": 5
+   "recentCm": 7.5
   },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
@@ -71,43 +83,58 @@
    "snow72cm": 70,
    "place": "Mt Juneau",
    "bins": [
-    1.2,
-    6.1,
+    2,
+    6.7,
+    6.6,
+    6.6,
+    4.9,
     10.7,
-    5.9,
-    5.7,
-    8.6,
-    9.5,
+    4.5,
     2.2,
-    4.7,
-    9.5,
-    6.4,
-    0.7
+    9.8,
+    10.4,
+    6.6,
+    0
    ],
    "snowingAt": [],
    "alerts": [],
-   "recentCm": 27.5
+   "recentCm": 22.5
+  },
+  "https://avalanche.state.co.us/": {
+   "name": "Colorado Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Vail Pass",
+    "Red Mountain Pass"
+   ],
+   "alerts": [],
+   "recentCm": 35
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 50,
+   "snow72cm": 60,
    "place": "Terrace",
    "bins": [
-    5.2,
-    6,
+    5.5,
+    3.9,
+    1.3,
+    12.2,
+    11.6,
+    5.8,
+    1.2,
+    2.7,
+    7,
     0.4,
-    3.4,
-    17.8,
-    6.8,
-    2,
-    1.5,
-    4.4,
-    1,
     0,
-    1.5
+    7.6
    ],
    "snowingAt": [
     "Terrace",
@@ -130,8 +157,8 @@
    "alerts": [],
    "recentCm": null
   },
-  "https://lawinenwarndienst.ktn.gv.at/": {
-   "name": "Carinthia Avalanche Warning Service",
+  "https://www.aineva.it/bollettini/": {
+   "name": "AINEVA",
    "units": "cm",
    "region": "Europe",
    "level": null,
@@ -139,7 +166,7 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Nassfeld"
+    "Courmayeur"
    ],
    "alerts": [],
    "recentCm": null
@@ -149,20 +176,20 @@
    "units": "cm",
    "region": "Japan",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 20,
    "place": "Tateyama",
    "bins": [
     0,
     0,
     0,
     0,
-    0.8,
-    1.4,
-    6.2,
-    6,
-    7,
-    2.1,
-    0.1,
+    1.5,
+    2,
+    6.9,
+    6.7,
+    4.6,
+    0.4,
+    0,
     0
    ],
    "snowingAt": [],
@@ -236,7 +263,7 @@
    "name": "Colorado Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 37.5,
+   "cm": 35,
    "place": "Red Mountain Pass",
    "source": "snotel",
    "resorts": [
@@ -292,7 +319,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 27.5,
+   "cm": 22.5,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -301,7 +328,7 @@
    "name": "Crested Butte Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 22.5,
+   "cm": 17.5,
    "place": "Schofield Pass",
    "source": "snotel",
    "resorts": [
@@ -318,13 +345,13 @@
    "name": "Utah Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 17.5,
+   "cm": 15,
    "place": "Snowbird",
    "source": "snotel",
    "resorts": [
     {
      "name": "Cottonwood Canyons",
-     "cm": 17.5,
+     "cm": 15,
      "station": "Snowbird",
      "source": "snotel",
      "featured": true
@@ -377,6 +404,15 @@
    "cm": 10,
    "place": "Niseko",
    "source": "model",
+   "resorts": []
+  },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 7.5,
+   "place": "Upper Tsaina River",
+   "source": "snotel",
    "resorts": []
   },
   "https://www.coavalanche.org/": {
@@ -468,53 +504,9 @@
     },
     {
      "name": "Montana Snowbowl",
-     "cm": 0,
+     "cm": 2.5,
      "station": "Stuart Mountain",
      "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
-  "https://www.mtavalanche.com/": {
-   "name": "Gallatin NF Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 7.5,
-   "place": "Beartooth Lake",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Big Sky",
-     "cm": 5,
-     "station": "Lone Mountain",
-     "source": "snotel",
-     "featured": true
-    },
-    {
-     "name": "Bridger Bowl",
-     "cm": 0,
-     "source": "model"
-    }
-   ]
-  },
-  "https://jhavalanche.org/": {
-   "name": "Bridger-Teton Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 7.5,
-   "place": "Grand Targhee",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Grand Targhee",
-     "cm": 7.5,
-     "station": "Grand Targhee",
-     "source": "snotel"
-    },
-    {
-     "name": "Jackson Hole",
-     "cm": 0,
-     "source": "model",
      "featured": true
     }
    ]
@@ -526,15 +518,6 @@
    "cm": 7.5,
    "place": "Taisetsu-Tokachi",
    "source": "model",
-   "resorts": []
-  },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Upper Tsaina River",
-   "source": "snotel",
    "resorts": []
   },
   "https://nwac.us/": {
@@ -602,16 +585,44 @@
     }
    ]
   },
-  "https://www.flatheadavalanche.org/": {
-   "name": "Flathead Avalanche Center",
+  "https://www.mtavalanche.com/": {
+   "name": "Gallatin NF Avalanche Center",
    "units": "in",
    "region": "North America",
    "cm": 5,
-   "place": "Pike Creek",
+   "place": "Fisher Creek",
    "source": "snotel",
    "resorts": [
     {
-     "name": "Whitefish Mountain",
+     "name": "Big Sky",
+     "cm": 2.5,
+     "station": "Lone Mountain",
+     "source": "snotel",
+     "featured": true
+    },
+    {
+     "name": "Bridger Bowl",
+     "cm": 0,
+     "source": "model"
+    }
+   ]
+  },
+  "https://jhavalanche.org/": {
+   "name": "Bridger-Teton Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Grand Targhee",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Grand Targhee",
+     "cm": 5,
+     "station": "Grand Targhee",
+     "source": "snotel"
+    },
+    {
+     "name": "Jackson Hole",
      "cm": 0,
      "source": "model",
      "featured": true
@@ -657,7 +668,7 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Aneroid Lake #2",
+   "place": "Mt. Howard",
    "source": "snotel",
    "resorts": []
   },
@@ -690,6 +701,22 @@
      "cm": 2.5,
      "station": "Lookout",
      "source": "snotel"
+    }
+   ]
+  },
+  "https://www.flatheadavalanche.org/": {
+   "name": "Flathead Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Pike Creek",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Whitefish Mountain",
+     "cm": 0,
+     "source": "model",
+     "featured": true
     }
    ]
   },
@@ -739,7 +766,7 @@
    "place": "Terrace",
    "region": "North America",
    "units": "cm",
-   "cm": 50
+   "cm": 59
   },
   {
    "href": "https://alaskasnow.org/",
@@ -747,7 +774,7 @@
    "place": "Haines",
    "region": "North America",
    "units": "in",
-   "cm": 36
+   "cm": 40
   },
   {
    "href": "https://nadare.jp/",
@@ -755,15 +782,15 @@
    "place": "Tateyama",
    "region": "Japan",
    "units": "cm",
-   "cm": 23
+   "cm": 22
   },
   {
-   "href": "https://cbavalanchecenter.org/",
-   "name": "Crested Butte Avalanche Center",
-   "place": "Crested Butte",
-   "region": "North America",
-   "units": "in",
-   "cm": 14
+   "href": "https://niseko.nadare.info/",
+   "name": "Niseko Avalanche Information",
+   "place": "Niseko",
+   "region": "Japan",
+   "units": "cm",
+   "cm": 13
   }
  ]
 }
