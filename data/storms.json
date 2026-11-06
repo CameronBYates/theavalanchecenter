@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-06T07:34:58.162Z",
+ "updated": "2026-11-06T10:19:30.036Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-06T07:00Z",
+ "binsStart": "2026-11-06T10:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -27,54 +27,54 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 30,
+   "snow72cm": 25,
    "place": "Haines",
    "bins": [
-    6.9,
-    9.7,
-    7.5,
-    2.3,
+    9.2,
+    8.5,
+    5,
+    1.3,
     0.8,
+    0.1,
+    0,
+    0.3,
     0.4,
-    0.1,
     0,
-    0.7,
-    0,
-    0.1,
-    0.5
+    0.4,
+    0.3
    ],
    "snowingAt": [
     "Haines"
    ],
    "alerts": [],
-   "recentCm": 22.5
+   "recentCm": 27.5
   },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 50,
+   "snow72cm": 45,
    "place": "Mt Juneau",
    "bins": [
-    7.3,
-    2.2,
-    2,
-    6.2,
-    13.2,
-    5.9,
+    6.6,
+    0.7,
+    2.3,
+    10.7,
+    13.1,
+    0.5,
     0,
-    0.4,
+    1.8,
+    3.2,
+    2.5,
     4.1,
-    1.6,
-    3.4,
-    2.1
+    0.5
    ],
    "snowingAt": [
     "Mt Juneau"
    ],
    "alerts": [],
-   "recentCm": 30
+   "recentCm": 32.5
   },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
@@ -84,18 +84,18 @@
    "snow72cm": 30,
    "place": "Mt Baker",
    "bins": [
-    4.4,
-    12.7,
+    14.3,
+    2.1,
     0,
     0,
     0,
     0,
     0,
-    0,
-    3.8,
-    6.7,
-    3.7,
-    0.4
+    2.7,
+    1,
+    8.5,
+    2.2,
+    0
    ],
    "snowingAt": [],
    "alerts": [],
@@ -106,30 +106,32 @@
    "units": "cm",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 35,
    "place": "Terrace",
    "bins": [
-    4.3,
-    0.4,
-    1.5,
+    2,
+    0.6,
+    1.7,
+    1,
+    0.1,
     1.3,
-    0.5,
-    0.2,
-    7.4,
-    8.2,
-    1.3,
-    4.5,
-    9.2,
-    0.6
+    12.9,
+    2.5,
+    2.7,
+    9.7,
+    2.3,
+    0
    ],
    "snowingAt": [
+    "Whistler",
     "Terrace",
-    "Smithers",
     "Cariboos",
+    "Pine Pass",
+    "Jasper",
     "White Pass, Yukon"
    ],
    "alerts": [],
-   "recentCm": 47.5
+   "recentCm": 50
   },
   "https://nadare.jp/": {
    "name": "Japan Avalanche Network",
@@ -139,21 +141,21 @@
    "snow72cm": 30,
    "place": "Taisetsu-Tokachi",
    "bins": [
-    0.9,
-    1.3,
-    2.4,
-    2.6,
-    4.3,
-    6,
-    4.8,
-    2.7,
-    1.9,
+    1.6,
+    1.6,
+    2.9,
+    3.2,
+    5.5,
+    5.3,
+    3.8,
     2.2,
-    0.6,
-    1.4
+    1.7,
+    1.7,
+    0.4,
+    1.6
    ],
    "snowingAt": [
-    "Tateyama"
+    "Taisetsu-Tokachi"
    ],
    "alerts": [],
    "recentCm": 2.5
@@ -166,18 +168,18 @@
    "snow72cm": 15,
    "place": "Niseko",
    "bins": [
-    0.3,
-    1.3,
-    1.8,
-    2.4,
-    2.8,
+    0.9,
+    1.6,
     2.2,
+    2.5,
+    2.4,
     2.7,
-    1.1,
-    0,
+    2,
+    0.3,
+    0.1,
     0.4,
-    0.4,
-    0.3
+    0.3,
+    0.6
    ],
    "snowingAt": [],
    "alerts": [],
@@ -189,13 +191,13 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 47.5,
+   "cm": 50,
    "place": "Terrace",
    "source": "model",
    "resorts": [
     {
      "name": "Whistler Blackcomb",
-     "cm": 2.5,
+     "cm": 5,
      "source": "model",
      "featured": true
     },
@@ -250,7 +252,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 30,
+   "cm": 32.5,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -259,7 +261,7 @@
    "name": "Alaska Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 22.5,
+   "cm": 27.5,
    "place": "Flower Mountain",
    "source": "snotel",
    "resorts": []
@@ -313,15 +315,15 @@
      "source": "snotel"
     },
     {
-     "name": "Winter Park",
-     "cm": 2.5,
-     "station": "Berthoud Summit",
+     "name": "Wolf Creek",
+     "cm": 5,
+     "station": "Upper San Juan",
      "source": "snotel"
     },
     {
-     "name": "Wolf Creek",
+     "name": "Winter Park",
      "cm": 2.5,
-     "station": "Wolf Creek Summit",
+     "station": "Berthoud Summit",
      "source": "snotel"
     },
     {
@@ -482,6 +484,22 @@
    "source": "model",
    "resorts": []
   },
+  "https://www.coavalanche.org/": {
+   "name": "Central Oregon Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Mckenzie",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Mt Bachelor",
+     "cm": 0,
+     "source": "model",
+     "featured": true
+    }
+   ]
+  },
   "https://www.bridgeportavalanchecenter.org/": {
    "name": "Bridgeport Avalanche Center",
    "units": "in",
@@ -524,25 +542,9 @@
    "resorts": [
     {
      "name": "Alyeska",
-     "cm": 0,
+     "cm": 2.5,
      "station": "Mt. Alyeska",
      "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
-  "https://www.coavalanche.org/": {
-   "name": "Central Oregon Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Irish Taylor",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Mt Bachelor",
-     "cm": 0,
-     "source": "model",
      "featured": true
     }
    ]
@@ -745,7 +747,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 48
+   "cm": 46
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -753,15 +755,7 @@
    "place": "Terrace",
    "region": "North America",
    "units": "cm",
-   "cm": 39
-  },
-  {
-   "href": "https://nwac.us/",
-   "name": "Northwest Avalanche Center",
-   "place": "Mt Baker",
-   "region": "North America",
-   "units": "in",
-   "cm": 32
+   "cm": 37
   },
   {
    "href": "https://nadare.jp/",
@@ -772,12 +766,20 @@
    "cm": 31
   },
   {
+   "href": "https://nwac.us/",
+   "name": "Northwest Avalanche Center",
+   "place": "Mt Baker",
+   "region": "North America",
+   "units": "in",
+   "cm": 31
+  },
+  {
    "href": "https://alaskasnow.org/",
    "name": "Alaska Avalanche Information Center",
    "place": "Haines",
    "region": "North America",
    "units": "in",
-   "cm": 29
+   "cm": 26
   }
  ]
 }
