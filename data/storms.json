@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-07T01:21:30.266Z",
+ "updated": "2026-11-07T04:07:15.810Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-07T01:00Z",
+ "binsStart": "2026-11-07T04:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -22,40 +22,26 @@
   }
  ],
  "centers": {
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Haines"
-   ],
-   "alerts": [],
-   "recentCm": 32.5
-  },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 35,
+   "snow72cm": 30,
    "place": "Mt Juneau",
    "bins": [
-    6.2,
-    9.8,
-    5.5,
+    7.4,
+    5,
+    1.2,
     0,
-    0.4,
-    2.4,
-    2.4,
+    1.5,
+    2,
+    2.3,
     4.7,
-    1.7,
-    0.1,
-    0.1,
-    3.9
+    0.8,
+    0,
+    2.4,
+    3.6
    ],
    "snowingAt": [
     "Mt Juneau"
@@ -69,19 +55,19 @@
    "region": "North America",
    "level": "notable",
    "snow72cm": 20,
-   "place": "Mt Baker",
+   "place": "Paradise",
    "bins": [
     0,
     0,
     0,
     0,
+    9,
+    9.4,
+    2.1,
+    1.6,
     0,
     0,
-    3.2,
-    14.7,
-    0,
-    0,
-    0,
+    0.2,
     0
    ],
    "snowingAt": [],
@@ -101,13 +87,13 @@
     0,
     0,
     0,
-    4.5,
-    6.9,
+    11.1,
+    0.5,
     0,
     0,
-    0,
-    2.2,
-    2.8
+    0.7,
+    3.2,
+    1.8
    ],
    "snowingAt": [],
    "alerts": [],
@@ -119,31 +105,31 @@
    "region": "North America",
    "level": "heavy",
    "snow72cm": 40,
-   "place": "Terrace",
+   "place": "Coquihalla",
    "bins": [
-    3.6,
-    1.3,
-    0.2,
-    6.4,
+    0,
+    0,
+    0,
+    0,
+    14.2,
     9.5,
+    11.9,
     1.5,
-    5.5,
-    3.6,
-    0.6,
-    0.3,
-    0.1,
-    5.3
+    0.4,
+    0,
+    0,
+    0
    ],
    "snowingAt": [
     "Terrace",
     "Smithers",
-    "Pine Pass"
+    "Jasper"
    ],
    "alerts": [],
-   "recentCm": 55
+   "recentCm": 57.5
   },
-  "https://www.slf.ch/en/avalanche-bulletin-and-snow-situation/": {
-   "name": "SLF Swiss Avalanche Bulletin",
+  "https://avalanche.report/": {
+   "name": "Avalanche.report (Euregio)",
    "units": "cm",
    "region": "Europe",
    "level": null,
@@ -151,13 +137,13 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Engelberg"
+    "Dolomites"
    ],
    "alerts": [],
    "recentCm": null
   },
-  "https://www.meteo.si/pozor/plaz": {
-   "name": "ARSO Slovenia",
+  "https://lawinenwarndienst.ktn.gv.at/": {
+   "name": "Carinthia Avalanche Warning Service",
    "units": "cm",
    "region": "Europe",
    "level": null,
@@ -165,7 +151,21 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Julian Alps"
+    "Nassfeld"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://www.aineva.it/bollettini/": {
+   "name": "AINEVA",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Cortina"
    ],
    "alerts": [],
    "recentCm": null
@@ -175,11 +175,11 @@
    "units": "cm",
    "region": "Japan",
    "level": "notable",
-   "snow72cm": 30,
+   "snow72cm": 25,
    "place": "Myoko",
    "bins": [
-    6.1,
-    4.5,
+    5.9,
+    1.6,
     0,
     0,
     0,
@@ -187,18 +187,19 @@
     0,
     0,
     0,
-    3.5,
-    10.9,
-    3.9
+    11.8,
+    5.6,
+    2.5
    ],
    "snowingAt": [
     "Taisetsu-Tokachi",
     "Hakuba",
     "Myoko",
+    "Kagura-Tanigawa",
     "Tateyama"
    ],
    "alerts": [],
-   "recentCm": 12.5
+   "recentCm": 15
   },
   "https://niseko.nadare.info/": {
    "name": "Niseko Avalanche Information",
@@ -220,13 +221,13 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 55,
+   "cm": 57.5,
    "place": "Terrace",
    "source": "model",
    "resorts": [
     {
      "name": "Whistler Blackcomb",
-     "cm": 7.5,
+     "cm": 10,
      "source": "model",
      "featured": true
     },
@@ -311,6 +312,15 @@
      "featured": true
     }
    ]
+  },
+  "https://nadare.jp/": {
+   "name": "Japan Avalanche Network",
+   "units": "cm",
+   "region": "Japan",
+   "cm": 15,
+   "place": "Tateyama",
+   "source": "model",
+   "resorts": []
   },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
@@ -407,15 +417,6 @@
      "source": "model"
     }
    ]
-  },
-  "https://nadare.jp/": {
-   "name": "Japan Avalanche Network",
-   "units": "cm",
-   "region": "Japan",
-   "cm": 12.5,
-   "place": "Tateyama",
-   "source": "model",
-   "resorts": []
   },
   "https://payetteavalanche.org/": {
    "name": "Payette Avalanche Center",
@@ -765,7 +766,7 @@
   {
    "href": "https://www.avalanche.ca/map",
    "name": "Avalanche Canada",
-   "place": "Terrace",
+   "place": "Coquihalla",
    "region": "North America",
    "units": "cm",
    "cm": 38
@@ -776,7 +777,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 37
+   "cm": 31
   },
   {
    "href": "https://nadare.jp/",
@@ -784,15 +785,15 @@
    "place": "Myoko",
    "region": "Japan",
    "units": "cm",
-   "cm": 29
+   "cm": 27
   },
   {
    "href": "https://nwac.us/",
    "name": "Northwest Avalanche Center",
-   "place": "Mt Baker",
+   "place": "Paradise",
    "region": "North America",
    "units": "in",
-   "cm": 18
+   "cm": 22
   },
   {
    "href": "https://www.mountwashingtonavalanchecenter.org/",
@@ -800,7 +801,7 @@
    "place": "Mt Washington",
    "region": "North America",
    "units": "in",
-   "cm": 16
+   "cm": 17
   }
  ]
 }
