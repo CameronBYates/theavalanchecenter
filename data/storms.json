@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-07T19:03:07.271Z",
+ "updated": "2026-11-07T21:52:07.264Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-07T19:00Z",
+ "binsStart": "2026-11-07T21:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -38,10 +38,10 @@
     0,
     0,
     0,
-    2.7,
-    5.9,
-    10.4,
-    6.9
+    5,
+    6.1,
+    11.6,
+    3.5
    ],
    "snowingAt": [],
    "alerts": [],
@@ -55,95 +55,98 @@
    "snow72cm": 30,
    "place": "Thompson Pass",
    "bins": [
-    0.5,
-    0.1,
+    0.4,
     0,
     0,
     0,
     0,
     0,
-    0.1,
-    3.7,
-    1.5,
-    17.1,
-    6
+    0,
+    0.8,
+    3.1,
+    3.6,
+    19.5,
+    1.5
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": 35
+  },
+  "https://www.coastalakavalanche.org/": {
+   "name": "Coastal Alaska Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "Mt Juneau",
+   "bins": [
+    0,
+    1,
+    0.6,
+    0.1,
+    1.1,
+    0.7,
+    0.9,
+    4.4,
+    3.3,
+    1.5,
+    0.2,
+    2.9
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": 62.5
   },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
-   "place": "Mt Baker",
+   "snow72cm": 15,
+   "place": "Paradise",
    "bins": [
     0,
     0,
-    8.2,
-    3,
-    4.3,
+    6.3,
+    6.5,
+    0.5,
     0,
     0,
     0,
+    2,
+    1.3,
     0,
-    2.4,
-    0.4,
     0
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": 12.5
   },
-  "https://www.mountwashingtonavalanchecenter.org/": {
-   "name": "Mount Washington Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "Mt Washington",
-   "bins": [
-    0,
-    5.6,
-    10.4,
-    5,
-    0,
-    0,
-    0,
-    0.1,
-    0.2,
-    0.4,
-    0.1,
-    0
-   ],
-   "snowingAt": [],
-   "alerts": [],
-   "recentCm": null
-  },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 50,
+   "snow72cm": 55,
    "place": "Terrace",
    "bins": [
+    11.1,
     6.9,
-    10.4,
-    3.4,
-    7.6,
-    3.1,
-    1.5,
+    5.7,
+    5.2,
+    3.5,
     0.2,
-    0.4,
-    6.2,
-    1.5,
-    1.6,
-    8.8
+    0.2,
+    2,
+    6,
+    1.1,
+    5.1,
+    5.9
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Terrace",
+    "Smithers"
+   ],
    "alerts": [],
    "recentCm": 52.5
   },
@@ -173,11 +176,11 @@
     0,
     0,
     0,
-    3.2,
-    2,
-    7.4,
-    3.9,
-    0.1,
+    4.9,
+    3.6,
+    5.8,
+    2.2,
+    0,
     0,
     0,
     0
@@ -283,11 +286,20 @@
    "source": "snotel",
    "resorts": []
   },
+  "https://nadare.jp/": {
+   "name": "Japan Avalanche Network",
+   "units": "cm",
+   "region": "Japan",
+   "cm": 20,
+   "place": "Myoko",
+   "source": "model",
+   "resorts": []
+  },
   "https://cbavalanchecenter.org/": {
    "name": "Crested Butte Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 20,
+   "cm": 17.5,
    "place": "North Lost Trail",
    "source": "snotel",
    "resorts": [
@@ -299,15 +311,6 @@
      "featured": true
     }
    ]
-  },
-  "https://nadare.jp/": {
-   "name": "Japan Avalanche Network",
-   "units": "cm",
-   "region": "Japan",
-   "cm": 20,
-   "place": "Myoko",
-   "source": "model",
-   "resorts": []
   },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
@@ -406,12 +409,6 @@
      "source": "snotel"
     },
     {
-     "name": "Loveland",
-     "cm": 5,
-     "station": "Loveland Basin",
-     "source": "snotel"
-    },
-    {
      "name": "Wolf Creek",
      "cm": 5,
      "station": "Upper San Juan",
@@ -421,6 +418,12 @@
      "name": "Winter Park",
      "cm": 2.5,
      "station": "Berthoud Summit",
+     "source": "snotel"
+    },
+    {
+     "name": "Loveland",
+     "cm": 2.5,
+     "station": "Loveland Basin",
      "source": "snotel"
     },
     {
@@ -441,26 +444,26 @@
    "units": "in",
    "region": "North America",
    "cm": 7.5,
-   "place": "Snowbird",
+   "place": "Franklin Basin",
    "source": "snotel",
    "resorts": [
     {
      "name": "Cottonwood Canyons",
-     "cm": 7.5,
-     "station": "Snowbird",
+     "cm": 2.5,
+     "station": "Atwater",
      "source": "snotel",
      "featured": true
-    },
-    {
-     "name": "Park City",
-     "cm": 2.5,
-     "station": "Thaynes Canyon",
-     "source": "snotel"
     },
     {
      "name": "Beaver Mountain",
      "cm": 2.5,
      "station": "Garden City Summit",
+     "source": "snotel"
+    },
+    {
+     "name": "Park City",
+     "cm": 0,
+     "station": "Thaynes Canyon",
      "source": "snotel"
     },
     {
@@ -491,41 +494,6 @@
     }
    ]
   },
-  "https://www.sierraavalanchecenter.org/": {
-   "name": "Sierra Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 5,
-   "place": "Css Lab",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Sugar Bowl",
-     "cm": 5,
-     "station": "Css Lab",
-     "source": "snotel"
-    },
-    {
-     "name": "Heavenly",
-     "cm": 2.5,
-     "station": "Heavenly Valley",
-     "source": "snotel"
-    },
-    {
-     "name": "Kirkwood",
-     "cm": 2.5,
-     "station": "Carson Pass",
-     "source": "snotel"
-    },
-    {
-     "name": "Palisades Tahoe",
-     "cm": 0,
-     "station": "Palisades Tahoe",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
   "https://www.sawtoothavalanche.com/": {
    "name": "Sawtooth Avalanche Center",
    "units": "in",
@@ -550,6 +518,41 @@
    "place": "Mt. Howard",
    "source": "snotel",
    "resorts": []
+  },
+  "https://www.sierraavalanchecenter.org/": {
+   "name": "Sierra Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 2.5,
+   "place": "Css Lab",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Sugar Bowl",
+     "cm": 2.5,
+     "station": "Css Lab",
+     "source": "snotel"
+    },
+    {
+     "name": "Heavenly",
+     "cm": 2.5,
+     "station": "Heavenly Valley",
+     "source": "snotel"
+    },
+    {
+     "name": "Kirkwood",
+     "cm": 2.5,
+     "station": "Carson Pass",
+     "source": "snotel"
+    },
+    {
+     "name": "Palisades Tahoe",
+     "cm": 0,
+     "station": "Palisades Tahoe",
+     "source": "snotel",
+     "featured": true
+    }
+   ]
   },
   "https://www.bridgeportavalanchecenter.org/": {
    "name": "Bridgeport Avalanche Center",
@@ -588,7 +591,7 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Savage Pass",
+   "place": "Stuart Mountain",
    "source": "snotel",
    "resorts": [
     {
@@ -747,7 +750,7 @@
    "place": "Terrace",
    "region": "North America",
    "units": "cm",
-   "cm": 52
+   "cm": 53
   },
   {
    "href": "https://alaskasnow.org/",
@@ -766,20 +769,20 @@
    "cm": 26
   },
   {
-   "href": "https://www.mountwashingtonavalanchecenter.org/",
-   "name": "Mount Washington Avalanche Center",
-   "place": "Mt Washington",
+   "href": "https://www.coastalakavalanche.org/",
+   "name": "Coastal Alaska Avalanche Center",
+   "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 22
+   "cm": 17
   },
   {
-   "href": "https://nwac.us/",
-   "name": "Northwest Avalanche Center",
-   "place": "Mt Baker",
-   "region": "North America",
-   "units": "in",
-   "cm": 18
+   "href": "https://nadare.jp/",
+   "name": "Japan Avalanche Network",
+   "place": "Tateyama",
+   "region": "Japan",
+   "units": "cm",
+   "cm": 17
   }
  ]
 }
