@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-07T07:21:21.654Z",
+ "updated": "2026-11-07T10:01:31.514Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-07T07:00Z",
+ "binsStart": "2026-11-07T10:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -27,24 +27,23 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 15,
+   "snow72cm": 20,
    "place": "Haines",
    "bins": [
     3.2,
-    1.7,
+    0.3,
     0.1,
+    0.1,
+    0.2,
     0,
-    0.4,
-    0,
-    0.1,
+    0.3,
     0.4,
     0.1,
-    1.7,
-    5,
-    2.5
+    3.6,
+    3.9,
+    5.5
    ],
    "snowingAt": [
-    "Thompson Pass",
     "Haines"
    ],
    "alerts": [],
@@ -55,27 +54,27 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 20,
    "place": "Mt Juneau",
    "bins": [
-    9.3,
-    3.2,
-    0,
+    7.4,
     0.4,
-    0.9,
+    0,
+    1.1,
+    0.2,
+    0.5,
+    2.9,
+    0.8,
     0.1,
-    2,
-    1.8,
-    0.3,
-    0.6,
-    4.1,
+    2.7,
+    2.2,
     1.1
    ],
    "snowingAt": [
     "Mt Juneau"
    ],
    "alerts": [],
-   "recentCm": 47.5
+   "recentCm": 50
   },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
@@ -83,20 +82,20 @@
    "region": "North America",
    "level": "notable",
    "snow72cm": 20,
-   "place": "Paradise",
+   "place": "Mt Baker",
    "bins": [
     0,
     0,
     0,
+    4.4,
+    5.3,
+    5.8,
     0,
-    10.7,
-    8.2,
-    1.8,
     0,
     0,
-    0.4,
-    0.1,
-    0.7
+    0,
+    0,
+    2.8
    ],
    "snowingAt": [],
    "alerts": [],
@@ -107,21 +106,21 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 15,
+   "snow72cm": 30,
    "place": "Mt Washington",
    "bins": [
     0,
     0,
+    0.1,
+    9.3,
+    15.3,
+    1,
     0,
     0,
-    3.6,
-    8,
     0,
-    0,
-    0,
-    1.5,
-    1.8,
-    0.6
+    2.7,
+    1,
+    0.4
    ],
    "snowingAt": [],
    "alerts": [],
@@ -135,28 +134,38 @@
    "snow72cm": 45,
    "place": "Terrace",
    "bins": [
-    1.1,
-    0.2,
-    7,
-    8.4,
-    1.5,
-    7.8,
-    2.7,
-    1.1,
+    0.3,
     0.8,
-    1,
-    5.7,
-    5.6
+    11.5,
+    4.3,
+    2.7,
+    6.4,
+    3,
+    0.1,
+    0.9,
+    3.4,
+    5.2,
+    6.3
    ],
    "snowingAt": [
-    "Terrace",
-    "Rogers Pass",
-    "Pine Pass",
-    "Jasper",
-    "White Pass, Yukon"
+    "Terrace"
    ],
    "alerts": [],
-   "recentCm": 57.5
+   "recentCm": 60
+  },
+  "https://www.slf.ch/en/avalanche-bulletin-and-snow-situation/": {
+   "name": "SLF Swiss Avalanche Bulletin",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Engelberg"
+   ],
+   "alerts": [],
+   "recentCm": null
   },
   "https://avalanche.report/": {
    "name": "Avalanche.report (Euregio)",
@@ -222,17 +231,17 @@
    "snow72cm": 20,
    "place": "Taisetsu-Tokachi",
    "bins": [
+    5.2,
+    4.3,
     3.2,
-    5,
-    3.9,
-    2.2,
-    1.1,
-    1,
-    0.6,
-    0.5,
-    1.1,
     1.3,
-    1.1,
+    1,
+    0.7,
+    0.4,
+    1,
+    1.2,
+    1.6,
+    0.2,
     0
    ],
    "snowingAt": [
@@ -264,7 +273,7 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 57.5,
+   "cm": 60,
    "place": "Terrace",
    "source": "model",
    "resorts": [
@@ -325,7 +334,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 47.5,
+   "cm": 50,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -639,22 +648,6 @@
     }
    ]
   },
-  "https://www.flatheadavalanche.org/": {
-   "name": "Flathead Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Pike Creek",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Whitefish Mountain",
-     "cm": 0,
-     "source": "model",
-     "featured": true
-    }
-   ]
-  },
   "https://missoulaavalanche.org/": {
    "name": "West Central Montana Avalanche Center",
    "units": "in",
@@ -757,15 +750,6 @@
     }
    ]
   },
-  "https://www.avalanchequebec.ca/": {
-   "name": "Avalanche Québec",
-   "units": "cm",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Chic-Chocs",
-   "source": "model",
-   "resorts": []
-  },
   "https://www.cnfaic.org/": {
    "name": "Chugach NF Avalanche Information Center",
    "units": "in",
@@ -803,6 +787,22 @@
      "source": "model"
     }
    ]
+  },
+  "https://www.flatheadavalanche.org/": {
+   "name": "Flathead Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 0,
+   "place": "Pike Creek",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Whitefish Mountain",
+     "cm": 0,
+     "source": "model",
+     "featured": true
+    }
+   ]
   }
  },
  "deepest": [
@@ -812,31 +812,7 @@
    "place": "Terrace",
    "region": "North America",
    "units": "cm",
-   "cm": 43
-  },
-  {
-   "href": "https://www.coastalakavalanche.org/",
-   "name": "Coastal Alaska Avalanche Center",
-   "place": "Mt Juneau",
-   "region": "North America",
-   "units": "in",
-   "cm": 24
-  },
-  {
-   "href": "https://nwac.us/",
-   "name": "Northwest Avalanche Center",
-   "place": "Paradise",
-   "region": "North America",
-   "units": "in",
-   "cm": 22
-  },
-  {
-   "href": "https://nadare.jp/",
-   "name": "Japan Avalanche Network",
-   "place": "Taisetsu-Tokachi",
-   "region": "Japan",
-   "units": "cm",
-   "cm": 21
+   "cm": 45
   },
   {
    "href": "https://www.mountwashingtonavalanchecenter.org/",
@@ -844,7 +820,31 @@
    "place": "Mt Washington",
    "region": "North America",
    "units": "in",
-   "cm": 15
+   "cm": 30
+  },
+  {
+   "href": "https://nadare.jp/",
+   "name": "Japan Avalanche Network",
+   "place": "Taisetsu-Tokachi",
+   "region": "Japan",
+   "units": "cm",
+   "cm": 20
+  },
+  {
+   "href": "https://www.coastalakavalanche.org/",
+   "name": "Coastal Alaska Avalanche Center",
+   "place": "Mt Juneau",
+   "region": "North America",
+   "units": "in",
+   "cm": 19
+  },
+  {
+   "href": "https://nwac.us/",
+   "name": "Northwest Avalanche Center",
+   "place": "Mt Baker",
+   "region": "North America",
+   "units": "in",
+   "cm": 18
   }
  ]
 }
