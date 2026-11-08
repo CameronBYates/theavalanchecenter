@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-08T15:53:03.862Z",
+ "updated": "2026-11-08T19:02:43.934Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-08T15:00Z",
+ "binsStart": "2026-11-08T19:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -27,21 +27,21 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 45,
    "place": "Turnagain Pass",
    "bins": [
     0,
     0,
-    0,
-    0,
     0.1,
-    6.4,
-    11.1,
-    18.4,
-    5.1,
+    0.1,
+    5.8,
+    9.4,
+    19.5,
+    7.6,
+    2.6,
+    0.2,
     0,
-    0,
-    0
+    0.4
    ],
    "snowingAt": [],
    "alerts": [
@@ -59,21 +59,21 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 45,
    "place": "Thompson Pass",
    "bins": [
     0,
     0,
     0,
+    0.4,
+    7.1,
+    1.8,
+    21.7,
+    9.7,
+    2,
+    0.2,
     0,
-    2.2,
-    6.1,
-    5.2,
-    14.8,
-    8.8,
-    1.5,
-    0,
-    0.2
+    0
    ],
    "snowingAt": [],
    "alerts": [
@@ -84,47 +84,34 @@
      "link": "https://forecast.weather.gov/MapClick.php?lat=61.13&lon=-145.75"
     }
    ],
-   "recentCm": 32.5
+   "recentCm": 35
   },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Mt Juneau",
    "bins": [
     0.6,
-    0.4,
-    0.8,
-    0.5,
-    2.6,
-    4.9,
+    0.2,
+    0.2,
+    1.4,
+    4.6,
+    2.5,
+    0.3,
+    0.2,
+    2,
+    2.2,
     1.6,
-    0.4,
-    1.5,
-    4.3,
-    2.3,
-    1.8
+    9.3
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Mt Juneau"
+   ],
    "alerts": [],
    "recentCm": 55
-  },
-  "https://nwac.us/": {
-   "name": "Northwest Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Mt Baker",
-    "Snoqualmie Pass"
-   ],
-   "alerts": [],
-   "recentCm": 12.5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
@@ -134,28 +121,25 @@
    "snow72cm": 40,
    "place": "Terrace",
    "bins": [
-    5.2,
-    3.4,
-    0.4,
-    0.2,
-    0,
-    4.6,
-    2,
-    3.1,
-    5.5,
-    4.6,
-    6.9,
-    6.2
+    2.1,
+    1.1,
+    0.1,
+    0.1,
+    4.5,
+    7.3,
+    1.1,
+    6.2,
+    2.4,
+    9.7,
+    2.9,
+    4.3
    ],
    "snowingAt": [
     "Whistler",
-    "Coquihalla",
-    "Terrace",
-    "Rogers Pass",
-    "Jasper"
+    "Kananaskis"
    ],
    "alerts": [],
-   "recentCm": 62.5
+   "recentCm": 65
   },
   "https://nadare.jp/": {
    "name": "Japan Avalanche Network",
@@ -165,11 +149,11 @@
    "snow72cm": 15,
    "place": "Tateyama",
    "bins": [
-    0,
-    4.9,
-    3.6,
-    5.8,
-    2.2,
+    3.2,
+    2,
+    7.4,
+    3.9,
+    0.1,
     0,
     0,
     0,
@@ -178,9 +162,7 @@
     0,
     0
    ],
-   "snowingAt": [
-    "Taisetsu-Tokachi"
-   ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": 22.5
   }
@@ -190,13 +172,13 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 62.5,
+   "cm": 65,
    "place": "Terrace",
    "source": "model",
    "resorts": [
     {
      "name": "Whistler Blackcomb",
-     "cm": 15,
+     "cm": 17.5,
      "source": "model",
      "featured": true
     },
@@ -211,6 +193,11 @@
      "source": "model"
     },
     {
+     "name": "Kicking Horse",
+     "cm": 2.5,
+     "source": "model"
+    },
+    {
      "name": "Sunshine Village",
      "cm": 2.5,
      "source": "model"
@@ -221,17 +208,12 @@
      "source": "model"
     },
     {
-     "name": "Whitewater",
-     "cm": 2.5,
-     "source": "model"
-    },
-    {
-     "name": "Kicking Horse",
+     "name": "Lake Louise Ski Resort",
      "cm": 0,
      "source": "model"
     },
     {
-     "name": "Lake Louise Ski Resort",
+     "name": "Whitewater",
      "cm": 0,
      "source": "model"
     },
@@ -256,38 +238,11 @@
    "source": "model",
    "resorts": []
   },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 32.5,
-   "place": "Flower Mountain",
-   "source": "snotel",
-   "resorts": []
-  },
-  "https://nadare.jp/": {
-   "name": "Japan Avalanche Network",
-   "units": "cm",
-   "region": "Japan",
-   "cm": 22.5,
-   "place": "Taisetsu-Tokachi",
-   "source": "model",
-   "resorts": []
-  },
-  "https://niseko.nadare.info/": {
-   "name": "Niseko Avalanche Information",
-   "units": "cm",
-   "region": "Japan",
-   "cm": 15,
-   "place": "Niseko",
-   "source": "model",
-   "resorts": []
-  },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 12.5,
+   "cm": 52.5,
    "place": "Easy Pass",
    "source": "snotel",
    "resorts": [
@@ -310,18 +265,45 @@
      "source": "snotel"
     },
     {
-     "name": "Mt Hood Meadows and Timberline",
-     "cm": 2.5,
-     "station": "Mt Hood Test Site",
-     "source": "snotel"
-    },
-    {
      "name": "Stevens Pass",
      "cm": 0,
      "station": "Stevens Pass",
      "source": "snotel"
+    },
+    {
+     "name": "Mt Hood Meadows and Timberline",
+     "cm": 0,
+     "station": "Mt Hood Test Site",
+     "source": "snotel"
     }
    ]
+  },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 35,
+   "place": "Flower Mountain",
+   "source": "snotel",
+   "resorts": []
+  },
+  "https://nadare.jp/": {
+   "name": "Japan Avalanche Network",
+   "units": "cm",
+   "region": "Japan",
+   "cm": 22.5,
+   "place": "Taisetsu-Tokachi",
+   "source": "model",
+   "resorts": []
+  },
+  "https://niseko.nadare.info/": {
+   "name": "Niseko Avalanche Information",
+   "units": "cm",
+   "region": "Japan",
+   "cm": 15,
+   "place": "Niseko",
+   "source": "model",
+   "resorts": []
   },
   "https://payetteavalanche.org/": {
    "name": "Payette Avalanche Center",
@@ -494,7 +476,7 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Mt. Howard",
+   "place": "Aneroid Lake #2",
    "source": "snotel",
    "resorts": []
   },
@@ -732,6 +714,22 @@
  },
  "deepest": [
   {
+   "href": "https://www.cnfaic.org/",
+   "name": "Chugach NF Avalanche Information Center",
+   "place": "Turnagain Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 46
+  },
+  {
+   "href": "https://alaskasnow.org/",
+   "name": "Alaska Avalanche Information Center",
+   "place": "Thompson Pass",
+   "region": "North America",
+   "units": "in",
+   "cm": 43
+  },
+  {
    "href": "https://www.avalanche.ca/map",
    "name": "Avalanche Canada",
    "place": "Terrace",
@@ -740,28 +738,12 @@
    "cm": 42
   },
   {
-   "href": "https://www.cnfaic.org/",
-   "name": "Chugach NF Avalanche Information Center",
-   "place": "Turnagain Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 41
-  },
-  {
-   "href": "https://alaskasnow.org/",
-   "name": "Alaska Avalanche Information Center",
-   "place": "Thompson Pass",
-   "region": "North America",
-   "units": "in",
-   "cm": 39
-  },
-  {
    "href": "https://www.coastalakavalanche.org/",
    "name": "Coastal Alaska Avalanche Center",
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 22
+   "cm": 25
   },
   {
    "href": "https://nadare.jp/",
