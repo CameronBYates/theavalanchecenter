@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-08T19:02:43.934Z",
+ "updated": "2026-11-08T21:53:03.498Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-08T19:00Z",
+ "binsStart": "2026-11-08T21:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -33,15 +33,15 @@
     0,
     0,
     0.1,
-    0.1,
-    5.8,
-    9.4,
-    19.5,
-    7.6,
-    2.6,
+    0.3,
+    9,
+    11.8,
+    18,
+    3.9,
+    2,
     0.2,
     0,
-    0.4
+    1.9
    ],
    "snowingAt": [],
    "alerts": [
@@ -65,15 +65,15 @@
     0,
     0,
     0,
-    0.4,
-    7.1,
+    2.7,
+    5.2,
+    5.7,
+    23.7,
+    3.7,
     1.8,
-    21.7,
-    9.7,
-    2,
-    0.2,
+    0.1,
     0,
-    0
+    0.1
    ],
    "snowingAt": [],
    "alerts": [
@@ -84,7 +84,7 @@
      "link": "https://forecast.weather.gov/MapClick.php?lat=61.13&lon=-145.75"
     }
    ],
-   "recentCm": 35
+   "recentCm": 30
   },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
@@ -94,52 +94,81 @@
    "snow72cm": 25,
    "place": "Mt Juneau",
    "bins": [
+    0.5,
+    0.2,
+    0.6,
+    2.4,
+    5.1,
     0.6,
     0.2,
-    0.2,
-    1.4,
-    4.6,
-    2.5,
-    0.3,
-    0.2,
+    0.7,
+    1.8,
     2,
-    2.2,
-    1.6,
-    9.3
+    4.8,
+    6.8
    ],
    "snowingAt": [
     "Mt Juneau"
    ],
    "alerts": [],
-   "recentCm": 55
+   "recentCm": 52.5
+  },
+  "https://nwac.us/": {
+   "name": "Northwest Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Snoqualmie Pass"
+   ],
+   "alerts": [],
+   "recentCm": 52.5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
+   "snow72cm": 45,
    "place": "Terrace",
    "bins": [
-    2.1,
-    1.1,
+    2.5,
+    0.3,
     0.1,
-    0.1,
-    4.5,
-    7.3,
-    1.1,
+    0.2,
+    7.2,
+    5,
+    1.6,
     6.2,
-    2.4,
-    9.7,
-    2.9,
-    4.3
+    2.5,
+    10.3,
+    1,
+    8
    ],
    "snowingAt": [
-    "Whistler",
-    "Kananaskis"
+    "Terrace",
+    "Purcells",
+    "White Pass, Yukon"
    ],
    "alerts": [],
-   "recentCm": 65
+   "recentCm": 62.5
+  },
+  "https://www.vorarlberg.at/lawine": {
+   "name": "Vorarlberg Avalanche Warning Service",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Lech"
+   ],
+   "alerts": [],
+   "recentCm": null
   },
   "https://nadare.jp/": {
    "name": "Japan Avalanche Network",
@@ -149,11 +178,11 @@
    "snow72cm": 15,
    "place": "Tateyama",
    "bins": [
-    3.2,
-    2,
-    7.4,
-    3.9,
-    0.1,
+    4.9,
+    3.6,
+    5.8,
+    2.2,
+    0,
     0,
     0,
     0,
@@ -162,7 +191,10 @@
     0,
     0
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Kagura-Tanigawa",
+    "Tateyama"
+   ],
    "alerts": [],
    "recentCm": 22.5
   }
@@ -172,13 +204,13 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 65,
+   "cm": 62.5,
    "place": "Terrace",
    "source": "model",
    "resorts": [
     {
      "name": "Whistler Blackcomb",
-     "cm": 17.5,
+     "cm": 20,
      "source": "model",
      "featured": true
     },
@@ -233,7 +265,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 55,
+   "cm": 52.5,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -265,15 +297,15 @@
      "source": "snotel"
     },
     {
-     "name": "Stevens Pass",
-     "cm": 0,
-     "station": "Stevens Pass",
+     "name": "Mt Hood Meadows and Timberline",
+     "cm": 2.5,
+     "station": "Mt Hood Test Site",
      "source": "snotel"
     },
     {
-     "name": "Mt Hood Meadows and Timberline",
+     "name": "Stevens Pass",
      "cm": 0,
-     "station": "Mt Hood Test Site",
+     "station": "Stevens Pass",
      "source": "snotel"
     }
    ]
@@ -282,7 +314,7 @@
    "name": "Alaska Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "cm": 35,
+   "cm": 30,
    "place": "Flower Mountain",
    "source": "snotel",
    "resorts": []
@@ -300,7 +332,7 @@
    "name": "Niseko Avalanche Information",
    "units": "cm",
    "region": "Japan",
-   "cm": 15,
+   "cm": 17.5,
    "place": "Niseko",
    "source": "model",
    "resorts": []
@@ -476,7 +508,7 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Aneroid Lake #2",
+   "place": "Mt. Howard",
    "source": "snotel",
    "resorts": []
   },
@@ -625,23 +657,6 @@
     }
    ]
   },
-  "https://kachinapeaks.org/": {
-   "name": "Kachina Peaks Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Snowslide Canyon",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Arizona Snowbowl",
-     "cm": 2.5,
-     "station": "Snowslide Canyon",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
   "https://www.mountwashingtonavalanchecenter.org/": {
    "name": "Mount Washington Avalanche Center",
    "units": "in",
@@ -710,6 +725,23 @@
      "featured": true
     }
    ]
+  },
+  "https://kachinapeaks.org/": {
+   "name": "Kachina Peaks Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 0,
+   "place": "Snowslide Canyon",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Arizona Snowbowl",
+     "cm": 0,
+     "station": "Snowslide Canyon",
+     "source": "snotel",
+     "featured": true
+    }
+   ]
   }
  },
  "deepest": [
@@ -719,7 +751,15 @@
    "place": "Turnagain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 46
+   "cm": 47
+  },
+  {
+   "href": "https://www.avalanche.ca/map",
+   "name": "Avalanche Canada",
+   "place": "Terrace",
+   "region": "North America",
+   "units": "cm",
+   "cm": 45
   },
   {
    "href": "https://alaskasnow.org/",
@@ -730,20 +770,12 @@
    "cm": 43
   },
   {
-   "href": "https://www.avalanche.ca/map",
-   "name": "Avalanche Canada",
-   "place": "Terrace",
-   "region": "North America",
-   "units": "cm",
-   "cm": 42
-  },
-  {
    "href": "https://www.coastalakavalanche.org/",
    "name": "Coastal Alaska Avalanche Center",
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 25
+   "cm": 26
   },
   {
    "href": "https://nadare.jp/",
