@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-08T01:26:38.856Z",
+ "updated": "2026-11-08T04:10:38.742Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-08T01:00Z",
+ "binsStart": "2026-11-08T04:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -35,13 +35,13 @@
     0,
     0,
     0,
-    0,
-    0,
-    2.7,
-    5.9,
-    10.4,
-    6.9,
-    1.2
+    0.2,
+    0.1,
+    6.1,
+    6.4,
+    12,
+    1.8,
+    0.1
    ],
    "snowingAt": [],
    "alerts": [],
@@ -51,22 +51,22 @@
    "name": "Alaska Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 30,
+   "level": "heavy",
+   "snow72cm": 40,
    "place": "Thompson Pass",
    "bins": [
-    0.1,
     0,
     0,
     0,
     0,
     0,
-    0.1,
-    3.7,
-    1.5,
-    17.1,
-    6,
-    0.8
+    0,
+    2.6,
+    2.6,
+    5.6,
+    24,
+    2.7,
+    0.1
    ],
    "snowingAt": [],
    "alerts": [
@@ -84,46 +84,71 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 15,
    "place": "Mt Juneau",
    "bins": [
-    0.4,
-    1.2,
-    0.1,
-    0.4,
     1.1,
+    0.2,
     0.4,
-    3,
-    4.8,
-    2,
     0.4,
-    0.6,
-    4.5
+    0.1,
+    0.8,
+    4.9,
+    3.8,
+    1.4,
+    0.1,
+    1.4,
+    2.8
    ],
    "snowingAt": [],
    "alerts": [],
    "recentCm": 62.5
+  },
+  "https://nwac.us/": {
+   "name": "Northwest Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "Mt Baker",
+   "bins": [
+    0,
+    3.2,
+    1.8,
+    0,
+    0,
+    0,
+    0,
+    6.9,
+    2.8,
+    0,
+    0.8,
+    0
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": 12.5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 50,
+   "snow72cm": 45,
    "place": "Terrace",
    "bins": [
-    10.4,
-    3.4,
-    7.6,
-    3.1,
-    1.5,
-    0.2,
-    0.4,
-    6.2,
-    1.5,
-    1.6,
-    8.8,
-    6.5
+    5,
+    6,
+    1.7,
+    3.5,
+    0.1,
+    0.3,
+    2.2,
+    4.3,
+    1.7,
+    4.2,
+    4,
+    11.3
    ],
    "snowingAt": [
     "Terrace",
@@ -131,21 +156,7 @@
     "Pine Pass"
    ],
    "alerts": [],
-   "recentCm": 55
-  },
-  "https://avalanche.report/": {
-   "name": "Avalanche.report (Euregio)",
-   "units": "cm",
-   "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Dolomites"
-   ],
-   "alerts": [],
-   "recentCm": null
+   "recentCm": 60
   },
   "https://lawinenwarndienst.bayern.de/": {
    "name": "Bavarian Avalanche Warning Service",
@@ -186,11 +197,11 @@
     0,
     0,
     0,
-    3.2,
-    2,
-    7.4,
-    3.9,
-    0.1,
+    4.9,
+    4.7,
+    5.4,
+    1.6,
+    0,
     0,
     0,
     0,
@@ -231,13 +242,13 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 55,
+   "cm": 60,
    "place": "Terrace",
    "source": "model",
    "resorts": [
     {
      "name": "Whistler Blackcomb",
-     "cm": 10,
+     "cm": 7.5,
      "source": "model",
      "featured": true
     },
@@ -346,23 +357,6 @@
     }
    ]
   },
-  "https://cbavalanchecenter.org/": {
-   "name": "Crested Butte Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 12.5,
-   "place": "Castle Peak",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Crested Butte",
-     "cm": 5,
-     "station": "Butte",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
   "https://niseko.nadare.info/": {
    "name": "Niseko Avalanche Information",
    "units": "cm",
@@ -403,15 +397,15 @@
    "source": "snotel",
    "resorts": [
     {
-     "name": "Aspen Snowmass",
-     "cm": 12.5,
-     "source": "model"
+     "name": "Loveland",
+     "cm": 5,
+     "station": "Grizzly Peak",
+     "source": "snotel"
     },
     {
-     "name": "Telluride",
-     "cm": 7.5,
-     "station": "Alta Lakes",
-     "source": "snotel"
+     "name": "Aspen Snowmass",
+     "cm": 5,
+     "source": "model"
     },
     {
      "name": "Wolf Creek",
@@ -432,9 +426,9 @@
      "source": "snotel"
     },
     {
-     "name": "Loveland",
+     "name": "Telluride",
      "cm": 2.5,
-     "station": "Loveland Basin",
+     "station": "Alta Lakes",
      "source": "snotel"
     },
     {
@@ -447,6 +441,23 @@
      "name": "Steamboat",
      "cm": 0,
      "source": "model"
+    }
+   ]
+  },
+  "https://cbavalanchecenter.org/": {
+   "name": "Crested Butte Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 7.5,
+   "place": "Upper Taylor",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Crested Butte",
+     "cm": 2.5,
+     "station": "Butte",
+     "source": "snotel",
+     "featured": true
     }
    ]
   },
@@ -526,7 +537,7 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Mt. Alyeska",
+   "place": "Turnagain Pass",
    "source": "snotel",
    "resorts": [
     {
@@ -556,6 +567,13 @@
    "source": "snotel",
    "resorts": [
     {
+     "name": "Palisades Tahoe",
+     "cm": 2.5,
+     "station": "Palisades Tahoe",
+     "source": "snotel",
+     "featured": true
+    },
+    {
      "name": "Sugar Bowl",
      "cm": 2.5,
      "station": "Css Lab",
@@ -568,15 +586,8 @@
      "source": "snotel"
     },
     {
-     "name": "Palisades Tahoe",
-     "cm": 0,
-     "station": "Palisades Tahoe",
-     "source": "snotel",
-     "featured": true
-    },
-    {
      "name": "Kirkwood",
-     "cm": 0,
+     "cm": 2.5,
      "station": "Carson Pass",
      "source": "snotel"
     }
@@ -619,7 +630,7 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Stuart Mountain",
+   "place": "Savage Pass",
    "source": "snotel",
    "resorts": [
     {
@@ -760,7 +771,7 @@
    "place": "Terrace",
    "region": "North America",
    "units": "cm",
-   "cm": 51
+   "cm": 44
   },
   {
    "href": "https://alaskasnow.org/",
@@ -768,7 +779,7 @@
    "place": "Thompson Pass",
    "region": "North America",
    "units": "in",
-   "cm": 29
+   "cm": 38
   },
   {
    "href": "https://www.cnfaic.org/",
@@ -784,7 +795,7 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 19
+   "cm": 17
   },
   {
    "href": "https://nadare.jp/",
