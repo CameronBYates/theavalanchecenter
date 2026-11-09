@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-08T21:53:03.498Z",
+ "updated": "2026-11-09T01:29:35.333Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-08T21:00Z",
+ "binsStart": "2026-11-09T01:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -27,21 +27,21 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 45,
+   "snow72cm": 40,
    "place": "Turnagain Pass",
    "bins": [
     0,
     0,
-    0.1,
-    0.3,
-    9,
-    11.8,
-    18,
-    3.9,
-    2,
-    0.2,
     0,
-    1.9
+    4.8,
+    10.3,
+    16.3,
+    6.4,
+    0,
+    1.4,
+    0.1,
+    0.1,
+    0
    ],
    "snowingAt": [],
    "alerts": [
@@ -59,21 +59,21 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 45,
-   "place": "Thompson Pass",
+   "snow72cm": 35,
+   "place": "Haines",
    "bins": [
     0,
-    0,
-    0,
-    2.7,
-    5.2,
-    5.7,
-    23.7,
-    3.7,
-    1.8,
     0.1,
-    0,
-    0.1
+    4.3,
+    5.4,
+    2.6,
+    4.4,
+    0.5,
+    0.9,
+    0.4,
+    3.2,
+    11.1,
+    2
    ],
    "snowingAt": [],
    "alerts": [
@@ -82,91 +82,92 @@
      "ends": "2026-11-10T16:00:00-09:00",
      "place": "Thompson Pass",
      "link": "https://forecast.weather.gov/MapClick.php?lat=61.13&lon=-145.75"
+    },
+    {
+     "event": "Winter Storm Warning",
+     "ends": "2026-11-09T18:00:00-09:00",
+     "place": "Haines",
+     "link": "https://forecast.weather.gov/MapClick.php?lat=59.4&lon=-136"
     }
    ],
-   "recentCm": 30
+   "recentCm": 20
   },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 25,
+   "level": "heavy",
+   "snow72cm": 30,
    "place": "Mt Juneau",
    "bins": [
-    0.5,
     0.2,
-    0.6,
-    2.4,
-    5.1,
-    0.6,
     0.2,
-    0.7,
-    1.8,
     2,
-    4.8,
-    6.8
+    4.4,
+    3.9,
+    0.2,
+    0,
+    1.8,
+    0.4,
+    1.5,
+    7.2,
+    8.3
    ],
-   "snowingAt": [
-    "Mt Juneau"
-   ],
+   "snowingAt": [],
    "alerts": [],
-   "recentCm": 52.5
-  },
-  "https://nwac.us/": {
-   "name": "Northwest Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Snoqualmie Pass"
-   ],
-   "alerts": [],
-   "recentCm": 52.5
+   "recentCm": 50
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 45,
+   "snow72cm": 35,
    "place": "Terrace",
    "bins": [
-    2.5,
+    1.9,
     0.3,
     0.1,
-    0.2,
-    7.2,
-    5,
-    1.6,
-    6.2,
-    2.5,
-    10.3,
-    1,
-    8
+    2.2,
+    4.3,
+    0.8,
+    4.8,
+    1.3,
+    7.4,
+    3.6,
+    5.6,
+    4.8
    ],
    "snowingAt": [
     "Terrace",
-    "Purcells",
-    "White Pass, Yukon"
+    "Smithers",
+    "Jasper"
    ],
    "alerts": [],
-   "recentCm": 62.5
+   "recentCm": 55
   },
-  "https://www.vorarlberg.at/lawine": {
-   "name": "Vorarlberg Avalanche Warning Service",
+  "https://www.aineva.it/bollettini/": {
+   "name": "AINEVA",
    "units": "cm",
    "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Lech"
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Courmayeur",
+   "bins": [
+    0,
+    0,
+    0,
+    0,
+    1.7,
+    0,
+    0,
+    0,
+    0.1,
+    7.5,
+    8.5,
+    0.2
    ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": null
   },
@@ -174,29 +175,30 @@
    "name": "Japan Avalanche Network",
    "units": "cm",
    "region": "Japan",
-   "level": "notable",
-   "snow72cm": 15,
-   "place": "Tateyama",
-   "bins": [
-    4.9,
-    3.6,
-    5.8,
-    2.2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
    "snowingAt": [
-    "Kagura-Tanigawa",
+    "Taisetsu-Tokachi",
     "Tateyama"
    ],
    "alerts": [],
    "recentCm": 22.5
+  },
+  "https://niseko.nadare.info/": {
+   "name": "Niseko Avalanche Information",
+   "units": "cm",
+   "region": "Japan",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Niseko"
+   ],
+   "alerts": [],
+   "recentCm": 17.5
   }
  },
  "recent": {
@@ -204,7 +206,7 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 62.5,
+   "cm": 55,
    "place": "Terrace",
    "source": "model",
    "resorts": [
@@ -261,15 +263,6 @@
     }
    ]
   },
-  "https://www.coastalakavalanche.org/": {
-   "name": "Coastal Alaska Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 52.5,
-   "place": "Mt Juneau",
-   "source": "model",
-   "resorts": []
-  },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
    "units": "in",
@@ -280,9 +273,15 @@
    "resorts": [
     {
      "name": "Mt Baker Ski Area",
-     "cm": 10,
+     "cm": 12.5,
      "source": "model",
      "featured": true
+    },
+    {
+     "name": "Crystal Mountain",
+     "cm": 5,
+     "station": "Morse Lake",
+     "source": "snotel"
     },
     {
      "name": "Snoqualmie Pass",
@@ -291,32 +290,26 @@
      "source": "snotel"
     },
     {
-     "name": "Crystal Mountain",
-     "cm": 2.5,
-     "station": "Morse Lake",
-     "source": "snotel"
-    },
-    {
-     "name": "Mt Hood Meadows and Timberline",
-     "cm": 2.5,
-     "station": "Mt Hood Test Site",
-     "source": "snotel"
-    },
-    {
      "name": "Stevens Pass",
      "cm": 0,
      "station": "Stevens Pass",
      "source": "snotel"
+    },
+    {
+     "name": "Mt Hood Meadows and Timberline",
+     "cm": 0,
+     "station": "Mt Hood Test Site",
+     "source": "snotel"
     }
    ]
   },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
+  "https://www.coastalakavalanche.org/": {
+   "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 30,
-   "place": "Flower Mountain",
-   "source": "snotel",
+   "cm": 50,
+   "place": "Mt Juneau",
+   "source": "model",
    "resorts": []
   },
   "https://nadare.jp/": {
@@ -326,6 +319,15 @@
    "cm": 22.5,
    "place": "Taisetsu-Tokachi",
    "source": "model",
+   "resorts": []
+  },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 20,
+   "place": "Flower Mountain",
+   "source": "snotel",
    "resorts": []
   },
   "https://niseko.nadare.info/": {
@@ -451,12 +453,6 @@
      "source": "snotel"
     },
     {
-     "name": "Vail and Beaver Creek",
-     "cm": 2.5,
-     "station": "Vail Mountain",
-     "source": "snotel"
-    },
-    {
      "name": "Winter Park",
      "cm": 2.5,
      "station": "Berthoud Summit",
@@ -473,6 +469,12 @@
      "cm": 0,
      "source": "model",
      "featured": true
+    },
+    {
+     "name": "Vail and Beaver Creek",
+     "cm": 0,
+     "station": "Vail Mountain",
+     "source": "snotel"
     },
     {
      "name": "Aspen Snowmass",
@@ -534,15 +536,15 @@
      "source": "snotel"
     },
     {
-     "name": "Heavenly",
-     "cm": 2.5,
-     "station": "Heavenly Valley",
-     "source": "snotel"
-    },
-    {
      "name": "Kirkwood",
      "cm": 2.5,
      "station": "Carson Pass",
+     "source": "snotel"
+    },
+    {
+     "name": "Heavenly",
+     "cm": 0,
+     "station": "Heavenly Valley",
      "source": "snotel"
     }
    ]
@@ -645,12 +647,12 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Palo",
+   "place": "Taos Powderhorn",
    "source": "snotel",
    "resorts": [
     {
      "name": "Taos Ski Valley",
-     "cm": 0,
+     "cm": 2.5,
      "station": "Taos Powderhorn",
      "source": "snotel",
      "featured": true
@@ -751,7 +753,7 @@
    "place": "Turnagain Pass",
    "region": "North America",
    "units": "in",
-   "cm": 47
+   "cm": 40
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -759,15 +761,15 @@
    "place": "Terrace",
    "region": "North America",
    "units": "cm",
-   "cm": 45
+   "cm": 37
   },
   {
    "href": "https://alaskasnow.org/",
    "name": "Alaska Avalanche Information Center",
-   "place": "Thompson Pass",
+   "place": "Haines",
    "region": "North America",
    "units": "in",
-   "cm": 43
+   "cm": 35
   },
   {
    "href": "https://www.coastalakavalanche.org/",
@@ -775,15 +777,15 @@
    "place": "Mt Juneau",
    "region": "North America",
    "units": "in",
-   "cm": 26
+   "cm": 30
   },
   {
-   "href": "https://nadare.jp/",
-   "name": "Japan Avalanche Network",
-   "place": "Tateyama",
-   "region": "Japan",
+   "href": "https://www.aineva.it/bollettini/",
+   "name": "AINEVA",
+   "place": "Courmayeur",
+   "region": "Europe",
    "units": "cm",
-   "cm": 17
+   "cm": 18
   }
  ]
 }
