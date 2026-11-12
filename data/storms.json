@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-11T17:14:43.454Z",
+ "updated": "2026-11-12T00:48:47.295Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-11T17:00Z",
+ "binsStart": "2026-11-12T00:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -26,23 +26,10 @@
    "name": "Chugach NF Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 15,
-   "place": "Turnagain Pass",
-   "bins": [
-    1.1,
-    8.3,
-    5.3,
-    0,
-    0,
-    0.4,
-    0.2,
-    0,
-    0,
-    0,
-    0.1,
-    0.1
-   ],
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
    "snowingAt": [
     "Turnagain Pass"
    ],
@@ -53,49 +40,22 @@
    "name": "Alaska Avalanche Information Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 15,
-   "place": "Haines",
-   "bins": [
-    6.4,
-    0.3,
-    1.1,
-    0.1,
-    0.8,
-    0.8,
-    0,
-    0,
-    0,
-    1.1,
-    2.3,
-    3.1
-   ],
-   "snowingAt": [
-    "Haines"
-   ],
-   "alerts": [],
-   "recentCm": 45
-  },
-  "https://www.coastalakavalanche.org/": {
-   "name": "Coastal Alaska Avalanche Center",
-   "units": "in",
-   "region": "North America",
    "level": null,
    "snow72cm": null,
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Mt Juneau"
+    "Thompson Pass"
    ],
    "alerts": [],
-   "recentCm": 17.5
+   "recentCm": 45
   },
   "https://www.shastaavalanche.org/": {
    "name": "Mount Shasta Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Mt Shasta",
    "bins": [
     0,
@@ -104,12 +64,12 @@
     0,
     0,
     0,
-    0,
-    0.1,
-    3.4,
-    1.7,
-    9,
-    3.9
+    0.3,
+    14.6,
+    1.6,
+    5.8,
+    0.3,
+    0.7
    ],
    "snowingAt": [],
    "alerts": [],
@@ -120,8 +80,8 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 35,
-   "place": "Carson Pass",
+   "snow72cm": 30,
+   "place": "Donner Summit",
    "bins": [
     0,
     0,
@@ -130,11 +90,11 @@
     0,
     0,
     0,
-    0,
-    0,
-    26.1,
-    7.4,
-    2.4
+    9.6,
+    20,
+    1.8,
+    0.2,
+    0
    ],
    "snowingAt": [],
    "alerts": [
@@ -162,11 +122,11 @@
     0,
     0,
     0,
+    1.8,
+    26.5,
+    3,
     0,
-    0.5,
-    17.2,
-    11.2,
-    1.9
+    0
    ],
    "snowingAt": [],
    "alerts": [
@@ -194,11 +154,11 @@
     0,
     0,
     0,
-    0,
-    0,
-    8.3,
-    17.7,
-    1.3
+    0.1,
+    18.6,
+    5.9,
+    0.1,
+    0
    ],
    "snowingAt": [],
    "alerts": [
@@ -211,33 +171,45 @@
    ],
    "recentCm": 0
   },
+  "https://utahavalanchecenter.org/": {
+   "name": "Utah Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Alta",
+   "bins": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0.7,
+    17,
+    0.8
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": 5
+  },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 20,
-   "place": "Terrace",
-   "bins": [
-    4.8,
-    3,
-    1.7,
-    5.3,
-    0.7,
-    0.2,
-    2.5,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
    "snowingAt": [
     "Terrace",
-    "White Pass, Yukon"
+    "Smithers"
    ],
    "alerts": [],
-   "recentCm": 42.5
+   "recentCm": 45
   }
  },
  "recent": {
@@ -254,20 +226,20 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 42.5,
+   "cm": 45,
    "place": "Terrace",
    "source": "model",
    "resorts": [
     {
-     "name": "Whistler Blackcomb",
-     "cm": 7.5,
-     "source": "model",
-     "featured": true
-    },
-    {
      "name": "Big White",
      "cm": 5,
      "source": "model"
+    },
+    {
+     "name": "Whistler Blackcomb",
+     "cm": 2.5,
+     "source": "model",
+     "featured": true
     },
     {
      "name": "Red Mountain",
@@ -372,7 +344,7 @@
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 17.5,
+   "cm": 20,
    "place": "Mt Juneau",
    "source": "model",
    "resorts": []
@@ -409,15 +381,6 @@
    "region": "Japan",
    "cm": 7.5,
    "place": "Taisetsu-Tokachi",
-   "source": "model",
-   "resorts": []
-  },
-  "https://niseko.nadare.info/": {
-   "name": "Niseko Avalanche Information",
-   "units": "cm",
-   "region": "Japan",
-   "cm": 7.5,
-   "place": "Niseko",
    "source": "model",
    "resorts": []
   },
@@ -537,6 +500,15 @@
      "source": "model"
     }
    ]
+  },
+  "https://niseko.nadare.info/": {
+   "name": "Niseko Avalanche Information",
+   "units": "cm",
+   "region": "Japan",
+   "cm": 5,
+   "place": "Niseko",
+   "source": "model",
+   "resorts": []
   },
   "https://hpavalanche.org/": {
    "name": "Hatcher Pass Avalanche Center",
@@ -660,7 +632,7 @@
    "units": "in",
    "region": "North America",
    "cm": 2.5,
-   "place": "Grand Targhee",
+   "place": "Pine Creek Pass",
    "source": "snotel",
    "resorts": [
     {
@@ -693,15 +665,6 @@
      "featured": true
     }
    ]
-  },
-  "https://www.mountwashingtonavalanchecenter.org/": {
-   "name": "Mount Washington Avalanche Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 2.5,
-   "place": "Mt Washington",
-   "source": "model",
-   "resorts": []
   },
   "https://www.esavalanche.org/": {
    "name": "Eastern Sierra Avalanche Center",
@@ -807,10 +770,10 @@
   {
    "href": "https://www.sierraavalanchecenter.org/",
    "name": "Sierra Avalanche Center",
-   "place": "Carson Pass",
+   "place": "Donner Summit",
    "region": "North America",
    "units": "in",
-   "cm": 36
+   "cm": 32
   },
   {
    "href": "https://www.bridgeportavalanchecenter.org/",
@@ -826,15 +789,7 @@
    "place": "Mammoth Lakes",
    "region": "North America",
    "units": "in",
-   "cm": 27
-  },
-  {
-   "href": "https://www.avalanche.ca/map",
-   "name": "Avalanche Canada",
-   "place": "Terrace",
-   "region": "North America",
-   "units": "cm",
-   "cm": 18
+   "cm": 25
   },
   {
    "href": "https://www.shastaavalanche.org/",
@@ -842,7 +797,15 @@
    "place": "Mt Shasta",
    "region": "North America",
    "units": "in",
-   "cm": 18
+   "cm": 23
+  },
+  {
+   "href": "https://utahavalanchecenter.org/",
+   "name": "Utah Avalanche Center",
+   "place": "Alta",
+   "region": "North America",
+   "units": "in",
+   "cm": 19
   }
  ]
 }
