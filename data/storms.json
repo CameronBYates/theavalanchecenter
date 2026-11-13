@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-13T01:54:13.167Z",
+ "updated": "2026-11-13T11:09:45.143Z",
  "thresholds": {
   "heavyCm": 30,
   "notableCm": 15,
   "hours": 72
  },
- "binsStart": "2026-11-13T01:00Z",
+ "binsStart": "2026-11-13T11:00Z",
  "sources": [
   {
    "name": "Open-Meteo",
@@ -22,26 +22,51 @@
   }
  ],
  "centers": {
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 20,
+   "place": "Haines",
+   "bins": [
+    0,
+    0,
+    1.8,
+    4.6,
+    4.6,
+    0.7,
+    0.2,
+    0,
+    0.8,
+    0.1,
+    1.9,
+    3.9
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": 12.5
+  },
   "https://nwac.us/": {
    "name": "Northwest Avalanche Center",
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 30,
    "place": "Paradise",
    "bins": [
     0,
-    0,
-    2.1,
-    1.2,
-    0,
-    3.7,
-    9.7,
-    1,
-    0.5,
-    2,
+    1.3,
+    8.3,
     0.3,
-    1.1
+    1.8,
+    5,
+    5.1,
+    2.7,
+    0.4,
+    1.5,
+    1.8,
+    0.6
    ],
    "snowingAt": [],
    "alerts": [],
@@ -52,21 +77,21 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Mt Bachelor",
    "bins": [
     0,
+    6.5,
+    1.9,
+    3.8,
+    10.6,
+    0.4,
     0,
-    1.5,
-    3.3,
-    0,
-    2.7,
-    5.8,
-    1,
-    0,
-    0.9,
-    1.5,
-    1
+    0.4,
+    1.3,
+    0.7,
+    0.6,
+    0.1
    ],
    "snowingAt": [],
    "alerts": [],
@@ -77,21 +102,21 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 15,
    "place": "Wallowa Mountains",
    "bins": [
     0,
     0,
+    4.9,
+    6.8,
     0,
-    1.8,
-    12.3,
-    6.1,
-    0,
-    0,
+    1.3,
     0,
     0,
     0,
-    0
+    0,
+    0.1,
+    2.7
    ],
    "snowingAt": [],
    "alerts": [],
@@ -102,21 +127,21 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 65,
+   "snow72cm": 70,
    "place": "Mt Shasta",
    "bins": [
-    0,
-    0,
-    22.4,
-    20.9,
-    7.7,
-    2.7,
-    0.2,
     0.8,
+    39.5,
+    2.7,
+    6,
+    6.5,
     0,
-    0.3,
-    4.5,
-    5.3
+    0,
+    0.1,
+    2,
+    5.4,
+    3.4,
+    2.8
    ],
    "snowingAt": [],
    "alerts": [],
@@ -127,16 +152,16 @@
    "units": "in",
    "region": "North America",
    "level": "heavy",
-   "snow72cm": 40,
-   "place": "Donner Summit",
+   "snow72cm": 35,
+   "place": "Carson Pass",
    "bins": [
     0,
+    13,
+    17.9,
+    2,
     0,
-    2.4,
-    25.1,
-    8.2,
-    3.7,
-    0.1,
+    0,
+    0,
     0,
     0,
     0,
@@ -158,16 +183,16 @@
    "name": "Bridgeport Avalanche Center",
    "units": "in",
    "region": "North America",
-   "level": "notable",
-   "snow72cm": 25,
+   "level": "heavy",
+   "snow72cm": 35,
    "place": "Sonora Pass",
    "bins": [
     0,
+    9.6,
+    21.1,
+    2.2,
     0,
     0,
-    12.3,
-    11.5,
-    2.5,
     0,
     0,
     0,
@@ -191,15 +216,15 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 20,
+   "snow72cm": 25,
    "place": "Mammoth Lakes",
    "bins": [
     0,
+    2.2,
+    22.2,
+    2.2,
     0,
     0,
-    1.8,
-    15.8,
-    1.4,
     0,
     0,
     0,
@@ -223,17 +248,17 @@
    "units": "in",
    "region": "North America",
    "level": "notable",
-   "snow72cm": 25,
+   "snow72cm": 20,
    "place": "Alta",
    "bins": [
     0,
     0,
+    0.6,
+    4.6,
+    11.3,
+    1.5,
     0,
-    2,
-    1,
-    7.1,
-    13.5,
-    1,
+    0,
     0,
     0,
     0,
@@ -242,6 +267,56 @@
    "snowingAt": [],
    "alerts": [],
    "recentCm": 5
+  },
+  "https://avalanche.state.co.us/": {
+   "name": "Colorado Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 25,
+   "place": "Wolf Creek Pass",
+   "bins": [
+    0,
+    0,
+    0,
+    4.3,
+    12.7,
+    8,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": 5
+  },
+  "https://taosavalanchecenter.org/": {
+   "name": "Taos Avalanche Center",
+   "units": "in",
+   "region": "North America",
+   "level": "notable",
+   "snow72cm": 15,
+   "place": "Taos Ski Valley",
+   "bins": [
+    0,
+    0,
+    0,
+    2,
+    1.8,
+    3.1,
+    8.6,
+    0.2,
+    0,
+    0,
+    0,
+    0
+   ],
+   "snowingAt": [],
+   "alerts": [],
+   "recentCm": 2.5
   },
   "https://www.avalanche.ca/map": {
    "name": "Avalanche Canada",
@@ -253,33 +328,45 @@
    "bins": [
     0,
     0,
-    0.7,
-    3.2,
-    1.5,
+    3.5,
+    0.5,
     0.8,
-    2.1,
-    3.2,
-    0.6,
-    7.4,
-    7.4,
-    5.8
+    1.1,
+    2.7,
+    6.3,
+    11.7,
+    5.7,
+    3.6,
+    1.3
    ],
-   "snowingAt": [],
+   "snowingAt": [
+    "Terrace"
+   ],
    "alerts": [],
-   "recentCm": 47.5
+   "recentCm": 42.5
   },
   "https://meteofrance.com/meteo-montagne": {
    "name": "Météo-France (BERA)",
    "units": "cm",
    "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Chamonix",
-    "Vanoise"
+   "level": "notable",
+   "snow72cm": 25,
+   "place": "Chamonix",
+   "bins": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3.6,
+    3.6,
+    0,
+    1.8,
+    11.5,
+    6.8
    ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": null
   },
@@ -292,16 +379,13 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Zermatt",
-    "Engelberg",
-    "Davos",
-    "Engadin"
+    "Engelberg"
    ],
    "alerts": [],
    "recentCm": null
   },
-  "https://avalanche.report/": {
-   "name": "Avalanche.report (Euregio)",
+  "https://lawinenwarndienst.ktn.gv.at/": {
+   "name": "Carinthia Avalanche Warning Service",
    "units": "cm",
    "region": "Europe",
    "level": null,
@@ -309,51 +393,7 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "St Anton",
-    "Obergurgl",
-    "Dolomites"
-   ],
-   "alerts": [],
-   "recentCm": null
-  },
-  "https://www.vorarlberg.at/lawine": {
-   "name": "Vorarlberg Avalanche Warning Service",
-   "units": "cm",
-   "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Lech"
-   ],
-   "alerts": [],
-   "recentCm": null
-  },
-  "https://lawine.salzburg.at/": {
-   "name": "Salzburg Avalanche Warning Service",
-   "units": "cm",
-   "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Gastein"
-   ],
-   "alerts": [],
-   "recentCm": null
-  },
-  "https://www.lawinenwarndienst-niederoesterreich.at/": {
-   "name": "Lower Austria Avalanche Warning Service",
-   "units": "cm",
-   "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Rax"
+    "Nassfeld"
    ],
    "alerts": [],
    "recentCm": null
@@ -362,14 +402,24 @@
    "name": "AINEVA",
    "units": "cm",
    "region": "Europe",
-   "level": null,
-   "snow72cm": null,
-   "place": null,
-   "bins": null,
-   "snowingAt": [
-    "Courmayeur",
-    "Livigno"
+   "level": "notable",
+   "snow72cm": 30,
+   "place": "Courmayeur",
+   "bins": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    4.1,
+    3.2,
+    0.1,
+    3.1,
+    13.2,
+    5
    ],
+   "snowingAt": [],
    "alerts": [],
    "recentCm": null
   },
@@ -382,8 +432,21 @@
    "place": null,
    "bins": null,
    "snowingAt": [
-    "Allgäu",
-    "Zugspitze"
+    "Allgäu"
+   ],
+   "alerts": [],
+   "recentCm": null
+  },
+  "https://www.meteo.si/pozor/plaz": {
+   "name": "ARSO Slovenia",
+   "units": "cm",
+   "region": "Europe",
+   "level": null,
+   "snow72cm": null,
+   "place": null,
+   "bins": null,
+   "snowingAt": [
+    "Julian Alps"
    ],
    "alerts": [],
    "recentCm": null
@@ -394,30 +457,20 @@
    "name": "Avalanche Canada",
    "units": "cm",
    "region": "North America",
-   "cm": 47.5,
+   "cm": 42.5,
    "place": "Terrace",
    "source": "model",
    "resorts": [
     {
      "name": "Big White",
-     "cm": 5,
+     "cm": 2.5,
      "source": "model"
     },
     {
      "name": "Whistler Blackcomb",
-     "cm": 2.5,
+     "cm": 0,
      "source": "model",
      "featured": true
-    },
-    {
-     "name": "Red Mountain",
-     "cm": 2.5,
-     "source": "model"
-    },
-    {
-     "name": "Whitewater",
-     "cm": 2.5,
-     "source": "model"
     },
     {
      "name": "Revelstoke Mountain",
@@ -440,6 +493,16 @@
      "source": "model"
     },
     {
+     "name": "Red Mountain",
+     "cm": 0,
+     "source": "model"
+    },
+    {
+     "name": "Whitewater",
+     "cm": 0,
+     "source": "model"
+    },
+    {
      "name": "Fernie Alpine",
      "cm": 0,
      "source": "model"
@@ -451,39 +514,22 @@
     }
    ]
   },
-  "https://alaskasnow.org/": {
-   "name": "Alaska Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 45,
-   "place": "Upper Tsaina River",
-   "source": "snotel",
-   "resorts": []
-  },
-  "https://www.cnfaic.org/": {
-   "name": "Chugach NF Avalanche Information Center",
-   "units": "in",
-   "region": "North America",
-   "cm": 22.5,
-   "place": "Turnagain Pass",
-   "source": "snotel",
-   "resorts": [
-    {
-     "name": "Alyeska",
-     "cm": 7.5,
-     "station": "Mt. Alyeska",
-     "source": "snotel",
-     "featured": true
-    }
-   ]
-  },
   "https://www.coastalakavalanche.org/": {
    "name": "Coastal Alaska Avalanche Center",
    "units": "in",
    "region": "North America",
-   "cm": 17.5,
+   "cm": 15,
    "place": "Mt Juneau",
    "source": "model",
+   "resorts": []
+  },
+  "https://alaskasnow.org/": {
+   "name": "Alaska Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 12.5,
+   "place": "Flower Mountain",
+   "source": "snotel",
    "resorts": []
   },
   "https://nwac.us/": {
@@ -494,12 +540,6 @@
    "place": "Fifteenmile",
    "source": "snotel",
    "resorts": [
-    {
-     "name": "Mt Baker Ski Area",
-     "cm": 2.5,
-     "source": "model",
-     "featured": true
-    },
     {
      "name": "Snoqualmie Pass",
      "cm": 2.5,
@@ -513,6 +553,12 @@
      "source": "snotel"
     },
     {
+     "name": "Mt Baker Ski Area",
+     "cm": 0,
+     "source": "model",
+     "featured": true
+    },
+    {
      "name": "Stevens Pass",
      "cm": 0,
      "station": "Stevens Pass",
@@ -523,6 +569,23 @@
      "cm": 0,
      "station": "Mt Hood Test Site",
      "source": "snotel"
+    }
+   ]
+  },
+  "https://www.cnfaic.org/": {
+   "name": "Chugach NF Avalanche Information Center",
+   "units": "in",
+   "region": "North America",
+   "cm": 5,
+   "place": "Turnagain Pass",
+   "source": "snotel",
+   "resorts": [
+    {
+     "name": "Alyeska",
+     "cm": 0,
+     "station": "Mt. Alyeska",
+     "source": "snotel",
+     "featured": true
     }
    ]
   },
@@ -914,15 +977,7 @@
    "place": "Mt Shasta",
    "region": "North America",
    "units": "in",
-   "cm": 65
-  },
-  {
-   "href": "https://www.sierraavalanchecenter.org/",
-   "name": "Sierra Avalanche Center",
-   "place": "Donner Summit",
-   "region": "North America",
-   "units": "in",
-   "cm": 39
+   "cm": 69
   },
   {
    "href": "https://www.avalanche.ca/map",
@@ -930,7 +985,7 @@
    "place": "Whistler",
    "region": "North America",
    "units": "cm",
-   "cm": 33
+   "cm": 37
   },
   {
    "href": "https://www.bridgeportavalanchecenter.org/",
@@ -938,15 +993,23 @@
    "place": "Sonora Pass",
    "region": "North America",
    "units": "in",
-   "cm": 26
+   "cm": 33
   },
   {
-   "href": "https://utahavalanchecenter.org/",
-   "name": "Utah Avalanche Center",
-   "place": "Alta",
+   "href": "https://www.sierraavalanchecenter.org/",
+   "name": "Sierra Avalanche Center",
+   "place": "Carson Pass",
    "region": "North America",
    "units": "in",
-   "cm": 25
+   "cm": 33
+  },
+  {
+   "href": "https://nwac.us/",
+   "name": "Northwest Avalanche Center",
+   "place": "Paradise",
+   "region": "North America",
+   "units": "in",
+   "cm": 29
   }
  ]
 }
