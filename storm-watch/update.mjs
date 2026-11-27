@@ -30,12 +30,29 @@ const points = centers.flatMap(c => c.points.map(([lat, lon, place, elev]) => ({
 const resorts = centers.flatMap(c => (c.resorts || []).map(([lat, lon, place, elev, radius = 8]) => ({ center: c, lat, lon, place, elev, radius, resort: true })));
 const allPoints = [...points, ...resorts];
 
-async function getJSON(url, headers = {}) {
+// Retries network errors (timeouts, dropped connections) as well as rate limits and server errors,
+// with growing waits, so one slow moment at a weather service does not sink the whole run.
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+async function getJSON(url, headers = {}, tries = 5) {
   for (let attempt = 1; ; attempt++) {
-    const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/json', ...headers } });
-    if (res.ok) return res.json();
-    if (attempt >= 3) throw new Error(`${res.status} ${res.statusText} for ${url}`);
-    await new Promise(r => setTimeout(r, 5000 * attempt));
+    let problem, retryAfter = 0;
+    try {
+      const res = await fetch(url, {
+        headers: { 'User-Agent': UA, Accept: 'application/json', ...headers },
+        signal: AbortSignal.timeout(45000)
+      });
+      if (res.ok) return await res.json();
+      problem = `${res.status} ${res.statusText}`;
+      // Other 4xx answers mean the request itself is wrong, and asking again will not help.
+      if (res.status < 500 && res.status !== 429 && res.status !== 408) attempt = tries;
+      retryAfter = Number(res.headers.get('retry-after')) || 0;
+    } catch (err) {
+      problem = err.cause?.code || err.name || err.message;
+    }
+    if (attempt >= tries) throw new Error(`${problem} for ${url.slice(0, 120)}`);
+    const wait = Math.min(retryAfter * 1000 || 15000 * 2 ** (attempt - 1), 90000);
+    console.warn(`  ${new URL(url).host}: ${problem}, retrying in ${wait / 1000}s (try ${attempt + 1} of ${tries})`);
+    await sleep(wait);
   }
 }
 
@@ -55,6 +72,7 @@ async function snowfall() {
       forecast_hours: '72',
       timezone: 'GMT'
     });
+    if (i) await sleep(3000); // spread the chunks out; Open-Meteo counts every location as a call
     const data = await getJSON(`https://api.open-meteo.com/v1/forecast?${qs}`);
     results.push(...(Array.isArray(data) ? data : [data]));
   }
@@ -77,7 +95,7 @@ async function snowfall() {
 }
 
 async function nwsAlerts(p) {
-  const data = await getJSON(`https://api.weather.gov/alerts/active?point=${p.lat},${p.lon}`, { Accept: 'application/geo+json' });
+  const data = await getJSON(`https://api.weather.gov/alerts/active?point=${p.lat},${p.lon}`, { Accept: 'application/geo+json' }, 2);
   return data.features
     .map(f => f.properties)
     .filter(a => NWS_EVENTS.has(a.event))
@@ -136,7 +154,24 @@ async function snotel(usPoints) {
   return result;
 }
 
-const everywhere = await snowfall();
+// Open-Meteo is the backbone: without it there is nothing to write. If it is still down after all the
+// retries, keep the last good file and end quietly; the next run in 3 hours tries again. Only fail the
+// job (and send GitHub's alert email) once the published data is more than 24 hours old (GitHub often runs this
+// schedule only a few times a day, and the page hides data after 36 hours).
+let everywhere;
+try {
+  everywhere = await snowfall();
+} catch (err) {
+  let age = Infinity;
+  try { age = Date.now() - Date.parse(JSON.parse(await readFile(out, 'utf8')).updated); } catch {}
+  const hours = Math.round(age / 3600000);
+  if (age < 24 * 3600 * 1000) {
+    console.log(`::warning::Open-Meteo unavailable (${err.message}); keeping data from ${hours} h ago.`);
+    process.exit(0);
+  }
+  console.log(`::error::Open-Meteo unavailable (${err.message}) and the published data is ${isFinite(hours) ? hours + ' h' : 'missing or'} old.`);
+  process.exit(1);
+}
 const snow = everywhere.filter(s => !s.resort); // the center's own points; ski areas are kept apart
 const resortSnow = everywhere.filter(s => s.resort);
 const usPoints = points.filter(p => p.center.country === 'US');

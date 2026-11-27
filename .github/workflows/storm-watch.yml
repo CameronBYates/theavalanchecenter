@@ -19,7 +19,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
         with:
@@ -45,8 +45,12 @@ jobs:
           node seo/sitemap-lastmod.mjs
           git add sitemap.xml
           git diff --cached --quiet || git commit -m "Update sitemap dates"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          # GitHub occasionally rejects a push with a server error; try a few times before giving up.
+          for try in 1 2 3 4; do
+            git pull --rebase origin main && git push origin HEAD:main && break
+            if [ "$try" = 4 ]; then exit 1; fi
+            echo "Push failed, retrying in $((try * 20))s"; sleep $((try * 20))
+          done
           echo "pushed=1" >> "$GITHUB_OUTPUT"
         id: commit
       - name: Tell Bing the home page changed (IndexNow)
