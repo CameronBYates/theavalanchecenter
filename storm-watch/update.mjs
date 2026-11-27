@@ -156,7 +156,8 @@ async function snotel(usPoints) {
 
 // Open-Meteo is the backbone: without it there is nothing to write. If it is still down after all the
 // retries, keep the last good file and end quietly; the next run in 3 hours tries again. Only fail the
-// job (and send GitHub's alert email) once the published data is more than 12 hours old.
+// job (and send GitHub's alert email) once the published data is more than 24 hours old (GitHub often runs this
+// schedule only a few times a day, and the page hides data after 36 hours).
 let everywhere;
 try {
   everywhere = await snowfall();
@@ -164,7 +165,7 @@ try {
   let age = Infinity;
   try { age = Date.now() - Date.parse(JSON.parse(await readFile(out, 'utf8')).updated); } catch {}
   const hours = Math.round(age / 3600000);
-  if (age < 12 * 3600 * 1000) {
+  if (age < 24 * 3600 * 1000) {
     console.log(`::warning::Open-Meteo unavailable (${err.message}); keeping data from ${hours} h ago.`);
     process.exit(0);
   }
