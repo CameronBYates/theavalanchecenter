@@ -527,7 +527,14 @@ header { display: grid; gap: 1.25rem; justify-items: center; text-align: center;
 .scale-bar span:nth-child(4) { background: var(--high); }
 .scale-bar span:nth-child(5) { background: var(--extreme); }
 .scale-labels { display: grid; grid-template-columns: repeat(5, 1fr); font: 500 0.68rem/1.2 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
-.scale-labels span { min-width: 0; overflow-wrap: anywhere; }
+.scale-labels span { min-width: 0; white-space: nowrap; }
+.scale-labels b { font-weight: inherit; }
+/* Phones: number above word on every label, tighter type so "Considerable" stays on one line. */
+@media (max-width: 34rem) {
+  .scale-labels { font-size: 0.62rem; letter-spacing: 0.02em; row-gap: 0.15rem; }
+  .scale-labels b { display: block; margin-bottom: 0.15rem; color: var(--ink); }
+}
+@media (max-width: 22rem) { .scale-labels { font-size: 0.56rem; letter-spacing: 0; } }
 .search { display: grid; gap: 0.45rem; width: min(100%, 26rem); justify-items: center; }
 .search label { font: 500 0.75rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
 .search input {
@@ -728,7 +735,7 @@ li a > .tag { align-self: center; justify-self: start; margin-left: 0.4rem; }
     <p class="lede">Every regional avalanche forecast center in the US and Canada, plus the Alps, Japan and New Zealand, in one place. Find your range and check today's forecast before you head out.</p>
     <div class="scale" aria-label="North American Public Avalanche Danger Scale">
       <div class="scale-bar" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
-      <div class="scale-labels"><span>1 Low</span><span>2 Moderate</span><span>3 Considerable</span><span>4 High</span><span>5 Extreme</span></div>
+      <div class="scale-labels"><span><b>1</b> Low</span><span><b>2</b> Moderate</span><span><b>3</b> Considerable</span><span><b>4</b> High</span><span><b>5</b> Extreme</span></div>
     </div>
     <div class="search">
       <label for="q">Find a center</label>
